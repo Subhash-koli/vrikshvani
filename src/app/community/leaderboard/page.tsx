@@ -33,6 +33,8 @@ const badges = [
   { name: 'Nature Intelligence Pioneer 🔬', desc: 'Awarded by Vriksh Vani team for exceptional contribution', requirement: 'By invitation' },
 ];
 
+import NaturePointsWidget from '@/components/ui/NaturePointsWidget';
+
 export default function LeaderboardPage() {
   return (
     <main id="main-content" className="min-h-screen bg-[#070B08] text-[#F7F6F2]">
@@ -65,6 +67,9 @@ export default function LeaderboardPage() {
               );
             })}
           </div>
+
+          {/* Nature Points Simulator */}
+          <NaturePointsWidget />
 
           {/* Leaderboard table */}
           <div className="space-y-3">
