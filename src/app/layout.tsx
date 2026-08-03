@@ -3,6 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 import "@/styles/globals.css";
 import CookieConsentBanner from "@/components/ui/CookieConsentBanner";
 import ToastContainer from "@/components/ui/Toast";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -59,8 +60,10 @@ export default function RootLayout({
         {children}
         <CookieConsentBanner />
         <ToastContainer />
+        <Analytics />
       </body>
     </html>
   );
 }
+
 
