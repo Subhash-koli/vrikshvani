@@ -1,0 +1,121 @@
+import type { Metadata } from 'next';
+import React from 'react';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import { Card } from '@/components/ui/Card';
+import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
+import { Download, Newspaper, Mail, Award } from 'lucide-react';
+import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Press & Media — Vriksh Vani',
+  description: 'Download the Vriksh Vani press kit, access high-resolution product photography, and request interviews with the founding team.',
+};
+
+const coverage = [
+  { outlet: 'TechCrunch India', headline: '"Vriksh Vani wants to give your houseplants a voice — literally"', date: 'July 2026', href: '#' },
+  { outlet: 'The Hindu BusinessLine', headline: '"Bengaluru startup decodes plant stress using aerospace-grade thermal cameras"', date: 'June 2026', href: '#' },
+  { outlet: 'YourStory', headline: '"Meet NIH-01: The world\'s first kiln-fired ceramic plant intelligence hub"', date: 'June 2026', href: '#' },
+  { outlet: 'Wired India', headline: '"This device translates plant distress into speech — and the science behind it is solid"', date: 'May 2026', href: '#' },
+];
+
+const awards = [
+  { name: 'RedDot Design Concept Award', year: '2026', category: 'Product Concept' },
+  { name: 'India Design Mark (I Mark)', year: '2026', category: 'Electronics & Technology' },
+  { name: 'T-Hub Cohort 14 Graduate', year: '2025', category: 'AgriTech / BioTech' },
+];
+
+export default function PressPage() {
+  return (
+    <main id="main-content" className="min-h-screen bg-[#070B08] text-[#F7F6F2]">
+      <Header />
+      <section className="pt-36 pb-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+
+          {/* Hero */}
+          <div className="text-center space-y-4 max-w-3xl mx-auto">
+            <Badge variant="lime">Press & Media</Badge>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-[#F7F6F2]">
+              For Journalists &amp; Media Partners.
+            </h1>
+            <p className="text-[#A3B18A]">
+              Logos, product photography, founder headshots, and a comprehensive press kit. Everything you need to cover the Nature Intelligence category.
+            </p>
+            <div className="flex justify-center gap-4 flex-wrap">
+              <Button variant="primary" className="flex items-center gap-2">
+                <Download className="w-4 h-4" /> Download Press Kit (ZIP)
+              </Button>
+              <Link href="mailto:press@vrikshvani.com">
+                <Button variant="outline" className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" /> Request Interview
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Press Kit Contents */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { icon: '🖼️', title: 'Product Photography', desc: '12 high-res lifestyle shots of NIH-01 in all 3 colorways. 300 DPI TIFF + web JPG.' },
+              { icon: '🎨', title: 'Brand Assets', desc: 'SVG and PNG logos in light/dark variants. Color palette, typography guide, and usage rules.' },
+              { icon: '📄', title: 'Company Factsheet', desc: 'Founding story, team bios, technical specifications, and funding status. 2-page PDF.' },
+            ].map((item, idx) => (
+              <Card key={idx} className="text-center space-y-3 py-8">
+                <span className="text-4xl block">{item.icon}</span>
+                <h3 className="font-display text-lg font-bold text-[#F7F6F2]">{item.title}</h3>
+                <p className="text-xs text-[#A3B18A] leading-relaxed">{item.desc}</p>
+              </Card>
+            ))}
+          </div>
+
+          {/* Media Coverage */}
+          <div className="space-y-5">
+            <div className="flex items-center gap-3">
+              <Newspaper className="w-6 h-6 text-[#8AD74C]" />
+              <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Media Coverage</h2>
+            </div>
+            <div className="space-y-3">
+              {coverage.map((c, idx) => (
+                <Card key={idx} className="flex items-start justify-between gap-4 flex-wrap">
+                  <div className="space-y-1">
+                    <p className="text-xs font-mono text-[#8AD74C] font-bold">{c.outlet} · {c.date}</p>
+                    <p className="text-sm font-semibold text-[#F7F6F2] leading-snug">{c.headline}</p>
+                  </div>
+                  <Link href={c.href}>
+                    <Button variant="outline" size="sm">Read →</Button>
+                  </Link>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Awards */}
+          <div className="space-y-5">
+            <div className="flex items-center gap-3">
+              <Award className="w-6 h-6 text-[#E8D07C]" />
+              <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Awards &amp; Recognition</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {awards.map((a, idx) => (
+                <Card key={idx} className="space-y-1 border-[#E8D07C]/20">
+                  <p className="text-xs font-mono text-[#E8D07C]">{a.year} · {a.category}</p>
+                  <p className="font-display font-bold text-[#F7F6F2] leading-snug">{a.name}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Press Contact */}
+          <Card className="p-8 border-[#8AD74C]/20 text-center space-y-3">
+            <h3 className="font-display text-xl font-bold text-[#F7F6F2]">Press Contact</h3>
+            <p className="text-sm text-[#A3B18A]">For interview requests, review units, and media partnerships, contact our communications team directly.</p>
+            <p className="font-mono text-[#8AD74C] font-bold">press@vrikshvani.com</p>
+            <p className="text-xs text-[#A3B18A]">Response time: within 24 hours on business days</p>
+          </Card>
+        </div>
+      </section>
+      <Footer />
+    </main>
+  );
+}

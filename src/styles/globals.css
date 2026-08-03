@@ -1,0 +1,205 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* ─────────────────────────────────────────────────────────────
+   NIDL DESIGN LANGUAGE — CSS CUSTOM PROPERTIES
+───────────────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    --color-obsidian:       #070B08;
+    --color-obsidian-dark:  #030504;
+    --color-forest-deep:    #0F2B18;
+    --color-forest-glass:   rgba(15, 43, 24, 0.70);
+    --color-forest-hover:   rgba(20, 56, 32, 0.85);
+    --color-lime-vibrant:   #8AD74C;
+    --color-lime-bio:       #3FAE2A;
+    --color-lime-glow:      rgba(138, 215, 76, 0.25);
+    --color-nature-gold:    #E8D07C;
+    --color-gold-glow:      rgba(232, 208, 124, 0.20);
+    --color-offwhite:       #F7F6F2;
+    --color-muted:          #A3B18A;
+
+    --radius-btn:           18px;
+    --radius-card:          24px;
+    --radius-container:     36px;
+
+    --blur-glass:           40px;
+    --transition-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-smooth:    cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-obsidian);
+    color: var(--color-offwhite);
+    font-family: var(--font-inter), 'Inter', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-lime-vibrant);
+    color: var(--color-obsidian);
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   NIDL GLASS MORPHISM UTILITIES
+───────────────────────────────────────────────────────────── */
+.nidl-glass {
+  background: var(--color-forest-glass);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nidl-glass-dark {
+  background: rgba(3, 5, 4, 0.90);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nidl-glass-hover {
+  transition: all 0.35s var(--transition-smooth);
+}
+
+.nidl-glass-hover:hover {
+  background: var(--color-forest-hover);
+  border-color: rgba(138, 215, 76, 0.30);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   NIDL GLOW EFFECTS
+───────────────────────────────────────────────────────────── */
+.nidl-lime-glow {
+  box-shadow: 0 0 25px var(--color-lime-glow), 0 0 60px rgba(138, 215, 76, 0.10);
+}
+
+.nidl-gold-glow {
+  box-shadow: 0 0 25px var(--color-gold-glow), 0 0 60px rgba(232, 208, 124, 0.10);
+}
+
+.nidl-text-lime {
+  background: linear-gradient(135deg, #8AD74C 0%, #3FAE2A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nidl-text-gold {
+  background: linear-gradient(135deg, #E8D07C 0%, #C9A84C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SKIP TO MAIN CONTENT (ACCESSIBILITY)
+───────────────────────────────────────────────────────────── */
+.skip-to-main {
+  position: absolute;
+  top: -100%;
+  left: 0.5rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--color-lime-bio);
+  color: var(--color-obsidian);
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: var(--radius-btn);
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-to-main:focus {
+  top: 0.5rem;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HEALTH SCORE BAR ANIMATION
+───────────────────────────────────────────────────────────── */
+.health-bar {
+  transition: width 1s var(--transition-smooth);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CUSTOM SCROLLBAR STYLING (NIDL)
+───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 43, 24, 0.8);
+  border-radius: 3px;
+  border: 1px solid rgba(138, 215, 76, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-lime-vibrant);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FOCUS VISIBLE RING (ACCESSIBILITY)
+───────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-lime-vibrant);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   NIDL SECTION DIVIDER
+───────────────────────────────────────────────────────────── */
+.nidl-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(138, 215, 76, 0.25) 30%,
+    rgba(138, 215, 76, 0.45) 50%,
+    rgba(138, 215, 76, 0.25) 70%,
+    transparent 100%
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   NIDL GRADIENT BACKGROUNDS
+───────────────────────────────────────────────────────────── */
+.nidl-hero-gradient {
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    rgba(15, 43, 24, 0.45) 0%,
+    transparent 70%
+  );
+}
+
+.nidl-lime-radial {
+  background: radial-gradient(
+    circle at center,
+    rgba(138, 215, 76, 0.08) 0%,
+    transparent 70%
+  );
+}

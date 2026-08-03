@@ -1,0 +1,156 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum UserRole {
+  VISITOR
+  FOUNDING_MEMBER
+  BOTANIST
+  ENTERPRISE_ADMIN
+  SYSTEM_ADMIN
+}
+
+enum Colorway {
+  BIOPHILIC_SAGE
+  CREAM_WHITE
+}
+
+enum VoicePersonality {
+  CALM_WARM
+  PLAYFUL_CURIOUS
+  SCIENTIFIC_PRECISION
+  MEDITATIVE_ZEN
+}
+
+enum WaitlistStatus {
+  PENDING_CONFIRMATION
+  CONFIRMED
+  INVITED_TO_PREORDER
+  ORDER_PLACED
+  CANCELLED
+}
+
+enum TicketDepartment {
+  ORDERS
+  TECHNICAL
+  ENTERPRISE
+  LEGAL_PRIVACY
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  role          UserRole  @default(VISITOR)
+  createdAt     DateTime  @default(now())
+
+  waitlistEntry WaitlistEntry?
+  orders        Order[]
+  plantProfiles PlantProfile[]
+  devices       SensorHubDevice[]
+  contactTickets ContactTicket[]
+
+  @@index([email])
+}
+
+model WaitlistEntry {
+  id                String         @id @default(cuid())
+  userId            String?        @unique
+  name              String
+  email             String         @unique
+  preferredColorway Colorway       @default(BIOPHILIC_SAGE)
+  referralCode      String         @unique
+  referredById      String?
+  referralCount     Int            @default(0)
+  queuePosition     Int            @default(0)
+  priorityScore     Int            @default(100)
+  status            WaitlistStatus @default(PENDING_CONFIRMATION)
+  joinedAt          DateTime       @default(now())
+
+  user       User?          @relation(fields: [userId], references: [id])
+  referredBy WaitlistEntry? @relation("ReferralTree", fields: [referredById], references: [id])
+  referrals  WaitlistEntry[] @relation("ReferralTree")
+
+  @@index([email])
+  @@index([priorityScore(sort: Desc), joinedAt(sort: Asc)])
+}
+
+model SensorHubDevice {
+  id              String         @id @default(cuid())
+  serialNumber    String         @unique
+  macAddress      String         @unique
+  firmwareVersion String         @default("v1.3.0")
+  status          String         @default("ONLINE")
+  ownerId         String?
+  lastSeenAt      DateTime?
+
+  owner         User?          @relation(fields: [ownerId], references: [id])
+  plantProfiles PlantProfile[]
+
+  @@index([serialNumber])
+}
+
+model PlantProfile {
+  id               String           @id @default(cuid())
+  userId           String
+  deviceId         String?
+  nickname         String
+  voicePersonality VoicePersonality @default(CALM_WARM)
+  healthScore      Int              @default(100)
+  currentEmotion   String           @default("Photosynthetic Joy 🌿")
+  createdAt        DateTime         @default(now())
+
+  user     User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  device   SensorHubDevice? @relation(fields: [deviceId], references: [id])
+  readings BioSignalReading[]
+
+  @@index([userId])
+}
+
+model BioSignalReading {
+  id               String   @id @default(cuid())
+  plantProfileId   String
+  leafSurfaceTemp  Float
+  ambientTemp      Float
+  relativeHumidity Float
+  computedVpd      Float
+  vocGasResistance Float
+  healthScore      Int
+  emotionTag       String
+  readingTimestamp DateTime @default(now())
+
+  plantProfile PlantProfile @relation(fields: [plantProfileId], references: [id], onDelete: Cascade)
+
+  @@index([plantProfileId])
+  @@index([readingTimestamp])
+}
+
+model Order {
+  id          String   @id @default(cuid())
+  userId      String
+  totalAmount Float
+  currency    String   @default("INR")
+  status      String   @default("PAID")
+  createdAt   DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model ContactTicket {
+  id         String           @id @default(cuid())
+  userId     String?
+  department TicketDepartment
+  name       String
+  email      String
+  subject    String
+  message    String           @db.Text
+  createdAt  DateTime         @default(now())
+
+  user User? @relation(fields: [userId], references: [id])
+}
