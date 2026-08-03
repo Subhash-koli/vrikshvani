@@ -46,7 +46,11 @@ const useCases = [
 
 const trustedBy = ['IISc Bengaluru', 'Royal Botanic Gardens Kew', 'TIFR Mumbai', 'RHS (UK)', 'USDA Plant Sciences'];
 
-import FleetRoiCalculator from '@/components/ui/FleetRoiCalculator';
+import dynamic from 'next/dynamic';
+
+const FleetRoiCalculator = dynamic(() => import('@/components/ui/FleetRoiCalculator'), {
+  loading: () => <div className="h-64 rounded-2xl bg-[#0F2B18]/20 animate-pulse border border-white/5" />,
+});
 
 export default function EnterprisePage() {
   return (

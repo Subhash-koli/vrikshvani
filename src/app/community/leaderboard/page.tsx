@@ -33,7 +33,11 @@ const badges = [
   { name: 'Nature Intelligence Pioneer 🔬', desc: 'Awarded by Vriksh Vani team for exceptional contribution', requirement: 'By invitation' },
 ];
 
-import NaturePointsWidget from '@/components/ui/NaturePointsWidget';
+import dynamic from 'next/dynamic';
+
+const NaturePointsWidget = dynamic(() => import('@/components/ui/NaturePointsWidget'), {
+  loading: () => <div className="h-64 rounded-2xl bg-[#0F2B18]/20 animate-pulse border border-white/5" />,
+});
 
 export default function LeaderboardPage() {
   return (

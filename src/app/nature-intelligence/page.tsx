@@ -2,8 +2,15 @@ import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import TechHero from '@/components/technology/TechHero';
-import SystemArchitectureDiagram from '@/components/visuals/SystemArchitectureDiagram';
-import ThermalVisualizer from '@/components/visuals/ThermalVisualizer';
+import dynamic from 'next/dynamic';
+
+const ThermalVisualizer = dynamic(() => import('@/components/visuals/ThermalVisualizer'), {
+  loading: () => <div className="h-64 rounded-2xl bg-[#0F2B18]/20 animate-pulse border border-white/5" />,
+});
+
+const SystemArchitectureDiagram = dynamic(() => import('@/components/visuals/SystemArchitectureDiagram'), {
+  loading: () => <div className="h-64 rounded-2xl bg-[#0F2B18]/20 animate-pulse border border-white/5" />,
+});
 
 export default function TechnologyPage() {
   return (

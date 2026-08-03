@@ -2,11 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  compress: true,
   experimental: {
     workerThreads: false,
     cpus: 4,
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -17,6 +20,28 @@ const nextConfig = {
         hostname: 'cdn.vrikshvani.com',
       },
     ],
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*.(png|jpg|jpeg|gif|webp|avif|ico|svg)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
   },
 };
 

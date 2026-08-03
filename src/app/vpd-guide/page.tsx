@@ -20,7 +20,11 @@ const vpdRanges = [
   { range: '> 1.6 kPa', label: 'Critical Stress', color: 'text-red-400', desc: 'Plants lose water faster than roots can supply. Wilting, leaf curl, and tip burn risk. Immediate intervention required.' },
 ];
 
-import VpdCalculator from '@/components/vpd/VpdCalculator';
+import dynamic from 'next/dynamic';
+
+const VpdCalculator = dynamic(() => import('@/components/vpd/VpdCalculator'), {
+  loading: () => <div className="h-64 rounded-2xl bg-[#0F2B18]/20 animate-pulse border border-white/5" />,
+});
 
 export default function VpdGuidePage() {
   return (
