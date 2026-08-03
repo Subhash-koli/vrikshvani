@@ -25,14 +25,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vriksh Vani — Decoded Plant Intelligence",
     description: "Decodes plant health, stress, and emotions using non-invasive thermal biometrics and voice AI.",
-    url: "https://vrikshvani.com",
+    url: "https://vrikshvani.vercel.app",
     siteName: "Vriksh Vani",
     images: [
       {
-        url: "https://cdn.vrikshvani.com/og-image.jpg",
+        url: "https://vrikshvani.vercel.app/og",
         width: 1200,
         height: 630,
-        alt: "Vriksh Vani NIH-01 Hub",
+        alt: "Vriksh Vani NIH-01 Nature Intelligence",
       },
     ],
     locale: "en_US",
@@ -44,6 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vriksh Vani — Decoded Plant Intelligence",
     description: "Decodes plant health, stress, and emotions using non-invasive thermal biometrics and voice AI.",
+    images: ["https://vrikshvani.vercel.app/og"],
     creator: "@vrikshvani",
   },
 };
