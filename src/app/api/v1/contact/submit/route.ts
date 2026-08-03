@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
+import { sendContactTicketConfirmationEmail } from '@/lib/email';
 
 const ContactSchema = z.object({
   name: z.string().min(1, 'Name required').max(100),
@@ -16,23 +17,20 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const data = ContactSchema.parse(body);
 
-    // In production: send via Resend email API
-    // await resend.emails.send({
-    //   from: 'Contact Form <hello@vrikshvani.com>',
-    //   to: ['hello@vrikshvani.com'],
-    //   subject: `[${data.reason.toUpperCase()}] ${data.subject}`,
-    //   text: `From: ${data.name} <${data.email}>\n\n${data.message}`,
-    // });
+    const ticketId = `TICK-${Date.now().toString(36).toUpperCase()}`;
 
-    console.log('[Contact] New submission:', {
+    // Trigger confirmation email
+    await sendContactTicketConfirmationEmail({
+      to: data.email,
       name: data.name,
-      email: data.email,
-      reason: data.reason,
       subject: data.subject,
+      ticketId,
+      reason: data.reason,
     });
 
     return NextResponse.json({
       success: true,
+      ticketId,
       message: 'Your message has been received. We will reply within 1–2 business days.',
     }, { status: 201 });
 
