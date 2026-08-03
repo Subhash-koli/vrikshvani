@@ -38,6 +38,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  manifest: "/manifest.json",
+  themeColor: "#0F2B18",
   twitter: {
     card: "summary_large_image",
     title: "Vriksh Vani — Decoded Plant Intelligence",

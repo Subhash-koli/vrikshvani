@@ -1,0 +1,45 @@
+{
+  "name": "Vriksh Vani — Nature Intelligence",
+  "short_name": "Vriksh Vani",
+  "description": "The world's first plant intelligence hub powered by leaf surface thermal sensing and NTE™ voice translation.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070B08",
+  "theme_color": "#0F2B18",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "lifestyle", "education", "science"],
+  "shortcuts": [
+    {
+      "name": "Live Telemetry",
+      "short_name": "Telemetry",
+      "description": "View live NIH-01 bio-signals",
+      "url": "/app"
+    },
+    {
+      "name": "VPD Simulator",
+      "short_name": "VPD",
+      "description": "Calculate Vapour Pressure Deficit",
+      "url": "/vpd-guide"
+    },
+    {
+      "name": "Species Database",
+      "short_name": "Species",
+      "description": "Search plant care parameters",
+      "url": "/species"
+    }
+  ]
+}
