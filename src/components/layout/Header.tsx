@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
-import { Menu, X, Leaf, Sparkles, ChevronDown } from 'lucide-react';
+import { Menu, X, Leaf, Sparkles, ChevronDown, Search } from 'lucide-react';
+import SearchModal from '@/components/ui/SearchModal';
 
 type NavGroup = {
   label: string;
@@ -59,6 +60,7 @@ const navGroups: NavGroup[] = [
 export const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
@@ -66,6 +68,17 @@ export const Header: React.FC = () => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setSearchOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   useEffect(() => {
@@ -160,8 +173,16 @@ export const Header: React.FC = () => {
             )}
           </nav>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons + Search Trigger */}
           <div className="hidden lg:flex items-center gap-3">
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0F2B18]/40 border border-white/10 hover:border-[#8AD74C]/40 text-xs text-[#A3B18A] hover:text-[#F7F6F2] transition-all"
+            >
+              <Search className="w-3.5 h-3.5 text-[#8AD74C]" />
+              <span>Search...</span>
+              <kbd className="hidden xl:inline-block px-1.5 py-0.5 text-[9px] font-mono bg-white/5 border border-white/10 rounded text-[#A3B18A]">⌘K</kbd>
+            </button>
             <Badge variant="lime" className="hidden xl:inline-flex gap-1">
               <Sparkles className="w-3 h-3" /> Batch 01 · 88 Left
             </Badge>
@@ -228,6 +249,7 @@ export const Header: React.FC = () => {
           </div>
         </div>
       )}
+      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 };
