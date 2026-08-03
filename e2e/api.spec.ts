@@ -78,4 +78,14 @@ test.describe('API Endpoints Suite', () => {
     expect(body.success).toBe(true);
   });
 
+  test('GET /api/v1/search returns matching results for query', async ({ request }) => {
+    const response = await request.get('/api/v1/search?q=monstera');
+    expect(response.status()).toBe(200);
+    const body = await response.json();
+    expect(body.success).toBe(true);
+    expect(Array.isArray(body.results)).toBe(true);
+    expect(body.total).toBeGreaterThan(0);
+    expect(body.results[0].title).toContain('Monstera');
+  });
+
 });
