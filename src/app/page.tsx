@@ -12,11 +12,14 @@ import HomeBlogPreview from '@/components/home/HomeBlogPreview';
 import HomeFaq from '@/components/home/HomeFaq';
 import HomeFinaleCta from '@/components/home/HomeFinaleCta';
 
+import HowItWorks60s from '@/components/home/HowItWorks60s';
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#070B08] text-[#F7F6F2] selection:bg-[#8AD74C] selection:text-[#070B08]">
       <Header />
       <HomeHero />
+      <HowItWorks60s />
       <HomeVisionBrief />
       <HomeTechBreakdown />
       <HomeProductShowcase />
