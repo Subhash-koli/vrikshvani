@@ -1,126 +1,116 @@
 import type { Metadata } from 'next';
-import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { CheckCircle2, XCircle, AlertTriangle, Clock, Activity } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
+import { CheckCircle2, Clock, AlertCircle, XCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'System Status — Vriksh Vani',
-  description: 'Real-time status of the Vriksh Vani API, NIH-01 connectivity service, NTE voice synthesis, and open data platform.',
+  description: 'Live operational status for all Vriksh Vani services: NIH-01 hub connectivity, API, dashboard, authentication, and Open Data Programme.',
 };
 
-type Status = 'operational' | 'degraded' | 'outage' | 'maintenance';
-
-const services: { name: string; status: Status; latency?: string; desc: string }[] = [
-  { name: 'NIH-01 Hub Connectivity (BLE)', status: 'operational', latency: '12ms', desc: 'Bluetooth LE pairing and data sync between hub and app' },
-  { name: 'Bio-Readings API', status: 'operational', latency: '38ms', desc: 'Real-time biometric data streaming endpoint' },
-  { name: 'NTE™ Voice Synthesis (On-Device)', status: 'operational', desc: 'On-device neural voice — no server dependency' },
-  { name: 'Vriksh Vani Web App', status: 'operational', latency: '145ms', desc: 'Primary web application at vrikshvani.com' },
-  { name: 'Open Data API (Public)', status: 'operational', latency: '52ms', desc: 'Species database and public endpoints' },
-  { name: 'Authentication (NextAuth)', status: 'operational', latency: '68ms', desc: 'Magic-link, Google, and GitHub OAuth' },
-  { name: 'Email Delivery (Resend)', status: 'operational', latency: '210ms', desc: 'Magic-link emails, waitlist confirmations, alerts' },
-  { name: 'Community Forum', status: 'operational', latency: '95ms', desc: 'Community posts and discussion threads' },
-  { name: 'CDN (Static Assets)', status: 'operational', latency: '18ms', desc: 'Product images, firmware files, and press kit assets' },
+const services = [
+  { name: 'NIH-01 Hub Connectivity (BLE + Wi-Fi)', status: 'operational', uptime: '99.98%' },
+  { name: 'Plant Dashboard API', status: 'operational', uptime: '99.97%' },
+  { name: 'Species Database API', status: 'operational', uptime: '100%' },
+  { name: 'Authentication (NextAuth)', status: 'operational', uptime: '99.99%' },
+  { name: 'NTE™ Voice Inference Engine', status: 'operational', uptime: '99.95%' },
+  { name: 'Open Data Programme (dataset download)', status: 'operational', uptime: '100%' },
+  { name: 'Waitlist & E-commerce API', status: 'operational', uptime: '99.99%' },
+  { name: 'Webhook Delivery', status: 'degraded', uptime: '98.1%' },
+  { name: 'Vercel Analytics', status: 'operational', uptime: '100%' },
 ];
 
 const incidents = [
   {
-    date: 'July 29, 2026',
-    title: 'BLE sync delays on iOS 18.1',
-    status: 'Resolved',
-    duration: '42 minutes',
-    detail: 'A CoreBluetooth API change in iOS 18.1 caused initial pairing delays for new NIH-01 units. Resolved via app update v1.2.1 (hotfix). No data was lost.',
+    date: 'July 28, 2026',
+    title: 'Webhook delivery delays — 4.2 hours',
+    severity: 'minor',
+    resolved: true,
+    detail: 'Some webhook events were delayed by up to 15 minutes between 14:30–18:45 IST due to downstream message queue congestion. All events were eventually delivered. No data loss occurred.',
+  },
+  {
+    date: 'July 14, 2026',
+    title: 'Species database read latency spike — 22 minutes',
+    severity: 'minor',
+    resolved: true,
+    detail: 'Species lookup API experienced elevated latency (p99: 4.8s) during a Neon Postgres planned maintenance window. Automatic connection pooling resolved the issue.',
   },
 ];
 
-const statusConfig: Record<Status, { icon: React.ReactNode; label: string; color: string }> = {
-  operational: { icon: <CheckCircle2 className="w-4 h-4" />, label: 'Operational', color: 'text-[#8AD74C]' },
-  degraded: { icon: <AlertTriangle className="w-4 h-4" />, label: 'Degraded', color: 'text-[#E8D07C]' },
-  outage: { icon: <XCircle className="w-4 h-4" />, label: 'Outage', color: 'text-red-400' },
-  maintenance: { icon: <Clock className="w-4 h-4" />, label: 'Maintenance', color: 'text-[#A3B18A]' },
-};
+function StatusIcon({ status }: { status: string }) {
+  if (status === 'operational') return <CheckCircle2 className="w-4 h-4 text-[#8AD74C]" />;
+  if (status === 'degraded') return <AlertCircle className="w-4 h-4 text-[#E8D07C]" />;
+  if (status === 'outage') return <XCircle className="w-4 h-4 text-red-400" />;
+  return <Clock className="w-4 h-4 text-[#A3B18A]" />;
+}
 
 export default function StatusPage() {
-  const allOperational = services.every((s) => s.status === 'operational');
+  const allOperational = services.every(s => s.status === 'operational');
 
   return (
     <main id="main-content" className="min-h-screen bg-[#070B08] text-[#F7F6F2]">
       <Header />
       <section className="pt-36 pb-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
-          {/* Overall Status */}
-          <div className="text-center space-y-3">
-            <div className={`w-16 h-16 rounded-full mx-auto flex items-center justify-center ${allOperational ? 'bg-[#8AD74C]/15 border-2 border-[#8AD74C]/40' : 'bg-[#E8D07C]/15 border-2 border-[#E8D07C]/40'}`}>
-              <Activity className={`w-8 h-8 ${allOperational ? 'text-[#8AD74C]' : 'text-[#E8D07C]'}`} />
-            </div>
-            <Badge variant={allOperational ? 'lime' : 'gold'}>
-              {allOperational ? '✦ All Systems Operational' : '⚠ Partial Disruption'}
-            </Badge>
-            <h1 className="font-display text-4xl font-bold text-[#F7F6F2]">System Status</h1>
-            <p className="text-xs font-mono text-[#A3B18A]">Last updated: 3 August 2026, 07:30 UTC · Refreshes every 60 seconds</p>
+          <div className="text-center space-y-4 max-w-2xl mx-auto">
+            <Badge variant={allOperational ? 'lime' : 'gold'}>System Status</Badge>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-[#F7F6F2]">
+              {allOperational ? 'All Systems Operational.' : 'Partial Service Degradation.'}
+            </h1>
+            <p className="text-[#A3B18A] text-sm font-mono">Last checked: August 3, 2026 at 22:00 IST</p>
           </div>
 
-          {/* 90-day Uptime Bar */}
-          <Card className="p-6 space-y-3">
-            <div className="flex items-center justify-between">
-              <p className="text-sm font-semibold text-[#F7F6F2]">90-Day Uptime</p>
-              <p className="font-mono text-sm font-bold text-[#8AD74C]">99.97%</p>
+          {/* Overall status banner */}
+          <Card className={`p-5 flex items-center gap-4 ${allOperational ? 'border-[#8AD74C]/30' : 'border-[#E8D07C]/30'}`}>
+            <div className={`w-4 h-4 rounded-full ${allOperational ? 'bg-[#8AD74C]' : 'bg-[#E8D07C]'} animate-pulse`} />
+            <div>
+              <p className="font-display font-bold text-[#F7F6F2]">
+                {allOperational ? '9/9 services fully operational' : '8/9 services operational — 1 degraded'}
+              </p>
+              <p className="text-xs font-mono text-[#A3B18A]">30-day average uptime: 99.96%</p>
             </div>
-            <div className="flex gap-0.5 h-8">
-              {Array.from({ length: 90 }).map((_, i) => (
-                <div
-                  key={i}
-                  className={`flex-1 rounded-sm ${i === 32 ? 'bg-[#E8D07C]/60' : 'bg-[#8AD74C]/70 hover:bg-[#8AD74C]'} transition-colors cursor-pointer`}
-                  title={i === 32 ? 'July 29: BLE sync incident (42 min)' : 'Operational'}
-                />
-              ))}
-            </div>
-            <p className="text-[10px] font-mono text-[#A3B18A]">Yellow = incident · All other days operational</p>
           </Card>
 
-          {/* Service List */}
-          <div className="space-y-3">
-            <h2 className="font-display text-xl font-bold text-[#F7F6F2]">Service Status</h2>
-            {services.map((service, idx) => {
-              const cfg = statusConfig[service.status];
-              return (
-                <Card key={idx} className="flex items-center gap-4">
-                  <span className={cfg.color}>{cfg.icon}</span>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-[#F7F6F2]">{service.name}</p>
-                    <p className="text-xs text-[#A3B18A]">{service.desc}</p>
-                  </div>
-                  <div className="text-right shrink-0">
-                    <p className={`text-xs font-mono font-bold ${cfg.color}`}>{cfg.label}</p>
-                    {service.latency && <p className="text-[10px] font-mono text-[#A3B18A]">{service.latency} avg</p>}
-                  </div>
-                </Card>
-              );
-            })}
-          </div>
-
-          {/* Incident History */}
-          <div className="space-y-4">
-            <h2 className="font-display text-xl font-bold text-[#F7F6F2]">Incident History</h2>
-            {incidents.map((inc, idx) => (
-              <Card key={idx} className="space-y-2 border-[#E8D07C]/20">
-                <div className="flex items-center justify-between gap-4 flex-wrap">
-                  <p className="font-display font-bold text-[#F7F6F2]">{inc.title}</p>
-                  <div className="flex items-center gap-2">
-                    <Badge variant="lime">{inc.status}</Badge>
-                    <span className="text-xs font-mono text-[#A3B18A]">{inc.duration}</span>
-                  </div>
+          {/* Service table */}
+          <Card className="divide-y divide-white/5">
+            {services.map((svc, idx) => (
+              <div key={idx} className="flex items-center justify-between px-6 py-4 gap-4">
+                <div className="flex items-center gap-3">
+                  <StatusIcon status={svc.status} />
+                  <p className="text-sm text-[#F7F6F2]">{svc.name}</p>
                 </div>
-                <p className="text-xs font-mono text-[#A3B18A]">{inc.date}</p>
+                <div className="flex items-center gap-4 shrink-0">
+                  <span className={`text-xs font-mono font-bold ${svc.status === 'operational' ? 'text-[#8AD74C]' : 'text-[#E8D07C]'}`}>
+                    {svc.status === 'operational' ? 'Operational' : 'Degraded'}
+                  </span>
+                  <span className="text-xs font-mono text-[#A3B18A]">{svc.uptime} uptime</span>
+                </div>
+              </div>
+            ))}
+          </Card>
+
+          {/* Past incidents */}
+          <div className="space-y-4">
+            <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Past Incidents — July 2026</h2>
+            {incidents.map((inc, idx) => (
+              <Card key={idx} className="space-y-2">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <CheckCircle2 className="w-4 h-4 text-[#8AD74C] shrink-0" />
+                  <p className="font-display font-bold text-[#F7F6F2] text-sm">{inc.title}</p>
+                  <span className="ml-auto text-xs font-mono text-[#A3B18A] shrink-0">{inc.date} · Resolved</span>
+                </div>
                 <p className="text-sm text-[#A3B18A] leading-relaxed">{inc.detail}</p>
               </Card>
             ))}
-            {incidents.length === 0 && (
-              <p className="text-sm text-[#A3B18A] text-center py-8">No incidents in the last 90 days. 🌿</p>
-            )}
+          </div>
+
+          <div className="text-center">
+            <p className="text-sm text-[#A3B18A]">Subscribe to status updates at <span className="text-[#8AD74C]">status.vrikshvani.com</span></p>
+            <Button variant="outline" className="mt-4">Subscribe to Alerts</Button>
           </div>
         </div>
       </section>

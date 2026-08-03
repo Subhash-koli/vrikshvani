@@ -1,35 +1,30 @@
 import type { Metadata } from 'next';
-import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
-import { ShieldCheck, Wrench, Clock, AlertTriangle, CheckCircle2 } from 'lucide-react';
-import Link from 'next/link';
+import { Shield, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Warranty & Repair — Vriksh Vani NIH-01',
-  description: '2-year manufacturer warranty on the NIH-01. Covers all sensor modules, electronic components, and firmware. Right to repair commitment with spare parts for 7 years.',
+  title: 'Warranty — Vriksh Vani NIH-01',
+  description: 'NIH-01 is covered by a 2-year hardware warranty. Learn what is covered, how to claim, and how to get a repair or replacement.',
 };
 
 const covered = [
-  'FLIR Lepton 3.5 thermal camera module',
-  'Bosch BME688 quad-gas sensor',
-  'ARM Cortex-M4 NPU and main PCB',
-  'Speaker and audio amplifier circuit',
-  'USB-C charging port and power management IC',
-  'Ceramic housing (structural defects, glaze failures)',
-  'Firmware (free updates for product lifetime)',
-  'BLE 5.0 and Wi-Fi 6 radio modules',
+  'Manufacturing defects in sensors (SHT41, BME688, FLIR Lepton)',
+  'Circuit board failures not caused by physical damage',
+  'Connectivity module (BLE, Wi-Fi) failures',
+  'Power supply and charging port defects',
+  'Software bugs causing sensor malfunction',
+  'Housing structural defects under normal use',
 ];
 
 const notCovered = [
-  'Physical damage from dropping or impact',
-  'Damage caused by using unofficial power adapters',
-  'Ceramic cracks or chips from user handling',
-  'Damage from exposure to water (NIH-01 is not waterproof)',
-  'Normal wear: speaker grille patina, minor surface scratching',
+  'Physical damage from dropping or liquid immersion',
+  'Sensor degradation from improper placement (direct sunlight, extreme humidity)',
+  'Damage from unauthorised modifications or repairs',
+  'Cosmetic scratches and normal wear',
+  'Damage caused by operating outside specified temperature range',
 ];
 
 export default function WarrantyPage() {
@@ -39,89 +34,65 @@ export default function WarrantyPage() {
       <section className="pt-36 pb-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
-          <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <Badge variant="lime">Manufacturer Warranty</Badge>
+          <div className="text-center space-y-4 max-w-2xl mx-auto">
+            <Badge variant="lime">Warranty</Badge>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-[#F7F6F2]">
-              Warranty &amp; Repair.
+              2-Year Hardware Warranty.
             </h1>
-            <p className="text-[#A3B18A]">We build things to last. The NIH-01 carries a 2-year manufacturer warranty and a 7-year spare parts commitment — because planned obsolescence is not something we believe in.</p>
+            <p className="text-[#A3B18A]">Every NIH-01 is covered by a 2-year limited hardware warranty from the date of purchase. We repair or replace — at no charge.</p>
           </div>
 
-          {/* Warranty Overview */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              { icon: ShieldCheck, val: '2 Years', label: 'Manufacturer Warranty', color: 'text-[#8AD74C]', borderColor: 'border-[#8AD74C]/30' },
-              { icon: Wrench, val: '7 Years', label: 'Spare Parts Guarantee', color: 'text-[#E8D07C]', borderColor: 'border-[#E8D07C]/30' },
-              { icon: Clock, val: '30 Days', label: 'No-Questions Returns', color: 'text-[#8AD74C]', borderColor: 'border-[#8AD74C]/30' },
-            ].map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <Card key={idx} className={`text-center py-8 space-y-3 border ${item.borderColor}`}>
-                  <Icon className={`w-8 h-8 ${item.color} mx-auto`} />
-                  <p className={`font-display text-3xl font-bold ${item.color}`}>{item.val}</p>
-                  <p className="text-xs font-mono text-[#A3B18A]">{item.label}</p>
-                </Card>
-              );
-            })}
-          </div>
-
-          {/* What's Covered */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <Card className="space-y-4 border-[#8AD74C]/20">
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-6 h-6 text-[#8AD74C]" />
+                <CheckCircle2 className="w-5 h-5 text-[#8AD74C]" />
                 <h2 className="font-display text-xl font-bold text-[#F7F6F2]">What&apos;s Covered</h2>
               </div>
-              <ul className="space-y-2">
-                {covered.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-[#A3B18A]">
-                    <span className="text-[#8AD74C] shrink-0 mt-0.5">✓</span>
+              <div className="space-y-2">
+                {covered.map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-[#A3B18A]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8AD74C] mt-1.5 shrink-0" />
                     {item}
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </Card>
             <Card className="space-y-4">
               <div className="flex items-center gap-3">
-                <AlertTriangle className="w-6 h-6 text-[#E8D07C]" />
-                <h2 className="font-display text-xl font-bold text-[#F7F6F2]">Not Covered</h2>
+                <Shield className="w-5 h-5 text-[#E8D07C]" />
+                <h2 className="font-display text-xl font-bold text-[#F7F6F2]">What&apos;s Not Covered</h2>
               </div>
-              <ul className="space-y-2">
-                {notCovered.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-[#A3B18A]">
-                    <span className="text-[#E8D07C] shrink-0 mt-0.5">✗</span>
+              <div className="space-y-2">
+                {notCovered.map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-[#A3B18A]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E8D07C] mt-1.5 shrink-0" />
                     {item}
-                  </li>
+                  </div>
                 ))}
-              </ul>
-              <p className="text-xs font-mono text-[#A3B18A] pt-2 border-t border-white/5">
-                Even for non-covered damage, we offer repair-at-cost service. See below.
-              </p>
+              </div>
             </Card>
           </div>
 
-          {/* Right to Repair */}
-          <Card className="p-8 space-y-5 border-[#8AD74C]/20">
-            <div className="flex items-center gap-3">
-              <Wrench className="w-6 h-6 text-[#8AD74C]" />
-              <h2 className="font-display text-xl font-bold text-[#F7F6F2]">Right to Repair Commitment</h2>
-            </div>
-            <p className="text-sm text-[#A3B18A] leading-relaxed">
-              We commit to making every replaceable component of NIH-01 available as a spare part for a minimum of <strong className="text-[#F7F6F2]">7 years from the last production date</strong> of each generation. This includes the FLIR module, BME688 sensor, speaker assembly, USB-C port PCB, and ceramic housing blanks.
-            </p>
-            <p className="text-sm text-[#A3B18A] leading-relaxed">
-              Repair manuals, PCB schematics, and 3D housing files are published openly on our <Link href="https://github.com/vrikshvani" className="text-[#8AD74C] hover:underline" target="_blank" rel="noopener noreferrer">GitHub</Link>. Third-party repair is explicitly permitted and not grounds for warranty void — only damage caused by repair will not be covered.
-            </p>
+          <Card className="p-6 space-y-4">
+            <h2 className="font-display text-xl font-bold text-[#F7F6F2]">How to Claim Warranty</h2>
+            <ol className="space-y-3">
+              {[
+                'Email hello@vrikshvani.com with subject "Warranty Claim" and your order number.',
+                'Our support team responds within 24 hours with a diagnosis questionnaire.',
+                'If the defect is confirmed, we send a prepaid return label.',
+                'On receipt, we repair or send a replacement unit within 7 business days.',
+              ].map((step, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-[#A3B18A]">
+                  <span className="font-mono text-xs font-bold text-[#8AD74C] mt-0.5 shrink-0">{i + 1}.</span>
+                  {step}
+                </li>
+              ))}
+            </ol>
           </Card>
 
-          {/* Claim CTA */}
-          <Card className="p-8 text-center space-y-4">
-            <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Make a Warranty Claim</h2>
-            <p className="text-sm text-[#A3B18A]">Email us at <strong className="text-[#8AD74C]">support@vrikshvani.com</strong> with your order number, a description of the issue, and photos. We respond within 1 business day.</p>
-            <Link href="/contact">
-              <Button variant="primary">Contact Support →</Button>
-            </Link>
-          </Card>
+          <div className="text-center text-sm text-[#A3B18A]">
+            <p>For full warranty terms, email <span className="text-[#8AD74C]">hello@vrikshvani.com</span></p>
+          </div>
         </div>
       </section>
       <Footer />
