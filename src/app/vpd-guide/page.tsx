@@ -20,6 +20,8 @@ const vpdRanges = [
   { range: '> 1.6 kPa', label: 'Critical Stress', color: 'text-red-400', desc: 'Plants lose water faster than roots can supply. Wilting, leaf curl, and tip burn risk. Immediate intervention required.' },
 ];
 
+import VpdCalculator from '@/components/vpd/VpdCalculator';
+
 export default function VpdGuidePage() {
   return (
     <main id="main-content" className="min-h-screen bg-[#070B08] text-[#F7F6F2]">
@@ -53,6 +55,9 @@ export default function VpdGuidePage() {
               <p className="text-[#A3B18A] mt-1">Where T = temperature (°C), RH = relative humidity (%)</p>
             </div>
           </Card>
+
+          {/* Interactive Calculator */}
+          <VpdCalculator />
 
           <div className="space-y-4">
             <div className="flex items-center gap-3">
