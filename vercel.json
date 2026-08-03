@@ -37,10 +37,4 @@
       "destination": "/robots.txt"
     }
   ],
-  "crons": [
-    {
-      "path": "/api/health",
-      "schedule": "0 * * * *"
-    }
-  ]
 }
