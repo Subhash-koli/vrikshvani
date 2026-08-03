@@ -48,6 +48,8 @@ export const metadata: Metadata = {
   },
 };
 
+import JsonLd, { organizationJsonLd } from "@/components/seo/JsonLd";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -56,6 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} dark scroll-smooth`}>
       <body className="bg-[#070B08] text-[#F7F6F2] font-sans antialiased selection:bg-[#8AD74C] selection:text-[#070B08]">
+        <JsonLd data={organizationJsonLd} />
         <a href="#main-content" className="skip-to-main">
           Skip to main content
         </a>
