@@ -1,0 +1,35 @@
+# Vercel Deploy Exclusions
+# These are built on Vercel's servers — no need to upload locally
+
+# Next.js build output
+.next/
+out/
+
+# Node modules (installed fresh on Vercel)
+node_modules/
+
+# Local environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor configs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test outputs
+coverage/
+playwright-report/
+test-results/
+
+# Brand Library (large files, not needed for deployment)
+Vriksh Vani Brand Library/
+Vriksh Vani info files/
+
+# Prisma migrations (using db push instead)
+prisma/migrations/
