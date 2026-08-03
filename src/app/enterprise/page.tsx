@@ -46,6 +46,8 @@ const useCases = [
 
 const trustedBy = ['IISc Bengaluru', 'Royal Botanic Gardens Kew', 'TIFR Mumbai', 'RHS (UK)', 'USDA Plant Sciences'];
 
+import FleetRoiCalculator from '@/components/ui/FleetRoiCalculator';
+
 export default function EnterprisePage() {
   return (
     <main id="main-content" className="min-h-screen bg-[#070B08] text-[#F7F6F2]">
@@ -99,6 +101,11 @@ export default function EnterprisePage() {
               );
             })}
           </div>
+
+          {/* ROI Simulator */}
+          <FleetRoiCalculator />
+
+          {/* Use cases */}
 
           {/* Use cases */}
           <div className="space-y-5">
