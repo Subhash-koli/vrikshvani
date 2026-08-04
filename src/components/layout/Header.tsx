@@ -106,6 +106,20 @@ export const Header: React.FC = () => {
     };
   }, []);
 
+  const [openMobileGroup, setOpenMobileGroup] = useState<string | null>('Product');
+
+  // Prevent background body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileOpen]);
+
   // Reset dropdowns on route change
   useEffect(() => {
     setActiveDropdown(null);
@@ -246,47 +260,68 @@ export const Header: React.FC = () => {
 
       {/* Mobile Full-Screen Menu */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bottom-0 h-[calc(100vh-100%)] bg-[#070B08]/98 backdrop-blur-2xl overflow-y-auto p-6 space-y-6 border-t border-white/10">
-          {navGroups.map((group) => (
-            <div key={group.label} className="space-y-2">
-              <p className="text-[10px] font-mono uppercase tracking-widest text-[#8AD74C] px-1">{group.label}</p>
-              {group.href ? (
-                <Link
-                  href={group.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block text-base font-semibold text-[#F7F6F2] hover:text-[#8AD74C] py-2 border-b border-white/5 transition-colors"
-                >
-                  {group.label}
-                </Link>
-              ) : (
-                <div className="space-y-1">
-                  {group.children?.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setMobileOpen(false)}
-                      className={`flex items-center justify-between py-2.5 px-3 rounded-xl transition-colors ${
-                        pathname === item.href
-                          ? 'bg-[#0F2B18] text-[#8AD74C]'
-                          : 'text-[#F7F6F2]/80 hover:bg-[#0F2B18]/60 hover:text-[#8AD74C]'
-                      }`}
+        <div className="lg:hidden fixed inset-x-0 top-[65px] bottom-0 z-50 bg-[#070B08] overflow-y-auto p-6 space-y-6 border-t border-white/10 shadow-2xl">
+          {navGroups.map((group) => {
+            const isExpanded = openMobileGroup === group.label;
+            return (
+              <div key={group.label} className="border-b border-white/5 pb-4 space-y-2">
+                {group.href ? (
+                  <Link
+                    href={group.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="block text-lg font-display font-semibold text-[#F7F6F2] hover:text-[#8AD74C] py-1 transition-colors"
+                  >
+                    {group.label}
+                  </Link>
+                ) : (
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => setOpenMobileGroup(isExpanded ? null : group.label)}
+                      className="w-full flex items-center justify-between py-2 text-lg font-display font-semibold text-[#F7F6F2] hover:text-[#8AD74C] transition-colors text-left"
                     >
-                      <span className="text-sm font-medium">{item.label}</span>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-          <div className="pt-4 border-t border-white/10 flex flex-col gap-3 pb-8">
-            <Badge variant="lime" className="justify-center py-2 gap-1">
-              <Sparkles className="w-3.5 h-3.5" /> Batch 01 Founding Member · 88 Left
+                      <span>{group.label}</span>
+                      <ChevronDown
+                        className={`w-5 h-5 text-[#8AD74C] transition-transform duration-300 ${
+                          isExpanded ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {isExpanded && (
+                      <div className="grid gap-1 pt-2 pl-2 border-l border-[#8AD74C]/20 mt-2 space-y-1">
+                        {group.children?.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={() => setMobileOpen(false)}
+                            className={`flex flex-col py-2 px-3 rounded-xl transition-colors ${
+                              pathname === item.href
+                                ? 'bg-[#0F2B18] text-[#8AD74C]'
+                                : 'text-[#F7F6F2]/80 hover:bg-[#0F2B18]/60 hover:text-[#8AD74C]'
+                            }`}
+                          >
+                            <span className="text-sm font-medium">{item.label}</span>
+                            {item.desc && (
+                              <span className="text-[10px] text-[#A3B18A] mt-0.5">{item.desc}</span>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+          <div className="pt-4 border-t border-white/10 flex flex-col gap-3 pb-12">
+            <Badge variant="lime" className="justify-center py-2.5 gap-1.5 text-xs">
+              <Sparkles className="w-4 h-4" /> Batch 01 Founding Member · 88 Left
             </Badge>
             <Link href="/waitlist" onClick={() => setMobileOpen(false)}>
-              <Button variant="primary" className="w-full">Pre-Order Founding Unit →</Button>
+              <Button variant="primary" size="lg" className="w-full">Pre-Order Founding Unit →</Button>
             </Link>
             <Link href="/enterprise" onClick={() => setMobileOpen(false)}>
-              <Button variant="outline" className="w-full">Enterprise Fleet Enquiry</Button>
+              <Button variant="outline" size="lg" className="w-full">Enterprise Fleet Enquiry</Button>
             </Link>
           </div>
         </div>
