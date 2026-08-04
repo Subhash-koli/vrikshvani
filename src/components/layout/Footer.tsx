@@ -88,7 +88,8 @@ export const Footer: React.FC = () => {
               </div>
               <div>
                 <span className="block font-display font-bold text-xl text-[#F7F6F2]">Vriksh Vani</span>
-                <span className="block text-[10px] font-mono tracking-widest text-[#A3B18A] uppercase">Nature Intelligence</span>
+                <span className="block text-[10px] font-mono tracking-widest text-[#8AD74C] uppercase">Category · Nature Intelligence</span>
+                <p className="text-xs italic text-[#E8D07C] font-serif mt-0.5">"Let your plant speak."</p>
               </div>
             </Link>
             <p className="text-sm text-[#A3B18A] max-w-sm leading-relaxed">

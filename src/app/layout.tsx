@@ -19,13 +19,13 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Vriksh Vani — Decoded Plant Intelligence & Thermal Sensing",
-  description: "Vriksh Vani decodes the silent biophysical language of plants using FLIR thermal biometrics, quad-gas sensing, and neural voice output. Join the Batch 01 waitlist today.",
-  keywords: ["Vriksh Vani", "Nature Intelligence", "Plant Transpiration", "FLIR Thermal Sensor", "Bosch BME688", "Neural Voice Synthesis", "Plant Care AI"],
+  title: "Vriksh Vani — Let your plant speak.",
+  description: "Vriksh Vani is the pioneer of the Nature Intelligence category. Let your plant speak through non-invasive FLIR thermal biometrics, quad-gas sensing, and neural voice synthesis. Reserve your NIH-01 hub today.",
+  keywords: ["Vriksh Vani", "Nature Intelligence Category", "Let your plant speak", "Plant Transpiration", "FLIR Thermal Sensor", "Bosch BME688", "Neural Voice Synthesis", "Plant Care AI"],
   authors: [{ name: "Siddhant Tiwari", url: "https://vrikshvani.com" }],
   openGraph: {
-    title: "Vriksh Vani — Decoded Plant Intelligence",
-    description: "Decodes plant health, stress, and emotions using non-invasive thermal biometrics and voice AI.",
+    title: "Vriksh Vani — Let your plant speak.",
+    description: "Nature Intelligence Category — Decodes plant health, stress, and emotions using non-invasive thermal biometrics and voice AI.",
     url: "https://vrikshvani.vercel.app",
     siteName: "Vriksh Vani",
     images: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: "https://vrikshvani.vercel.app/og",
         width: 1200,
         height: 630,
-        alt: "Vriksh Vani NIH-01 Nature Intelligence",
+        alt: "Vriksh Vani — Let your plant speak. (Nature Intelligence Category)",
       },
     ],
     locale: "en_US",
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   themeColor: "#0F2B18",
   twitter: {
     card: "summary_large_image",
-    title: "Vriksh Vani — Decoded Plant Intelligence",
-    description: "Decodes plant health, stress, and emotions using non-invasive thermal biometrics and voice AI.",
+    title: "Vriksh Vani — Let your plant speak.",
+    description: "Nature Intelligence Category — Decodes plant health, stress, and emotions using non-invasive thermal biometrics and voice AI.",
     images: ["https://vrikshvani.vercel.app/og"],
     creator: "@vrikshvani",
   },

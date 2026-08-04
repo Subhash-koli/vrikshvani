@@ -14,19 +14,22 @@ export const HomeHero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
 
-          {/* Scarcity Badge — delay 0 */}
-          <div className="animate-hero animate-hero-d0">
+          {/* Scarcity Badge & Category Pill — delay 0 */}
+          <div className="animate-hero animate-hero-d0 flex flex-wrap items-center justify-center gap-3">
             <ScarcityBadge />
+            <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#0F2B18] border border-[#8AD74C]/30 text-[#8AD74C]">
+              Category: Nature Intelligence
+            </span>
           </div>
 
-          {/* Main Headline — delay 1 */}
+          {/* Main Slogan Headline — delay 1 */}
           <h1 className="animate-hero animate-hero-d1 font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#F7F6F2] leading-[1.1]">
-            Listen to the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8AD74C] via-[#E8D07C] to-[#3FAE2A]">Unspoken Words</span> of Nature.
+            Let your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8AD74C] via-[#E8D07C] to-[#3FAE2A]">plant speak.</span>
           </h1>
 
           {/* Subtitle — delay 2 */}
           <p className="animate-hero animate-hero-d2 text-lg sm:text-xl text-[#A3B18A] max-w-2xl font-normal leading-relaxed">
-            Vriksh Vani NIH-01 translates leaf transpiration, micro-volatility, and thermal stress into human speech using non-invasive thermal biometrics and local TinyML inference.
+            Vriksh Vani NIH-01 decodes leaf transpiration, micro-volatility, and thermal stress into human speech using non-invasive biometrics and local TinyML voice synthesis.
           </p>
 
           {/* CTA Buttons — delay 3 */}

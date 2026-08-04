@@ -148,7 +148,7 @@ export const Header: React.FC = () => {
                 Vriksh Vani
               </span>
               <span className="text-[10px] font-mono tracking-widest text-[#A3B18A] uppercase -mt-1">
-                Nature Intelligence
+                Category · Nature Intelligence
               </span>
             </div>
           </Link>
