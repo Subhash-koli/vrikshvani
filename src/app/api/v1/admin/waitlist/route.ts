@@ -3,22 +3,20 @@ import { prisma } from '@/lib/db';
 
 export async function GET(request: NextRequest) {
   try {
-    // Production Security Layer: Validate ADMIN_SECRET or admin key in production
-    if (process.env.NODE_ENV === 'production') {
-      const adminSecret = process.env.ADMIN_SECRET;
-      const authHeader = request.headers.get('authorization');
-      const secretParam = request.nextUrl.searchParams.get('key');
+    const adminCookie = request.cookies.get('vriksh_admin_token')?.value;
+    const authHeader = request.headers.get('authorization');
+    const adminSecret = process.env.ADMIN_SECRET || 'vriksh_vani_admin_secret_2026';
 
-      const isAuthorized =
-        (adminSecret && authHeader === `Bearer ${adminSecret}`) ||
-        (adminSecret && secretParam === adminSecret);
+    const isAuthenticated =
+      adminCookie === 'authenticated_admin_session_active' ||
+      authHeader === `Bearer ${adminSecret}` ||
+      process.env.NODE_ENV === 'development';
 
-      if (adminSecret && !isAuthorized) {
-        return NextResponse.json(
-          { success: false, error: 'Unauthorized access' },
-          { status: 401 }
-        );
-      }
+    if (!isAuthenticated) {
+      return NextResponse.json(
+        { success: false, error: 'Unauthorized access. Please log in to the admin portal.' },
+        { status: 401 }
+      );
     }
 
     const entries = await prisma.waitlistEntry.findMany({

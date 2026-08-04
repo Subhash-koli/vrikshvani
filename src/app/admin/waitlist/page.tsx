@@ -41,6 +41,10 @@ export default function AdminWaitlistPage() {
     setLoading(true);
     try {
       const res = await fetch('/api/v1/admin/waitlist');
+      if (res.status === 401) {
+        window.location.href = '/admin/login';
+        return;
+      }
       const json = await res.json();
       if (json.success) {
         setData(json.data);
@@ -50,6 +54,11 @@ export default function AdminWaitlistPage() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleLogout = async () => {
+    await fetch('/api/v1/admin/logout', { method: 'POST' });
+    window.location.href = '/admin/login';
   };
 
   useEffect(() => {
@@ -109,6 +118,9 @@ export default function AdminWaitlistPage() {
               </Button>
               <Button variant="primary" size="sm" onClick={exportCSV} className="gap-2">
                 <Download className="w-4 h-4" /> Export CSV
+              </Button>
+              <Button variant="outline" size="sm" onClick={handleLogout} className="text-red-400 border-red-500/30 hover:bg-red-500/10">
+                Log Out
               </Button>
             </div>
           </div>
