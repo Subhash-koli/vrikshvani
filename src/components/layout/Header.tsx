@@ -147,8 +147,8 @@ export const Header: React.FC = () => {
               <span className="font-display font-bold text-lg tracking-tight text-[#F7F6F2] group-hover:text-[#8AD74C] transition-colors">
                 Vriksh Vani
               </span>
-              <span className="text-[10px] font-mono tracking-widest text-[#A3B18A] uppercase -mt-1">
-                Category · Nature Intelligence
+              <span className="text-[10px] font-mono tracking-widest text-[#A3B18A] uppercase -mt-0.5">
+                Let your plant speak.
               </span>
             </div>
           </Link>
