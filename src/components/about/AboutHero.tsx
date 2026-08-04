@@ -1,9 +1,6 @@
-'use client';
-
 import React from 'react';
 import { Badge } from '@/components/ui/Badge';
 import { Leaf, Heart, Globe } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 export const AboutHero: React.FC = () => {
   return (

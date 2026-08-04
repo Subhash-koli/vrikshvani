@@ -1,10 +1,7 @@
-'use client';
-
 import React from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Heart, Activity, Cpu } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 export const HomeVisionBrief: React.FC = () => {
   return (
