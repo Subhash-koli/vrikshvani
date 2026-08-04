@@ -87,7 +87,7 @@ export const Footer: React.FC = () => {
                 <Leaf className="w-5 h-5 text-[#8AD74C]" />
               </div>
               <div>
-                <span className="block font-display font-bold text-xl text-[#F7F6F2]">VRIKSH VANI</span>
+                <span className="block font-display font-bold text-xl text-[#F7F6F2]">Vriksh Vani</span>
                 <span className="block text-[10px] font-mono tracking-widest text-[#A3B18A] uppercase">Nature Intelligence</span>
               </div>
             </Link>

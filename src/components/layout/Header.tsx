@@ -145,7 +145,7 @@ export const Header: React.FC = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-display font-bold text-lg tracking-tight text-[#F7F6F2] group-hover:text-[#8AD74C] transition-colors">
-                VRIKSH VANI
+                Vriksh Vani
               </span>
               <span className="text-[10px] font-mono tracking-widest text-[#A3B18A] uppercase -mt-1">
                 Nature Intelligence
