@@ -1,13 +1,9 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Smartphone, Volume2, Bell, RefreshCw } from 'lucide-react';
 
 export const HomeAppPreview: React.FC = () => {
-  const [activeVoice, setActiveVoice] = useState('CALM_WARM');
-
   return (
     <section className="py-24 bg-[#070B08] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,6 +19,11 @@ export const HomeAppPreview: React.FC = () => {
               The Vriksh Vani App for iOS and Android pairs seamlessly via Bluetooth 5.2. View real-time transpiration graphs, customize voice personalities, and receive intelligent care reminders before stress damages your plants.
             </p>
 
+            {/* Hidden Peer Inputs for Pure CSS Voice Selector */}
+            <input type="radio" id="voice-calm" name="voice-preview" defaultChecked className="peer/calm hidden" />
+            <input type="radio" id="voice-sci" name="voice-preview" className="peer/sci hidden" />
+            <input type="radio" id="voice-playful" name="voice-preview" className="peer/playful hidden" />
+
             {/* Voice Personality Selector */}
             <div className="nidl-glass rounded-card p-6 space-y-4">
               <div className="flex items-center justify-between">
@@ -30,35 +31,29 @@ export const HomeAppPreview: React.FC = () => {
                 <Volume2 className="w-4 h-4 text-[#8AD74C] animate-pulse" />
               </div>
               <p className="text-sm italic text-[#F7F6F2]">
-                "{activeVoice === 'CALM_WARM' && 'Good morning! My stomata are open and I am feeling photosynthetically joyful. 🌿'}"
-                "{activeVoice === 'SCIENTIFIC' && 'Transpiration rate: 1.4 mmol/m²/s. Leaf surface temperature: 24.2°C. Stomatal status: Optimal.'}"
-                "{activeVoice === 'PLAYFUL' && 'Hey there! A little more morning light would make my leaves dance! ✨'}"
+                <span className="peer-checked/calm:inline hidden">"Good morning! My stomata are open and I am feeling photosynthetically joyful. 🌿"</span>
+                <span className="peer-checked/sci:inline hidden">"Transpiration rate: 1.4 mmol/m²/s. Leaf surface temperature: 24.2°C. Stomatal status: Optimal."</span>
+                <span className="peer-checked/playful:inline hidden">"Hey there! A little more morning light would make my leaves dance! ✨"</span>
               </p>
               <div className="flex flex-wrap gap-2 pt-2">
-                <button
-                  onClick={() => setActiveVoice('CALM_WARM')}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium ${
-                    activeVoice === 'CALM_WARM' ? 'bg-[#3FAE2A] text-[#070B08]' : 'bg-white/5 text-[#F7F6F2]/70'
-                  }`}
+                <label
+                  htmlFor="voice-calm"
+                  className="px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-colors bg-white/5 text-[#F7F6F2]/70 peer-checked/calm:bg-[#3FAE2A] peer-checked/calm:text-[#070B08]"
                 >
                   Calm & Warm
-                </button>
-                <button
-                  onClick={() => setActiveVoice('SCIENTIFIC')}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium ${
-                    activeVoice === 'SCIENTIFIC' ? 'bg-[#3FAE2A] text-[#070B08]' : 'bg-white/5 text-[#F7F6F2]/70'
-                  }`}
+                </label>
+                <label
+                  htmlFor="voice-sci"
+                  className="px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-colors bg-white/5 text-[#F7F6F2]/70 peer-checked/sci:bg-[#3FAE2A] peer-checked/sci:text-[#070B08]"
                 >
                   Scientific Precision
-                </button>
-                <button
-                  onClick={() => setActiveVoice('PLAYFUL')}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium ${
-                    activeVoice === 'PLAYFUL' ? 'bg-[#3FAE2A] text-[#070B08]' : 'bg-white/5 text-[#F7F6F2]/70'
-                  }`}
+                </label>
+                <label
+                  htmlFor="voice-playful"
+                  className="px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-colors bg-white/5 text-[#F7F6F2]/70 peer-checked/playful:bg-[#3FAE2A] peer-checked/playful:text-[#070B08]"
                 >
                   Playful & Curious
-                </button>
+                </label>
               </div>
             </div>
           </div>
@@ -107,3 +102,4 @@ export const HomeAppPreview: React.FC = () => {
 };
 
 export default HomeAppPreview;
+

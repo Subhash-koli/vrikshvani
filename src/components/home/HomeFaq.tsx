@@ -1,13 +1,9 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { ChevronDown } from 'lucide-react';
 
 export const HomeFaq: React.FC = () => {
-  const [openIdx, setOpenIdx] = useState<number | null>(0);
-
   const faqs = [
     {
       q: "How does FLIR thermal sensing work without invading plant tissue?",
@@ -42,32 +38,19 @@ export const HomeFaq: React.FC = () => {
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, idx) => {
-            const isOpen = openIdx === idx;
-            return (
-              <Card
-                key={idx}
-                onClick={() => setOpenIdx(isOpen ? null : idx)}
-                className="cursor-pointer transition-all duration-300"
-              >
-                <div className="flex items-center justify-between">
-                  <h3 className="font-display text-base md:text-lg font-semibold text-[#F7F6F2]">
-                    {faq.q}
-                  </h3>
-                  <ChevronDown
-                    className={`w-5 h-5 text-[#8AD74C] transition-transform duration-300 ${
-                      isOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </div>
-                {isOpen && (
-                  <p className="text-sm text-[#A3B18A] mt-4 pt-4 border-t border-white/5 leading-relaxed">
-                    {faq.a}
-                  </p>
-                )}
-              </Card>
-            );
-          })}
+          {faqs.map((faq, idx) => (
+            <Card key={idx} className="p-0 overflow-hidden">
+              <details className="group p-6 cursor-pointer">
+                <summary className="flex items-center justify-between list-none font-display text-base md:text-lg font-semibold text-[#F7F6F2] select-none">
+                  <span>{faq.q}</span>
+                  <ChevronDown className="w-5 h-5 text-[#8AD74C] transition-transform duration-300 group-open:rotate-180 shrink-0 ml-4" />
+                </summary>
+                <p className="text-sm text-[#A3B18A] mt-4 pt-4 border-t border-white/5 leading-relaxed">
+                  {faq.a}
+                </p>
+              </details>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
@@ -75,3 +58,4 @@ export const HomeFaq: React.FC = () => {
 };
 
 export default HomeFaq;
+

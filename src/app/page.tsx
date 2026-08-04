@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HomeHero from '@/components/home/HomeHero';
@@ -10,7 +10,8 @@ import HomeCommunityWall from '@/components/home/HomeCommunityWall';
 import HomePricingPreview from '@/components/home/HomePricingPreview';
 import HomeBlogPreview from '@/components/home/HomeBlogPreview';
 import HomeFaq from '@/components/home/HomeFaq';
-import HomeFinaleCta from '@/components/home/HomeFinaleCta';
+import dynamic from 'next/dynamic';
+const HomeFinaleCta = dynamic(() => import('@/components/home/HomeFinaleCta'), { ssr: false });
 
 import HowItWorks60s from '@/components/home/HowItWorks60s';
 

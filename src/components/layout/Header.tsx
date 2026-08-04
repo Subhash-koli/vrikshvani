@@ -1,12 +1,14 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { Menu, X, Leaf, Sparkles, ChevronDown, Search } from 'lucide-react';
-import SearchModal from '@/components/ui/SearchModal';
+import dynamic from 'next/dynamic';
+
+const SearchModal = dynamic(() => import('@/components/ui/SearchModal'), { ssr: false });
 
 type NavGroup = {
   label: string;
@@ -62,25 +64,49 @@ export const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    let rafId: number;
+    const handleScroll = () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => setScrolled(window.scrollY > 20));
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
+  // Close menus on Escape or click outside
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
         setSearchOpen((prev) => !prev);
+      } else if (e.key === 'Escape') {
+        setActiveDropdown(null);
+        setMobileOpen(false);
       }
     };
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
+  // Reset dropdowns on route change
   useEffect(() => {
     setActiveDropdown(null);
     setMobileOpen(false);
@@ -88,7 +114,8 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      ref={headerRef}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-[#070B08]/90 backdrop-blur-2xl border-b border-white/10 py-3 shadow-glass'
           : 'bg-transparent py-5'
@@ -113,7 +140,7 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation with Dropdowns */}
-          <nav className="hidden lg:flex items-center gap-1 bg-[#0F2B18]/40 border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-md">
+          <nav aria-label="Main Navigation" className="hidden lg:flex items-center gap-1 bg-[#0F2B18]/40 border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-md">
             {navGroups.map((group) =>
               group.href ? (
                 <Link
@@ -133,6 +160,10 @@ export const Header: React.FC = () => {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <button
+                    type="button"
+                    aria-expanded={activeDropdown === group.label}
+                    aria-haspopup="true"
+                    onClick={() => setActiveDropdown(activeDropdown === group.label ? null : group.label)}
                     className={`px-3.5 py-1.5 text-xs font-medium transition-colors rounded-full hover:bg-white/5 flex items-center gap-1 ${
                       group.children?.some(c => pathname.startsWith(c.href))
                         ? 'text-[#8AD74C]'
@@ -143,28 +174,30 @@ export const Header: React.FC = () => {
                     <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${activeDropdown === group.label ? 'rotate-180' : ''}`} />
                   </button>
 
-                  {/* Mega Dropdown */}
+                  {/* Mega Dropdown with hover bridge */}
                   {activeDropdown === group.label && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-[#070B08]/98 backdrop-blur-2xl border border-white/10 rounded-2xl p-3 shadow-2xl">
-                      <div className="grid gap-1">
-                        {group.children?.map((item) => (
-                          <Link
-                            key={item.href}
-                            href={item.href}
-                            className={`flex flex-col px-3 py-2.5 rounded-xl hover:bg-[#0F2B18] transition-colors group/item ${
-                              pathname === item.href ? 'bg-[#0F2B18]' : ''
-                            }`}
-                          >
-                            <span className={`text-xs font-semibold transition-colors ${
-                              pathname === item.href ? 'text-[#8AD74C]' : 'text-[#F7F6F2] group-hover/item:text-[#8AD74C]'
-                            }`}>
-                              {item.label}
-                            </span>
-                            {item.desc && (
-                              <span className="text-[10px] text-[#A3B18A] mt-0.5">{item.desc}</span>
-                            )}
-                          </Link>
-                        ))}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-80 z-[100] before:absolute before:-top-3 before:inset-x-0 before:h-4 before:content-['']">
+                      <div className="bg-[#0B150F] border border-[#8AD74C]/30 rounded-2xl p-3.5 shadow-[0_25px_60px_rgba(0,0,0,0.95)]">
+                        <div className="grid gap-1">
+                          {group.children?.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className={`flex flex-col px-3 py-2.5 rounded-xl hover:bg-[#0F2B18] transition-colors group/item ${
+                                pathname === item.href ? 'bg-[#0F2B18]' : ''
+                              }`}
+                            >
+                              <span className={`text-xs font-semibold transition-colors ${
+                                pathname === item.href ? 'text-[#8AD74C]' : 'text-[#F7F6F2] group-hover/item:text-[#8AD74C]'
+                              }`}>
+                                {item.label}
+                              </span>
+                              {item.desc && (
+                                <span className="text-[10px] text-[#A3B18A] mt-0.5">{item.desc}</span>
+                              )}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   )}
@@ -192,22 +225,31 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg bg-[#0F2B18]/80 text-[#F7F6F2] border border-white/10"
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="p-2 rounded-lg bg-[#0F2B18]/80 text-[#F7F6F2] border border-white/10"
+              aria-label="Open search"
+            >
+              <Search className="w-5 h-5 text-[#8AD74C]" />
+            </button>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 rounded-lg bg-[#0F2B18]/80 text-[#F7F6F2] border border-white/10"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Full-Screen Menu */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] bottom-0 bg-[#070B08]/98 backdrop-blur-2xl overflow-y-auto p-6 space-y-6">
+        <div className="lg:hidden fixed inset-x-0 top-full bottom-0 h-[calc(100vh-100%)] bg-[#070B08]/98 backdrop-blur-2xl overflow-y-auto p-6 space-y-6 border-t border-white/10">
           {navGroups.map((group) => (
             <div key={group.label} className="space-y-2">
-              <p className="text-[10px] font-mono uppercase tracking-widest text-[#A3B18A] px-1">{group.label}</p>
+              <p className="text-[10px] font-mono uppercase tracking-widest text-[#8AD74C] px-1">{group.label}</p>
               {group.href ? (
                 <Link
                   href={group.href}
@@ -236,7 +278,7 @@ export const Header: React.FC = () => {
               )}
             </div>
           ))}
-          <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
+          <div className="pt-4 border-t border-white/10 flex flex-col gap-3 pb-8">
             <Badge variant="lime" className="justify-center py-2 gap-1">
               <Sparkles className="w-3.5 h-3.5" /> Batch 01 Founding Member · 88 Left
             </Badge>
@@ -255,3 +297,4 @@ export const Header: React.FC = () => {
 };
 
 export default Header;
+
