@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -73,7 +74,9 @@ export default function LeaderboardPage() {
           </div>
 
           {/* Nature Points Simulator */}
-          <NaturePointsWidget />
+          <Suspense fallback={<div className="h-64 rounded-2xl bg-[#0F2B18]/20 animate-pulse border border-white/5" />}>
+            <NaturePointsWidget />
+          </Suspense>
 
           {/* Leaderboard table */}
           <div className="space-y-3">

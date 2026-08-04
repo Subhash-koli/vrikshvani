@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -61,7 +62,9 @@ export default function VpdGuidePage() {
           </Card>
 
           {/* Interactive Calculator */}
-          <VpdCalculator />
+          <Suspense fallback={<div className="h-64 rounded-2xl bg-[#0F2B18]/20 animate-pulse border border-white/5" />}>
+            <VpdCalculator />
+          </Suspense>
 
           <div className="space-y-4">
             <div className="flex items-center gap-3">
