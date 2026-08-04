@@ -10,8 +10,7 @@ import HomeCommunityWall from '@/components/home/HomeCommunityWall';
 import HomePricingPreview from '@/components/home/HomePricingPreview';
 import HomeBlogPreview from '@/components/home/HomeBlogPreview';
 import HomeFaq from '@/components/home/HomeFaq';
-import dynamic from 'next/dynamic';
-const HomeFinaleCta = dynamic(() => import('@/components/home/HomeFinaleCta'), { ssr: false });
+import HomeFinaleCta from '@/components/home/HomeFinaleCta';
 
 import HowItWorks60s from '@/components/home/HowItWorks60s';
 

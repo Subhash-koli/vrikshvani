@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "@/styles/globals.css";
-import dynamic from "next/dynamic";
-const CookieConsentBanner = dynamic(() => import("@/components/ui/CookieConsentBanner"), { ssr: false });
-const ToastContainer = dynamic(() => import("@/components/ui/Toast"), { ssr: false });
+import CookieConsentBanner from "@/components/ui/CookieConsentBanner";
+import ToastContainer from "@/components/ui/Toast";
 import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
