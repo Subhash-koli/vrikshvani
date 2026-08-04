@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -7,6 +8,16 @@ import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
 
+export const metadata: Metadata = {
+  title: 'Botanist Community & Open Forum — Vriksh Vani',
+  description: 'Connect with plant parents, researchers, and botanists decoding nature intelligence. Share transpiration logs, care tips, and plant voice recordings.',
+  openGraph: {
+    title: 'Botanist Community & Open Forum — Vriksh Vani',
+    description: 'Join the world\'s largest plant intelligence community. Open forums, species care guides, and research circles.',
+    url: 'https://vrikshvani.com/community',
+  },
+};
+
 export default function CommunityPage() {
   const spaces = [
     { title: "Founding Botanists Guild", members: "486 Members", desc: "Exclusive inner circle of Batch 01 hardware owners." },
@@ -15,7 +26,7 @@ export default function CommunityPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#070B08] text-[#F7F6F2]">
+    <main id="main-content" className="min-h-screen bg-[#070B08] text-[#F7F6F2]">
       <Header />
 
       {/* Hero */}

@@ -6,7 +6,7 @@ const nextConfig = {
   experimental: {
     workerThreads: false,
     cpus: 4,
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizePackageImports: ['lucide-react'],
   },
   images: {
     formats: ['image/avif', 'image/webp'],

@@ -1,39 +1,42 @@
-import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
+import { prisma } from '@/lib/db';
 
 const NewsletterSchema = z.object({
-  email: z.string().email('Valid email required'),
-  firstName: z.string().min(1).max(100).optional(),
-  interests: z.array(z.enum(['plant-science', 'product-updates', 'community', 'enterprise'])).optional(),
+  email: z.string().email('Please enter a valid email address'),
 });
 
-export async function POST(req: NextRequest) {
+export async function POST(request: Request) {
   try {
-    const body = await req.json();
-    const data = NewsletterSchema.parse(body);
+    const body = await request.json();
+    const validated = NewsletterSchema.parse(body);
 
-    // In production: add to Resend audience / Mailchimp list
-    // For now we log and return a success response
-    console.log('[Newsletter] New subscriber:', data.email, data.interests);
+    // Create or update visitor user record
+    await prisma.user.upsert({
+      where: { email: validated.email },
+      update: { role: 'VISITOR' },
+      create: {
+        email: validated.email,
+        role: 'VISITOR',
+      },
+    });
 
     return NextResponse.json({
       success: true,
-      message: 'You\'ve been added to the Nature Intelligence Dispatch!',
-      data: {
-        email: data.email,
-        subscribedAt: new Date().toISOString(),
-      },
-    }, { status: 201 });
-
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return NextResponse.json({
-        success: false,
-        error: 'Validation failed',
-        details: error.errors,
-      }, { status: 400 });
+      message: 'Welcome to the Nature Intelligence Dispatch! Check your inbox soon.',
+    });
+  } catch (error: any) {
+    if (error?.errors) {
+      return NextResponse.json(
+        { success: false, error: error.errors[0]?.message || 'Invalid email address' },
+        { status: 400 }
+      );
     }
-    return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
+
+    console.error('[Newsletter API Error]', error);
+    return NextResponse.json(
+      { success: false, error: 'Something went wrong. Please try again.' },
+      { status: 500 }
+    );
   }
 }

@@ -3,6 +3,7 @@ import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Thermometer, Wind, Volume2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const STEPS = [
   {
@@ -36,44 +37,50 @@ const STEPS = [
 
 export default function HowItWorks60s() {
   return (
-    <section className="py-20 px-4 bg-[#0F2B18]/20 border-y border-white/5">
-      <div className="max-w-5xl mx-auto space-y-12">
-        <div className="text-center space-y-3 max-w-2xl mx-auto">
-          <Badge variant="lime">Simplicity First</Badge>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#F7F6F2]">
-            How Vriksh Vani Works in 60 Seconds
-          </h2>
-          <p className="text-[#A3B18A] text-base">
-            No complex charts needed unless you want them. NIH-01 transforms invisible plant biophysics into natural human speech.
-          </p>
-        </div>
+    <section className="py-20 bg-[#0F2B18]/20 border-y border-white/5">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 space-y-12">
+        <ScrollReveal>
+          <div className="text-center space-y-3 max-w-2xl mx-auto">
+            <Badge variant="lime">Simplicity First</Badge>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-[#F7F6F2]">
+              How Vriksh Vani Works in 60 Seconds
+            </h2>
+            <p className="text-[#A3B18A] text-base">
+              No complex charts needed unless you want them. NIH-01 transforms invisible plant biophysics into natural human speech.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* 3 Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {STEPS.map((s, idx) => {
             const Icon = s.icon;
             return (
-              <Card key={idx} className={`p-6 space-y-4 border ${s.border} relative overflow-hidden group`}>
-                <span className="absolute top-4 right-4 text-xs font-mono text-[#A3B18A]/40 font-bold">{s.step}</span>
-                <div className={`w-12 h-12 rounded-2xl ${s.bg} border ${s.border} flex items-center justify-center`}>
-                  <Icon className={`w-6 h-6 ${s.color}`} />
-                </div>
-                <div className="space-y-1.5">
-                  <h3 className="font-display font-bold text-xl text-[#F7F6F2]">{s.title}</h3>
-                  <p className="text-xs text-[#A3B18A] leading-relaxed">{s.subtitle}</p>
-                </div>
-              </Card>
+              <ScrollReveal key={idx} stagger={idx}>
+                <Card className={`p-6 space-y-4 border ${s.border} relative overflow-hidden group h-full`}>
+                  <span className="absolute top-4 right-4 text-xs font-mono text-[#A3B18A]/40 font-bold">{s.step}</span>
+                  <div className={`w-12 h-12 rounded-2xl ${s.bg} border ${s.border} flex items-center justify-center`}>
+                    <Icon className={`w-6 h-6 ${s.color}`} />
+                  </div>
+                  <div className="space-y-1.5">
+                    <h3 className="font-display font-bold text-xl text-[#F7F6F2]">{s.title}</h3>
+                    <p className="text-xs text-[#A3B18A] leading-relaxed">{s.subtitle}</p>
+                  </div>
+                </Card>
+              </ScrollReveal>
             );
           })}
         </div>
 
         {/* Action Link */}
-        <div className="text-center pt-2">
-          <Link href="/vpd-guide" className="inline-flex items-center gap-2 text-sm text-[#8AD74C] hover:underline font-semibold">
-            <span>Try the Interactive VPD Simulator</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
+        <ScrollReveal delay={200}>
+          <div className="text-center pt-2">
+            <Link href="/vpd-guide" className="inline-flex items-center gap-2 text-sm text-[#8AD74C] hover:underline font-semibold">
+              <span>Try the Interactive VPD Simulator</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

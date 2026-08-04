@@ -49,3 +49,43 @@ export const organizationJsonLd = {
     contactType: 'customer support',
   },
 };
+
+export const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Does NIH-01 harm or invade the plant?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not at all. NIH-01 uses non-invasive FLIR thermal optics and Bosch quad-gas sensors placed 15-30cm from the plant. No probes or wires are inserted into the plant or soil.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does plant voice synthesis work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Nature Translation Engine (NTE) translates micro-thermal shifts, leaf transpiration rates, and vapor pressure deficit (VPD) into natural human speech using local on-device TinyML.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is my privacy protected?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. 100% of sensor frame buffers exist strictly in volatile SRAM and are overwritten immediately. No cameras, video recordings, or audio files are ever stored or uploaded.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'When will Batch 01 ship?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Batch 01 Founding Units are scheduled for priority dispatch in October 2026.',
+      },
+    },
+  ],
+};
+

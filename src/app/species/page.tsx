@@ -88,19 +88,22 @@ export default function SpeciesPage() {
                 <span>Difficulty</span>
                 <span>Model Confidence</span>
               </div>
-              {featuredSpecies.map((s, idx) => (
-                <Link key={idx} href={`/care-guides/${s.name.toLowerCase().replace(' ', '-').replace(' ', '-')}`}>
-                  <div className="grid grid-cols-5 items-center px-6 py-3 hover:bg-white/2 transition-colors gap-2">
-                    <div className="col-span-2">
-                      <p className="text-sm font-medium text-[#F7F6F2] italic">{s.name}</p>
-                      <p className="text-xs font-mono text-[#A3B18A]">{s.common}</p>
+              {featuredSpecies.map((s, idx) => {
+                const slug = s.name.toLowerCase().replace(/\s+/g, '-');
+                return (
+                  <Link key={idx} href={`/species/${slug}`}>
+                    <div className="grid grid-cols-5 items-center px-6 py-3 hover:bg-white/5 transition-colors gap-2 cursor-pointer group">
+                      <div className="col-span-2">
+                        <p className="text-sm font-medium text-[#F7F6F2] group-hover:text-[#8AD74C] transition-colors italic">{s.name}</p>
+                        <p className="text-xs font-mono text-[#A3B18A]">{s.common}</p>
+                      </div>
+                      <span className="text-sm font-mono text-[#8AD74C]">{s.vpd}</span>
+                      <span className="text-sm text-[#A3B18A]">{s.care}</span>
+                      <span className="text-sm font-mono text-[#8AD74C]">{s.confidence}%</span>
                     </div>
-                    <span className="text-sm font-mono text-[#8AD74C]">{s.vpd}</span>
-                    <span className="text-sm text-[#A3B18A]">{s.care}</span>
-                    <span className="text-sm font-mono text-[#8AD74C]">{s.confidence}%</span>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                );
+              })}
             </Card>
           </div>
 

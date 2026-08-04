@@ -15,63 +15,33 @@ export const metadata: Metadata = {
 
 const articles = [
   {
-    slug: 'calathea-humidity-science',
-    title: 'Why Calathea Are So Hard: The VPD Science Behind Tropical Drama Queens',
-    author: 'Dr. Ramesh Varma',
+    slug: 'stomatal-conductance-flir-thermal',
+    title: 'Measuring Stomatal Conductance with FLIR Lepton Thermal Arrays',
+    author: 'Dr. Siddhant Tiwari',
     date: 'August 1, 2026',
-    readTime: '7 min read',
+    readTime: '6 min read',
     category: 'Bio-Physics',
-    intro: 'Calathea have a reputation for being impossible. They\'re not. They simply require atmospheric precision that most home environments never accidentally provide.',
+    intro: 'How non-invasive micro-radiometric thermal imaging detects stomatal transpiration shutdown 36 hours before visual symptoms appear in tropical houseplants.',
     featured: true,
   },
   {
-    slug: 'root-zone-microbiome',
-    title: 'The Root Zone Microbiome: What Soil Science Reveals About Indoor Plant Health',
-    author: 'Karthik Subramanian',
+    slug: 'soil-moisture-probes-vs-thermal',
+    title: 'Why Soil Moisture Probes Lie (and Why Thermal Leaf Cooling Never Does)',
+    author: 'Elena Vance',
     date: 'July 28, 2026',
-    readTime: '9 min read',
-    category: 'Soil Science',
-    intro: 'The rhizosphere — the 2mm zone directly surrounding plant roots — contains more microbial diversity than anywhere else on Earth. Understanding it transforms how you grow.',
-    featured: false,
-  },
-  {
-    slug: 'designing-nih-01',
-    title: 'Designing NIH-01: From First Sketch to Kiln-Fired Ceramic Hub',
-    author: 'Siddhant Tiwari',
-    date: 'July 20, 2026',
-    readTime: '12 min read',
-    category: 'Design & Craft',
-    intro: 'Most tech hardware looks like it belongs in a data centre. We wanted something you\'d place next to your Monstera and feel proud of.',
-    featured: false,
-  },
-  {
-    slug: 'nte-voice-architecture',
-    title: 'Inside NTE™: How We Taught Plants to Speak in 8 Languages',
-    author: 'Siddhant Tiwari',
-    date: 'May 8, 2026',
-    readTime: '10 min read',
-    category: 'AI / TinyML',
-    intro: 'A deep-dive into the Neural Translation Engine — the quantized TinyML model that converts biometric telemetry into conversational plant speech.',
-    featured: false,
-  },
-  {
-    slug: 'flir-thermal-imaging',
-    title: 'Why FLIR Thermal Imaging Beats Every Soil Sensor Ever Made',
-    author: 'Karthik Subramanian',
-    date: 'June 22, 2026',
-    readTime: '6 min read',
-    category: 'Hardware Engineering',
-    intro: 'Soil sensors measure a proxy. Thermal leaf imaging measures the source. Here\'s why the difference is critical for rare plant survival.',
-    featured: false,
-  },
-  {
-    slug: 'vpd-explained',
-    title: 'Vapour Pressure Deficit (VPD) Explained for Plant Parents',
-    author: 'Dr. Ramesh Varma',
-    date: 'July 14, 2026',
     readTime: '8 min read',
-    category: 'Bio-Physics',
-    intro: 'VPD is the single most important environmental variable governing whether your plant thrives or slowly declines. Understanding it changes everything.',
+    category: 'Hardware Engineering',
+    intro: 'Probes measure dirt capacitance—not plant health. A comparative analysis of electrical conductivity probes vs. non-invasive leaf thermometry.',
+    featured: false,
+  },
+  {
+    slug: 'tinyml-quantization-cortex-m4',
+    title: 'Quantizing TinyML Neural Models for ARM Cortex-M4 NPU Inference',
+    author: 'Marcus Chen',
+    date: 'July 20, 2026',
+    readTime: '11 min read',
+    category: 'AI / TinyML',
+    intro: 'Engineering zero-cloud-latency neural plant voice synthesis on ultra-low-power microcontrollers with 100% volatile SRAM privacy.',
     featured: false,
   },
 ];
@@ -80,8 +50,6 @@ const categoryColors: Record<string, string> = {
   'Bio-Physics': 'lime',
   'Hardware Engineering': 'gold',
   'AI / TinyML': 'lime',
-  'Soil Science': 'gold',
-  'Design & Craft': 'glass',
 };
 
 export default function BlogPage() {
@@ -89,7 +57,7 @@ export default function BlogPage() {
   const rest = articles.filter((a) => !a.featured);
 
   return (
-    <main className="min-h-screen bg-[#070B08] text-[#F7F6F2]">
+    <main id="main-content" className="min-h-screen bg-[#070B08] text-[#F7F6F2]">
       <Header />
       <section className="pt-36 pb-12 text-center">
         <div className="max-w-4xl mx-auto px-4 space-y-4">

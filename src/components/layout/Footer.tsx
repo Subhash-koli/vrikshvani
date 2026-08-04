@@ -153,7 +153,7 @@ export const Footer: React.FC = () => {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-xs text-[#F7F6F2]/60 hover:text-[#8AD74C] transition-colors leading-relaxed"
+                      className="text-xs text-[#F7F6F2]/70 hover:text-[#8AD74C] transition-colors leading-relaxed py-1 inline-block"
                     >
                       {link.label}
                     </Link>

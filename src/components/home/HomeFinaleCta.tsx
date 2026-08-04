@@ -6,23 +6,69 @@ import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Select } from '@/components/ui/Select';
-import { Sparkles, CheckCircle2, Lock } from 'lucide-react';
+import { Sparkles, CheckCircle2, Lock, AlertCircle, Loader2 } from 'lucide-react';
+
+interface WaitlistResponse {
+  success: boolean;
+  message?: string;
+  data?: {
+    email: string;
+    queuePosition: number;
+    referralCode: string;
+    preferredColorway: string;
+  };
+  error?: string | Array<{ message: string }>;
+}
 
 export const HomeFinaleCta: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [colorway, setColorway] = useState('BIOPHILIC_SAGE');
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [responseData, setResponseData] = useState<WaitlistResponse['data'] | null>(null);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubmitted(true);
+    if (!email || !name) return;
+
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const res = await fetch('/api/v1/waitlist/join', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          preferredColorway: colorway,
+        }),
+      });
+
+      const data: WaitlistResponse = await res.json();
+
+      if (!res.ok || !data.success) {
+        const errMsg = Array.isArray(data.error)
+          ? data.error.map((e) => e.message).join(', ')
+          : typeof data.error === 'string'
+          ? data.error
+          : 'Something went wrong. Please try again.';
+        setErrorMessage(errMsg);
+        setStatus('error');
+        return;
+      }
+
+      setResponseData(data.data ?? null);
+      setStatus('success');
+    } catch {
+      setErrorMessage('Network error. Please check your connection and try again.');
+      setStatus('error');
     }
   };
 
   return (
-    <section className="py-28 bg-[#030504] border-t border-white/5 relative overflow-hidden">
+    <section id="reserve" className="py-28 bg-[#030504] border-t border-white/5 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#8AD74C]/10 rounded-full blur-[160px] pointer-events-none" />
 
@@ -41,13 +87,24 @@ export const HomeFinaleCta: React.FC = () => {
               Reserve your NIH-01 Nature Intelligence Hub. Lock in Founding Member perks, zero price increases, and early October 2026 shipping.
             </p>
 
-            {submitted ? (
-              <div className="p-8 rounded-card bg-[#0F2B18] border border-[#8AD74C] text-center space-y-3 animate-fadeIn">
+            {status === 'success' && responseData ? (
+              <div className="p-8 rounded-card bg-[#0F2B18] border border-[#8AD74C] text-center space-y-4 animate-fadeIn">
                 <CheckCircle2 className="w-12 h-12 text-[#8AD74C] mx-auto" />
                 <h3 className="font-display text-2xl font-bold text-[#F7F6F2]">Reservation Confirmed!</h3>
                 <p className="text-sm text-[#A3B18A]">
-                  Your unique referral code <span className="font-mono text-[#8AD74C]">LEAFCODE-8941</span> has been sent to <span className="text-[#F7F6F2]">{email}</span>. Share it to climb the queue!
+                  Your queue position is <span className="font-mono text-[#E8D07C] font-bold text-lg">#{responseData.queuePosition}</span>
                 </p>
+                <p className="text-sm text-[#A3B18A]">
+                  Your unique referral code <span className="font-mono text-[#8AD74C]">{responseData.referralCode}</span> has been sent to <span className="text-[#F7F6F2]">{responseData.email}</span>.
+                </p>
+                <div className="pt-2">
+                  <a
+                    href={`/waitlist/confirmed?queue=${responseData.queuePosition}&code=${responseData.referralCode}`}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-btn bg-[#8AD74C] hover:bg-[#3FAE2A] text-[#070B08] font-display font-bold text-xs shadow-lime-glow transition-all"
+                  >
+                    View Your Priority Dashboard & Share →
+                  </a>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 max-w-xl mx-auto pt-4 text-left">
@@ -58,6 +115,7 @@ export const HomeFinaleCta: React.FC = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
+                    disabled={status === 'loading'}
                   />
                   <Input
                     label="Email Address"
@@ -66,6 +124,7 @@ export const HomeFinaleCta: React.FC = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    disabled={status === 'loading'}
                   />
                 </div>
 
@@ -79,8 +138,28 @@ export const HomeFinaleCta: React.FC = () => {
                   ]}
                 />
 
-                <Button variant="primary" size="lg" type="submit" className="w-full mt-2">
-                  Complete Batch 01 Reservation →
+                {/* Error Message */}
+                {status === 'error' && errorMessage && (
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm animate-fadeIn">
+                    <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+
+                <Button
+                  variant="primary"
+                  size="lg"
+                  type="submit"
+                  className="w-full mt-2"
+                  disabled={status === 'loading'}
+                >
+                  {status === 'loading' ? (
+                    <span className="flex items-center gap-2">
+                      <Loader2 className="w-4 h-4 animate-spin" /> Joining Waitlist...
+                    </span>
+                  ) : (
+                    'Join the Waitlist →'
+                  )}
                 </Button>
 
                 <div className="flex items-center justify-center gap-2 text-xs text-[#A3B18A] pt-2">

@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import CookieConsentBanner from "@/components/ui/CookieConsentBanner";
 import ToastContainer from "@/components/ui/Toast";
 import { Analytics } from "@vercel/analytics/react";
+import JsonLd, { organizationJsonLd } from "@/components/seo/JsonLd";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,19 +18,22 @@ const outfit = Outfit({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vrikshvani.com';
+
 export const metadata: Metadata = {
   title: "Vriksh Vani — Let your plant speak.",
   description: "Vriksh Vani is the pioneer of the Nature Intelligence category. Let your plant speak through non-invasive FLIR thermal biometrics, quad-gas sensing, and neural voice synthesis. Reserve your NIH-01 hub today.",
   keywords: ["Vriksh Vani", "Nature Intelligence Category", "Let your plant speak", "Plant Transpiration", "FLIR Thermal Sensor", "Bosch BME688", "Neural Voice Synthesis", "Plant Care AI"],
-  authors: [{ name: "Siddhant Tiwari", url: "https://vrikshvani.com" }],
+  authors: [{ name: "Siddhant Tiwari", url: siteUrl }],
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: "Vriksh Vani — Let your plant speak.",
     description: "Nature Intelligence Category — Decodes plant health, stress, and emotions using non-invasive thermal biometrics and voice AI.",
-    url: "https://vrikshvani.vercel.app",
+    url: siteUrl,
     siteName: "Vriksh Vani",
     images: [
       {
-        url: "https://vrikshvani.vercel.app/og",
+        url: `${siteUrl}/og`,
         width: 1200,
         height: 630,
         alt: "Vriksh Vani — Let your plant speak. (Nature Intelligence Category)",
@@ -39,17 +43,16 @@ export const metadata: Metadata = {
     type: "website",
   },
   manifest: "/manifest.json",
-  themeColor: "#0F2B18",
   twitter: {
     card: "summary_large_image",
     title: "Vriksh Vani — Let your plant speak.",
     description: "Nature Intelligence Category — Decodes plant health, stress, and emotions using non-invasive thermal biometrics and voice AI.",
-    images: ["https://vrikshvani.vercel.app/og"],
+    images: [`${siteUrl}/og`],
     creator: "@vrikshvani",
   },
 };
 
-import JsonLd, { organizationJsonLd } from "@/components/seo/JsonLd";
+
 
 export default function RootLayout({
   children,

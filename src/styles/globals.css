@@ -80,14 +80,14 @@
 }
 
 .nidl-glass-hover {
-  transition: all 0.35s var(--transition-smooth);
+  transition: all 0.4s var(--transition-spring);
 }
 
 .nidl-glass-hover:hover {
   background: var(--color-forest-hover);
-  border-color: rgba(138, 215, 76, 0.30);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(138, 215, 76, 0.40);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(138, 215, 76, 0.15);
 }
 
 /* ─────────────────────────────────────────────────────────────

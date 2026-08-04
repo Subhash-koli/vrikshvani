@@ -1,0 +1,77 @@
+import React from 'react';
+import { Card } from '@/components/ui/Card';
+import { Badge } from '@/components/ui/Badge';
+import { Box, Cable, FileText, Award, Leaf } from 'lucide-react';
+
+const BOX_ITEMS = [
+  {
+    icon: Box,
+    name: 'NIH-01 Hub Unit',
+    desc: 'Hand-poured biophilic ceramic hub with integrated thermal optics, sensors & speaker.',
+    badge: 'Ceramic Core',
+  },
+  {
+    icon: Cable,
+    name: 'Woven USB-C Cable (2m)',
+    desc: 'Braided recycled nylon cable matching your chosen ceramic colorway.',
+    badge: '100% Recycled',
+  },
+  {
+    icon: Award,
+    name: 'Gold-Foil Certificate',
+    desc: 'Numbered Founding Member certificate printed on FSC-certified cotton paper.',
+    badge: 'Numbered Batch 01',
+  },
+  {
+    icon: FileText,
+    name: 'Quickstart Care Guide',
+    desc: 'Illustrated botanical guide covering placement, VPD basics, and NTE™ voice setup.',
+    badge: 'Soy Ink Printed',
+  },
+  {
+    icon: Leaf,
+    name: 'Zero-Plastic Packaging',
+    desc: 'Custom-molded bamboo & sugarcane pulp tray. 100% home compostable within 90 days.',
+    badge: 'Biodegradable',
+  },
+];
+
+export const ProductUnboxing: React.FC = () => {
+  return (
+    <section className="py-24 bg-[#030504] border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <Badge variant="lime">Unboxing Experience</Badge>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
+            What&apos;s Inside the Box.
+          </h2>
+          <p className="text-[#A3B18A] text-base md:text-lg">
+            Plastic-free, zero-waste packaging designed with the same biophilic reverence as the hardware itself.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {BOX_ITEMS.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <Card key={idx} className="space-y-4 h-full flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-10 h-10 rounded-xl bg-[#0F2B18] border border-[#8AD74C]/30 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-[#8AD74C]" />
+                    </div>
+                    <Badge variant="glass" className="text-[10px]">{item.badge}</Badge>
+                  </div>
+                  <h3 className="font-display text-lg font-bold text-[#F7F6F2]">{item.name}</h3>
+                  <p className="text-xs text-[#A3B18A] leading-relaxed">{item.desc}</p>
+                </div>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProductUnboxing;
