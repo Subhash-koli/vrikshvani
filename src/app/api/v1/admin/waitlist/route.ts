@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
   } catch (error: any) {
     console.error('[Admin Waitlist API Error]', error);
     return NextResponse.json(
-      { success: false, error: 'Failed to retrieve pre-orders from database' },
+      { success: false, error: error?.message || 'Failed to retrieve pre-orders from database' },
       { status: 500 }
     );
   }
