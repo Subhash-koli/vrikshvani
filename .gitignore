@@ -10,8 +10,7 @@
 # production
 /build
 
-# heavy generated mockups & media assets
-/public/assets/
+# heavy generated mockups & media exports (excluding website public assets)
 /instagram_export/
 /*.zip
 
