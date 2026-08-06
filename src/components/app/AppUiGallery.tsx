@@ -12,6 +12,7 @@ const APP_SCREENS = [
     icon: Smartphone,
     title: 'Real-Time Health Overview',
     desc: 'Displays plant health score (98%), VPD status, leaf surface temperature, and quick care actions.',
+    image: '/assets/app_ui_mockups/app-telemetry-dashboard-dark.png',
     mockup: {
       title: 'Monstera Deliciosa',
       badge: 'Health: 98% (Optimal)',
@@ -27,6 +28,7 @@ const APP_SCREENS = [
     icon: MessageSquare,
     title: 'Conversational Plant Interface',
     desc: 'Ask your plant how it is feeling, request care advice, or customize your NTE™ voice personality.',
+    image: '/assets/app_ui_mockups/app-plant-health-voice-card.png',
     mockup: {
       title: 'Vriksh AI Chat',
       badge: 'NTE™ Voice Active',
@@ -42,6 +44,7 @@ const APP_SCREENS = [
     icon: History,
     title: '90-Day Time-Series History',
     desc: 'Track VPD fluctuations, leaf temperature cooling deltas, and watering history across seasons.',
+    image: '/assets/app_ui_mockups/app-thermal-histogram.png',
     mockup: {
       title: 'Transpiration History',
       badge: '90-Day SPI Log',
@@ -57,13 +60,14 @@ const APP_SCREENS = [
     icon: Layers,
     title: 'Multi-Plant Hub Control',
     desc: 'Manage up to 500 NIH-01 hubs across living rooms, offices, and commercial greenhouses.',
+    image: '/assets/app_ui_mockups/app-fleet-management-overview.png',
     mockup: {
-      title: 'My Garden Fleet (12)',
-      badge: 'All Systems Online',
-      gaugeLabel: 'Active Hubs',
-      gaugeVal: '12 / 12 Online',
-      vpdVal: 'Bluetooth 5.2 Sync',
-      quote: '"11 plants optimal, 1 Calathea requires attention."',
+      title: 'Botanical Fleet',
+      badge: '12 Active Hubs',
+      gaugeLabel: 'Fleet Health',
+      gaugeVal: '99.4%',
+      vpdVal: 'Matter Mesh Connected',
+      quote: '"All 12 botanical hubs synchronized with zero latency."',
     },
   },
 ];
