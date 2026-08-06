@@ -83,8 +83,12 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="lg:col-span-1 space-y-5">
             <Link href="/" className="flex items-center gap-2.5 group w-fit">
-              <div className="w-10 h-10 rounded-xl bg-[#0F2B18] border border-[#8AD74C]/30 flex items-center justify-center group-hover:border-[#8AD74C] transition-colors">
-                <Leaf className="w-5 h-5 text-[#8AD74C]" />
+              <div className="w-10 h-10 rounded-xl bg-[#0F2B18] border border-[#8AD74C]/30 flex items-center justify-center group-hover:border-[#8AD74C] transition-colors p-1 overflow-hidden">
+                <img
+                  src="/assets/vrikshvani_logo/vrikshvani-iconmark-flat-light.png"
+                  alt="Vriksh Vani Logo"
+                  className="w-7 h-7 object-contain group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
               <div>
                 <span className="block font-display font-bold text-xl text-[#F7F6F2]">Vriksh Vani</span>
