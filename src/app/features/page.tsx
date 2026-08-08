@@ -11,8 +11,35 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Features — Vriksh Vani NIH-01',
-  description: 'Explore every feature of the NIH-01 plant intelligence hub: leaf surface thermal sensing, VPD computation, NTE™ voice translation, on-device AI, smart home integration, and more.',
+  title: 'NIH-01 Hardware & AI Features | Vriksh Vani',
+  description: 'Full feature list of NIH-01: FLIR Lepton 3.5 thermal array, Bosch BME688 quad-gas sensor, ARM Cortex-M4 NPU, real-time VPD, Home Assistant MQTT, and offline NTE™ voice.',
+  keywords: ['NIH-01 features', 'FLIR thermal plant sensor', 'Bosch BME688', 'on-device voice AI', 'Home Assistant plant sensor', 'VPD computation'],
+  alternates: {
+    canonical: 'https://www.vrikshvani.com/features',
+  },
+  openGraph: {
+    title: 'NIH-01 Hardware & AI Features | Vriksh Vani',
+    description: 'FLIR thermal leaf optics, quad-gas analysis, ARM Cortex-M4 NPU, and real-time VPD computation in a kiln-fired ceramic casing.',
+    url: 'https://www.vrikshvani.com/features',
+    siteName: 'Vriksh Vani',
+    images: [
+      {
+        url: 'https://www.vrikshvani.com/og?title=NIH-01%20Hardware%20%26%20AI%20Features&subtitle=Thermal%2C%20Quad-Gas%20%26%20NTE%E2%84%A2%20Voice',
+        width: 1200,
+        height: 630,
+        alt: 'NIH-01 Hardware & AI Features',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'NIH-01 Hardware & AI Features | Vriksh Vani',
+    description: 'Explore the FLIR thermal array, quad-gas sensor, and on-device AI powering NIH-01.',
+    images: ['https://www.vrikshvani.com/og?title=NIH-01%20Hardware%20%26%20AI%20Features&subtitle=Thermal%2C%20Quad-Gas%20%26%20NTE%E2%84%A2%20Voice'],
+    creator: '@vrikshvani',
+  },
 };
 
 const coreFeatures = [

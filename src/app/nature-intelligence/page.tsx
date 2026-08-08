@@ -10,12 +10,34 @@ import HomeFinaleCta from '@/components/home/HomeFinaleCta';
 import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
-  title: 'Nature Intelligence™ & NIOS Architecture — Vriksh Vani Technology',
-  description: 'Explore the 6-stage Nature Intelligence OS (NIOS) framework. Thermal transpiration sensing, quad-gas analysis, and local TinyML neural voice engine.',
+  title: 'Nature Intelligence Category & NIOS Architecture | Vriksh Vani',
+  description: 'Explore the 6-stage Nature Intelligence OS (NIOS) framework. Combines thermal transpiration sensing, quad-gas analysis, and local TinyML neural voice synthesis.',
+  keywords: ['Nature Intelligence', 'NIOS architecture', 'plant biophysics AI', 'NTE voice engine', 'plant transpiration thermal sensing'],
+  alternates: {
+    canonical: 'https://www.vrikshvani.com/nature-intelligence',
+  },
   openGraph: {
-    title: 'Nature Intelligence™ & NIOS Architecture — Vriksh Vani',
+    title: 'Nature Intelligence Category & NIOS Architecture | Vriksh Vani',
     description: 'Learn how tiny ML and FLIR thermal optics decode invisible plant stress into natural human speech.',
-    url: 'https://vrikshvani.com/nature-intelligence',
+    url: 'https://www.vrikshvani.com/nature-intelligence',
+    siteName: 'Vriksh Vani',
+    images: [
+      {
+        url: 'https://www.vrikshvani.com/og?title=Nature%20Intelligence%20Category&subtitle=Bridging%20Plant%20Biophysics%20%26%20Human%20Speech',
+        width: 1200,
+        height: 630,
+        alt: 'Nature Intelligence Category & NIOS Architecture',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nature Intelligence Category | Vriksh Vani',
+    description: 'Discover how Vriksh Vani decodes plant biometrics into natural human speech.',
+    images: ['https://www.vrikshvani.com/og?title=Nature%20Intelligence%20Category&subtitle=Bridging%20Plant%20Biophysics%20%26%20Human%20Speech'],
+    creator: '@vrikshvani',
   },
 };
 

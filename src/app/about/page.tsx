@@ -15,12 +15,34 @@ import AboutMasterSummary from '@/components/about/AboutMasterSummary';
 import Timeline from '@/components/about/Timeline';
 
 export const metadata: Metadata = {
-  title: 'Our Story & 100-Year Vision — About Vriksh Vani',
-  description: 'Learn why Vriksh Vani was founded. Meet our team of biophysicists, hardware engineers, and plant parents dedicated to decoding nature intelligence.',
+  title: 'Our Story & 100-Year Vision | About Vriksh Vani',
+  description: 'Vriksh Vani was founded to bridge plant biophysics and human communication. Meet our team of hardware engineers and plant parents building Nature Intelligence.',
+  keywords: ['About Vriksh Vani', 'Nature Intelligence founder', 'Siddhant Tiwari', 'Vriksh Vani story', 'plant technology startup', 'Bengaluru hardware startup'],
+  alternates: {
+    canonical: 'https://www.vrikshvani.com/about',
+  },
   openGraph: {
-    title: 'Our Story & 100-Year Vision — About Vriksh Vani',
-    description: 'Technology should disappear. Nature should become understandable. Discover the mission driving Vriksh Vani.',
-    url: 'https://vrikshvani.com/about',
+    title: 'Our Story & 100-Year Vision | About Vriksh Vani',
+    description: 'Technology should disappear. Nature should become understandable. Discover the mission and team behind Vriksh Vani.',
+    url: 'https://www.vrikshvani.com/about',
+    siteName: 'Vriksh Vani',
+    images: [
+      {
+        url: 'https://www.vrikshvani.com/og?title=Our%20Story%20%26%20100-Year%20Vision&subtitle=Decoding%20Plant%20Biometrics',
+        width: 1200,
+        height: 630,
+        alt: 'About Vriksh Vani — Nature Intelligence',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Our Story & 100-Year Vision | About Vriksh Vani',
+    description: 'Discover the mission and team behind Vriksh Vani Nature Intelligence.',
+    images: ['https://www.vrikshvani.com/og?title=Our%20Story%20%26%20100-Year%20Vision&subtitle=Decoding%20Plant%20Biometrics'],
+    creator: '@vrikshvani',
   },
 };
 
