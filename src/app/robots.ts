@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/'],
+      disallow: ['/api/', '/admin/', '/dashboard/', '/auth/'],
     },
     sitemap: 'https://www.vrikshvani.com/sitemap.xml',
     host: 'https://www.vrikshvani.com',

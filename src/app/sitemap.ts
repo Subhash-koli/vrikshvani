@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://vrikshvani.vercel.app';
+  const baseUrl = 'https://www.vrikshvani.com';
   const now = new Date();
 
   const routes: { path: string; priority: number; freq: 'always' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' }[] = [
