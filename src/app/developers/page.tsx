@@ -8,8 +8,19 @@ import { Code2, Terminal, Webhook, Database, Lock } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Developer API — Vriksh Vani',
-  description: 'The Vriksh Vani REST API gives developers programmatic access to plant bio-signal data, species profiles, and smart home automation triggers from NIH-01.',
+  title: 'Developer REST API & Webhooks | Vriksh Vani',
+  description: 'Programmatic REST API & MQTT access to NIH-01 live VPD readings, thermal delta, gas resistance, species parameters, and automated smart home triggers.',
+  keywords: ['Vriksh Vani API', 'plant biometric API', 'NIH-01 MQTT broker', 'plant care developer platform'],
+  alternates: {
+    canonical: 'https://www.vrikshvani.com/developers',
+  },
+  openGraph: {
+    title: 'Developer REST API & Webhooks | Vriksh Vani',
+    description: 'Build plant-aware automations with local MQTT & REST endpoints from NIH-01.',
+    url: 'https://www.vrikshvani.com/developers',
+    siteName: 'Vriksh Vani',
+    images: [{ url: 'https://www.vrikshvani.com/og?title=Developer%20Platform%20%26%20API&subtitle=REST%20Endpoints%2C%20MQTT%20%26%20Webhooks' }],
+  },
 };
 
 const endpoints = [

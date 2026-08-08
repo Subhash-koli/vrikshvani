@@ -18,9 +18,19 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Craftsmanship & Materials — Vriksh Vani NIH-01',
-  description:
-    'Every NIH-01 is hand-thrown stoneware ceramic fired at 1250°C. Inside: FLIR Lepton 3.5, Bosch BME688, ARM Cortex-M4, and braided copper speaker grille.',
+  title: 'Craftsmanship & Ceramic Design | Vriksh Vani NIH-01',
+  description: 'Every NIH-01 is hand-thrown stoneware ceramic fired at 1250°C in Karnataka, India. Features FLIR Lepton 3.5, Bosch BME688, and braided copper speaker grille.',
+  keywords: ['ceramic plant sensor', 'kiln fired ceramic tech', 'NIH-01 materials', 'sustainable hardware design'],
+  alternates: {
+    canonical: 'https://www.vrikshvani.com/product/craftsmanship',
+  },
+  openGraph: {
+    title: 'Craftsmanship & Ceramic Design | Vriksh Vani NIH-01',
+    description: 'Hand-thrown stoneware ceramic meets FLIR thermal biometrics & Bosch quad-gas sensing.',
+    url: 'https://www.vrikshvani.com/product/craftsmanship',
+    siteName: 'Vriksh Vani',
+    images: [{ url: 'https://www.vrikshvani.com/og?title=Ceramic%20Craftsmanship&subtitle=Hand-Thrown%20Stoneware%20Fired%20at%201250%C2%B0C' }],
+  },
 };
 
 const materials = [

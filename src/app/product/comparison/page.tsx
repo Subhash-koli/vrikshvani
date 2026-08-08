@@ -17,9 +17,19 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'NIH-01 vs Competitors — Vriksh Vani Product Comparison',
-  description:
-    'How does NIH-01 compare to Xiaomi Mi Flora, Planta App, Sustee aquameter, and standard soil sensors? Side-by-side feature comparison.',
+  title: 'NIH-01 vs Competitors Comparison | Vriksh Vani',
+  description: 'Compare NIH-01 with Xiaomi Mi Flora, Planta App, and Sustee. NIH-01 is the only plant hub featuring FLIR thermal optics, quad-gas sensing, and NTE™ voice AI.',
+  keywords: ['NIH-01 vs Mi Flora', 'plant sensor comparison', 'NIH-01 vs Planta', 'best plant monitor 2026'],
+  alternates: {
+    canonical: 'https://www.vrikshvani.com/product/comparison',
+  },
+  openGraph: {
+    title: 'NIH-01 vs Competitors Comparison | Vriksh Vani',
+    description: 'Side-by-side feature comparison: FLIR thermal biometrics vs standard soil moisture probes.',
+    url: 'https://www.vrikshvani.com/product/comparison',
+    siteName: 'Vriksh Vani',
+    images: [{ url: 'https://www.vrikshvani.com/og?title=NIH-01%20vs%20Competitors&subtitle=Side-by-Side%20Feature%20Comparison' }],
+  },
 };
 
 function CellYes({ label }: { label: string }) {
