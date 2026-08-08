@@ -54,8 +54,7 @@ export const metadata: Metadata = {
     creator: "@vrikshvani",
   },
   verification: {
-    // Add your Google Search Console verification token here when you get it
-    // google: 'YOUR_GOOGLE_VERIFICATION_TOKEN',
+    google: 'fMaBohNpJhKpLbMOQac6KinW_xT47TUXyT2ZVbZDvkI',
   },
 };
 
