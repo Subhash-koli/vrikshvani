@@ -47,6 +47,14 @@ export const metadata: Metadata = {
     type: "website",
   },
   manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: '/assets/vrikshvani_logo/Vriksh%20vani%20logo%20favicon.png', type: 'image/png' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    shortcut: '/assets/vrikshvani_logo/Vriksh%20vani%20logo%20favicon.png',
+    apple: '/assets/vrikshvani_logo/Vriksh%20vani%20logo%20favicon.png',
+  },
   twitter: {
     card: "summary_large_image",
     title: "Vriksh Vani — Let your plant speak.",
