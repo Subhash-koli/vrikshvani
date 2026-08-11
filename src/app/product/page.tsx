@@ -9,7 +9,7 @@ import ProductComparisonTable from '@/components/product/ProductComparisonTable'
 import ProductTechSpecs from '@/components/product/ProductTechSpecs';
 import HomeFeatureGrid from '@/components/home/HomeFeatureGrid';
 import HomeTrustBar from '@/components/home/HomeTrustBar';
-import JsonLd, { productJsonLd } from '@/components/seo/JsonLd';
+import JsonLd, { productJsonLd, createBreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import HomeFinaleCta from '@/components/home/HomeFinaleCta';
 
 export const metadata: Metadata = {
@@ -48,6 +48,7 @@ export default function ProductPage() {
   return (
     <main id="main-content" className="min-h-screen bg-[#070B08] text-[#F7F6F2]">
       <JsonLd data={productJsonLd} />
+      <JsonLd data={createBreadcrumbJsonLd([{ name: 'Home', url: '/' }, { name: 'Product', url: '/product' }])} />
       <Header />
       <ProductHero />
       <HomeTrustBar />
