@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Cpu, Eye, Wind, Volume2, ShieldCheck, Zap, Layers } from 'lucide-react';
+import { Cpu, Eye, Wind, Volume2, ShieldCheck, Layers } from 'lucide-react';
 
 interface HardwareHotspot {
   id: string;
@@ -18,55 +18,55 @@ interface HardwareHotspot {
 const HOTSPOTS: HardwareHotspot[] = [
   {
     id: 'ceramic',
-    name: 'Artisanal Ceramic Shell',
-    badge: 'Slip-Cast Porcelain',
+    name: 'Artisanal Ceramic Shell Concept',
+    badge: 'Slip-Cast Clay Vision',
     icon: Layers,
-    spec: '92% Recycled Mineral Clay',
-    desc: 'Hand-poured and kiln-fired at 1,280°C. Biophilic matte texture with custom thermal-optical window cutout.',
-    layerPos: 'Layer 1 · Outer Shell',
+    spec: 'Sustainable Mineral Clay',
+    desc: 'Designed for hand-pouring and high-temperature firing. Biophilic matte texture with custom optical thermal window.',
+    layerPos: 'Layer 1 · Outer Enclosure',
   },
   {
     id: 'flir',
     name: 'FLIR Lepton 3.5 Thermal Array',
-    badge: '160x120 Radiometric',
+    badge: 'Planned Sensor',
     icon: Eye,
-    spec: '±0.05°C Micro-Kelvin Sensitivity',
-    desc: 'Measures leaf surface temperature non-invasively to calculate true evaporative cooling and stomatal resistance.',
+    spec: '160x120 Radiometric Target',
+    desc: 'Measures leaf surface temperature non-invasively to evaluate evaporative cooling dynamics.',
     layerPos: 'Layer 2 · Optical Sensor',
   },
   {
     id: 'bme',
     name: 'Bosch BME688 Quad-Gas Sensor',
-    badge: 'AI Gas Scanner',
+    badge: 'Planned Sensor',
     icon: Wind,
-    spec: 'VOC, VSC & CO₂ Proxy',
-    desc: 'Scans volatile organic compounds emitted during root anaerobic stress, pest activity, or humidity fluctuations.',
+    spec: 'VOC & Atmospheric Gas',
+    desc: 'Scans volatile organic compounds emitted during root stress, pest activity, or humidity shifts.',
     layerPos: 'Layer 3 · Chemical Sensing',
   },
   {
     id: 'npu',
-    name: 'ESP32-S3 TinyML Neural Engine',
-    badge: '240MHz Dual-Core',
+    name: 'ESP32-S3 TinyML Compute Engine',
+    badge: 'Dual-Core Microcontroller',
     icon: Cpu,
-    spec: '<45ms Local Inference',
-    desc: 'Quantized neural network classifies bio-stress states directly on device. Zero cloud dependency or latency.',
+    spec: 'Target On-Device Inference',
+    desc: 'Quantized neural model classifies biophysical states directly on-device with zero cloud dependency.',
     layerPos: 'Layer 4 · Main Logic Board',
   },
   {
     id: 'speaker',
     name: 'Acoustic NTE™ Speaker',
-    badge: '1.5W Neodymium',
+    badge: 'Audio Synthesis Vision',
     icon: Volume2,
-    spec: '300Hz – 18kHz Frequency Range',
-    desc: 'Custom-tuned acoustic chamber projects natural, calm spoken voice output directly into your room.',
+    spec: 'Custom Acoustic Chamber',
+    desc: 'Acoustic chamber designed to project calm spoken voice output directly into living spaces.',
     layerPos: 'Layer 5 · Audio Synthesis',
   },
   {
     id: 'privacy',
     name: 'Volatile SRAM Privacy Buffer',
-    badge: '100% Zero-Video',
+    badge: 'Privacy Standard',
     icon: ShieldCheck,
-    spec: '20 FPS RAM Overwrite',
+    spec: 'Zero Video Architecture',
     desc: 'Thermal frames exist exclusively in volatile SRAM for neural inference and are immediately purged. No video stored.',
     layerPos: 'Layer 6 · Security Shield',
   },
@@ -81,12 +81,12 @@ export const ProductExplodedView: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <Badge variant="gold">Hardware Engineering</Badge>
+          <Badge variant="gold">Hardware Architecture Vision</Badge>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
             Every Detail Has a Purpose.
           </h2>
           <p className="text-[#A3B18A] text-base md:text-lg">
-            Inside the handcrafted ceramic shell lies an enterprise-grade bio-physics lab. Explore the 6 core layers of the NIH-01 hub.
+            Inside the ceramic shell concept: our vision for accessible plant biophysics. Explore the 6 core layers of the NIH-01 hub architecture.
           </p>
         </div>
 
@@ -159,10 +159,10 @@ export const ProductExplodedView: React.FC = () => {
                 <div className="bg-[#070B08] border border-white/10 rounded-2xl p-6 relative overflow-hidden min-h-[160px] flex items-center justify-center">
                   <div className="absolute inset-0 bg-[#8AD74C]/5 radial-glow" />
                   <div className="text-center space-y-2 relative z-10">
-                    <Zap className="w-8 h-8 text-[#8AD74C] mx-auto animate-pulse" />
-                    <span className="font-mono text-xs text-[#8AD74C] block font-bold">{active.badge} ACTIVE</span>
+                    <Cpu className="w-8 h-8 text-[#8AD74C] mx-auto animate-pulse" />
+                    <span className="font-mono text-xs text-[#8AD74C] block font-bold">{active.badge} VISION</span>
                     <span className="text-[11px] text-[#A3B18A] block max-w-sm mx-auto">
-                      Interfacing directly with NIOS Core Pipeline via SPI/I2C local bus.
+                      Designed to interface with the NIOS pipeline via SPI/I2C local bus.
                     </span>
                   </div>
                 </div>

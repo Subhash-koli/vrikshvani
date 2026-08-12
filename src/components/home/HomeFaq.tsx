@@ -8,24 +8,24 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const faqs = [
   {
-    q: "How does FLIR thermal sensing work without invading plant tissue?",
-    a: "FLIR thermal arrays detect micro-kelvin surface temperature shifts on leaves caused by evaporative cooling during stomatal opening. This non-invasive method measures plant stress hours before physical wilting occurs.",
+    q: "How does non-invasive thermal sensing work?",
+    a: "FLIR thermal arrays measure micro-kelvin surface temperature differences on leaf surfaces caused by evaporative cooling during leaf transpiration. This enables us to observe potential stress indicators without touching or harming plant tissue.",
   },
   {
     q: "Is there any camera or video recording inside my room?",
-    a: "No. The NIH-01 contains no visual cameras. Thermal frames are processed exclusively in volatile SRAM by the local ARM Cortex-M4 NPU and overwritten 20 times per second with zero video cloud exfiltration.",
+    a: "No. The NIH-01 hub concept contains zero visual cameras. Thermal frames exist strictly in volatile SRAM for edge processing and are immediately purged, ensuring complete home privacy.",
   },
   {
-    q: "What languages does the NTE™ Neural Voice Engine support?",
-    a: "NTE™ supports 8 native languages including English, Hindi, Kannada, Tamil, Telugu, Marathi, Spanish, and German.",
+    q: "What is the Nature Translation Engine™ (NTE)?",
+    a: "NTE™ is our neural translation model concept that interprets biophysical sensor signals (temperature, VPD, humidity, gas levels) and expresses the plant's physiological status through a natural human-friendly voice.",
   },
   {
-    q: "What happens if my Wi-Fi goes offline?",
-    a: "The NIH-01 features onboard 30-day (720-hour) SPI flash memory. It continues monitoring plant biometrics locally and automatically backfills cloud history when reconnected.",
+    q: "What development stage is Vriksh Vani currently in?",
+    a: "Vriksh Vani is currently in the research, category positioning, and prototype validation stage. We are actively developing models, testing sensor combinations, and building our early research community.",
   },
   {
-    q: "When will Batch 01 Founding Member units ship?",
-    a: "Batch 01 production units ship in October 2026. Every reservation includes a numbered gold-foil certificate and founding member pricing.",
+    q: "How can I participate in testing NIH-01?",
+    a: "You can join our Founding Research Waitlist. Early cohort members will receive development updates, dataset releases, and priority invitations to test prototype units as they become available.",
   },
 ];
 
@@ -77,7 +77,7 @@ export const HomeFaq: React.FC = () => {
           <div className="text-center mb-16 space-y-4">
             <Badge variant="lime">Frequently Asked Questions</Badge>
             <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-              Everything You Need to Know.
+              Transparent Answers on Our Journey.
             </h2>
           </div>
         </ScrollReveal>

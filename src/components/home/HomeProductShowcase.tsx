@@ -11,9 +11,9 @@ import Link from 'next/link';
 const COLORWAYS = [
   {
     id: 'sage',
-    label: '🌿 Biophilic Sage',
+    label: '🌿 Biophilic Sage Concept',
     image: '/assets/nih01-sage.png',
-    alt: 'NIH-01 in Biophilic Sage ceramic finish',
+    alt: 'NIH-01 in Biophilic Sage ceramic finish concept',
     borderColor: 'border-[#8AD74C]',
     textColor: 'text-[#8AD74C]',
     glowColor: 'bg-[#8AD74C]/15',
@@ -21,10 +21,9 @@ const COLORWAYS = [
   },
   {
     id: 'white',
-    label: '✨ Cream White',
-    // Reuse sage image with CSS filter until cream variant image is available
+    label: '✨ Cream White Concept',
     image: '/assets/nih01-sage.png',
-    alt: 'NIH-01 in Cream White ceramic finish',
+    alt: 'NIH-01 in Cream White ceramic finish concept',
     borderColor: 'border-[#E8D07C]',
     textColor: 'text-[#E8D07C]',
     glowColor: 'bg-[#E8D07C]/15',
@@ -44,7 +43,7 @@ export const HomeProductShowcase: React.FC = () => {
           {/* Product Render Display Container */}
           <div className="nidl-glass rounded-container p-8 md:p-12 relative flex flex-col items-center justify-center min-h-[420px]">
             <Badge variant="lime" className="absolute top-6 left-6">
-              Ceramic Artisan Finish
+              Ceramic Hardware Vision
             </Badge>
 
             {/* Product Image */}
@@ -80,34 +79,34 @@ export const HomeProductShowcase: React.FC = () => {
             </div>
           </div>
 
-          {/* Product Details & Pre-order Perks */}
+          {/* Product Details & Vision */}
           <div className="space-y-6">
-            <Badge variant="gold">Craftsmanship & Design</Badge>
+            <Badge variant="gold">Craftsmanship & Design Vision</Badge>
             <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-              Hand-poured ceramic. Engineered to last a lifetime.
+              Hand-poured ceramic design. Engineered to endure.
             </h2>
             <p className="text-[#A3B18A] text-base leading-relaxed">
-              Each NIH-01 shell is slip-cast in artisanal ceramic kilns, hand-polished, and fitted with custom optical thermal windows. It integrates seamlessly into living rooms, offices, and greenhouses.
+              NIH-01 is being designed around handcrafted ceramic bodies, custom optical thermal windows, and biophilic aesthetics that integrate seamlessly into homes, offices, and research spaces.
             </p>
 
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-3 text-sm text-[#F7F6F2]">
-                <CheckCircle2 className="w-5 h-5 text-[#8AD74C]" /> 92% Recycled Ceramic Shell with Solar Assembly
+                <CheckCircle2 className="w-5 h-5 text-[#8AD74C]" /> Sustainable mineral clay shell design
               </div>
               <div className="flex items-center gap-3 text-sm text-[#F7F6F2]">
-                <CheckCircle2 className="w-5 h-5 text-[#8AD74C]" /> 1-Year Full Hardware Warranty & Lifetime Firmware Updates
+                <CheckCircle2 className="w-5 h-5 text-[#8AD74C]" /> Planned lifetime firmware updates & open API access
               </div>
               <div className="flex items-center gap-3 text-sm text-[#F7F6F2]">
-                <CheckCircle2 className="w-5 h-5 text-[#8AD74C]" /> Numbered Founding Member Gold-Foil Keepsake Certificate
+                <CheckCircle2 className="w-5 h-5 text-[#8AD74C]" /> Numbered Founding Member digital & physical certificate
               </div>
             </div>
 
             <div className="pt-4 flex items-center gap-4">
               <Link href="/product">
-                <Button variant="primary">Explore Full Specifications →</Button>
+                <Button variant="primary">Explore Hardware Specs →</Button>
               </Link>
-              <Link href="/product/craftsmanship">
-                <Button variant="outline">Watch Artisan Film</Button>
+              <Link href="/waitlist">
+                <Button variant="outline">Join Prototype Cohort</Button>
               </Link>
             </div>
           </div>

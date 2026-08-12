@@ -8,23 +8,23 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 export const HomeBlogPreview: React.FC = () => {
   const articles = [
     {
-      title: "Measuring Stomatal Conductance with FLIR Lepton Thermal Arrays",
+      title: "Exploring Stomatal Conductance with FLIR Thermal Sensing",
       category: "Bio-Physics",
-      date: "August 2026",
+      date: "Research Note",
       readTime: "6 min read",
       slug: "stomatal-conductance-flir-thermal",
     },
     {
-      title: "Why Soil Moisture Probes Lie (and Why Thermal Leaf Cooling Never Does)",
-      category: "Hardware",
-      date: "July 2026",
+      title: "Soil Moisture Probes vs. Thermal Leaf Surface Dynamics",
+      category: "Hardware Vision",
+      date: "Research Note",
       readTime: "8 min read",
       slug: "soil-moisture-probes-vs-thermal",
     },
     {
-      title: "Quantizing TinyML Neural Models for ARM Cortex-M4 NPU Inference",
+      title: "TinyML Neural Model Quantization for On-Device Edge Microcontrollers",
       category: "Embedded AI",
-      date: "July 2026",
+      date: "Research Note",
       readTime: "11 min read",
       slug: "tinyml-quantization-cortex-m4",
     },
@@ -36,9 +36,9 @@ export const HomeBlogPreview: React.FC = () => {
         <ScrollReveal>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="space-y-3 max-w-2xl">
-              <Badge variant="gold">Vriksh Vani Dispatch</Badge>
+              <Badge variant="gold">Vriksh Vani Research Notes</Badge>
               <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-                Latest Research & Botanical Science.
+                Our Research & Botanical Hypotheses.
               </h2>
             </div>
             <Link href="/blog">
@@ -65,7 +65,7 @@ export const HomeBlogPreview: React.FC = () => {
                 <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-[#A3B18A]">
                   <span>{art.date}</span>
                   <Link href={`/blog/${art.slug}`} className="text-[#8AD74C] font-mono flex items-center gap-1 hover:underline">
-                    Read Paper <ArrowRight className="w-3 h-3" />
+                    Read Note <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
               </Card>

@@ -4,29 +4,29 @@ import React from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { Star, Quote, Leaf } from 'lucide-react';
+import { Compass, Lightbulb, ShieldCheck, HeartHandshake } from 'lucide-react';
 
-const TESTIMONIALS = [
+const COMMUNITY_PILLARS = [
   {
-    name: 'Dr. Ananya Roy',
-    role: 'Botanical Researcher, IISc Bengaluru',
-    quote: 'NIH-01 proved that thermal transpiration variance correlates directly with root stress 36 hours before visual symptoms. It is a game-changer for plant biophysics.',
-    plantCount: '45+ Plants',
-    badge: 'Batch 00 Tester',
+    title: 'Biophysical Stress Sensing',
+    icon: Lightbulb,
+    desc: 'Exploring whether thermal leaf cooling and micro-climates can reveal plant stress hours before physical wilting occurs.',
+    badge: 'Research Hypothesis',
+    color: 'text-[#E8D07C]',
   },
   {
-    name: 'Marcus Vance',
-    role: 'Rare Monstera Collector, London',
-    quote: 'Hearing my Monstera Variegata tell me its air humidity was too low saved a $2,000 leaf from crisping. The natural spoken voice is magical.',
-    plantCount: '120+ Rare Aroids',
-    badge: 'Founding Member',
+    title: 'Zero-Video Privacy Architecture',
+    icon: ShieldCheck,
+    desc: 'Designing hardware where thermal frames are processed strictly in volatile RAM and immediately overwritten.',
+    badge: 'Privacy Standard',
+    color: 'text-[#8AD74C]',
   },
   {
-    name: 'Elena Rostova',
-    role: 'Biophilic Interior Designer, SF',
-    quote: 'The ceramic craftsmanship is extraordinary. It feels like an art piece on the sideboard rather than a tech gadget. The privacy design gave my clients complete confidence.',
-    plantCount: '30+ Studio Plants',
-    badge: 'Design Guild',
+    title: 'Human–Plant Connection',
+    icon: HeartHandshake,
+    desc: 'Translating invisible plant physiology into empathetic, natural language to help humans care for living systems.',
+    badge: 'Category Vision',
+    color: 'text-emerald-400',
   },
 ];
 
@@ -41,64 +41,56 @@ export const HomeTestimonials: React.FC = () => {
         <ScrollReveal>
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <Badge variant="gold" className="gap-1.5">
-              <Quote className="w-3.5 h-3.5" /> Early Tester Dispatches
+              <Compass className="w-3.5 h-3.5" /> Founding Principles
             </Badge>
 
             <h2 className="font-display text-3xl sm:text-5xl font-bold text-[#F7F6F2] leading-tight">
-              Loved by botanists, trusted by{' '}
+              Built on radical honesty,{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D07C] to-[#8AD74C]">
-                plant parents worldwide.
+                guided by science.
               </span>
             </h2>
 
             <p className="text-[#A3B18A] text-base sm:text-lg leading-relaxed">
-              Read how early Batch 00 prototype testers transformed their relationship with their indoor gardens.
+              We are at the beginning of the Nature Intelligence journey. Here is the commitment we make to our research community.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* 3 Testimonial Cards */}
+        {/* 3 Pillar Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {TESTIMONIALS.map((t, idx) => (
-            <ScrollReveal key={idx} stagger={idx}>
-              <Card className="p-8 space-y-6 border-white/10 nidl-glass-hover h-full flex flex-col justify-between">
-                <div className="space-y-4">
-                  {/* Stars & Badge */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#E8D07C] text-[#E8D07C]" />
-                      ))}
+          {COMMUNITY_PILLARS.map((p, idx) => {
+            const Icon = p.icon;
+            return (
+              <ScrollReveal key={idx} stagger={idx}>
+                <Card className="p-8 space-y-6 border-white/10 nidl-glass-hover h-full flex flex-col justify-between">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="w-10 h-10 rounded-xl bg-[#0F2B18] border border-white/10 flex items-center justify-center">
+                        <Icon className={`w-5 h-5 ${p.color}`} />
+                      </div>
+                      <span className="text-[10px] font-mono text-[#8AD74C] bg-[#0F2B18] px-2 py-0.5 rounded border border-[#8AD74C]/20">
+                        {p.badge}
+                      </span>
                     </div>
-                    <span className="text-[10px] font-mono text-[#8AD74C] bg-[#0F2B18] px-2 py-0.5 rounded border border-[#8AD74C]/20">
-                      {t.badge}
-                    </span>
+
+                    <h3 className="font-display font-bold text-xl text-[#F7F6F2]">
+                      {p.title}
+                    </h3>
+
+                    <p className="text-sm text-[#A3B18A] leading-relaxed">
+                      {p.desc}
+                    </p>
                   </div>
 
-                  {/* Quote */}
-                  <p className="text-sm sm:text-base text-[#F7F6F2]/90 leading-relaxed italic">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                </div>
-
-                {/* Author Info */}
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                  <div className="space-y-0.5">
-                    <div className="font-display font-bold text-sm text-[#F7F6F2]">
-                      {t.name}
-                    </div>
-                    <div className="text-[11px] text-[#A3B18A]">
-                      {t.role}
-                    </div>
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#A3B18A]">
+                    <span>Vriksh Vani Charter</span>
+                    <span className="text-[#8AD74C]">Truth Before Growth</span>
                   </div>
-                  <div className="flex items-center gap-1 text-[11px] font-mono text-[#E8D07C]">
-                    <Leaf className="w-3.5 h-3.5" />
-                    <span>{t.plantCount}</span>
-                  </div>
-                </div>
-              </Card>
-            </ScrollReveal>
-          ))}
+                </Card>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </section>

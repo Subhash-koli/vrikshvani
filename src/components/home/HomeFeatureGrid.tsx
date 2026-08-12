@@ -18,58 +18,58 @@ import {
 const FEATURES = [
   {
     title: 'FLIR Thermal Biometrics',
-    desc: 'Lepton 3.5 micro-radiometric thermal core reads true leaf surface temperature non-invasively without physical contact.',
+    desc: 'Targeting FLIR Lepton 3.5 thermal array to read true leaf surface temperature non-invasively without physical contact.',
     icon: Thermometer,
-    tag: 'Hardware',
+    tag: 'Planned Sensor',
     color: 'text-[#E8D07C]',
   },
   {
     title: 'Bosch Quad-Gas Sensing',
-    desc: 'BME688 AI gas sensor measures VOCs, CO2 equivalents, atmospheric humidity, and volatile organic transpiration compounds.',
+    desc: 'Designing with BME688 AI gas sensor to measure VOCs, CO2 proxies, and organic transpiration compounds.',
     icon: Wind,
-    tag: 'Hardware',
+    tag: 'Planned Sensor',
     color: 'text-sky-400',
   },
   {
     title: 'NTE Spoken Voice Engine',
-    desc: 'Translates biophysical readings into 4 distinct voice personalities across 8 human languages directly on your device.',
+    desc: 'Translating biophysical readings into calm voice interpretations across multiple languages on-device.',
     icon: Volume2,
-    tag: 'Voice AI',
+    tag: 'AI Concept',
     color: 'text-[#8AD74C]',
   },
   {
-    title: 'TinyML Edge NPU',
-    desc: 'On-device neural processor runs inference at <45ms latency with zero dependence on cloud servers or internet connectivity.',
+    title: 'TinyML Edge Compute',
+    desc: 'On-device neural inference designed for low latency with zero dependence on cloud servers or constant internet.',
     icon: Cpu,
-    tag: 'Compute',
+    tag: 'Design Target',
     color: 'text-emerald-400',
   },
   {
     title: '100% Volatile SRAM Privacy',
-    desc: 'Thermal frame buffers exist strictly in volatile RAM. No images or audio are ever recorded, stored, or transmitted.',
+    desc: 'Thermal frame buffers exist strictly in volatile RAM. No visual images or audio are ever recorded or stored.',
     icon: ShieldCheck,
-    tag: 'Privacy',
+    tag: 'Privacy Standard',
     color: 'text-[#8AD74C]',
   },
   {
-    title: 'Matter & Smart Home Mesh',
-    desc: 'Integrates natively with Home Assistant, Apple Home, Google Home, and Alexa via Thread and Wi-Fi 6 mesh protocol.',
+    title: 'Matter & Smart Home Vision',
+    desc: 'Designed to integrate with Home Assistant, Apple Home, Google Home, and Alexa via Thread and Wi-Fi mesh protocols.',
     icon: Globe,
-    tag: 'IoT Mesh',
+    tag: 'Roadmap Integration',
     color: 'text-[#E8D07C]',
   },
   {
-    title: '200+ Species Encyclopedia',
-    desc: 'Pre-loaded biophysical profiles for tropicals, succulents, orchids, and rare houseplants calibrated by botanical research labs.',
+    title: 'Species Research Library',
+    desc: 'Building species-specific biophysical profiles for tropicals, succulents, and indoor house plants step by step.',
     icon: BookOpen,
-    tag: 'Botanical DB',
+    tag: 'Ongoing Research',
     color: 'text-amber-400',
   },
   {
     title: 'Kiln-Fired Artisan Ceramic',
-    desc: 'Crafted from sustainable biophilic ceramic fired at 1,280°C. Designed to blend seamlessly into biophilic home decor.',
+    desc: 'Designed with slip-cast biophilic ceramic fired at high temperatures to blend into living spaces.',
     icon: Sparkles,
-    tag: 'Craft',
+    tag: 'Design Craft',
     color: 'text-rose-400',
   },
 ];
@@ -84,7 +84,7 @@ export const HomeFeatureGrid: React.FC = () => {
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <Badge variant="lime">Core Capabilities</Badge>
+            <Badge variant="lime">Core Capabilities Vision</Badge>
 
             <h2 className="font-display text-3xl sm:text-5xl font-bold text-[#F7F6F2] leading-tight">
               Engineered for absolute clarity,{' '}
@@ -94,7 +94,7 @@ export const HomeFeatureGrid: React.FC = () => {
             </h2>
 
             <p className="text-[#A3B18A] text-base sm:text-lg leading-relaxed">
-              Every component inside the NIH-01 hub is selected to respect plant biology and human privacy.
+              Every planned component inside the NIH-01 hub concept is chosen to respect plant biology and human privacy.
             </p>
           </div>
         </ScrollReveal>

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { Sparkles, Volume2, Cpu, Activity, Waves, Thermometer, Wind } from 'lucide-react';
+import { Sparkles, Volume2, Cpu, Activity, Waves, Thermometer, Wind, Info } from 'lucide-react';
 
 const PERSONALITIES = [
   {
@@ -61,7 +61,7 @@ export const HomeSolutionDemo: React.FC = () => {
         <ScrollReveal>
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <Badge variant="lime" className="gap-1.5">
-              <Sparkles className="w-3.5 h-3.5" /> Nature Translation Engine™ (NTE)
+              <Sparkles className="w-3.5 h-3.5" /> Concept Preview · Nature Translation Engine™
             </Badge>
 
             <h2 className="font-display text-3xl sm:text-5xl font-bold text-[#F7F6F2] leading-tight">
@@ -72,8 +72,18 @@ export const HomeSolutionDemo: React.FC = () => {
             </h2>
 
             <p className="text-[#A3B18A] text-base sm:text-lg leading-relaxed">
-              Experience how NIH-01 processes invisible leaf micro-climates into clear, empathetic plant voices on your device.
+              An interactive demonstration of how NIH-01 is designed to translate invisible leaf micro-climates into clear plant voice interpretations.
             </p>
+          </div>
+        </ScrollReveal>
+
+        {/* Scientific Framing Banner */}
+        <ScrollReveal delay={50}>
+          <div className="max-w-3xl mx-auto p-4 rounded-xl bg-[#070B08]/80 border border-[#8AD74C]/20 flex items-start gap-3 text-xs text-[#A3B18A] leading-relaxed">
+            <Info className="w-4 h-4 text-[#8AD74C] shrink-0 mt-0.5" />
+            <span>
+              <strong className="text-[#F7F6F2]">How NTE™ Works:</strong> Vriksh Vani doesn&apos;t literally make plants speak in human words. It measures biological signals (thermal shifts, VPD, VOCs), uses AI to interpret biophysical stress, and presents that interpretation in natural language.
+            </span>
           </div>
         </ScrollReveal>
 
@@ -96,7 +106,7 @@ export const HomeSolutionDemo: React.FC = () => {
           </div>
         </ScrollReveal>
 
-        {/* Interactive Demo Grid: Left Raw Signals vs Right Spoken Translation */}
+        {/* Interactive Demo Grid */}
         <ScrollReveal delay={200}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Left: Raw Sensor Signals */}
@@ -106,12 +116,12 @@ export const HomeSolutionDemo: React.FC = () => {
                   <div className="flex items-center gap-2">
                     <Cpu className="w-5 h-5 text-[#8AD74C]" />
                     <span className="text-xs font-mono uppercase text-[#F7F6F2] font-bold tracking-wider">
-                      NIH-01 Sensor Telemetry
+                      Simulated Sensor Telemetry
                     </span>
                   </div>
-                  <span className="flex items-center gap-1.5 text-[10px] font-mono text-[#8AD74C]">
-                    <span className="w-2 h-2 rounded-full bg-[#8AD74C] animate-pulse" />
-                    LIVE EDGE NPU
+                  <span className="flex items-center gap-1.5 text-[10px] font-mono text-[#E8D07C]">
+                    <span className="w-2 h-2 rounded-full bg-[#E8D07C] animate-pulse" />
+                    CONCEPT DEMO
                   </span>
                 </div>
 
@@ -156,9 +166,9 @@ export const HomeSolutionDemo: React.FC = () => {
 
               {/* Health Score Pill */}
               <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                <span className="text-xs font-mono text-[#A3B18A]">Transpiration Index</span>
+                <span className="text-xs font-mono text-[#A3B18A]">Sample Transpiration Index</span>
                 <span className="text-sm font-mono font-bold text-[#8AD74C] bg-[#0F2B18] px-3 py-1 rounded-full border border-[#8AD74C]/30">
-                  {current.healthScore}/100 Perfect Balance
+                  {current.healthScore}/100 Illustrative
                 </span>
               </div>
             </Card>
@@ -171,7 +181,7 @@ export const HomeSolutionDemo: React.FC = () => {
                     {current.emotion}
                   </Badge>
                   <span className="text-xs font-mono text-[#A3B18A]">
-                    Personality: <strong className="text-[#F7F6F2]">{current.label}</strong>
+                    Voice Personality: <strong className="text-[#F7F6F2]">{current.label}</strong>
                   </span>
                 </div>
 
@@ -209,10 +219,10 @@ export const HomeSolutionDemo: React.FC = () => {
                   className="px-6 py-3 rounded-btn bg-[#3FAE2A] hover:bg-[#8AD74C] text-[#070B08] font-display font-bold text-xs flex items-center gap-2 shadow-lime-glow transition-all duration-300"
                 >
                   <Volume2 className="w-4 h-4" />
-                  {isPlaying ? 'Playing Neural Voice...' : 'Listen to Plant Voice (Simulated)'}
+                  {isPlaying ? 'Playing Voice Sample...' : 'Listen to Voice Concept (Simulated)'}
                 </button>
                 <span className="text-[11px] font-mono text-[#A3B18A] hidden sm:inline-block">
-                  On-device TinyML · 0 Cloud Latency
+                  On-device TinyML Concept
                 </span>
               </div>
             </Card>

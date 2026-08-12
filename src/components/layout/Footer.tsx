@@ -1,67 +1,41 @@
 import React from 'react';
 import Link from 'next/link';
-import { Leaf, ShieldCheck, MapPin, Github, Twitter, Instagram, Youtube } from 'lucide-react';
+import { ShieldCheck, MapPin, Github, Twitter, Instagram, Youtube } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 
 const footerColumns = [
   {
-    heading: 'Product',
+    heading: 'Product Concept',
     links: [
       { label: 'NIH-01 Hub Overview', href: '/product' },
-      { label: 'Features & Capabilities', href: '/product/features' },
-      { label: 'Ceramic Colorways', href: '/product/colorways' },
-      { label: 'Specifications', href: '/product/specifications' },
-      { label: 'Craftsmanship', href: '/product/craftsmanship' },
-      { label: 'Unboxing Experience', href: '/product/unboxing' },
-      { label: 'vs. Traditional Monitors', href: '/product/comparison' },
+      { label: 'Features & Vision', href: '/product' },
+      { label: 'Ceramic Colorways', href: '/product' },
+      { label: 'Target Specifications', href: '/product' },
     ],
   },
   {
     heading: 'Technology',
     links: [
       { label: 'Nature Intelligence', href: '/nature-intelligence' },
-      { label: 'NTE™ Voice Engine', href: '/nature-intelligence/nte-voice' },
-      { label: 'Research Lab', href: '/nature-intelligence/research' },
-      { label: 'Technical Whitepaper', href: '/nature-intelligence/whitepaper' },
-      { label: 'Open Plant Datasets', href: '/nature-intelligence/open-data' },
-      { label: 'Mobile App', href: '/app' },
-      { label: 'Fleet Management', href: '/app/fleet-management' },
-      { label: 'Smart Home Integration', href: '/app/smart-home' },
+      { label: 'NTE™ Voice Concept', href: '/nature-intelligence' },
+      { label: 'Research Framework', href: '/nature-intelligence' },
+      { label: 'Mobile App Vision', href: '/app' },
     ],
   },
   {
-    heading: 'Community',
+    heading: 'Community & Research',
     links: [
-      { label: 'Community Hub', href: '/community' },
-      { label: 'Open Forum', href: '/community/forum' },
-      { label: 'Leaderboard', href: '/community/leaderboard' },
-      { label: 'Blog & Research', href: '/blog' },
-      { label: 'Enterprise Solutions', href: '/enterprise' },
-      { label: 'Sustainability Report', href: '/sustainability' },
-      { label: 'Press Room', href: '/press' },
+      { label: 'Join Research Cohort', href: '/waitlist' },
+      { label: 'Blog & Research Notes', href: '/blog' },
+      { label: 'Our Philosophy', href: '/about' },
     ],
   },
   {
-    heading: 'Support',
+    heading: 'Legal & Info',
     links: [
-      { label: 'Help Center', href: '/support' },
-      { label: 'FAQs', href: '/support/faq' },
-      { label: 'System Status', href: '/support/status' },
-      { label: 'Shipping Info', href: '/shipping' },
-      { label: 'Warranty & Returns', href: '/warranty' },
-      { label: 'Contact Us', href: '/contact' },
-      { label: 'Developer API Docs', href: '/developers' },
-    ],
-  },
-  {
-    heading: 'Company',
-    links: [
-      { label: 'Our Story', href: '/about' },
-      { label: 'Careers (We\'re Hiring)', href: '/careers' },
-      { label: 'Privacy Policy', href: '/privacy' },
-      { label: 'Terms of Service', href: '/terms' },
-      { label: 'Cookie Policy', href: '/cookies' },
-      { label: 'Accessibility Statement', href: '/accessibility' },
+      { label: 'Privacy Principles', href: '/privacy' },
+      { label: 'Terms of Use', href: '/terms' },
+      { label: 'Contact Founder', href: '/contact' },
     ],
   },
 ];
@@ -96,7 +70,7 @@ export const Footer: React.FC = () => {
               </div>
             </Link>
             <p className="text-sm text-[#A3B18A] max-w-sm leading-relaxed">
-              Decoding the silent biophysical language of plants through FLIR thermal biometrics, quad-gas analysis, and on-device neural voice synthesis.
+              Decoding the silent biophysical language of plants through thermal biometrics, atmospheric gas analysis, and on-device neural voice synthesis.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-xs font-mono text-[#8AD74C]">
@@ -105,7 +79,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 text-xs font-mono text-[#A3B18A]">
                 <MapPin className="w-4 h-4 shrink-0" />
-                <span>Bengaluru · London · San Francisco</span>
+                <span>Bengaluru, Karnataka, India</span>
               </div>
             </div>
             {/* Social Links */}
@@ -131,16 +105,16 @@ export const Footer: React.FC = () => {
           {/* Waitlist CTA */}
           <div className="lg:col-span-2 flex items-center justify-center lg:justify-end">
             <div className="nidl-glass rounded-2xl p-8 space-y-4 w-full max-w-md">
-              <Badge variant="lime">Batch 01 — 88 Units Remaining</Badge>
+              <Badge variant="lime">Early Research Community</Badge>
               <h3 className="font-display text-2xl font-bold text-[#F7F6F2]">
-                Hear Your Plants Speak.
+                Explore Nature Intelligence.
               </h3>
               <p className="text-sm text-[#A3B18A]">
-                Reserve your NIH-01 Founding Unit — no charge until dispatch.
+                Join our research waitlist to get early updates and participate in prototype testing.
               </p>
               <Link href="/waitlist" className="block">
                 <button className="w-full h-12 bg-[#3FAE2A] hover:bg-[#8AD74C] text-[#070B08] font-display font-bold text-sm rounded-btn transition-all duration-300 shadow-lime-glow">
-                  Pre-Order Founding Unit →
+                  Join the Waitlist →
                 </button>
               </Link>
             </div>
@@ -148,13 +122,13 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Link Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {footerColumns.map((col) => (
             <div key={col.heading} className="space-y-3">
               <h4 className="text-[10px] font-mono uppercase tracking-widest text-[#8AD74C]">{col.heading}</h4>
               <ul className="space-y-2">
-                {col.links.map((link) => (
-                  <li key={link.href}>
+                {col.links.map((link, idx) => (
+                  <li key={idx}>
                     <Link
                       href={link.href}
                       className="text-xs text-[#F7F6F2]/70 hover:text-[#8AD74C] transition-colors leading-relaxed py-1 inline-block"
@@ -170,15 +144,11 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#A3B18A] font-mono">
-          <p>© 2026 Vriksh Vani Technologies Pvt. Ltd. CIN: U72900KA2024PTC000001 · Bengaluru, Karnataka, India 560001</p>
+          <p>© 2026 Vriksh Vani · An Independent Nature Intelligence Project · Bengaluru, India</p>
           <div className="flex items-center gap-6 flex-wrap justify-center">
             <Link href="/privacy" className="hover:text-[#8AD74C] transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-[#8AD74C] transition-colors">Terms</Link>
-            <Link href="/cookies" className="hover:text-[#8AD74C] transition-colors">Cookies</Link>
-            <Link href="/support/status" className="flex items-center gap-1.5 hover:text-[#8AD74C] transition-colors">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#8AD74C] animate-pulse" />
-              All Systems Operational
-            </Link>
+            <Link href="/contact" className="hover:text-[#8AD74C] transition-colors">Contact</Link>
           </div>
         </div>
       </div>

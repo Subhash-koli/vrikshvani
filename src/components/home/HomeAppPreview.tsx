@@ -1,26 +1,25 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Smartphone, Volume2 } from 'lucide-react';
+import { Volume2 } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const VOICES = [
   {
     id: 'calm',
     label: 'Calm & Warm',
-    text: '"Good morning! My stomata are open and I am feeling photosynthetically joyful. 🌿"',
+    text: '"Good morning! My stomata are open and transpiration is active. 🌿"',
   },
   {
     id: 'sci',
     label: 'Scientific Precision',
-    text: '"Transpiration rate: 1.4 mmol/m²/s. Leaf surface temperature: 24.2°C. Stomatal status: Optimal."',
+    text: '"Transpiration rate: 1.4 mmol/m²/s. Leaf surface temperature: 24.2°C. Stomatal status: Nominal."',
   },
   {
     id: 'playful',
     label: 'Playful & Curious',
-    text: '"Hey there! A little more morning light would make my leaves dance! ✨"',
+    text: '"Hey there! A little morning light would be wonderful! ✨"',
   },
 ];
 
@@ -35,18 +34,18 @@ export const HomeAppPreview: React.FC = () => {
           {/* Text Description */}
           <ScrollReveal direction="left">
             <div className="space-y-6">
-              <Badge variant="lime">Mobile Ecosystem</Badge>
+              <Badge variant="lime">Mobile Ecosystem Concept</Badge>
               <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-                Your garden&apos;s emotional dashboard in your pocket.
+                Your garden&apos;s intelligence dashboard in your pocket.
               </h2>
               <p className="text-[#A3B18A] text-base leading-relaxed">
-                The Vriksh Vani App for iOS and Android pairs seamlessly via Bluetooth 5.2. View real-time transpiration graphs, customize voice personalities, and receive intelligent care reminders before stress damages your plants.
+                The Vriksh Vani App vision for iOS and Android is designed to pair via Bluetooth 5.2. View transpiration estimates, customize voice personalities, and receive early care insights before visible plant stress occurs.
               </p>
 
               {/* Voice Personality Selector */}
               <div className="nidl-glass rounded-card p-6 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono uppercase text-[#8AD74C]">Try Voice Synthesis</span>
+                  <span className="text-xs font-mono uppercase text-[#8AD74C]">Voice Synthesis Concept Demo</span>
                   <Volume2 className="w-4 h-4 text-[#8AD74C] animate-pulse" />
                 </div>
                 <p className="text-sm italic text-[#F7F6F2] min-h-[3rem] transition-opacity duration-300">
@@ -82,13 +81,13 @@ export const HomeAppPreview: React.FC = () => {
                 <div className="space-y-4 text-center">
                   <div className="text-4xl">🪴</div>
                   <div className="font-display font-bold text-lg text-[#F7F6F2]">Monstera Deliciosa</div>
-                  <Badge variant="lime">Health: 98% (Optimal)</Badge>
+                  <Badge variant="lime">UI Wireframe Preview</Badge>
 
                   {/* Simulated Telemetry Graph */}
                   <div className="bg-[#0F2B18]/70 border border-white/10 rounded-xl p-3 space-y-2 text-left">
                     <div className="flex justify-between text-[10px] font-mono text-[#A3B18A]">
                       <span>Leaf Surface Temp</span>
-                      <span className="text-[#8AD74C]">24.2°C</span>
+                      <span className="text-[#8AD74C]">24.2°C (Simulated)</span>
                     </div>
                     <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
                       <div className="bg-[#8AD74C] h-full w-[85%]" />
@@ -103,7 +102,7 @@ export const HomeAppPreview: React.FC = () => {
                 {/* Bottom Nav Bar */}
                 <div className="pt-3 border-t border-white/10 flex justify-around text-xs text-[#A3B18A]">
                   <span className="text-[#8AD74C]">Dashboard</span>
-                  <span>Fleet</span>
+                  <span>Species</span>
                   <span>Settings</span>
                 </div>
               </div>

@@ -15,7 +15,7 @@ export const HomeVisionBrief: React.FC = () => {
               Plants are not silent. <span className="text-[#8AD74C]">We just forgot how to listen.</span>
             </h2>
             <p className="text-[#A3B18A] text-base md:text-lg">
-              For 3.8 billion years, flora developed intricate thermal and biochemical signalling networks. Vriksh Vani bridges biology and technology to make plant consciousness audible.
+              For 3.8 billion years, flora developed intricate thermal and biochemical signalling networks. Vriksh Vani bridges biology and technology to make plant signals interpretable to humans.
             </p>
           </div>
         </ScrollReveal>
@@ -28,7 +28,7 @@ export const HomeVisionBrief: React.FC = () => {
               </div>
               <h3 className="font-display text-xl font-semibold text-[#F7F6F2]">Thermal Transpiration</h3>
               <p className="text-sm text-[#A3B18A] leading-relaxed">
-                FLIR thermal sensors measure micro-kelvin fluctuations on leaf surfaces to detect stomatal stress hours before wilting occurs.
+                Investigating how FLIR thermal sensors can measure micro-kelvin surface temperature fluctuations on leaf surfaces to detect stomatal stress.
               </p>
             </Card>
           </ScrollReveal>
@@ -38,9 +38,9 @@ export const HomeVisionBrief: React.FC = () => {
               <div className="w-12 h-12 rounded-xl bg-[#E8D07C]/10 border border-[#E8D07C]/30 flex items-center justify-center">
                 <Heart className="w-6 h-6 text-[#E8D07C]" />
               </div>
-              <h3 className="font-display text-xl font-semibold text-[#F7F6F2]">Emotional Speech Engine</h3>
+              <h3 className="font-display text-xl font-semibold text-[#F7F6F2]">Empathetic Speech Engine</h3>
               <p className="text-sm text-[#A3B18A] leading-relaxed">
-                NTE™ maps biophysical states to natural human expressions across 8 native languages, giving your Monstera or Ficus a distinct personality.
+                NTE™ is designed to map biophysical states into natural human expressions, translating complex sensor telemetry into understandable plant perspectives.
               </p>
             </Card>
           </ScrollReveal>
@@ -52,7 +52,7 @@ export const HomeVisionBrief: React.FC = () => {
               </div>
               <h3 className="font-display text-xl font-semibold text-[#F7F6F2]">Zero-Cloud Edge AI</h3>
               <p className="text-sm text-[#A3B18A] leading-relaxed">
-                ARM Cortex-M4 NPU runs TinyML inference directly inside the ceramic hub. Thermal frames are processed in volatile RAM and immediately purged.
+                ESP32-S3 TinyML compute is designed to run inference directly inside the ceramic hub. Thermal frames are processed in volatile RAM and immediately purged.
               </p>
             </Card>
           </ScrollReveal>

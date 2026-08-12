@@ -11,15 +11,15 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'NIH-01 Hardware & AI Features | Vriksh Vani',
-  description: 'Full feature list of NIH-01: FLIR Lepton 3.5 thermal array, Bosch BME688 quad-gas sensor, ARM Cortex-M4 NPU, real-time VPD, Home Assistant MQTT, and offline NTE™ voice.',
-  keywords: ['NIH-01 features', 'FLIR thermal plant sensor', 'Bosch BME688', 'on-device voice AI', 'Home Assistant plant sensor', 'VPD computation'],
+  title: 'NIH-01 Concept & Targeted Features | Vriksh Vani',
+  description: 'Target features of NIH-01: FLIR thermal optics vision, BME688 gas sensing, ESP32-S3 TinyML compute, real-time VPD, and privacy-first NTE™ voice output.',
+  keywords: ['NIH-01 features', 'FLIR thermal plant sensor concept', 'Bosch BME688', 'on-device voice AI', 'VPD computation concept'],
   alternates: {
     canonical: 'https://www.vrikshvani.com/features',
   },
   openGraph: {
-    title: 'NIH-01 Hardware & AI Features | Vriksh Vani',
-    description: 'FLIR thermal leaf optics, quad-gas analysis, ARM Cortex-M4 NPU, and real-time VPD computation in a kiln-fired ceramic casing.',
+    title: 'NIH-01 Concept & Targeted Features | Vriksh Vani',
+    description: 'FLIR thermal optics vision, quad-gas analysis, ESP32-S3 TinyML compute, and real-time VPD computation concept in ceramic casing.',
     url: 'https://www.vrikshvani.com/features',
     siteName: 'Vriksh Vani',
     images: [
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NIH-01 Hardware & AI Features | Vriksh Vani',
-    description: 'Explore the FLIR thermal array, quad-gas sensor, and on-device AI powering NIH-01.',
+    title: 'NIH-01 Concept & Targeted Features | Vriksh Vani',
+    description: 'Explore the thermal optics vision, quad-gas sensor, and on-device AI concept powering NIH-01.',
     images: ['https://www.vrikshvani.com/og?title=NIH-01%20Hardware%20%26%20AI%20Features&subtitle=Thermal%2C%20Quad-Gas%20%26%20NTE%E2%84%A2%20Voice'],
     creator: '@vrikshvani',
   },
@@ -46,7 +46,7 @@ const coreFeatures = [
   {
     icon: Thermometer,
     title: 'Leaf Surface Thermal Sensing',
-    desc: 'FLIR Lepton 3.5 thermal array captures your plant\'s exact leaf surface temperature (±0.05°C) — not the ambient air around it. The only true measure of transpiration stress.',
+    desc: 'Targeting FLIR Lepton 3.5 thermal array to capture leaf surface temperature non-invasively — evaluating true transpiration stress dynamics.',
     colour: 'text-[#E8D07C]',
     bg: 'bg-[#E8D07C]/10',
     border: 'border-[#E8D07C]/20',
@@ -54,7 +54,7 @@ const coreFeatures = [
   {
     icon: Droplets,
     title: 'VPD Real-Time Computation',
-    desc: 'NIH-01 computes Vapour Pressure Deficit every 60 seconds using leaf temperature + SHT41 ambient humidity. Colour-coded from 0.0–4.0 kPa with species-specific target zones.',
+    desc: 'Designed to compute Vapour Pressure Deficit by pairing leaf surface temperature with atmospheric humidity to monitor transpiration pressure.',
     colour: 'text-[#8AD74C]',
     bg: 'bg-[#8AD74C]/10',
     border: 'border-[#8AD74C]/20',
@@ -62,7 +62,7 @@ const coreFeatures = [
   {
     icon: Wind,
     title: 'Gas Resistance Soil Proxy',
-    desc: 'The BME688 gas sensor reads volatile organic compounds as a non-invasive proxy for soil microbial health and moisture — no probes, no soil contact required.',
+    desc: 'BME688 gas sensor reads volatile organic compounds (VOCs) as a non-invasive indicator for substrate microbial activity and stress.',
     colour: 'text-[#8AD74C]',
     bg: 'bg-[#8AD74C]/10',
     border: 'border-[#8AD74C]/20',
@@ -70,71 +70,71 @@ const coreFeatures = [
   {
     icon: Mic,
     title: 'NTE™ Voice Translation',
-    desc: 'Nature Translated to Emotion™. An on-device acoustic synthesis model converts real biometric readings into a calm, expressive plant voice — spoken through the integrated speaker.',
+    desc: 'Nature Translated to Emotion™. An on-device acoustic synthesis model concept that converts sensor readings into natural plant voice interpretations.',
     colour: 'text-[#E8D07C]',
     bg: 'bg-[#E8D07C]/10',
     border: 'border-[#E8D07C]/20',
   },
   {
     icon: Brain,
-    title: 'On-Device Neural Inference',
-    desc: 'All AI runs on the ESP32-S3 processor — no cloud latency, no internet dependency. Species recognition and emotion-state classification happen in under 200ms.',
+    title: 'On-Device TinyML Inference',
+    desc: 'Designed around low-power ESP32-S3 microcontrollers — zero cloud latency, zero external dependence. On-device signal classification for total privacy.',
     colour: 'text-[#8AD74C]',
     bg: 'bg-[#8AD74C]/10',
     border: 'border-[#8AD74C]/20',
   },
   {
     icon: BarChart3,
-    title: '90-Day Biometric History',
-    desc: 'View time-series graphs of VPD, thermal delta, gas resistance, and health score trends over the last 90 days. Spot seasonal patterns and optimise care schedules.',
+    title: 'Biometric Telemetry History',
+    desc: 'View time-series trends of VPD, thermal delta, gas resistance, and environmental metrics over time to spot care trends.',
     colour: 'text-[#8AD74C]',
     bg: 'bg-[#8AD74C]/10',
     border: 'border-[#8AD74C]/20',
   },
   {
     icon: Bell,
-    title: 'Intelligent Alert System',
-    desc: 'Threshold-based alerts for VPD spikes, thermal stress, low moisture, and health score drops. Delivered as push notifications, webhook events, or NTE™ voice warnings.',
+    title: 'Intelligent Alerts Vision',
+    desc: 'Threshold alerts for VPD spikes, thermal stress, and environmental shifts delivered as companion app push notifications or voice updates.',
     colour: 'text-[#E8D07C]',
     bg: 'bg-[#E8D07C]/10',
     border: 'border-[#E8D07C]/20',
   },
   {
     icon: Smartphone,
-    title: 'Companion App (iOS & Android)',
-    desc: 'The Vriksh Vani app lets you name your plant, choose a voice personality (Calm Warm / Playful Curious / Scientific / Zen), view live readings, and manage multiple NIH-01 hubs.',
+    title: 'Companion App Vision (iOS & Android)',
+    desc: 'The Vriksh Vani app vision allows naming plants, selecting voice personalities, viewing telemetry graphs, and managing devices.',
     colour: 'text-[#8AD74C]',
     bg: 'bg-[#8AD74C]/10',
     border: 'border-[#8AD74C]/20',
   },
   {
     icon: Wifi,
-    title: 'Smart Home Integration',
-    desc: 'NIH-01 connects via Wi-Fi and BLE to trigger humidifiers, grow lights, and fans through Apple HomeKit, Google Home, Amazon Alexa, and Zapier webhooks.',
+    title: 'Smart Home Mesh Vision',
+    desc: 'Designed to connect via Wi-Fi and Bluetooth to trigger humidifiers, grow lights, and fans via smart home protocols.',
     colour: 'text-[#8AD74C]',
     bg: 'bg-[#8AD74C]/10',
     border: 'border-[#8AD74C]/20',
   },
   {
     icon: Shield,
-    title: 'Privacy-First Design',
-    desc: 'No voice audio is ever recorded or transmitted. All inference is on-device. Plant biometric data is only shared with the Open Data Programme if you explicitly opt in.',
+    title: 'Privacy-First Architecture',
+    desc: 'No camera images or ambient voice audio recorded. Thermal frame buffers exist only in volatile SRAM and are purged immediately.',
     colour: 'text-[#E8D07C]',
     bg: 'bg-[#E8D07C]/10',
     border: 'border-[#E8D07C]/20',
   },
   {
     icon: Zap,
-    title: 'Offline Mode',
-    desc: 'NIH-01 continues sensing, speaking, and logging locally without internet. Readings sync to the cloud automatically when connectivity is restored.',
+    title: 'Offline-First Sensing',
+    desc: 'Designed to continue monitoring and signal processing locally without requiring constant active cloud connections.',
     colour: 'text-[#8AD74C]',
     bg: 'bg-[#8AD74C]/10',
     border: 'border-[#8AD74C]/20',
   },
   {
     icon: Globe,
-    title: 'Open Data Contribution',
-    desc: 'Opt in to contribute anonymised biometric readings to the Vriksh Vani Open Data Programme — a global plant science dataset shared under CC BY 4.0.',
+    title: 'Open Data Collaboration',
+    desc: 'Opt-in framework to contribute anonymised biometric telemetry to public research datasets for plant science advancing.',
     colour: 'text-[#8AD74C]',
     bg: 'bg-[#8AD74C]/10',
     border: 'border-[#8AD74C]/20',
@@ -142,18 +142,16 @@ const coreFeatures = [
 ];
 
 const specs = [
-  { label: 'Thermal Sensor', value: 'FLIR Lepton 3.5 (160×120, ±0.05°C)' },
-  { label: 'Humidity Sensor', value: 'SHT41 (±1.8% RH, ±0.2°C)' },
-  { label: 'Gas Sensor', value: 'BME688 (VOC, CO₂ proxy, pressure)' },
-  { label: 'Processor', value: 'ESP32-S3 dual-core @ 240 MHz' },
-  { label: 'Connectivity', value: 'Wi-Fi 4 (802.11n) + BLE 5.0' },
-  { label: 'Speaker', value: '1.5W full-range, 300–18,000 Hz' },
-  { label: 'Battery', value: '2,400 mAh LiPo — 7 days per charge' },
-  { label: 'Sensing Interval', value: 'Every 60 seconds (configurable)' },
-  { label: 'Species Database', value: '847 species with validated VPD targets' },
-  { label: 'Local Storage', value: '90 days of readings (8MB flash)' },
-  { label: 'Dimensions', value: '68 × 68 × 24 mm' },
-  { label: 'Materials', value: 'Recycled PLA housing, FSC cork base' },
+  { label: 'Thermal Sensor Target', value: 'FLIR Lepton 3.5 (160×120 Radiometric)' },
+  { label: 'Atmospheric Sensor Target', value: 'SHT41 (Humidity & Ambient Temp)' },
+  { label: 'Gas Sensor Target', value: 'BME688 (VOC, Pressure, Air Quality)' },
+  { label: 'Microcontroller Target', value: 'ESP32-S3 Dual-Core @ 240 MHz' },
+  { label: 'Wireless Protocol Target', value: 'Wi-Fi 4 + BLE 5.0' },
+  { label: 'Acoustic Speaker Concept', value: 'Custom Acoustic Chamber Enclosure' },
+  { label: 'Power Architecture', value: 'Low-Power Energy Optimized Design' },
+  { label: 'Sensing Interval Target', value: 'Configurable Sample Rate' },
+  { label: 'Species Knowledge Library', value: 'Growing Species Biophysics Library' },
+  { label: 'Enclosure Material', value: 'Slip-Cast Biophilic Ceramic Concept' },
 ];
 
 export default function FeaturesPage() {
@@ -164,20 +162,20 @@ export default function FeaturesPage() {
       {/* Hero */}
       <section className="pt-36 pb-20 px-4">
         <div className="max-w-5xl mx-auto text-center space-y-5">
-          <Badge variant="lime">Features</Badge>
+          <Badge variant="lime">NIH-01 Capabilities Vision</Badge>
           <h1 className="font-display text-4xl md:text-6xl font-bold text-[#F7F6F2] leading-tight">
-            Everything NIH-01<br />Can Do.
+            Target Features of<br />NIH-01.
           </h1>
           <p className="text-[#A3B18A] text-lg max-w-2xl mx-auto leading-relaxed">
-            The Nature Intelligence Hub 01 packs six precision sensors, an on-device AI engine,
-            and a plant voice synthesiser into a 68mm square. Here&apos;s every capability it brings to your plants.
+            The Nature Intelligence Hub 01 concept combines non-invasive biometrics, on-device TinyML compute,
+            and plant voice synthesis into a biophilic ceramic form factor.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/product">
-              <Button variant="primary" size="lg">Order NIH-01 →</Button>
+            <Link href="/waitlist">
+              <Button variant="primary" size="lg">Join Research Waitlist →</Button>
             </Link>
             <Link href="/nature-intelligence">
-              <Button variant="outline" size="lg">The Science</Button>
+              <Button variant="outline" size="lg">Read Philosophy &amp; Vision</Button>
             </Link>
           </div>
         </div>
@@ -207,9 +205,9 @@ export default function FeaturesPage() {
       <section className="py-20 px-4 border-t border-white/5">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="text-center space-y-3">
-            <Badge variant="gold">Technical Specifications</Badge>
+            <Badge variant="gold">Target Hardware Specifications</Badge>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-[#F7F6F2]">
-              Built to Scientific Grade.
+              Engineered with Purpose.
             </h2>
           </div>
           <Card className="divide-y divide-white/5">
@@ -228,17 +226,14 @@ export default function FeaturesPage() {
         <div className="max-w-3xl mx-auto">
           <Card className="p-10 text-center border-[#8AD74C]/20 space-y-5">
             <h2 className="font-display text-3xl font-bold text-[#F7F6F2]">
-              Ready to Hear Your Plant?
+              Join the Nature Intelligence Community
             </h2>
             <p className="text-[#A3B18A]">
-              NIH-01 Batch 01 is open for waitlist registration. Join now to secure your position and get early access pricing.
+              Be part of the early research cohort. Join our waitlist to receive development updates and prototype invitations.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
-              <Link href="/product">
+              <Link href="/waitlist">
                 <Button variant="primary" size="lg">Join the Waitlist →</Button>
-              </Link>
-              <Link href="/pricing">
-                <Button variant="outline" size="lg">View Pricing</Button>
               </Link>
             </div>
           </Card>

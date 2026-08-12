@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Eye, Wind, Zap, Lock } from 'lucide-react';
+import { Eye, Wind, Cpu, Lock } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export const HomeTechBreakdown: React.FC = () => {
@@ -9,26 +9,26 @@ export const HomeTechBreakdown: React.FC = () => {
     {
       icon: Eye,
       title: 'FLIR Lepton 3.5 Sensor',
-      badge: 'Thermal Array',
-      desc: '160x120 thermal resolution measures stomatal cooling dynamics with 0.05°C accuracy.',
+      badge: 'Planned Sensor',
+      desc: '160x120 thermal resolution to measure leaf surface temperature dynamics non-invasively.',
     },
     {
       icon: Wind,
       title: 'Bosch BME688 Gas Sensor',
-      badge: 'Quad-Gas Engine',
-      desc: 'Scans Volatile Organic Compounds (VOCs) and VSCs emitted during pest or humidity stress.',
+      badge: 'Planned Sensor',
+      desc: 'Scans Volatile Organic Compounds (VOCs) and VSCs emitted during environmental or moisture stress.',
     },
     {
-      icon: Zap,
-      title: 'ARM Cortex-M4 TinyML NPU',
-      badge: '45ms Latency',
-      desc: 'Quantized neural network classifies biophysical stress states locally without cloud delay.',
+      icon: Cpu,
+      title: 'ESP32-S3 TinyML Compute',
+      badge: 'Design Target',
+      desc: 'On-device neural inference designed to process biophysical stress states locally without cloud latency.',
     },
     {
       icon: Lock,
       title: 'Zero-Video SRAM Shield',
-      badge: '100% Privacy',
-      desc: 'Volatile RAM frame buffer overwrites thermal data 20 times per second. Zero video exfiltration.',
+      badge: 'Privacy Standard',
+      desc: 'Volatile RAM buffer overwrites thermal data in real-time. Zero video exfiltration by architecture design.',
     },
   ];
 
@@ -38,13 +38,13 @@ export const HomeTechBreakdown: React.FC = () => {
         <ScrollReveal>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="space-y-3 max-w-2xl">
-              <Badge variant="lime">Hardware Architecture</Badge>
+              <Badge variant="lime">Hardware Architecture Vision</Badge>
               <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-                Engineering Excellence inside Handcrafted Ceramic.
+                Engineering Vision inside Handcrafted Ceramic.
               </h2>
             </div>
             <p className="text-[#A3B18A] text-sm md:text-base max-w-md">
-              The NIH-01 pairs artisanal ceramic craftsmanship with enterprise thermal and chemical biometrics.
+              The NIH-01 concept pairs artisanal ceramic design with targeted thermal and environmental biometrics.
             </p>
           </div>
         </ScrollReveal>

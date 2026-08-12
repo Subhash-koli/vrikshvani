@@ -10,29 +10,32 @@ const MISALIGNMENTS = [
   {
     humanSee: 'Soil feels moist to touch',
     plantFeel: 'Root Hypoxia & Anoxia',
-    detail: 'Overwatering drowns root hair stomata, cutting off root respiration 48 hours before visible yellowing.',
+    detail: 'Overwatering can drown root hair stomata, reducing root respiration days before visible yellowing occurs.',
     icon: Droplets,
     color: 'text-amber-400',
     borderColor: 'border-amber-500/20',
     bgColor: 'bg-amber-500/10',
+    latency: 'Sub-surface stress builds silently',
   },
   {
     humanSee: 'Leaves look green and vibrant',
     plantFeel: 'Transpiration Shutdown',
-    detail: 'High vapor pressure deficit forces stomatal closure to preserve moisture, halting photosynthesis entirely.',
+    detail: 'High vapor pressure deficit forces stomatal closure to preserve moisture, slowing photosynthesis despite green appearance.',
     icon: ThermometerSnowflake,
     color: 'text-sky-400',
     borderColor: 'border-sky-500/20',
     bgColor: 'bg-sky-500/10',
+    latency: 'Stomatal closure precedes wilting',
   },
   {
     humanSee: 'Plant droops suddenly',
-    plantFeel: 'Thermal Shock (36h delayed)',
-    detail: 'Visual wilting is the final emergency state. Thermal stress spikes 36 hours before physical drooping.',
+    plantFeel: 'Thermal Stress Response',
+    detail: 'Visual wilting is an emergency state. Thermal surface shifts occur earlier as transpiration cooling diminishes.',
     icon: Activity,
     color: 'text-rose-400',
     borderColor: 'border-rose-500/20',
     bgColor: 'bg-rose-500/10',
+    latency: 'Thermal shifts lead visual symptoms',
   },
 ];
 
@@ -58,7 +61,7 @@ export const HomeProblemSection: React.FC = () => {
             </h2>
 
             <p className="text-[#A3B18A] text-base sm:text-lg leading-relaxed font-normal">
-              By the time leaf yellowing or drooping becomes visible to the human eye, your plant has already endured days of silent biophysical distress.
+              By the time leaf yellowing or drooping becomes visible to the human eye, plants have often experienced extended periods of unobserved biophysical distress.
             </p>
           </div>
         </ScrollReveal>
@@ -111,7 +114,7 @@ export const HomeProblemSection: React.FC = () => {
                   {/* Warning Footer */}
                   <div className="pt-4 border-t border-white/5 flex items-center gap-2 text-[11px] font-mono text-[#A3B18A]/70">
                     <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span>36–48h latency before visual signs</span>
+                    <span>{item.latency}</span>
                   </div>
                 </Card>
               </ScrollReveal>

@@ -76,33 +76,33 @@ export const HomeFinaleCta: React.FC = () => {
         <Card className="p-8 md:p-14 border-[#8AD74C]/30 shadow-2xl">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <Badge variant="lime" className="px-4 py-1.5 text-xs font-mono">
-              <Sparkles className="w-4 h-4 text-[#8AD74C] animate-spin" /> Batch 01 Pre-Order Reservation
+              <Sparkles className="w-4 h-4 text-[#8AD74C]" /> Early Research Cohort
             </Badge>
 
             <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-              Join the Botanical Revolution Today.
+              Join the Nature Intelligence Journey.
             </h2>
 
             <p className="text-[#A3B18A] text-base md:text-lg max-w-xl mx-auto">
-              Reserve your NIH-01 Nature Intelligence Hub. Lock in Founding Member perks, zero price increases, and early October 2026 shipping.
+              Be among the first to receive research updates, prototype access, and contribute to our plant biophysics datasets.
             </p>
 
             {status === 'success' && responseData ? (
               <div className="p-8 rounded-card bg-[#0F2B18] border border-[#8AD74C] text-center space-y-4 animate-fadeIn">
                 <CheckCircle2 className="w-12 h-12 text-[#8AD74C] mx-auto" />
-                <h3 className="font-display text-2xl font-bold text-[#F7F6F2]">Reservation Confirmed!</h3>
+                <h3 className="font-display text-2xl font-bold text-[#F7F6F2]">Waitlist Spot Confirmed!</h3>
                 <p className="text-sm text-[#A3B18A]">
                   Your queue position is <span className="font-mono text-[#E8D07C] font-bold text-lg">#{responseData.queuePosition}</span>
                 </p>
                 <p className="text-sm text-[#A3B18A]">
-                  Your unique referral code <span className="font-mono text-[#8AD74C]">{responseData.referralCode}</span> has been sent to <span className="text-[#F7F6F2]">{responseData.email}</span>.
+                  Your unique invite code <span className="font-mono text-[#8AD74C]">{responseData.referralCode}</span> has been sent to <span className="text-[#F7F6F2]">{responseData.email}</span>.
                 </p>
                 <div className="pt-2">
                   <a
                     href={`/waitlist/confirmed?queue=${responseData.queuePosition}&code=${responseData.referralCode}`}
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-btn bg-[#8AD74C] hover:bg-[#3FAE2A] text-[#070B08] font-display font-bold text-xs shadow-lime-glow transition-all"
                   >
-                    View Your Priority Dashboard & Share →
+                    View Community Dashboard →
                   </a>
                 </div>
               </div>
@@ -111,7 +111,7 @@ export const HomeFinaleCta: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Input
                     label="Full Name"
-                    placeholder="Siddhant Tiwari"
+                    placeholder="Your Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
@@ -120,7 +120,7 @@ export const HomeFinaleCta: React.FC = () => {
                   <Input
                     label="Email Address"
                     type="email"
-                    placeholder="siddhant@example.com"
+                    placeholder="you@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -129,12 +129,12 @@ export const HomeFinaleCta: React.FC = () => {
                 </div>
 
                 <Select
-                  label="Preferred Ceramic Colorway"
+                  label="Preferred Ceramic Colorway Concept"
                   value={colorway}
                   onChange={(e) => setColorway(e.target.value)}
                   options={[
-                    { label: '🌿 Biophilic Sage (Limited)', value: 'BIOPHILIC_SAGE' },
-                    { label: '✨ Cream White (Classic)', value: 'CREAM_WHITE' },
+                    { label: '🌿 Biophilic Sage', value: 'BIOPHILIC_SAGE' },
+                    { label: '✨ Cream White', value: 'CREAM_WHITE' },
                   ]}
                 />
 
@@ -158,12 +158,12 @@ export const HomeFinaleCta: React.FC = () => {
                       <Loader2 className="w-4 h-4 animate-spin" /> Joining Waitlist...
                     </span>
                   ) : (
-                    'Join the Waitlist →'
+                    'Join Research Waitlist →'
                   )}
                 </Button>
 
                 <div className="flex items-center justify-center gap-2 text-xs text-[#A3B18A] pt-2">
-                  <Lock className="w-3.5 h-3.5 text-[#8AD74C]" /> 100% No-Risk Cancellation · Zero Upfront Fee Required
+                  <Lock className="w-3.5 h-3.5 text-[#8AD74C]" /> 100% Privacy Protected · Zero Upfront Fee Required
                 </div>
               </form>
             )}

@@ -5,26 +5,13 @@ import Footer from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { Download, Newspaper, Mail, Award } from 'lucide-react';
+import { Download, Mail, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Press & Media — Vriksh Vani',
-  description: 'Download the Vriksh Vani press kit, access high-resolution product photography, and request interviews with the founding team.',
+  description: 'Download the Vriksh Vani brand kit, access high-resolution product concept photography, and request interviews with the founder.',
 };
-
-const coverage = [
-  { outlet: 'TechCrunch India', headline: '"Vriksh Vani wants to give your houseplants a voice — literally"', date: 'July 2026', href: '#' },
-  { outlet: 'The Hindu BusinessLine', headline: '"Bengaluru startup decodes plant stress using aerospace-grade thermal cameras"', date: 'June 2026', href: '#' },
-  { outlet: 'YourStory', headline: '"Meet NIH-01: The world\'s first kiln-fired ceramic plant intelligence hub"', date: 'June 2026', href: '#' },
-  { outlet: 'Wired India', headline: '"This device translates plant distress into speech — and the science behind it is solid"', date: 'May 2026', href: '#' },
-];
-
-const awards = [
-  { name: 'RedDot Design Concept Award', year: '2026', category: 'Product Concept' },
-  { name: 'India Design Mark (I Mark)', year: '2026', category: 'Electronics & Technology' },
-  { name: 'T-Hub Cohort 14 Graduate', year: '2025', category: 'AgriTech / BioTech' },
-];
 
 export default function PressPage() {
   return (
@@ -35,16 +22,16 @@ export default function PressPage() {
 
           {/* Hero */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <Badge variant="lime">Press & Media</Badge>
+            <Badge variant="lime">Press &amp; Media Resources</Badge>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-[#F7F6F2]">
-              For Journalists &amp; Media Partners.
+              For Journalists &amp; Storytellers.
             </h1>
             <p className="text-[#A3B18A]">
-              Logos, product photography, founder headshots, and a comprehensive press kit. Everything you need to cover the Nature Intelligence category.
+              Logos, brand guidelines, product concept visuals, and founder background. Everything you need to cover the Nature Intelligence movement.
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <Button variant="primary" className="flex items-center gap-2">
-                <Download className="w-4 h-4" /> Download Press Kit (ZIP)
+                <Download className="w-4 h-4" /> Download Brand Assets (ZIP)
               </Button>
               <Link href="mailto:press@vrikshvani.com">
                 <Button variant="outline" className="flex items-center gap-2">
@@ -54,13 +41,25 @@ export default function PressPage() {
             </div>
           </div>
 
+          {/* Category Story brief */}
+          <Card className="p-8 border-[#8AD74C]/20 space-y-4">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#8AD74C]">
+              <Sparkles className="w-4 h-4 text-[#8AD74C]" />
+              <span>CATEGORY DEFINITION</span>
+            </div>
+            <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">What is Nature Intelligence?</h2>
+            <p className="text-sm text-[#A3B18A] leading-relaxed">
+              Nature Intelligence is a new category of biophilic technology that focuses on interpreting non-invasive physiological signals from living systems (leaves, plants, micro-climates) using thermal imaging, atmospheric gas analysis, and edge AI translation.
+            </p>
+          </Card>
+
           {/* Official Brand Logos Suite Showcase */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <span className="text-2xl">🎨</span>
               <div>
                 <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Official Brand Logo Suite</h2>
-                <p className="text-xs text-[#A3B18A]">Analyzed, categorized, and standardized brand logo assets for press, web, and hardware media.</p>
+                <p className="text-xs text-[#A3B18A]">Standardized brand logo assets for press, web, and media publication.</p>
               </div>
             </div>
 
@@ -86,13 +85,13 @@ export default function PressPage() {
                 },
                 {
                   title: '3D Embossed Stacked Logo',
-                  category: 'Hero Cards / Packaging Render',
+                  category: 'Hero Cards / Renders',
                   file: '/assets/vrikshvani_logo/vrikshvani-logo-3d-embossed-light.png',
                   bg: 'bg-white',
                 },
                 {
                   title: 'Gold Ring Circular Emblem',
-                  category: 'Social Media / App Store Badge',
+                  category: 'Social Media / App Icon',
                   file: '/assets/vrikshvani_logo/vrikshvani-emblem-gold-ring.png',
                   bg: 'bg-[#070B08]',
                 },
@@ -104,7 +103,7 @@ export default function PressPage() {
                 },
                 {
                   title: '3D Standalone Icon Mark',
-                  category: 'Favicon / Mobile App Splash Icon',
+                  category: 'Favicon / App Icon',
                   file: '/assets/vrikshvani_logo/vrikshvani-iconmark-3d-light.png',
                   bg: 'bg-white',
                 },
@@ -139,49 +138,12 @@ export default function PressPage() {
             </div>
           </div>
 
-          {/* Media Coverage */}
-          <div className="space-y-5">
-            <div className="flex items-center gap-3">
-              <Newspaper className="w-6 h-6 text-[#8AD74C]" />
-              <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Media Coverage</h2>
-            </div>
-            <div className="space-y-3">
-              {coverage.map((c, idx) => (
-                <Card key={idx} className="flex items-start justify-between gap-4 flex-wrap">
-                  <div className="space-y-1">
-                    <p className="text-xs font-mono text-[#8AD74C] font-bold">{c.outlet} · {c.date}</p>
-                    <p className="text-sm font-semibold text-[#F7F6F2] leading-snug">{c.headline}</p>
-                  </div>
-                  <Link href={c.href}>
-                    <Button variant="outline" size="sm">Read →</Button>
-                  </Link>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Awards */}
-          <div className="space-y-5">
-            <div className="flex items-center gap-3">
-              <Award className="w-6 h-6 text-[#E8D07C]" />
-              <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Awards &amp; Recognition</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {awards.map((a, idx) => (
-                <Card key={idx} className="space-y-1 border-[#E8D07C]/20">
-                  <p className="text-xs font-mono text-[#E8D07C]">{a.year} · {a.category}</p>
-                  <p className="font-display font-bold text-[#F7F6F2] leading-snug">{a.name}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
-
           {/* Press Contact */}
           <Card className="p-8 border-[#8AD74C]/20 text-center space-y-3">
-            <h3 className="font-display text-xl font-bold text-[#F7F6F2]">Press Contact</h3>
-            <p className="text-sm text-[#A3B18A]">For interview requests, review units, and media partnerships, contact our communications team directly.</p>
+            <h3 className="font-display text-xl font-bold text-[#F7F6F2]">Media &amp; Press Contact</h3>
+            <p className="text-sm text-[#A3B18A]">For story inquiries, research discussions, and interview requests with the founder:</p>
             <p className="font-mono text-[#8AD74C] font-bold">press@vrikshvani.com</p>
-            <p className="text-xs text-[#A3B18A]">Response time: within 24 hours on business days</p>
+            <p className="text-xs text-[#A3B18A]">Location: Bengaluru, Karnataka, India</p>
           </Card>
         </div>
       </section>

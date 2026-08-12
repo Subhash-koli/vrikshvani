@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
-import { Menu, X, Leaf, Sparkles, ChevronDown, Search } from 'lucide-react';
+import { Menu, X, Sparkles, ChevronDown, Search } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 const SearchModal = dynamic(() => import('@/components/ui/SearchModal'), { ssr: false });
@@ -20,42 +20,34 @@ const navGroups: NavGroup[] = [
   {
     label: 'Product',
     children: [
-      { label: 'NIH-01 Hub Overview', href: '/product', desc: 'The thermal biometrics ceramic hub' },
-      { label: 'Features & Capabilities', href: '/product/features', desc: '14 core capabilities' },
-      { label: 'Ceramic Colorways', href: '/product/colorways', desc: 'Sage, Cream White, Obsidian' },
-      { label: 'Technical Specifications', href: '/product/specifications', desc: 'Full hardware datasheet' },
-      { label: 'Craftsmanship', href: '/product/craftsmanship', desc: 'Kiln-fired artisan process' },
-      { label: 'Unboxing Experience', href: '/product/unboxing', desc: 'Plastic-free packaging' },
-      { label: 'vs. Traditional Monitors', href: '/product/comparison', desc: 'FLIR vs soil probe matrix' },
+      { label: 'NIH-01 Concept Overview', href: '/product', desc: 'The thermal biometrics ceramic hub concept' },
+      { label: 'Features & Capabilities', href: '/product/features', desc: 'Target capabilities' },
+      { label: 'Ceramic Colorways', href: '/product/colorways', desc: 'Sage, Cream White concept' },
+      { label: 'Technical Specifications', href: '/product/specifications', desc: 'Hardware datasheet vision' },
+      { label: 'Craftsmanship', href: '/product/craftsmanship', desc: 'Kiln-fired ceramic design' },
     ],
   },
   {
     label: 'Technology',
     children: [
-      { label: 'Nature Intelligence', href: '/nature-intelligence', desc: 'TinyML NPU architecture' },
-      { label: 'NTE™ Voice Engine', href: '/nature-intelligence/nte-voice', desc: '4 personalities, 8 languages' },
-      { label: 'Research Lab', href: '/nature-intelligence/research', desc: 'Peer-reviewed publications' },
-      { label: 'Technical Whitepaper', href: '/nature-intelligence/whitepaper', desc: '48-page engineering deep-dive' },
-      { label: 'Open Plant Datasets', href: '/nature-intelligence/open-data', desc: 'Free academic downloads' },
-      { label: 'Mobile App', href: '/app', desc: 'iOS & Android companion' },
-      { label: 'Smart Home Integration', href: '/app/smart-home', desc: 'Home Assistant & Matter' },
-      { label: 'Fleet Management', href: '/app/fleet-management', desc: 'Up to 500 plants' },
+      { label: 'Nature Intelligence', href: '/nature-intelligence', desc: 'ESP32-S3 TinyML architecture' },
+      { label: 'NTE™ Voice Engine', href: '/nature-intelligence/nte-voice', desc: 'Neural interpretation concept' },
+      { label: 'Research Framework', href: '/nature-intelligence/research', desc: 'Working research hypotheses' },
+      { label: 'Open Data Program', href: '/nature-intelligence/open-data', desc: 'Open dataset framework' },
+      { label: 'Mobile App Concept', href: '/app', desc: 'iOS & Android app vision' },
     ],
   },
   {
-    label: 'Community',
+    label: 'Research',
     children: [
-      { label: 'Community Hub', href: '/community', desc: '2,944 botanists worldwide' },
-      { label: 'Open Forum', href: '/community/forum', desc: 'Research & care discussions' },
-      { label: 'Leaderboard', href: '/community/leaderboard', desc: 'Nature Points rankings' },
-      { label: 'Blog & Research', href: '/blog', desc: 'Bio-physics dispatches' },
-      { label: 'Enterprise Solutions', href: '/enterprise', desc: 'Commercial fleet pricing' },
-      { label: 'Sustainability', href: '/sustainability', desc: '100-year ecological commitment' },
+      { label: 'Open Hypotheses', href: '/nature-intelligence/research', desc: 'Biophysics study notes' },
+      { label: 'Blog & Dispatches', href: '/blog', desc: 'Research notes & updates' },
+      { label: 'Community Cohort', href: '/community', desc: 'Early research testers' },
     ],
   },
   {
-    label: 'Pricing',
-    href: '/pricing',
+    label: 'About',
+    href: '/about',
   },
 ];
 
@@ -234,11 +226,11 @@ export const Header: React.FC = () => {
               <span>Search...</span>
               <kbd className="hidden xl:inline-block px-1.5 py-0.5 text-[9px] font-mono bg-white/5 border border-white/10 rounded text-[#A3B18A]">⌘K</kbd>
             </button>
-            <Badge variant="lime" className="hidden xl:inline-flex gap-1">
-              <Sparkles className="w-3 h-3" /> Batch 01 · 88 Left
+            <Badge variant="lime" className="hidden xl:inline-flex gap-1 text-[11px] font-mono">
+              <Sparkles className="w-3 h-3 text-[#8AD74C]" /> EARLY ACCESS
             </Badge>
             <Link href="/waitlist">
-              <Button variant="primary" size="sm">Pre-Order →</Button>
+              <Button variant="primary" size="sm">Join Waitlist →</Button>
             </Link>
           </div>
 
@@ -319,13 +311,10 @@ export const Header: React.FC = () => {
           })}
           <div className="pt-4 border-t border-white/10 flex flex-col gap-3 pb-12">
             <Badge variant="lime" className="justify-center py-2.5 gap-1.5 text-xs">
-              <Sparkles className="w-4 h-4" /> Batch 01 Founding Member · 88 Left
+              <Sparkles className="w-4 h-4" /> EARLY ACCESS · BATCH 01
             </Badge>
             <Link href="/waitlist" onClick={() => setMobileOpen(false)}>
-              <Button variant="primary" size="lg" className="w-full">Pre-Order Founding Unit →</Button>
-            </Link>
-            <Link href="/enterprise" onClick={() => setMobileOpen(false)}>
-              <Button variant="outline" size="lg" className="w-full">Enterprise Fleet Enquiry</Button>
+              <Button variant="primary" size="lg" className="w-full">Join Research Waitlist →</Button>
             </Link>
           </div>
         </div>
@@ -336,4 +325,3 @@ export const Header: React.FC = () => {
 };
 
 export default Header;
-
