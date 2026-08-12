@@ -3,19 +3,19 @@
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Smartphone, Activity, MessageSquare, History, Layers, ShieldCheck, Heart } from 'lucide-react';
+import { Smartphone, MessageSquare, History, Layers, ShieldCheck } from 'lucide-react';
 
 const APP_SCREENS = [
   {
     id: 'dashboard',
     name: 'Plant Dashboard',
     icon: Smartphone,
-    title: 'Real-Time Health Overview',
-    desc: 'Displays plant health score (98%), VPD status, leaf surface temperature, and quick care actions.',
+    title: 'Real-Time Telemetry Overview',
+    desc: 'Displays plant hydration status, real-time VPD indicator, leaf surface temperature, and quick care actions.',
     image: '/assets/app_ui_mockups/app-telemetry-dashboard-dark.png',
     mockup: {
       title: 'Monstera Deliciosa',
-      badge: 'Health: 98% (Optimal)',
+      badge: 'Hydration: Balanced (Optimal)',
       gaugeLabel: 'Leaf Surface Temp',
       gaugeVal: '24.2°C',
       vpdVal: '0.92 kPa (Ideal)',
@@ -35,23 +35,23 @@ const APP_SCREENS = [
       gaugeLabel: 'Stomatal Status',
       gaugeVal: 'Fully Open',
       vpdVal: 'Calm & Warm Voice',
-      quote: '"I could use a tiny drop of water around 4:00 PM!"',
+      quote: '"I could use a gentle watering around 4:00 PM!"',
     },
   },
   {
     id: 'timeline',
     name: 'Biometric Timeline',
     icon: History,
-    title: '90-Day Time-Series History',
-    desc: 'Track VPD fluctuations, leaf temperature cooling deltas, and watering history across seasons.',
+    title: 'Time-Series History',
+    desc: 'Track VPD fluctuations, leaf temperature cooling deltas, and watering patterns across seasons.',
     image: '/assets/app_ui_mockups/app-thermal-histogram.png',
     mockup: {
       title: 'Transpiration History',
-      badge: '90-Day SPI Log',
+      badge: 'Local Telemetry Log',
       gaugeLabel: 'Average VPD',
       gaugeVal: '0.88 kPa',
-      vpdVal: 'Zero Anomalies',
-      quote: '"Growth rate increased 14% over the last 30 days."',
+      vpdVal: 'Within Target Range',
+      quote: '"Consistent transpiration cycle observed over the past 7 days."',
     },
   },
   {
@@ -59,15 +59,15 @@ const APP_SCREENS = [
     name: 'Garden Fleet',
     icon: Layers,
     title: 'Multi-Plant Hub Control',
-    desc: 'Manage up to 500 NIH-01 hubs across living rooms, offices, and commercial greenhouses.',
+    desc: 'Manage multiple NIH-01 hubs across living rooms, offices, and indoor plant collections.',
     image: '/assets/app_ui_mockups/app-fleet-management-overview.png',
     mockup: {
-      title: 'Botanical Fleet',
-      badge: '12 Active Hubs',
-      gaugeLabel: 'Fleet Health',
-      gaugeVal: '99.4%',
-      vpdVal: 'Matter Mesh Connected',
-      quote: '"All 12 botanical hubs synchronized with zero latency."',
+      title: 'Botanical Collection',
+      badge: '4 Active Hubs',
+      gaugeLabel: 'Collection Status',
+      gaugeVal: 'All Stable',
+      vpdVal: 'BLE Mesh Connected',
+      quote: '"All botanical hubs synchronized locally via Bluetooth."',
     },
   },
 ];
@@ -80,12 +80,12 @@ export const AppUiGallery: React.FC = () => {
     <section className="py-24 bg-[#030504] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <Badge variant="lime">Mobile Application</Badge>
+          <Badge variant="lime">Companion App Interface Concept</Badge>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-            Your Garden&apos;s Emotional Dashboard.
+            Your Garden&apos;s Biophysical Dashboard.
           </h2>
           <p className="text-[#A3B18A] text-base md:text-lg">
-            Explore key screens of the Vriksh Vani app for iOS and Android. Designed for clarity, empathy, and scientific precision.
+            Explore conceptual screens and interface wireframes for the companion app. Designed for clarity, empathy, and scientific precision.
           </p>
         </div>
 
@@ -125,7 +125,7 @@ export const AppUiGallery: React.FC = () => {
               </p>
               <div className="pt-4 border-t border-white/10 flex items-center gap-3 text-xs text-[#8AD74C]">
                 <ShieldCheck className="w-4 h-4 shrink-0" />
-                <span>Bluetooth 5.2 BLE + Wi-Fi Cloud Sync</span>
+                <span>Local BLE Sync + Optional Cloud Telemetry</span>
               </div>
             </Card>
           </div>
