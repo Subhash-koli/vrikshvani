@@ -18,7 +18,7 @@ const TIERS: Tier[] = [
   { name: 'Seedling', minPoints: 0, badge: '🌱', color: 'text-emerald-400', perks: ['Community Forum Access', 'Open Data Explorer'] },
   { name: 'Naturalist', minPoints: 1000, badge: '🌿', color: 'text-[#8AD74C]', perks: ['Species Parameter Submissions', 'Early Firmware Betas'] },
   { name: 'Ecologist', minPoints: 5000, badge: '🌳', color: 'text-[#E8D07C]', perks: ['Priority Pre-Order Queue (+50 pts)', 'Exclusive Ceramic Colorways'] },
-  { name: 'Botanist', minPoints: 15000, badge: '🌺', color: 'text-amber-400', perks: ['IISc Co-Author Recognition', 'VIP Direct Biophysics Support'] },
+  { name: 'Botanist', minPoints: 15000, badge: '🌺', color: 'text-amber-400', perks: ['Research Contributor Recognition', 'Direct Biophysics Q&A'] },
 ];
 
 export default function NaturePointsWidget() {

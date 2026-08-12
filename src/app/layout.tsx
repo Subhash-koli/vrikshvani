@@ -23,9 +23,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vrikshvani.com';
 
 export const metadata: Metadata = {
   title: "Vriksh Vani — Let your plant speak.",
-  description: "Vriksh Vani is the pioneer of the Nature Intelligence category. Let your plant speak through non-invasive FLIR thermal biometrics, quad-gas sensing, and neural voice synthesis. Reserve your NIH-01 hub today.",
+  description: "Vriksh Vani is the pioneer of the Nature Intelligence category. Exploring non-invasive FLIR thermal biometrics, quad-gas sensing, and neural voice synthesis to interpret plant signals.",
   keywords: ["Vriksh Vani", "Nature Intelligence Category", "Let your plant speak", "Plant Transpiration", "FLIR Thermal Sensor", "Bosch BME688", "Neural Voice Synthesis", "Plant Care AI", "plant health monitor", "plant voice AI"],
-  authors: [{ name: "Siddhant Tiwari", url: siteUrl }],
+  authors: [{ name: "Subhash Koli", url: siteUrl }],
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: 'https://www.vrikshvani.com',

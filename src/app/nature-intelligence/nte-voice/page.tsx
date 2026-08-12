@@ -9,18 +9,18 @@ import { Mic, Brain, Cpu, Waves, Globe, Volume2 } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'NTE™ Neural Translation Engine — Vriksh Vani Voice System',
-  description: 'Deep-dive into the Neural Translation Engine: INT8 quantized TinyML model running on ARM Cortex-M4, converting plant biometrics into conversational speech in 8 languages.',
+  title: 'NTE™ Neural Translation Engine Concept — Vriksh Vani Voice System',
+  description: 'Deep-dive into the Neural Translation Engine concept: exploring INT8 quantized TinyML models on ESP32-S3 to convert plant biometrics into conversational speech.',
 };
 
 const languages = ['English', 'Hindi', 'Tamil', 'Kannada', 'Telugu', 'Spanish', 'French', 'German'];
 const emotions = [
-  { name: 'Photosynthetic Joy 🌿', trigger: 'Optimal VPD + bright light + root zone healthy', sample: '"My leaves are catching the light perfectly right now. I feel alive."' },
-  { name: 'Transpiration Fatigue 🌡️', trigger: 'VPD > 1.6 kPa, leaf temp elevated +1.2°C', sample: '"The air feels very dry today. My stomata are beginning to close."' },
-  { name: 'Gentle Thirst 💧', trigger: 'Substrate dry > 80%, gas resistance rising', sample: '"I\'m beginning to draw down my reserves. Water would be welcome."' },
-  { name: 'Root Exploration Mode 🪴', trigger: 'Root zone temp optimal, substrate recently watered', sample: '"My roots are very active today. I can feel myself reaching further."' },
-  { name: 'Morning Awakening ☀️', trigger: 'Light intensity rising after dark period', sample: '"The light is returning. I\'m beginning the day\'s work."' },
-  { name: 'Stormy Rest 🌧️', trigger: 'Atmospheric pressure drop + low light', sample: '"Something in the air has shifted. I\'m conserving my energy today."' },
+  { name: 'Photosynthetic Joy 🌿', trigger: 'Optimal VPD + bright light + root zone healthy', sample: '"My leaves are catching the light comfortably right now. Transpiration is optimal."' },
+  { name: 'Transpiration Fatigue 🌡️', trigger: 'VPD > 1.6 kPa, leaf temp elevated +1.2°C', sample: '"The air feels dry today. Stomatal conductance is decreasing."' },
+  { name: 'Gentle Thirst 💧', trigger: 'Substrate moisture low, gas resistance rising', sample: '"Sub-surface moisture is diminishing. A gentle watering would be beneficial."' },
+  { name: 'Root Activity Mode 🪴', trigger: 'Root zone temp optimal, moisture balanced', sample: '"Active root respiration observed. Growing conditions are favorable."' },
+  { name: 'Morning Awakening ☀️', trigger: 'Light intensity rising after dark period', sample: '"Morning light detected. Photosynthetic cycle is initiating."' },
+  { name: 'Conservation Rest 🌧️', trigger: 'Atmospheric pressure drop + low light', sample: '"Low ambient light and pressure shift. Energy conservation state active."' },
 ];
 
 export default function NteVoicePage() {
@@ -31,22 +31,22 @@ export default function NteVoicePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
 
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <Badge variant="lime">NTE™ v2.1 · 45ms Latency</Badge>
+            <Badge variant="lime">NTE™ AI Translation Concept</Badge>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-[#F7F6F2]">
-              Neural Translation Engine™
+              Nature Translation Engine™
             </h1>
             <p className="text-[#A3B18A] leading-relaxed">
-              A custom INT8 quantized neural network running entirely on-device — no cloud, no internet, no audio streaming. Your plant&apos;s voice is generated in under 45 milliseconds.
+              A custom quantized neural translation model concept designed to run on-device &mdash; translating biophysical sensor telemetry into natural, human-friendly insights.
             </p>
           </div>
 
-          {/* Architecture Stats */}
+          {/* Architecture Concept Targets */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { val: '45ms', label: 'Inference-to-Speech', icon: Waves, color: 'text-[#8AD74C]' },
-              { val: '8', label: 'Languages Supported', icon: Globe, color: 'text-[#8AD74C]' },
-              { val: '64', label: 'Emotional State Classes', icon: Brain, color: 'text-[#E8D07C]' },
-              { val: '44.1kHz', label: 'Audio Output Quality', icon: Volume2, color: 'text-[#E8D07C]' },
+              { val: '<50ms', label: 'Target Inference Latency', icon: Waves, color: 'text-[#8AD74C]' },
+              { val: '8', label: 'Target Language Profiles', icon: Globe, color: 'text-[#8AD74C]' },
+              { val: 'On-Device', label: 'Local TinyML Compute', icon: Brain, color: 'text-[#E8D07C]' },
+              { val: 'Zero Video', label: 'Volatile SRAM Privacy', icon: Volume2, color: 'text-[#E8D07C]' },
             ].map((s, idx) => {
               const Icon = s.icon;
               return (
@@ -63,15 +63,15 @@ export default function NteVoicePage() {
           <Card className="p-8 space-y-6">
             <div className="flex items-center gap-3">
               <Cpu className="w-6 h-6 text-[#8AD74C]" />
-              <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Inference Pipeline</h2>
+              <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Conceptual Inference Pipeline</h2>
             </div>
             <div className="space-y-4">
               {[
-                { step: '01', title: 'Sensor Fusion', desc: 'FLIR Lepton 3.5 provides leaf surface temperature delta. BME688 provides ambient temperature, humidity, pressure, and quad-gas resistance. Time-of-day and season are appended to the feature vector.' },
-                { step: '02', title: 'Feature Extraction', desc: '12 real-time features are normalised and packed into an INT8 input tensor: VPD, leaf temp delta, gas resistance, pressure trend, humidity trend, light proxy, species ID, time-of-day, day-of-year, and 3 rolling averages.' },
-                { step: '03', title: 'NTE™ Neural Network Inference', desc: 'The INT8 quantized neural network (ARM Cortex-M4 NPU) runs inference in under 8ms, classifying the input into one of 64 emotional state classes with a confidence score.' },
-                { step: '04', title: 'Speech Template Selection', desc: 'The top-confidence emotional state class selects a language-appropriate speech template from a library of 20–40 curated human-written utterances per language per emotional class.' },
-                { step: '05', title: 'WaveNet-Lite Synthesis', desc: 'The selected template text is synthesised into 44.1kHz audio using our on-device WaveNet-Lite voice model. Personality modulation (warmth, pitch, cadence) is applied per plant profile.' },
+                { step: '01', title: 'Multivariate Sensor Fusion', desc: 'Targeting FLIR Lepton 3.5 for leaf surface temperature delta, combined with SHT41 humidity and BME688 gas resistance readings.' },
+                { step: '02', title: 'Feature Vector Normalization', desc: 'Real-time features (VPD, thermal delta, gas resistance, time-of-day) are compiled into a normalized input tensor.' },
+                { step: '03', title: 'On-Device TinyML Inference', desc: 'A quantized neural model running on the ESP32-S3 microcontroller evaluates biophysical stress and transpiration states.' },
+                { step: '04', title: 'Natural Language Template Mapping', desc: 'The classified physiological state selects an appropriate natural language template tailored to the plant species and personality.' },
+                { step: '05', title: 'Acoustic Voice Synthesis', desc: 'The selected utterance is rendered into audio output through the integrated acoustic speaker chamber.' },
               ].map((s) => (
                 <div key={s.step} className="flex gap-5 items-start">
                   <span className="font-mono text-sm font-bold text-[#8AD74C] shrink-0 w-8">{s.step}</span>
@@ -84,34 +84,33 @@ export default function NteVoicePage() {
             </div>
           </Card>
 
-          {/* Language Support */}
+          {/* Language Support Vision */}
           <div className="space-y-5">
             <div className="flex items-center gap-3">
               <Globe className="w-6 h-6 text-[#8AD74C]" />
-              <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">8 Languages, 1 Device</h2>
+              <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Multilingual Voice Target</h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {languages.map((lang, idx) => (
                 <Card key={idx} className="text-center py-4 border-[#8AD74C]/20">
                   <p className="font-display font-bold text-[#F7F6F2]">{lang}</p>
-                  <p className="text-xs font-mono text-[#8AD74C]">✓ On-Device</p>
+                  <p className="text-xs font-mono text-[#8AD74C]">Target Profile</p>
                 </Card>
               ))}
             </div>
-            <p className="text-xs text-[#A3B18A]">Additional languages planned: Marathi, Bengali, Japanese, Mandarin — Batch 02.</p>
           </div>
 
           {/* Emotion Gallery */}
           <div className="space-y-5">
             <div className="flex items-center gap-3">
               <Mic className="w-6 h-6 text-[#E8D07C]" />
-              <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Sample Emotional States</h2>
+              <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Sample Physiological State Interpretations</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {emotions.map((e, idx) => (
                 <Card key={idx} className="space-y-3">
                   <p className="font-display font-bold text-[#F7F6F2]">{e.name}</p>
-                  <p className="text-xs text-[#A3B18A]"><strong className="text-[#8AD74C]">Triggered by:</strong> {e.trigger}</p>
+                  <p className="text-xs text-[#A3B18A]"><strong className="text-[#8AD74C]">Biophysical Trigger:</strong> {e.trigger}</p>
                   <p className="text-sm text-[#F7F6F2] italic border-l-2 border-[#8AD74C] pl-3 leading-relaxed">{e.sample}</p>
                 </Card>
               ))}
@@ -119,10 +118,10 @@ export default function NteVoicePage() {
           </div>
 
           <Card className="p-8 text-center border-[#8AD74C]/30 space-y-4">
-            <p className="font-display text-2xl font-bold text-[#F7F6F2]">Hear It For Yourself.</p>
-            <p className="text-sm text-[#A3B18A]">The NTE™ voice is available exclusively on the NIH-01 hub. Reserve a Batch 01 founding unit to experience plant speech.</p>
+            <p className="font-display text-2xl font-bold text-[#F7F6F2]">Join the Early Research Cohort.</p>
+            <p className="text-sm text-[#A3B18A]">Be part of our prototype validation program and help refine the NTE™ plant voice model.</p>
             <Link href="/waitlist">
-              <Button variant="primary" size="lg">Pre-Order NIH-01 →</Button>
+              <Button variant="primary" size="lg">Join Research Waitlist →</Button>
             </Link>
           </Card>
         </div>

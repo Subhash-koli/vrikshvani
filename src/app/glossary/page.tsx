@@ -17,7 +17,7 @@ const glossaryTerms = [
   {
     term: 'NIH-01 (Nature Intelligence Hub 01)',
     category: 'Hardware',
-    definition: 'The flagship ceramic plant monitoring hub engineered by Vriksh Vani. Houses six precision sensors, an ARM Cortex-M4 NPU, FLIR Lepton 3.5 thermal array, and a 1.5W full-range acoustic speaker in a kiln-fired stoneware ceramic chassis.',
+    definition: 'The prototype ceramic plant monitoring hub designed by Vriksh Vani. Houses precision sensors, an ESP32-S3 dual-core microcontroller, target FLIR Lepton 3.5 thermal array, and an acoustic speaker in a kiln-fired ceramic chassis.',
   },
   {
     term: 'NTE™ (Nature Translated to Emotion)',
@@ -57,7 +57,7 @@ const glossaryTerms = [
   {
     term: 'Open Data Programme',
     category: 'Initiative',
-    definition: 'Vriksh Vani\'s global academic data donation program. Donates anonymised, user-opted-in plant biometric time-series datasets to researchers at IISc, Kew Gardens, and institutions worldwide under CC BY 4.0 license.',
+    definition: 'Vriksh Vani\'s open research initiative. Shares anonymised, user-opted-in plant biometric telemetry datasets with botanical researchers and institutions worldwide under open licenses.',
   },
   {
     term: 'Nature Points (PTS)',

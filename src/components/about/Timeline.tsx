@@ -3,38 +3,38 @@
 import React from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Calendar, CheckCircle2, Award, ShieldCheck, Milestone } from 'lucide-react';
+import { Milestone } from 'lucide-react';
 
 const MILESTONES = [
   {
-    quarter: 'Q1 2024',
-    title: 'Initial Biophysics Research',
-    desc: 'Research initiated at IISc Bengaluru studying leaf surface temperature correlation with VPD and stomatal conductance across 30 tropical species.',
+    quarter: 'Phase 01',
+    title: 'The Seed Idea & Problem Discovery',
+    desc: 'Observing the disconnect between visible plant appearance and invisible transpiration dynamics. Conceptualizing the Nature Intelligence framework.',
     status: 'Completed',
   },
   {
-    quarter: 'Q3 2024',
-    title: 'Hardware Alpha Prototype',
-    desc: 'Integration of FLIR Lepton 3.5 LWIR thermal camera with Bosch BME688 gas sensor on custom PCB architecture.',
+    quarter: 'Phase 02',
+    title: 'Biophysics Research & Sensor Selection',
+    desc: 'Investigating LWIR thermal imaging (FLIR Lepton), environmental humidity (SHT41), and atmospheric VOC gas sensing (BME688) as non-invasive biometrics.',
     status: 'Completed',
   },
   {
-    quarter: 'Q1 2025',
-    title: 'NTE™ Model v1.0 & Patent Filing',
-    desc: 'Developed quantized INT8 speech synthesis model running on ESP32-S3. Patent Pending filed (#202641012903) for non-invasive plant voice translation.',
+    quarter: 'Phase 03',
+    title: 'NTE™ Neural Voice Architecture Concept',
+    desc: 'Designing the Nature Translation Engine pipeline to map biophysical stress patterns to natural human expressions on ESP32-S3 TinyML compute.',
     status: 'Completed',
   },
   {
-    quarter: 'Q4 2025',
-    title: 'Global Beta Programme (Batch 00)',
-    desc: 'Deployed 150 Batch 00 hubs across 23 countries, collecting 1.2M+ daily biometric readings to validate species VPD targets.',
-    status: 'Completed',
+    quarter: 'Phase 04',
+    title: 'Hardware Architecture & Ceramic Industrial Design',
+    desc: 'Designing the slip-cast ceramic enclosure, thermal optical window cutouts, and acoustic chamber for NIH-01 prototype development.',
+    status: 'Current Phase',
   },
   {
-    quarter: 'Q3 2026',
-    title: 'Batch 01 Production & Open Data Launch',
-    desc: 'Stoneware ceramic production in Bengaluru + public release of the Vriksh Vani Open Data Programme datasets.',
-    status: 'Current Milestone',
+    quarter: 'Phase 05',
+    title: 'Prototype Cohort & Open Research Validation',
+    desc: 'Deploying initial bench prototypes with our founding tester community to collect real-world plant telemetry and validate early stress models.',
+    status: 'Upcoming Milestone',
   },
 ];
 
@@ -47,11 +47,11 @@ export default function Timeline() {
             <Milestone className="w-5 h-5 text-[#8AD74C]" />
           </div>
           <div>
-            <h3 className="font-display text-xl font-bold text-[#F7F6F2]">Development Timeline & Milestones</h3>
-            <p className="text-xs text-[#A3B18A]">2024–2026 Research & Hardware Engineering Roadmap</p>
+            <h3 className="font-display text-xl font-bold text-[#F7F6F2]">Our Journey &amp; Development Roadmap</h3>
+            <p className="text-xs text-[#A3B18A]">From Initial Question to Nature Intelligence Prototype</p>
           </div>
         </div>
-        <Badge variant="lime">Patent Pending #202641012903</Badge>
+        <Badge variant="lime">Open Research Journey</Badge>
       </div>
 
       {/* Timeline Steps */}

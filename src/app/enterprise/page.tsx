@@ -44,7 +44,7 @@ const useCases = [
   { emoji: '🌿', name: 'Plant Studios & Nurseries', desc: 'Professional growers and plant studios managing large inventories at scale.' },
 ];
 
-const trustedBy = ['IISc Bengaluru', 'Royal Botanic Gardens Kew', 'TIFR Mumbai', 'RHS (UK)', 'USDA Plant Sciences'];
+
 
 import dynamic from 'next/dynamic';
 
@@ -78,15 +78,7 @@ export default function EnterprisePage() {
             </div>
           </div>
 
-          {/* Trusted by */}
-          <div className="text-center space-y-3">
-            <p className="text-xs font-mono text-[#A3B18A] uppercase tracking-widest">Research Partners & Trusted Institutions</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              {trustedBy.map((name, i) => (
-                <span key={i} className="text-sm font-medium text-[#A3B18A] bg-[#0F2B18]/60 border border-white/10 rounded-full px-4 py-1.5">{name}</span>
-              ))}
-            </div>
-          </div>
+
 
           {/* Features grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

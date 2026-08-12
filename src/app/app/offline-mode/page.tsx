@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 const offlineFeatures = [
   {
     icon: Cpu,
-    title: 'On-Device Neural Inference',
-    desc: 'The NTE™ emotion classification network runs entirely on the ARM Cortex-M4 NPU inside NIH-01. No internet connection is required for plant voice output or bio-signal interpretation.',
-    stat: '<45ms',
-    statLabel: 'Inference Latency',
+    title: 'On-Device TinyML Inference',
+    desc: 'The NTE™ emotion classification network is designed to run locally on the ESP32-S3 microcontroller inside NIH-01. No continuous internet connection is required for plant voice output.',
+    stat: '<50ms',
+    statLabel: 'Target Latency',
   },
   {
     icon: Database,

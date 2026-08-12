@@ -1,6 +1,5 @@
 import React from 'react';
 import { Badge } from '@/components/ui/Badge';
-import { Leaf, Heart, Globe } from 'lucide-react';
 
 export const AboutHero: React.FC = () => {
   return (
@@ -9,12 +8,12 @@ export const AboutHero: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div className="max-w-4xl mx-auto space-y-6">
-          <Badge variant="gold">Our Mission & Cause</Badge>
+          <Badge variant="gold">Our Mission &amp; Purpose</Badge>
           <h1 className="font-display text-4xl sm:text-6xl font-bold text-[#F7F6F2] leading-tight">
-            We are building the <span className="text-[#8AD74C]">Universal Translator</span> for Plant Life.
+            Building the Bridge to <span className="text-[#8AD74C]">Nature Intelligence.</span>
           </h1>
           <p className="text-lg md:text-xl text-[#A3B18A] max-w-2xl mx-auto leading-relaxed">
-            Founded in Bengaluru in 2024, Vriksh Vani merges non-invasive thermal biometrics with embedded artificial intelligence to give a voice to the natural world.
+            Vriksh Vani is an independent project exploring how non-invasive thermal biometrics and embedded edge AI can help humans understand the silent signals of living systems.
           </p>
         </div>
       </div>

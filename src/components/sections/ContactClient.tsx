@@ -154,7 +154,7 @@ export const ContactClient: React.FC = () => {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Siddhant Tiwari"
+                      placeholder="Subhash Koli"
                     />
                     <Input
                       label="Email Address"

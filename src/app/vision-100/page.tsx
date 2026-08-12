@@ -24,7 +24,7 @@ const decades = [
       'Publish 25+ peer-reviewed papers on plant biophysics and on-device inference',
       'Open Data Programme: 1 billion+ anonymised plant readings donated to science',
       'Expand NTE™ voice to 20 languages',
-      'Establish IISc, TIFR, and international research partnerships',
+      'Establish university and botanical research collaborations',
     ],
   },
   {

@@ -58,9 +58,9 @@ export default function LeaderboardPage() {
           {/* Stats bar */}
           <div className="grid grid-cols-3 gap-4">
             {[
-              { stat: '342', label: 'Active Contributors', icon: Star },
-              { stat: '1.2M+', label: 'Readings/Day', icon: TrendingUp },
-              { stat: '847', label: 'Species Tracked', icon: Leaf },
+              { stat: 'Cohort 01', label: 'Early Access Tier', icon: Star },
+              { stat: 'Open Telemetry', label: 'Research Framework', icon: TrendingUp },
+              { stat: 'Multi-Species', label: 'Target Library', icon: Leaf },
             ].map((s, i) => {
               const Icon = s.icon;
               return (

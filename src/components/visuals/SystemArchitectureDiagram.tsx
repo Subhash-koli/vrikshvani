@@ -18,7 +18,7 @@ export default function SystemArchitectureDiagram() {
             <p className="text-xs text-[#A3B18A]">Non-Invasive Sensor Fusion → TinyML INT8 Engine → NTE™ Speech</p>
           </div>
         </div>
-        <Badge variant="lime">Patent Pending #202641012903</Badge>
+        <Badge variant="lime">Architecture &amp; Dataflow Concept</Badge>
       </div>
 
       {/* SVG Diagram Container */}
@@ -105,15 +105,15 @@ export default function SystemArchitectureDiagram() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-[#A3B18A]">
         <div className="flex items-center gap-2">
           <ShieldCheck className="w-4 h-4 text-[#8AD74C] shrink-0" />
-          <span>100% On-Device Inference (Zero Cloud Dependency)</span>
+          <span>Local On-Device TinyML Inference (Privacy First)</span>
         </div>
         <div className="flex items-center gap-2">
           <Zap className="w-4 h-4 text-[#E8D07C] shrink-0" />
-          <span>Sub-128ms Biometric-to-Speech Latency</span>
+          <span>Target &lt;128ms Total Sensor-to-Speech Flow</span>
         </div>
         <div className="flex items-center gap-2">
           <Radio className="w-4 h-4 text-emerald-400 shrink-0" />
-          <span>AES-256 Encrypted Telemetry Ingestion</span>
+          <span>Optional Encrypted Telemetry Synchronization</span>
         </div>
       </div>
     </Card>

@@ -1,28 +1,28 @@
 import React from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Quote } from 'lucide-react';
+import { Sparkles, Users, MessageSquareHeart } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export const HomeCommunityWall: React.FC = () => {
-  const testimonials = [
+  const perspectives = [
     {
-      quote: "The concept of hearing what your plant needs before it starts wilting is revolutionary. As a researcher studying plant stress responses, this is the consumer product I've been waiting for.",
-      author: "Dr. Ananya Rao",
-      role: "Plant Biophysics Researcher, IISc Bengaluru",
-      context: "Early concept advisor",
+      title: "Botanical Curiosity",
+      desc: "Can non-invasive thermal imaging detect stomatal closure early enough to prevent domestic plant mortality? That is the question driving our biophysical experiments.",
+      tag: "Biophysics Focus",
+      icon: Sparkles,
     },
     {
-      quote: "The ceramic hub renders look stunning — it would integrate beautifully into a modern living space. A plant care device that's also a design piece? That's exactly what's missing in the market.",
-      author: "Marcus Vance",
-      role: "Architect & Interior Designer, London",
-      context: "Design feedback contributor",
+      title: "Biophilic Aesthetics",
+      desc: "Domestic plant tech should respect living spaces. Designing handcrafted ceramic enclosures that feel like artisanal pottery rather than black plastic gadgets.",
+      tag: "Design Philosophy",
+      icon: MessageSquareHeart,
     },
     {
-      quote: "Zero video cameras is the right approach. Processing thermal frames in volatile SRAM with immediate purging shows they're thinking about privacy from the hardware level, not as an afterthought.",
-      author: "Priya Sharma",
-      role: "Cybersecurity Consultant, San Francisco",
-      context: "Privacy architecture reviewer",
+      title: "Uncompromising Privacy",
+      desc: "No optical cameras, no room video harvesting. Processing sensor signals in volatile SRAM on-device ensures domestic privacy is preserved by design.",
+      tag: "Privacy Architecture",
+      icon: Users,
     },
   ];
 
@@ -31,29 +31,36 @@ export const HomeCommunityWall: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <Badge variant="gold">Community & Early Feedback</Badge>
+            <Badge variant="gold">Founding Vision &amp; Inquiries</Badge>
             <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-              What Experts Are Saying About the Concept.
+              The Core Questions We Are Exploring.
             </h2>
+            <p className="text-[#A3B18A] text-sm md:text-base max-w-2xl mx-auto">
+              Our founding cohort is built on transparent exploration, scientific curiosity, and privacy-conscious hardware engineering.
+            </p>
           </div>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t, idx) => (
-            <ScrollReveal key={idx} stagger={idx}>
-              <Card className="flex flex-col justify-between space-y-6 h-full">
-                <div className="space-y-4">
-                  <Quote className="w-8 h-8 text-[#8AD74C]/40" />
-                  <p className="text-sm text-[#F7F6F2]/90 leading-relaxed italic">&quot;{t.quote}&quot;</p>
-                </div>
-                <div className="pt-4 border-t border-white/5 space-y-1">
-                  <div className="font-display font-semibold text-sm text-[#F7F6F2]">{t.author}</div>
-                  <div className="text-xs text-[#A3B18A]">{t.role}</div>
-                  <Badge variant="glass" className="mt-2 text-[10px]">{t.context}</Badge>
-                </div>
-              </Card>
-            </ScrollReveal>
-          ))}
+          {perspectives.map((p, idx) => {
+            const Icon = p.icon;
+            return (
+              <ScrollReveal key={idx} stagger={idx}>
+                <Card className="flex flex-col justify-between space-y-6 h-full p-8 border-white/10 hover:border-[#8AD74C]/30 transition-all">
+                  <div className="space-y-4">
+                    <div className="w-10 h-10 rounded-xl bg-[#8AD74C]/10 border border-[#8AD74C]/20 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-[#8AD74C]" />
+                    </div>
+                    <h3 className="font-display text-xl font-bold text-[#F7F6F2]">{p.title}</h3>
+                    <p className="text-sm text-[#A3B18A] leading-relaxed">{p.desc}</p>
+                  </div>
+                  <div className="pt-4 border-t border-white/5">
+                    <Badge variant="glass" className="text-[10px]">{p.tag}</Badge>
+                  </div>
+                </Card>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </section>

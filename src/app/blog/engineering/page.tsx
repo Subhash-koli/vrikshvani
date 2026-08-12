@@ -8,42 +8,34 @@ import Link from 'next/link';
 import { Cpu } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Engineering Articles — Vriksh Vani Blog',
-  description: 'Engineering articles from the Vriksh Vani hardware and software team on embedded systems, edge AI, sensor fusion, and full-stack plant intelligence.',
+  title: 'Engineering Notes — Vriksh Vani Notes',
+  description: 'Engineering notes from the Vriksh Vani project on embedded systems, edge AI, sensor fusion, and plant telemetry.',
 };
 
 const articles = [
   {
-    slug: 'nte-voice-architecture',
+    slug: 'tinyml-quantization-esp32-s3',
     badge: 'Edge AI',
-    title: 'How NTE™ Runs a 3-Axis Emotion Classifier in 256KB Flash on ARM Cortex-M4',
-    excerpt: 'A technical deep-dive into the quantisation, pruning, and CMSIS-NN deployment pipeline that lets NTE™ run on bare metal without an operating system.',
+    title: 'How NTE™ Runs a Physiological State Classifier on ESP32-S3 Microcontrollers',
+    excerpt: 'A technical exploration into the quantization and TensorFlow Lite Micro deployment pipeline that enables on-device inference with volatile SRAM privacy.',
     readTime: '15 min read',
     date: 'July 2026',
   },
   {
-    slug: 'nih01-sensor-fusion',
+    slug: 'stomatal-conductance-flir-thermal',
     badge: 'Hardware',
-    title: 'Sensor Fusion in NIH-01: Fusing SHT41, BME688, and FLIR Lepton Data in Real-Time',
-    excerpt: 'NIH-01 processes three heterogeneous sensor streams simultaneously. This is the engineering story of how we align, normalise, and weight each signal for reliable plant health scoring.',
+    title: 'Sensor Fusion in NIH-01: Combining SHT41, BME688, and FLIR Lepton Telemetry',
+    excerpt: 'NIH-01 architecture evaluates three heterogeneous sensor streams. Exploring how we align and normalize each signal for plant health evaluation.',
     readTime: '11 min read',
     date: 'June 2026',
   },
   {
-    slug: 'vpd-explained',
+    slug: 'soil-moisture-probes-vs-thermal',
     badge: 'Algorithms',
-    title: 'The VPD Algorithm: From Raw Temperature and Humidity to Agronomic-Grade Accuracy',
-    excerpt: 'The Magnus formula, Arden Buck correction, and leaf temperature compensation — how we compute accurate VPD from three sensor readings sampled at 1Hz.',
+    title: 'The VPD Algorithm: From Raw Temperature and Humidity to Biophysical Insights',
+    excerpt: 'The Magnus formula and leaf temperature compensation — how we compute accurate VPD from synchronized sensor readings.',
     readTime: '9 min read',
     date: 'May 2026',
-  },
-  {
-    slug: 'nextjs-plant-dashboard',
-    badge: 'Software',
-    title: 'Building a Real-Time Plant Dashboard with Next.js 14, Prisma, and Neon Postgres',
-    excerpt: 'The architecture decisions, streaming patterns, and edge deployment strategy behind the Vriksh Vani live dashboard — serving 100,000+ bio-signal events per day.',
-    readTime: '13 min read',
-    date: 'April 2026',
   },
 ];
 
@@ -58,13 +50,13 @@ export default function BlogEngineeringPage() {
             <div className="flex items-center gap-3">
               <Cpu className="w-8 h-8 text-[#8AD74C]" />
               <div>
-                <Badge variant="lime">Engineering</Badge>
+                <Badge variant="lime">Engineering Notes</Badge>
                 <h1 className="font-display text-3xl md:text-4xl font-bold text-[#F7F6F2] mt-1">
-                  Engineering & Technical Articles
+                  Hardware &amp; Embedded AI Notes
                 </h1>
               </div>
             </div>
-            <p className="text-[#A3B18A]">Under-the-hood engineering from the Vriksh Vani hardware and software team.</p>
+            <p className="text-[#A3B18A]">Architecture notes and embedded systems explorations from the Vriksh Vani project.</p>
           </div>
 
           <div className="space-y-5">
@@ -84,7 +76,7 @@ export default function BlogEngineeringPage() {
 
           <div className="text-center">
             <Link href="/blog">
-              <Button variant="outline">← Back to All Articles</Button>
+              <Button variant="outline">← Back to All Notes</Button>
             </Link>
           </div>
         </div>

@@ -24,7 +24,7 @@ const commitments = [
     title: 'Ultra-Low Power Electronics',
     stat: '0.8W',
     statLabel: 'Average Operational Draw',
-    body: 'The NIH-01 NPU runs at 0.8W average — less than a LED nightlight. The ARM Cortex-M4 processor was chosen specifically for its energy-efficiency profile. Annual electricity cost to run NIH-01 24/7: under ₹35 / $0.50. Charging adapter is rated A+ energy class.',
+    body: 'The NIH-01 compute runs at ultra-low power draw — less than a LED nightlight. The ESP32-S3 dual-core microcontroller was chosen specifically for its energy-efficiency profile. Designed for continuous low-power operation.',
   },
   {
     icon: Recycle,

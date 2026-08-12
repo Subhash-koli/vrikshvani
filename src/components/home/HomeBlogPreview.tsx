@@ -26,7 +26,7 @@ export const HomeBlogPreview: React.FC = () => {
       category: "Embedded AI",
       date: "Research Note",
       readTime: "11 min read",
-      slug: "tinyml-quantization-cortex-m4",
+      slug: "tinyml-quantization-esp32-s3",
     },
   ];
 

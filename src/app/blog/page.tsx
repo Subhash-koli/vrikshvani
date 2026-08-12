@@ -4,50 +4,49 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
 import { CalendarDays, Clock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Vriksh Vani Dispatch — Plant Science & Bio-Physics Research Blog',
-  description: 'Read peer-reviewed research dispatches, hardware design stories, VPD science explainers, and plant care insights from the Vriksh Vani science team.',
+  title: 'Vriksh Vani Research Notes — Plant Science & Biophysics Explanations',
+  description: 'Read research notes, hardware design logs, VPD science explainers, and plant care insights from the Vriksh Vani project.',
 };
 
 const articles = [
   {
     slug: 'stomatal-conductance-flir-thermal',
     title: 'Measuring Stomatal Conductance with FLIR Lepton Thermal Arrays',
-    author: 'Dr. Siddhant Tiwari',
+    author: 'Subhash Koli',
     date: 'August 1, 2026',
     readTime: '6 min read',
-    category: 'Bio-Physics',
-    intro: 'How non-invasive micro-radiometric thermal imaging detects stomatal transpiration shutdown 36 hours before visual symptoms appear in tropical houseplants.',
+    category: 'Biophysics',
+    intro: 'How non-invasive radiometric thermal imaging explores stomatal transpiration changes before visual symptoms appear in tropical houseplants.',
     featured: true,
   },
   {
     slug: 'soil-moisture-probes-vs-thermal',
-    title: 'Why Soil Moisture Probes Lie (and Why Thermal Leaf Cooling Never Does)',
-    author: 'Elena Vance',
+    title: 'Why Soil Moisture Probes Measure Dirt (and What Thermal Leaf Cooling Reveals)',
+    author: 'Subhash Koli',
     date: 'July 28, 2026',
     readTime: '8 min read',
     category: 'Hardware Engineering',
-    intro: 'Probes measure dirt capacitance—not plant health. A comparative analysis of electrical conductivity probes vs. non-invasive leaf thermometry.',
+    intro: 'Probes measure soil electrical conductivity—not direct plant physiological states. A comparative exploration of soil probes vs. non-invasive thermometry.',
     featured: false,
   },
   {
-    slug: 'tinyml-quantization-cortex-m4',
-    title: 'Quantizing TinyML Neural Models for ARM Cortex-M4 NPU Inference',
-    author: 'Marcus Chen',
+    slug: 'tinyml-quantization-esp32-s3',
+    title: 'Quantizing TinyML Neural Models for ESP32-S3 Edge Inference',
+    author: 'Subhash Koli',
     date: 'July 20, 2026',
     readTime: '11 min read',
     category: 'AI / TinyML',
-    intro: 'Engineering zero-cloud-latency neural plant voice synthesis on ultra-low-power microcontrollers with 100% volatile SRAM privacy.',
+    intro: 'Engineering on-device neural plant voice synthesis on low-power microcontrollers with volatile SRAM privacy.',
     featured: false,
   },
 ];
 
 const categoryColors: Record<string, string> = {
-  'Bio-Physics': 'lime',
+  'Biophysics': 'lime',
   'Hardware Engineering': 'gold',
   'AI / TinyML': 'lime',
 };
@@ -61,12 +60,12 @@ export default function BlogPage() {
       <Header />
       <section className="pt-36 pb-12 text-center">
         <div className="max-w-4xl mx-auto px-4 space-y-4">
-          <Badge variant="gold">Vriksh Vani Dispatch</Badge>
+          <Badge variant="gold">Vriksh Vani Research Notes</Badge>
           <h1 className="font-display text-4xl md:text-6xl font-bold text-[#F7F6F2]">
-            Botanical Science &amp; Bio-Physics Hub.
+            Botanical Science &amp; Engineering Notes.
           </h1>
           <p className="text-[#A3B18A] text-base md:text-lg">
-            Peer-reviewed research dispatches, hardware design stories, and plant care insights from the Vriksh Vani science team.
+            Research hypotheses, hardware design notes, and plant care insights from the Vriksh Vani project.
           </p>
         </div>
       </section>
@@ -91,13 +90,13 @@ export default function BlogPage() {
                 <span>{featured.author}</span>
               </div>
               <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#8AD74C] group-hover:gap-3 transition-all">
-                Read Article <ArrowRight className="w-4 h-4" />
+                Read Note <ArrowRight className="w-4 h-4" />
               </span>
             </Card>
           </Link>
 
           {/* Article Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {rest.map((article) => (
               <Link key={article.slug} href={`/blog/${article.slug}`} className="block group">
                 <Card className="h-full flex flex-col space-y-4 hover:border-[#8AD74C]/30 transition-all duration-300">
@@ -111,9 +110,10 @@ export default function BlogPage() {
                   <div className="flex items-center gap-4 text-[10px] font-mono text-[#A3B18A] flex-wrap mt-auto pt-2 border-t border-white/5">
                     <span className="flex items-center gap-1"><CalendarDays className="w-3 h-3" />{article.date}</span>
                     <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{article.readTime}</span>
+                    <span>{article.author}</span>
                   </div>
                   <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#8AD74C] group-hover:gap-2 transition-all">
-                    Read → 
+                    Read Note → 
                   </span>
                 </Card>
               </Link>

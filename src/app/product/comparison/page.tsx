@@ -17,15 +17,15 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'NIH-01 vs Competitors Comparison | Vriksh Vani',
-  description: 'Compare NIH-01 with Xiaomi Mi Flora, Planta App, and Sustee. NIH-01 is the only plant hub featuring FLIR thermal optics, quad-gas sensing, and NTE™ voice AI.',
-  keywords: ['NIH-01 vs Mi Flora', 'plant sensor comparison', 'NIH-01 vs Planta', 'best plant monitor 2026'],
+  title: 'NIH-01 Concept vs Traditional Monitors | Vriksh Vani',
+  description: 'Compare NIH-01 concept with traditional soil probes and reminder apps. Explores non-invasive thermal optics, quad-gas sensing, and NTE™ voice AI.',
+  keywords: ['NIH-01 vs soil probes', 'plant sensor concept comparison', 'plant monitor comparison'],
   alternates: {
     canonical: 'https://www.vrikshvani.com/product/comparison',
   },
   openGraph: {
-    title: 'NIH-01 vs Competitors Comparison | Vriksh Vani',
-    description: 'Side-by-side feature comparison: FLIR thermal biometrics vs standard soil moisture probes.',
+    title: 'NIH-01 Concept vs Traditional Monitors | Vriksh Vani',
+    description: 'Side-by-side concept comparison: non-invasive thermal biometrics vs standard soil moisture probes.',
     url: 'https://www.vrikshvani.com/product/comparison',
     siteName: 'Vriksh Vani',
     images: [{ url: 'https://www.vrikshvani.com/og?title=NIH-01%20vs%20Competitors&subtitle=Side-by-Side%20Feature%20Comparison' }],
@@ -61,7 +61,7 @@ function CellWarn({ label }: { label: string }) {
 
 function CellPrice({ label, highlight }: { label: string; highlight?: boolean }) {
   return (
-    <span className={`font-mono font-semibold ${highlight ? 'text-[#E8D07C]' : 'text-[#F7F6F2]/60'}`}>
+    <span className={`font-mono font-semibold ${highlight ? 'text-[#8AD74C]' : 'text-[#F7F6F2]/60'}`}>
       {label}
     </span>
   );
@@ -70,80 +70,73 @@ function CellPrice({ label, highlight }: { label: string; highlight?: boolean })
 const comparisonRows = [
   {
     feature: 'Sensing Method',
-    nih01: <CellYes label="FLIR Thermal + Quad-Gas + Humidity" />,
+    nih01: <CellYes label="FLIR Thermal + Quad-Gas (Target)" />,
     miFlora: <CellNo label="Soil EC probe" />,
     sustee: <CellNo label="Water capillary" />,
     generic: <CellNo label="Soil EC probe" />,
   },
   {
-    feature: 'Plant Speech / Voice Output',
-    nih01: <CellYes label="NTE™ (8 languages)" />,
+    feature: 'Plant Voice Synthesis',
+    nih01: <CellYes label="NTE™ Neural Voice Concept" />,
     miFlora: <CellNo label="None" />,
     sustee: <CellNo label="None" />,
     generic: <CellNo label="None" />,
   },
   {
-    feature: 'FLIR Thermal Camera',
-    nih01: <CellYes label="Lepton 3.5 (160×120)" />,
+    feature: 'Thermal Array Optics',
+    nih01: <CellYes label="FLIR Lepton 3.5 Target" />,
     miFlora: <CellNo label="Not included" />,
     sustee: <CellNo label="Not included" />,
     generic: <CellNo label="Not included" />,
   },
   {
     feature: 'VOC / Gas Analysis',
-    nih01: <CellYes label="Bosch BME688" />,
+    nih01: <CellYes label="Bosch BME688 Target" />,
     miFlora: <CellNo label="None" />,
     sustee: <CellNo label="None" />,
     generic: <CellNo label="None" />,
   },
   {
-    feature: 'VPD Measurement',
-    nih01: <CellYes label="Calculated real-time" />,
+    feature: 'VPD Calculation',
+    nih01: <CellYes label="Calculated Real-Time" />,
     miFlora: <CellNo label="Not supported" />,
     sustee: <CellNo label="Not supported" />,
     generic: <CellNo label="Not supported" />,
   },
   {
-    feature: 'On-Device AI',
-    nih01: <CellYes label="ARM Cortex-M4 NPU" />,
+    feature: 'On-Device AI Engine',
+    nih01: <CellYes label="ESP32-S3 TinyML Compute" />,
     miFlora: <CellNo label="None" />,
     sustee: <CellNo label="None" />,
     generic: <CellNo label="None" />,
   },
   {
     feature: 'Cloud Dependency',
-    nih01: <CellYes label="Fully offline" />,
+    nih01: <CellYes label="Local Edge Inference" />,
     miFlora: <CellWarn label="Required" />,
     sustee: <CellYes label="None" />,
     generic: <CellYes label="None" />,
   },
   {
     feature: 'Housing Material',
-    nih01: <CellYes label="Kiln-Fired Ceramic" />,
+    nih01: <CellYes label="Artisan Ceramic Concept" />,
     miFlora: <CellNo label="Plastic" />,
     sustee: <CellNo label="Plastic" />,
     generic: <CellNo label="Plastic" />,
   },
   {
-    feature: 'Species Database',
-    nih01: <CellYes label="847+ species" />,
+    feature: 'Species Research',
+    nih01: <CellYes label="Growing Research Library" />,
     miFlora: <CellNo label="15 species" />,
     sustee: <CellNo label="Not applicable" />,
     generic: <CellNo label="Not applicable" />,
   },
   {
-    feature: 'Right to Repair',
-    nih01: <CellYes label="7 Years" />,
-    miFlora: <CellNo label="Proprietary" />,
-    sustee: <CellNo label="Disposable" />,
-    generic: <CellNo label="None" />,
-  },
-  {
-    feature: 'Price',
-    nih01: <CellPrice label="₹24,999" highlight />,
-    miFlora: <CellPrice label="₹2,499" />,
-    sustee: <CellPrice label="₹1,899" />,
-    generic: <CellPrice label="₹299–899" />,
+    feature: 'Commercial Stage',
+    nih01: <CellPrice label="Research Prototype" highlight />,
+    miFlora: <CellPrice label="Commercial Product" />,
+    sustee: <CellPrice label="Commercial Product" />,
+    generic: <CellPrice label="Commercial Product" />,
   },
 ];
 
@@ -152,19 +145,19 @@ const differentiators = [
     icon: Camera,
     title: 'Thermal Biometrics, Not Soil Probes',
     desc:
-      'NIH-01 reads leaf surface temperature using FLIR Lepton 3.5 — detecting stomatal closure, water stress gradients, and photosynthetic activity before any visible wilting. Soil probes measure dirt. NIH-01 measures the plant itself.',
+      'NIH-01 is designed to observe leaf surface temperature using thermal optics — evaluating stomatal dynamics and water stress gradients. Soil probes measure external dirt; NIH-01 observes the plant itself.',
   },
   {
     icon: Mic,
-    title: 'Plants That Actually Speak',
+    title: 'Natural Plant Speech Concept',
     desc:
-      'Neural Translation Engine™ converts sensor fusion data into grammatically coherent plant speech across 8 languages. No app required. The NIH-01 tells you, in plain language, what your plant is experiencing right now.',
+      'The Nature Translation Engine™ concept maps biophysical sensor data into natural language plant expressions. Translating complex biophysics into accessible human insights.',
   },
   {
     icon: Cpu,
-    title: 'Intelligence Lives On the Device',
+    title: 'Intelligence Lives on the Device',
     desc:
-      "With an ARM Cortex-M4 NPU running TensorFlow Lite Micro, every inference happens locally at under 45ms latency. No cloud latency. No subscription. No data sold. Your plant's biometric data stays in your home.",
+      'Designed around the ESP32-S3 microcontroller running quantized TinyML models. Inference is designed to execute locally for complete home privacy.',
   },
 ];
 
@@ -176,15 +169,13 @@ export default function ComparisonPage() {
       {/* Hero */}
       <section className="pt-36 pb-20 px-4">
         <div className="max-w-5xl mx-auto text-center space-y-6">
-          <Badge variant="lime">Product Comparison</Badge>
+          <Badge variant="lime">Conceptual Comparison</Badge>
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-[#F7F6F2] leading-tight">
-            No Sensor Has Done
-            <br className="hidden md:block" /> This Before.
+            A New Approach to
+            <br className="hidden md:block" /> Plant Intelligence.
           </h1>
           <p className="text-[#A3B18A] text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
-            NIH-01 is not a soil probe with better marketing. It is a plant biometric
-            intelligence hub — a fundamentally different category of device. Here&apos;s
-            the proof.
+            NIH-01 is not another plastic soil probe. It is a research prototype exploring non-invasive plant biometrics and edge AI.
           </p>
         </div>
       </section>
@@ -197,12 +188,12 @@ export default function ComparisonPage() {
               <thead>
                 <tr className="border-b border-white/10 bg-[#0F2B18]/60">
                   <th className="text-left px-6 py-5 text-xs uppercase tracking-widest text-[#A3B18A] font-semibold w-[200px]">
-                    Feature
+                    Capability
                   </th>
                   <th className="text-left px-6 py-5 text-xs uppercase tracking-widest font-bold">
                     <span className="flex items-center gap-2 text-[#8AD74C]">
                       <span className="inline-block w-2 h-2 rounded-full bg-[#8AD74C]" />
-                      NIH-01
+                      NIH-01 Concept
                     </span>
                   </th>
                   <th className="text-left px-6 py-5 text-xs uppercase tracking-widest text-[#F7F6F2]/50 font-semibold">
@@ -236,14 +227,6 @@ export default function ComparisonPage() {
               </tbody>
             </table>
           </div>
-
-          {/* Footnote */}
-          <div className="mt-8 text-center">
-            <p className="text-[#A3B18A] text-sm italic max-w-2xl mx-auto leading-relaxed">
-              &ldquo;NIH-01 doesn&apos;t compete in the same category as soil sensors.
-              It&apos;s the first plant biometric intelligence hub.&rdquo;
-            </p>
-          </div>
         </div>
       </section>
 
@@ -251,9 +234,9 @@ export default function ComparisonPage() {
       <section className="py-20 px-4 border-t border-white/5">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14 space-y-3">
-            <Badge variant="gold">Why It&apos;s Different</Badge>
+            <Badge variant="gold">Architectural Vision</Badge>
             <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-              Three Reasons NIH-01 Stands Alone
+              Three Pillars of the NIH-01 Concept
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -278,24 +261,18 @@ export default function ComparisonPage() {
       {/* CTA */}
       <section className="py-24 px-4">
         <div className="max-w-3xl mx-auto text-center space-y-8">
-          <Badge variant="glass">Batch 01 — Limited Units</Badge>
+          <Badge variant="glass">Founding Research Cohort</Badge>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-            The Benchmark Has Changed.
+            Help Shape Nature Intelligence.
           </h2>
           <p className="text-[#A3B18A] text-base md:text-lg leading-relaxed">
-            Join the waitlist for NIH-01. Batch 01 ships to a limited number of early
-            adopters across India. Reserve your spot before they&apos;re gone.
+            Join the research waitlist for NIH-01. Participate in prototype testing cohorts and help validate our plant biophysics models.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/product#waitlist">
+            <Link href="/waitlist">
               <Button variant="primary" size="lg">
-                Join the Waitlist
+                Join Research Waitlist
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
-            <Link href="/product/specifications">
-              <Button variant="secondary" size="lg">
-                Full Specifications
               </Button>
             </Link>
           </div>
