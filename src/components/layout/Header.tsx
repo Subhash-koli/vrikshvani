@@ -138,12 +138,12 @@ export const Header: React.FC = () => {
               className="flex items-center gap-2.5 group cursor-pointer focus:outline-none"
               aria-label="Vriksh Vani Home"
             >
-              <div className="relative w-8 h-8 rounded-xl bg-[#0F2B18] border border-[#8AD74C]/40 flex items-center justify-center p-1 group-hover:border-[#8AD74C] transition-all shadow-lime-glow shrink-0">
+              <div className="relative w-9 h-9 rounded-xl bg-[#0F2B18] border border-[#8AD74C]/50 flex items-center justify-center p-1 group-hover:border-[#8AD74C] group-hover:shadow-[0_0_15px_rgba(138,215,76,0.4)] transition-all shadow-lime-glow shrink-0">
                 <Image
-                  src="/assets/vrikshvani_logo/Vriksh vani logo icon.png"
+                  src="/assets/vrikshvani_logo/vrikshvani-emblem-gold-ring.png"
                   alt="Vriksh Vani Logo"
-                  width={24}
-                  height={24}
+                  width={28}
+                  height={28}
                   className="object-contain"
                   priority
                   unoptimized
@@ -151,7 +151,7 @@ export const Header: React.FC = () => {
               </div>
               <div className="flex flex-col text-left">
                 <span className="font-display font-extrabold text-base sm:text-lg tracking-tight text-[#F7F6F2] group-hover:text-[#8AD74C] transition-colors leading-tight">
-                  Vriksh vani
+                  Vriksh Vani
                 </span>
                 <span className="text-[10px] text-[#A3B18A] tracking-normal font-sans hidden sm:inline leading-none mt-0.5">
                   Let Your Plants Speak

@@ -36,11 +36,11 @@ export const HomeHero: React.FC = () => {
         {/* ─────────────────────────────────────────────────────────────────────────────
             2. SURGICAL VIGNETTE GRADIENT SYSTEM FOR CRISP TEXT READABILITY
            ───────────────────────────────────────────────────────────────────────────── */}
-        {/* Horizontal Desktop Gradient: Darkens text column on the left (0% to 55%), leaving the NIH-01 bot on the right crystal clear */}
-        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#070B08] via-[#070B08]/85 via-50% to-transparent z-10" />
+        {/* Horizontal Desktop Gradient: Darkens text column on the left (0% to 50%), leaving the NIH-01 robot on the right 100% crystal clear */}
+        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#070B08] via-[#070B08]/85 via-45% to-transparent z-10" />
 
         {/* Vertical Mobile/Tablet Gradient */}
-        <div className="lg:hidden absolute inset-0 bg-gradient-to-b from-[#070B08]/95 via-[#070B08]/60 to-[#070B08] z-10" />
+        <div className="lg:hidden absolute inset-0 bg-gradient-to-b from-[#070B08]/95 via-[#070B08]/55 to-[#070B08] z-10" />
 
         {/* Top Header Fade */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#070B08] via-[#070B08]/70 to-transparent z-10" />
@@ -59,9 +59,9 @@ export const HomeHero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* =========================================================================
-              LEFT COLUMN (60% Width on Desktop): Headline, Subtitle, CTAs & Tech Bar
+              LEFT COLUMN (60% Width on Desktop): Headline, Subtitle, CTAs, Live Voice Card & Tech Bar
              ========================================================================= */}
-          <div className="lg:col-span-7 xl:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 sm:space-y-7">
+          <div className="lg:col-span-7 xl:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 sm:space-y-6">
 
             {/* Pill Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0F2B18]/90 border border-[#8AD74C]/40 text-xs sm:text-sm font-medium text-[#8AD74C] shadow-[0_0_20px_rgba(138,215,76,0.25)] backdrop-blur-xl">
@@ -109,8 +109,23 @@ export const HomeHero: React.FC = () => {
               </Link>
             </div>
 
+            {/* Live Plant Voice Telemetry Output Card (Placed in Left Column to avoid blocking robot) */}
+            <div className="w-full max-w-xl p-4 rounded-2xl bg-[#0F2B18]/85 border border-[#8AD74C]/45 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.8)] space-y-2">
+              <div className="flex items-center justify-between text-xs text-[#8AD74C] font-mono flex-wrap gap-2">
+                <span className="flex items-center gap-1.5 font-bold">
+                  <Sparkles className="w-3.5 h-3.5 text-[#8AD74C] animate-pulse" /> Live NTE™ Spoken Plant Output
+                </span>
+                <span className="text-[10px] text-[#A3B18A] bg-white/5 px-2.5 py-0.5 rounded-full border border-white/10">
+                  Stomata: Open · VPD: 0.92 kPa
+                </span>
+              </div>
+              <p className="text-xs sm:text-sm italic text-[#F7F6F2] font-sans leading-snug">
+                "My stomata are open and photosynthesizing happily! I could use a tiny sip of water around 4:00 PM."
+              </p>
+            </div>
+
             {/* Micro Technology Pill Bar */}
-            <div className="pt-3 border-t border-white/10 w-full max-w-xl flex items-center justify-center lg:justify-start gap-4 flex-wrap text-xs font-mono text-[#A3B18A]">
+            <div className="pt-2 border-t border-white/10 w-full max-w-xl flex items-center justify-center lg:justify-start gap-4 flex-wrap text-xs font-mono text-[#A3B18A]">
               <span className="flex items-center gap-1.5 text-[#8AD74C]">
                 <Sun className="w-3.5 h-3.5" /> FLIR Thermal Optics
               </span>
@@ -127,38 +142,9 @@ export const HomeHero: React.FC = () => {
           </div>
 
           {/* =========================================================================
-              RIGHT COLUMN (40% Width on Desktop): Floating Voice Speech Bubble Card
+              RIGHT COLUMN (40% Width on Desktop): Kept 100% unobstructed so the 3D NIH-01 robot shines!
              ========================================================================= */}
-          <div className="lg:col-span-5 xl:col-span-5 relative flex flex-col justify-between items-center lg:items-end py-6 lg:py-0 w-full min-h-[300px] lg:min-h-[440px]">
-
-            {/* Top-Right Floating Telemetry Node */}
-            <div className="w-full max-w-xs p-3 sm:p-4 rounded-2xl bg-[#070B08]/90 border border-[#8AD74C]/40 backdrop-blur-xl shadow-[0_15px_35px_rgba(0,0,0,0.85)] flex items-center gap-3 self-center lg:self-end hover:border-[#8AD74C] transition-all duration-300 transform hover:-translate-y-1">
-              <div className="w-9 h-9 rounded-xl bg-[#0F2B18] border border-[#8AD74C]/60 flex items-center justify-center shrink-0 shadow-lime-glow">
-                <Leaf className="w-4 h-4 text-[#8AD74C]" />
-              </div>
-              <div className="flex flex-col text-left flex-1">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold font-display text-[#F7F6F2]">Transpiration Active</span>
-                  <span className="text-[9px] font-mono text-[#8AD74C] bg-[#0F2B18] px-2 py-0.5 rounded-full border border-[#8AD74C]/30">VPD: 0.92 kPa</span>
-                </div>
-                <span className="text-[11px] text-[#A3B18A] font-mono mt-0.5">Stomata: Fully Open</span>
-              </div>
-            </div>
-
-            {/* Bottom-Right Floating Spoken Voice Speech Bubble Card */}
-            <div className="w-full max-w-sm mt-auto p-4 rounded-2xl bg-[#0F2B18]/90 border border-[#8AD74C]/50 backdrop-blur-2xl shadow-[0_20px_45px_rgba(0,0,0,0.9)] space-y-2 relative self-center lg:self-end">
-              <div className="flex items-center justify-between text-xs text-[#8AD74C] font-mono">
-                <span className="flex items-center gap-1.5 font-bold">
-                  <Sparkles className="w-3.5 h-3.5" /> NTE™ Spoken Plant Output
-                </span>
-                <span className="text-[10px] text-[#A3B18A] bg-white/5 px-2 py-0.5 rounded-full">Calm Mode</span>
-              </div>
-              <p className="text-xs sm:text-sm italic text-[#F7F6F2] font-sans leading-snug">
-                "My stomata are open and photosynthesizing happily! I could use a tiny sip of water around 4:00 PM."
-              </p>
-            </div>
-
-          </div>
+          <div className="hidden lg:block lg:col-span-5 xl:col-span-5 pointer-events-none min-h-[440px]" />
 
         </div>
       </div>
