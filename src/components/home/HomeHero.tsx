@@ -44,7 +44,7 @@ export const HomeHero: React.FC = () => {
           {/* =========================================================================
               LEFT COLUMN (60% Width on Desktop): Headline, Subtitle, CTAs, Live Voice Card & Tech Bar
              ========================================================================= */}
-          <div className="lg:col-span-7 xl:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 sm:space-y-6">
+          <div className="lg:col-span-7 xl:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 sm:space-y-6 bg-[#070B08]/80 backdrop-blur-2xl border border-[#8AD74C]/25 p-6 sm:p-8 lg:p-9 rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.9)]">
 
             {/* Pill Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0F2B18]/90 border border-[#8AD74C]/40 text-xs sm:text-sm font-medium text-[#8AD74C] shadow-[0_0_20px_rgba(138,215,76,0.25)] backdrop-blur-xl">
