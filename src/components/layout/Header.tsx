@@ -5,9 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
 import { Menu, X, Leaf, ChevronDown, Search } from 'lucide-react';
-import dynamic from 'next/dynamic';
-
-const SearchModal = dynamic(() => import('@/components/ui/SearchModal'), { ssr: false });
+import SearchModal from '@/components/ui/SearchModal';
 
 type NavItem = {
   label: string;
@@ -108,7 +106,7 @@ export const Header: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="flex items-center justify-between">
 
-          {/* Mobile Hamburger Toggle (Left on Mobile as in Reference Image 02) */}
+          {/* Mobile Hamburger Toggle */}
           <div className="flex items-center lg:hidden">
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -216,7 +214,7 @@ export const Header: React.FC = () => {
             })}
           </nav>
 
-          {/* Right Action Button (Desktop: Full Pill Button / Mobile: Compact Pill) */}
+          {/* Right Action Button */}
           <div className="flex items-center gap-2.5">
             <button
               onClick={() => setSearchOpen(true)}
