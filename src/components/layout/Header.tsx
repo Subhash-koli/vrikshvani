@@ -146,6 +146,7 @@ export const Header: React.FC = () => {
                   height={24}
                   className="object-contain"
                   priority
+                  unoptimized
                 />
               </div>
               <div className="flex flex-col text-left">
