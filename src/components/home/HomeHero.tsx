@@ -29,7 +29,7 @@ export const HomeHero: React.FC = () => {
           <img
             src="/assets/theme_backgrounds/hero-bg-desktop.png"
             alt="Vriksh Vani NHI-01 Nature Intelligence Hub in sunlit biophilic forest stream"
-            className="w-full h-full object-cover object-[center_35%] lg:object-center transition-all duration-700"
+            className="w-full h-full object-contain sm:object-cover object-top lg:object-center transition-all duration-500"
           />
         </picture>
 
