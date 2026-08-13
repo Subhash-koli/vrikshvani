@@ -10,67 +10,71 @@ export const HomeHero: React.FC = () => {
     <section className="relative overflow-hidden bg-[#070B08] min-h-screen flex flex-col">
 
       {/* ─────────────────────────────────────────────────────────────────────────────
-          1. DEVICE-RESPONSIVE BIOPHILIC HERO BACKGROUND (Mobile / Tablet / Desktop)
+          1. DEVICE-RESPONSIVE BACKGROUND
+          - Single <picture> element: server-safe, no hydration issues
+          - object-position tuned per breakpoint via Tailwind responsive arbitrary values
+          - Mobile: robot at top-center (15% from top)
+          - Tablet: robot on right at 30% height
+          - Desktop: robot anchored at 70% horizontal, fully exposed
          ───────────────────────────────────────────────────────────────────────────── */}
       <div className="absolute inset-0 z-0 pointer-events-none">
 
-        {/* ── Desktop Background (≥1024px): Robot anchored to right 40% ── */}
-        <div className="hidden lg:block absolute inset-0">
+        {/* Background image – device-specific via HTML5 <picture> */}
+        <picture className="absolute inset-0 w-full h-full block">
+          {/* Mobile (<640px): portrait crop, robot centered top */}
+          <source media="(max-width: 639px)" srcSet="/assets/theme_backgrounds/hero-bg-mobile.png" />
+          {/* Tablet (640–1023px): landscape crop, robot on right */}
+          <source media="(min-width: 640px) and (max-width: 1023px)" srcSet="/assets/theme_backgrounds/hero-bg-tablet.png" />
+          {/* Desktop (≥1024px): widescreen, robot right-anchored */}
           <img
             src="/assets/theme_backgrounds/hero-bg-desktop.png"
             alt="Vriksh Vani NHI-01 Nature Intelligence Hub in sunlit biophilic forest stream"
-            className="w-full h-full object-cover object-right-center"
-            style={{ objectPosition: '70% center' }}
+            className={[
+              'w-full h-full object-cover',
+              // Mobile: pull robot into upper portion of frame
+              '[object-position:center_15%]',
+              // Tablet: shift right to expose robot
+              'sm:[object-position:60%_30%]',
+              // Desktop: anchor robot to right 30% of canvas
+              'lg:[object-position:70%_center]',
+            ].join(' ')}
           />
-          {/* Narrow left gradient – stops at 45% so the robot is fully exposed */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(to right, #070B08 0%, #070B08cc 25%, #070B0880 38%, transparent 52%)',
-            }}
-          />
-          {/* Bottom fade into section 2 */}
-          <div className="absolute bottom-0 left-0 right-0 h-32"
-            style={{ background: 'linear-gradient(to top, #070B08 0%, #070B08bb 40%, transparent 100%)' }}
-          />
-        </div>
+        </picture>
 
-        {/* ── Tablet Background (640–1023px): Robot peeking right ── */}
-        <div className="hidden sm:block lg:hidden absolute inset-0">
-          <img
-            src="/assets/theme_backgrounds/hero-bg-tablet.png"
-            alt="Vriksh Vani NHI-01 hero background tablet"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: '60% 30%' }}
-          />
-          {/* Light overlay – preserve robot visibility on the right */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(to bottom, #070B08cc 0%, #070B0840 30%, #070B0860 70%, #070B08ee 100%)',
-            }}
-          />
-        </div>
+        {/* ── Desktop gradient: left text protection only, robot right side fully clear ── */}
+        <div
+          className="hidden lg:block absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to right, #070B08 0%, #070B08d0 22%, #070B0890 36%, #070B0830 48%, transparent 58%)',
+          }}
+        />
 
-        {/* ── Mobile Background (<640px): Robot centered top ── */}
-        <div className="sm:hidden absolute inset-0">
-          <img
-            src="/assets/theme_backgrounds/hero-bg-mobile.png"
-            alt="Vriksh Vani NHI-01 hero background mobile"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 15%' }}
-          />
-          {/* Top bar behind header + bottom fade for card readability */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(to bottom, #070B08e0 0%, #070B0850 18%, #070B0820 40%, #070B0880 72%, #070B08f2 100%)',
-            }}
-          />
-        </div>
+        {/* ── Tablet gradient: light top/bottom fade, middle open for robot ── */}
+        <div
+          className="hidden sm:block lg:hidden absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to bottom, #070B08cc 0%, #070B0850 22%, #070B0830 45%, #070B0870 72%, #070B08ee 100%)',
+          }}
+        />
+
+        {/* ── Mobile gradient: top bar dark (header), middle clear (robot), bottom dark (cards) ── */}
+        <div
+          className="sm:hidden absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to bottom, #070B08e8 0%, #070B0860 16%, #070B0820 38%, #070B0870 68%, #070B08f0 100%)',
+          }}
+        />
+
+        {/* ── Bottom section-2 transition fade (all devices) ── */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-28"
+          style={{
+            background: 'linear-gradient(to top, #070B08 0%, #070B08c0 50%, transparent 100%)',
+          }}
+        />
 
       </div>
 
@@ -82,7 +86,8 @@ export const HomeHero: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
             {/* =========================================================================
-                LEFT COLUMN – text + CTAs
+                LEFT COLUMN – text, CTAs, live card, tech bar
+                Desktop: 6/12 cols (≈50%) – gradient covers this zone only
                ========================================================================= */}
             <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 sm:space-y-6">
 
@@ -143,7 +148,7 @@ export const HomeHero: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm italic text-[#F7F6F2] font-sans leading-snug">
-                  &quot;My stomata are open and photosynthesizing happily! I could use a tiny sip of water around 4:00 PM.&quot;
+                  &ldquo;My stomata are open and photosynthesizing happily! I could use a tiny sip of water around 4:00 PM.&rdquo;
                 </p>
               </div>
 
@@ -165,9 +170,10 @@ export const HomeHero: React.FC = () => {
             </div>
 
             {/* =========================================================================
-                RIGHT COLUMN – 100% open viewport for the 3D robot to show through
+                RIGHT COLUMN – transparent spacer so the 3D robot in the bg shows through
+                No content, no overlays — the background image is the hero here
                ========================================================================= */}
-            <div className="hidden lg:block lg:col-span-6 xl:col-span-6 pointer-events-none min-h-[500px]" />
+            <div className="hidden lg:block lg:col-span-6 xl:col-span-6 pointer-events-none min-h-[480px]" aria-hidden="true" />
 
           </div>
         </div>
@@ -179,7 +185,7 @@ export const HomeHero: React.FC = () => {
       <div className="relative z-20 flex justify-center pb-6">
         <a
           href="#problem-section"
-          className="flex flex-col items-center gap-1 text-xs text-[#A3B18A]/80 hover:text-[#8AD74C] transition-colors group"
+          className="flex flex-col items-center gap-1 text-xs text-[#A3B18A]/80 hover:text-[#8AD74C] transition-colors"
         >
           <span className="font-mono text-[9px] tracking-widest uppercase">Scroll to Discover</span>
           <ChevronDown className="w-4 h-4 animate-bounce text-[#8AD74C]" />
