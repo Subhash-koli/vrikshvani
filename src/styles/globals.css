@@ -42,11 +42,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  section {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 500px;
-  }
-
   ::selection {
     background-color: var(--color-lime-vibrant);
     color: var(--color-obsidian);

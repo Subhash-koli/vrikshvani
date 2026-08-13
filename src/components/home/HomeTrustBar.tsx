@@ -39,7 +39,7 @@ const DESIGN_PRINCIPLES = [
 
 export const HomeTrustBar: React.FC = () => {
   return (
-    <section className="py-14 bg-[#030504] border-y border-white/5 overflow-hidden">
+    <section id="philosophy" className="py-14 bg-[#030504] border-y border-white/5 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 space-y-8">
         <ScrollReveal>
           <div className="flex flex-wrap items-center justify-center gap-2 border-b border-white/5 pb-6">
