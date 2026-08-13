@@ -45,9 +45,9 @@ const glossaryTerms = [
     definition: 'The differential temperature between the leaf surface (T_leaf) and the ambient air (T_air). A negative ΔT indicates active transpiration cooling; a positive ΔT signals heat stress or closed stomata.',
   },
   {
-    term: 'TinyML On-Device NPU',
+    term: 'TinyML On-Device Inference',
     category: 'AI Hardware',
-    definition: 'An embedded neural network processing pipeline running quantized INT8 inference on the ESP32-S3 microcontroller. Processes bio-signal vectors in under 128ms with zero cloud dependency and 100% data privacy.',
+    definition: 'An embedded neural network processing pipeline running quantized INT8 inference on the ESP32-S3 microcontroller (dual Xtensa LX7 cores, 240MHz). Processes bio-signal vectors locally with zero cloud dependency and 100% data privacy. Note: ESP32-S3 has no dedicated NPU — inference runs on the general-purpose CPU cores using optimised TensorFlow Lite Micro.',
   },
   {
     term: 'Stomatal Conductance',

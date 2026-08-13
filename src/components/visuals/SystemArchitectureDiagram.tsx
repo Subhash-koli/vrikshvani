@@ -62,7 +62,7 @@ export default function SystemArchitectureDiagram() {
           {/* Layer 2: Compute */}
           <g transform="translate(335, 20)">
             <rect width="250" height="280" rx="12" fill="url(#layerGrad)" stroke="#8AD74C" strokeWidth="1.5" />
-            <text x="20" y="35" font-family="monospace" fontSize="12" fontWeight="bold" fill="#8AD74C">LAYER 2: TinyML NPU ENGINE</text>
+            <text x="20" y="35" font-family="monospace" fontSize="12" fontWeight="bold" fill="#8AD74C">LAYER 2: TinyML INFERENCE ENGINE</text>
 
             <rect x="20" y="55" width="210" height="60" rx="8" fill="#070B08" stroke="#8AD74C" strokeWidth="1" />
             <text x="35" y="80" fontFamily="system-ui" fontSize="12" fontWeight="bold" fill="#F7F6F2">ESP32-S3 Dual-Core</text>
