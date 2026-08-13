@@ -25,7 +25,7 @@ export const HomeHero: React.FC = () => {
             alt="Vriksh Vani NHI-01 Nature Intelligence Hub in sunlit biophilic forest"
             className={[
               'w-full h-full object-cover',
-              '[object-position:center_10%]',
+              '[object-position:center_5%]',
               'sm:[object-position:58%_25%]',
               'lg:[object-position:66%_center]',
             ].join(' ')}
@@ -44,7 +44,7 @@ export const HomeHero: React.FC = () => {
 
         {/* ── Mobile: clear at top (robot shows), dark at bottom (content readable) ── */}
         <div className="sm:hidden absolute inset-0" style={{
-          background: 'linear-gradient(to top, #070B08 0%, #070B08f5 30%, #070B08c0 50%, #070B0860 64%, transparent 80%)',
+          background: 'linear-gradient(to top, #070B08 0%, #070B08f8 35%, #070B08d0 55%, #070B0868 68%, transparent 82%)',
         }} />
 
         {/* Section 2 transition */}
