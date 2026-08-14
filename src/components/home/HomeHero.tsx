@@ -206,11 +206,12 @@ export const HomeHero: React.FC = () => {
                                        drop-shadow-[0_0_40px_rgba(138,215,76,0.35)]">
                         {slide.line2}
                       </span>
-                      {/* Gradient leaf — hugs last letter */}
+                      {/* Gradient leaf — large, clear, glowing next to the hero word */}
                       <div
-                        className="absolute -top-[0.5em] -right-[0.35em]
-                                   w-[0.28em] h-[0.28em] rotate-12
-                                   drop-shadow-[0_0_10px_rgba(168,224,85,0.95)]"
+                        className="absolute -top-1 -right-4 sm:-top-3 sm:-right-7 lg:-top-4 lg:-right-10
+                                   w-6 h-6 sm:w-10 sm:h-10 lg:w-14 lg:h-14
+                                   rotate-12 pointer-events-none
+                                   drop-shadow-[0_0_16px_rgba(168,224,85,0.9)]"
                         style={{
                           background: 'linear-gradient(to bottom, #A8E055 0%, #6BBF28 50%, #2E6B12 100%)',
                           WebkitMaskImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12'/%3E%3C/svg%3E")`,
