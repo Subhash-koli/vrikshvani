@@ -96,8 +96,8 @@ export const HomeSolutionDemo: React.FC = () => {
                 onClick={() => setActiveTab(idx)}
                 className={`px-5 py-2.5 rounded-full text-xs font-medium transition-all duration-300 ${
                   activeTab === idx
-                    ? 'bg-[#8AD74C] text-[#070B08] font-bold shadow-lime-glow scale-105'
-                    : 'bg-[#0F2B18]/60 text-[#A3B18A] hover:text-[#F7F6F2] border border-white/10 hover:border-[#8AD74C]/40'
+                    ? 'bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] text-white font-bold scale-105'
+                    : 'bg-[#040E06]/20 text-[#A3B18A] hover:text-[#F7F6F2] border border-white/10 hover:border-[#7EC840]/40'
                 }`}
               >
                 {p.label}

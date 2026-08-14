@@ -249,7 +249,7 @@ export default function OrderConfirmPage() {
                   href={sl.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium border border-white/15 rounded-btn text-[#F7F6F2] hover:border-[#8AD74C]/40 hover:text-[#8AD74C] transition-all duration-200 bg-[#0F2B18]/40"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl text-white transition-all duration-200 bg-[#040E06]/20 border border-[#7EC840]/45 hover:bg-[#040E06]/35 hover:border-[#A0D850]/70"
                 >
                   {sl.label}
                 </a>

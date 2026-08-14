@@ -68,7 +68,7 @@ export const HomeProductShowcase: React.FC = () => {
                   onClick={() => setActiveColorway(idx)}
                   className={`px-4 py-2 rounded-full text-xs font-medium cursor-pointer transition-all duration-300 ${
                     activeColorway === idx
-                      ? `bg-[#0F2B18] ${c.borderColor} border ${c.textColor} shadow-lime-glow`
+                      ? 'bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] text-white font-bold scale-105'
                       : 'bg-white/5 border border-white/10 text-[#F7F6F2]/60 hover:border-white/20'
                   }`}
                 >

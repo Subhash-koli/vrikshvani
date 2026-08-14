@@ -117,7 +117,7 @@ export default function SustainabilityPage() {
             <p className="text-sm text-[#A3B18A] max-w-xl mx-auto">
               Full LCA (Life Cycle Assessment), Scope 1–3 emissions, supplier audit summary, and reforestation GPS coordinates — published annually.
             </p>
-            <button className="px-6 py-3 bg-[#0F2B18] border border-[#8AD74C]/30 rounded-btn text-sm font-medium text-[#8AD74C] hover:bg-[#8AD74C] hover:text-[#070B08] transition-all">
+            <button className="px-6 py-3 bg-[#040E06]/20 border border-[#7EC840]/50 rounded-xl text-sm font-medium text-white hover:bg-[#040E06]/35 hover:border-[#A0D850]/75 transition-all">
               Download Full Report (PDF, 4.2 MB)
             </button>
           </Card>

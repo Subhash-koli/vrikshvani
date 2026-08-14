@@ -98,9 +98,9 @@ export const AppUiGallery: React.FC = () => {
               <button
                 key={s.id}
                 onClick={() => setActiveTab(s.id)}
-                className={`px-4 py-2.5 rounded-btn text-xs font-semibold cursor-pointer transition-all duration-300 flex items-center gap-2 border ${
+                className={`px-4 py-2.5 rounded-xl text-xs font-semibold cursor-pointer transition-all duration-300 flex items-center gap-2 border ${
                   isActive
-                    ? 'bg-[#0F2B18] border-[#8AD74C] text-[#8AD74C] shadow-lime-glow'
+                    ? 'bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] border-transparent text-white'
                     : 'bg-white/5 border-white/10 text-[#A3B18A] hover:text-[#F7F6F2] hover:border-white/20'
                 }`}
               >
