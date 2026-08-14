@@ -294,42 +294,48 @@ export const Header: React.FC = () => {
         <div className="flex lg:hidden items-center justify-between py-1">
           
           {/* Far Left: Hamburger Menu Button [≡] (Clean white lines icon, no box border) */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-1.5 text-white hover:text-[#8AD74C] transition-colors focus:outline-none shrink-0"
-            aria-label="Toggle navigation menu"
-          >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6 text-white" />}
-          </button>
+          <div className="w-20 flex items-center justify-start">
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-1.5 text-white hover:text-[#8AD74C] transition-colors focus:outline-none"
+              aria-label="Toggle navigation menu"
+            >
+              {mobileOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+            </button>
+          </div>
 
-          {/* Center: Brand Logo + Subtitle */}
-          <Link href="/" className="flex items-center gap-2 group cursor-pointer focus:outline-none text-center">
-            <Image
-              src="/assets/vrikshvani_logo/1000397742-removebg-preview.png"
-              alt="Vriksh Vani Logo"
-              width={34}
-              height={34}
-              className="object-contain shrink-0"
-              priority
-              unoptimized
-            />
-            <div className="flex flex-col text-left leading-none">
-              <span className="font-display font-extrabold text-base tracking-tight text-white group-hover:text-[#8AD74C] transition-colors">
-                Vriksh vani
-              </span>
-              <span className="text-[9px] text-[#A3B18A] tracking-tight font-sans mt-0.5">
-                Let Your Plants Speak
-              </span>
-            </div>
-          </Link>
+          {/* Center: Brand Logo + Subtitle (Perfectly centered in flex-1) */}
+          <div className="flex-1 flex items-center justify-center">
+            <Link href="/" className="flex items-center gap-2 group cursor-pointer focus:outline-none">
+              <Image
+                src="/assets/vrikshvani_logo/vrikshvani-iconmark-flat-light.png"
+                alt="Vriksh Vani Logo"
+                width={30}
+                height={30}
+                className="object-contain shrink-0"
+                priority
+                unoptimized
+              />
+              <div className="flex flex-col text-left leading-none">
+                <span className="font-display font-extrabold text-base tracking-tight text-white group-hover:text-[#8AD74C] transition-colors">
+                  Vriksh vani
+                </span>
+                <span className="text-[9px] text-[#A3B18A] tracking-normal font-sans mt-0.5">
+                  Let Your Plants Speak
+                </span>
+              </div>
+            </Link>
+          </div>
 
           {/* Far Right: Compact Gradient Join Button */}
-          <Link href="/waitlist" className="shrink-0">
-            <button className="flex items-center gap-1.5 rounded-xl px-3.5 py-1.5 text-xs font-bold text-white bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60] transition-all active:scale-95 shadow-[0_2px_12px_rgba(80,180,40,0.4)]">
-              <Leaf className="w-3.5 h-3.5 fill-white text-white shrink-0" />
-              <span>Join</span>
-            </button>
-          </Link>
+          <div className="w-20 flex items-center justify-end">
+            <Link href="/waitlist" className="shrink-0">
+              <button className="flex items-center gap-1.5 rounded-xl px-3.5 py-1.5 text-xs font-bold text-white bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60] transition-all active:scale-95 shadow-[0_2px_12px_rgba(80,180,40,0.4)]">
+                <Leaf className="w-3.5 h-3.5 fill-white text-white shrink-0" />
+                <span>Join</span>
+              </button>
+            </Link>
+          </div>
 
         </div>
 
