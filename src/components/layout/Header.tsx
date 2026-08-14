@@ -280,9 +280,9 @@ export const Header: React.FC = () => {
               <Button
                 variant="primary"
                 size="sm"
-                className="rounded-full px-5 py-2 font-bold text-xs bg-[#3FAE2A] hover:bg-[#8AD74C] text-[#070B08] shadow-[0_0_20px_rgba(63,174,42,0.4)] flex items-center gap-1.5 transition-all hover:scale-105"
+                className="flex items-center gap-1.5 hover:scale-105 px-5 py-2 text-xs"
               >
-                <Leaf className="w-3.5 h-3.5 fill-current" />
+                <Leaf className="w-3.5 h-3.5 fill-white" />
                 <span>Join the Waitlist</span>
               </Button>
             </Link>
@@ -385,8 +385,8 @@ export const Header: React.FC = () => {
 
           <div className="pt-4 border-t border-white/10 space-y-3 pb-8">
             <Link href="/waitlist" onClick={() => setMobileOpen(false)}>
-              <Button variant="primary" size="lg" className="w-full rounded-full flex items-center justify-center gap-2">
-                <Leaf className="w-4 h-4 fill-current" />
+              <Button variant="primary" size="lg" className="w-full flex items-center justify-center gap-2">
+                <Leaf className="w-4 h-4 fill-white" />
                 <span>Join Founding Waitlist →</span>
               </Button>
             </Link>

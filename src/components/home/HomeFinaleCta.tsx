@@ -100,7 +100,9 @@ export const HomeFinaleCta: React.FC = () => {
                 <div className="pt-2">
                   <a
                     href={`/waitlist/confirmed?queue=${responseData.queuePosition}&code=${responseData.referralCode}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-btn bg-[#8AD74C] hover:bg-[#3FAE2A] text-[#070B08] font-display font-bold text-xs shadow-lime-glow transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-display font-bold text-xs text-white transition-all
+                               bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050]
+                               hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60]"
                   >
                     View Community Dashboard →
                   </a>

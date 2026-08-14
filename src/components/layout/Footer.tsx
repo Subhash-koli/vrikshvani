@@ -112,11 +112,14 @@ export const Footer: React.FC = () => {
               <p className="text-sm text-[#A3B18A]">
                 Join our research waitlist to get early updates and participate in prototype testing.
               </p>
-              <Link href="/waitlist" className="block">
-                <button className="w-full h-12 bg-[#3FAE2A] hover:bg-[#8AD74C] text-[#070B08] font-display font-bold text-sm rounded-btn transition-all duration-300 shadow-lime-glow">
-                  Join the Waitlist →
-                </button>
-              </Link>
+                <Link href="/waitlist" className="block">
+                  <button className="w-full h-12 rounded-xl font-display font-bold text-sm text-white
+                                     bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050]
+                                     hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60]
+                                     transition-all duration-300">
+                    Join the Waitlist →
+                  </button>
+                </Link>
             </div>
           </div>
         </div>

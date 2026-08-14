@@ -15,13 +15,23 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   ...props
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-btn transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-lime-vibrant/50 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
+  // rounded-xl (12px) — matches the hero button reference design
+  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#8AD74C]/50 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
 
   const variants = {
-    primary: 'bg-[#3FAE2A] hover:bg-[#8AD74C] text-[#070B08] font-semibold shadow-lime-glow hover:shadow-lime-glow',
-    secondary: 'bg-[#0F2B18]/70 hover:bg-[#0F2B18]/90 text-[#F7F6F2] border border-white/10 backdrop-blur-2xl hover:border-[#8AD74C]/40',
-    outline: 'border border-[#8AD74C] text-[#8AD74C] hover:bg-[#8AD74C]/10',
+    // Cinematic gradient: near-black forest BL → rich lime center → electric citrus TR
+    primary: 'bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60] text-white font-bold',
+
+    // Dark glass with lime-tinted border — secondary CTA
+    secondary: 'bg-[#040E06]/40 hover:bg-[#040E06]/60 text-[#F7F6F2] border border-[#7EC840]/40 hover:border-[#A0D850]/65',
+
+    // Minimal glass outline — tertiary/watch-demo style
+    outline: 'bg-[#040E06]/20 border border-[#7EC840]/50 text-white hover:bg-[#040E06]/35 hover:border-[#A0D850]/75',
+
+    // Ghost — nav/text-only links
     ghost: 'text-[#F7F6F2] hover:text-[#8AD74C] hover:bg-white/5',
+
+    // Gold — reserved for research/special tier
     gold: 'bg-[#E8D07C] hover:bg-[#f0df9e] text-[#070B08] font-semibold shadow-gold-glow',
   };
 

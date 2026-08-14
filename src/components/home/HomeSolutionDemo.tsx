@@ -216,7 +216,9 @@ export const HomeSolutionDemo: React.FC = () => {
                 <button
                   onClick={handlePlayVoice}
                   disabled={isPlaying}
-                  className="px-6 py-3 rounded-btn bg-[#3FAE2A] hover:bg-[#8AD74C] text-[#070B08] font-display font-bold text-xs flex items-center gap-2 shadow-lime-glow transition-all duration-300"
+                  className="px-5 py-2.5 rounded-xl font-display font-bold text-xs text-white flex items-center gap-2 transition-all duration-300
+                             bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050]
+                             hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60]"
                 >
                   <Volume2 className="w-4 h-4" />
                   {isPlaying ? 'Playing Voice Sample...' : 'Listen to Voice Concept (Simulated)'}

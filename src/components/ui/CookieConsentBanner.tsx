@@ -65,13 +65,15 @@ export const CookieConsentBanner: React.FC = () => {
         <div className="grid grid-cols-2 gap-2">
           <button
             onClick={() => accept('essential')}
-            className="h-9 bg-[#0F2B18] border border-white/10 rounded-btn text-xs font-medium text-[#F7F6F2] hover:border-[#8AD74C]/30 transition-colors"
+            className="h-9 bg-[#040E06]/20 border border-[#7EC840]/40 rounded-xl text-xs font-medium text-white hover:border-[#A0D850]/65 transition-all"
           >
             Essential Only
           </button>
           <button
             onClick={() => accept('all')}
-            className="h-9 bg-[#3FAE2A] hover:bg-[#8AD74C] rounded-btn text-xs font-bold text-[#070B08] transition-colors shadow-lime-glow"
+            className="h-9 rounded-xl text-xs font-bold text-white transition-all
+                       bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050]
+                       hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60]"
           >
             Accept All
           </button>

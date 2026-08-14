@@ -81,7 +81,10 @@ export default function WaitlistPage() {
           </p>
 
           <div className="pt-4 flex justify-center gap-4 flex-wrap">
-            <a href="#reserve" className="px-8 py-4 rounded-btn bg-[#3FAE2A] hover:bg-[#8AD74C] text-[#070B08] font-display font-bold text-base shadow-lime-glow transition-all">
+            <a href="#reserve"
+               className="px-8 py-4 rounded-xl font-display font-bold text-base text-white transition-all
+                          bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050]
+                          hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60]">
               Reserve Your Unit Below ↓
             </a>
           </div>

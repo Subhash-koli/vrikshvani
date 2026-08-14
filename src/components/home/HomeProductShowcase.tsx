@@ -102,10 +102,10 @@ export const HomeProductShowcase: React.FC = () => {
 
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <Link href="/product">
-                <Button variant="primary" className="rounded-full">Explore Hardware Specs →</Button>
+                <Button variant="primary">Explore Hardware Specs →</Button>
               </Link>
               <Link href="/waitlist">
-                <Button variant="outline" className="rounded-full">Join Prototype Cohort</Button>
+                <Button variant="outline">Join Prototype Cohort</Button>
               </Link>
             </div>
           </div>
