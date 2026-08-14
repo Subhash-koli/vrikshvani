@@ -113,7 +113,7 @@ export const HomeHero: React.FC = () => {
           <source media="(min-width: 640px) and (max-width: 1023px)" srcSet="/assets/theme_backgrounds/hero-bg-tablet.png" />
           <img
             src="/assets/theme_backgrounds/hero-bg-desktop.png"
-            alt="Vriksh Vani NHI-01 Nature Intelligence Hub in sunlit biophilic forest"
+            alt="Vriksh Vani NIH-01 Nature Intelligence Hub in sunlit biophilic forest"
             className={[
               'w-full h-full object-cover',
               '[object-position:center_50%]',

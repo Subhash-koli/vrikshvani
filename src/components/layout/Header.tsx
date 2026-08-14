@@ -18,7 +18,7 @@ const navGroups: NavGroup[] = [
   {
     label: 'Product',
     children: [
-      { label: 'NHI-01 Concept Overview', href: '/product', desc: 'The thermal biometrics ceramic hub concept' },
+      { label: 'NIH-01 Concept Overview', href: '/product', desc: 'The thermal biometrics ceramic hub concept' },
       { label: 'Features & Capabilities', href: '/product/features', desc: 'Target capabilities & non-invasive sensing' },
       { label: 'Ceramic Colorways', href: '/product/colorways', desc: 'Biophilic Sage & Cream White concepts' },
       { label: 'Technical Specifications', href: '/product/specifications', desc: 'ESP32-S3 TinyML hardware datasheet' },

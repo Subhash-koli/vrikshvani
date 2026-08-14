@@ -42,7 +42,7 @@ export const HomeProductShowcase: React.FC = () => {
           {/* Product Render Display Container */}
           <div className="nidl-glass rounded-3xl p-6 md:p-10 relative flex flex-col items-center justify-center min-h-[420px] border border-[#8AD74C]/25 shadow-2xl">
             <Badge variant="lime" className="absolute top-6 left-6">
-              NHI-01 Hardware Vision
+              NIH-01 Hardware Vision
             </Badge>
 
             {/* Product Image */}
@@ -85,7 +85,7 @@ export const HomeProductShowcase: React.FC = () => {
               Handcrafted stoneware. Nature-first intelligence.
             </h2>
             <p className="text-[#A3B18A] text-base leading-relaxed">
-              NHI-01 is being designed around tactile ceramic stoneware bodies, custom optical thermal windows, and biophilic companion aesthetics that integrate naturally into living spaces and botanical collections.
+              NIH-01 is being designed around tactile ceramic stoneware bodies, custom optical thermal windows, and biophilic companion aesthetics that integrate naturally into living spaces and botanical collections.
             </p>
 
             <div className="space-y-3 pt-2">
