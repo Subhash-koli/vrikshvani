@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Outfit, Poppins, Libre_Baskerville } from "next/font/google";
 import Script from "next/script";
 import "@/styles/globals.css";
 import CookieConsentBanner from "@/components/ui/CookieConsentBanner";
@@ -16,6 +16,22 @@ const inter = Inter({
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
+  display: "swap",
+});
+
+// Poppins — bold brand name "Vriksh Vani"
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+// Libre Baskerville — serif tagline "LET YOUR PLANT SPEAK" (Cambria-like)
+const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-baskerville",
   display: "swap",
 });
 
@@ -75,7 +91,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} dark scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${outfit.variable} ${poppins.variable} ${libreBaskerville.variable} dark scroll-smooth`}>
       <head>
         {/* Google Analytics GA4 */}
         <Script

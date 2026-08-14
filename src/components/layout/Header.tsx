@@ -152,11 +152,11 @@ export const Header: React.FC = () => {
                 />
               </div>
               <div className="flex flex-col text-left">
-                <span className="font-display font-extrabold text-base sm:text-lg tracking-tight text-[#F7F6F2] group-hover:text-[#8AD74C] transition-colors leading-tight">
+                <span className="font-brand font-extrabold text-base sm:text-lg tracking-tight text-[#F7F6F2] group-hover:text-[#8AD74C] transition-colors leading-tight">
                   Vriksh Vani
                 </span>
-                <span className="text-[9px] text-[#A3B18A] tracking-wider font-mono uppercase hidden sm:inline leading-none mt-0.5">
-                  LET YOUR PLANTS SPEAK
+                <span className="font-serif-logo text-[8px] sm:text-[9px] text-[#A3B18A] tracking-[0.22em] normal-case hidden sm:inline leading-none mt-0.5">
+                  Let Your Plant Speak
                 </span>
               </div>
             </Link>

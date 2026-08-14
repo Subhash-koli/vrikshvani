@@ -42,6 +42,8 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
         display: ['var(--font-outfit)', 'Outfit', 'sans-serif'],
+        brand: ['var(--font-poppins)', 'Poppins', 'sans-serif'],
+        'serif-logo': ['var(--font-baskerville)', 'Libre Baskerville', 'Georgia', 'Cambria', 'serif'],
       },
       boxShadow: {
         'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
