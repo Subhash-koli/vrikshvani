@@ -8,14 +8,15 @@ import { Input } from '@/components/ui/Input';
 import { Mail, MessageSquare, Building2, Clock, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
-type Reason = 'general' | 'enterprise' | 'press' | 'technical' | 'accessibility';
+type Reason = 'general' | 'research' | 'prototype' | 'press' | 'technical' | 'partnership';
 
 const reasons: { value: Reason; label: string; desc: string }[] = [
-  { value: 'general', label: 'General Enquiry', desc: 'Product questions, waitlist, pricing' },
-  { value: 'enterprise', label: 'Enterprise / Bulk Order', desc: 'Fleet pricing, API access, SLAs' },
-  { value: 'press', label: 'Press & Media', desc: 'Interviews, review units, press kit' },
-  { value: 'technical', label: 'Technical / Developer', desc: 'SDK, open-data API, integrations' },
-  { value: 'accessibility', label: 'Accessibility', desc: 'Accessibility barriers and feedback' },
+  { value: 'general', label: 'General Inquiry', desc: 'Project questions & research waitlist' },
+  { value: 'research', label: 'Research Collaboration', desc: 'University, academic & lab research' },
+  { value: 'prototype', label: 'Prototype Testing Cohort', desc: 'Early hardware testbed cohort' },
+  { value: 'press', label: 'Press & Media', desc: 'Interviews & press kit requests' },
+  { value: 'technical', label: 'Technical / Developer', desc: 'SDK, open-data API, botanical AI' },
+  { value: 'partnership', label: 'Partnership', desc: 'Botanical garden & institutional partners' },
 ];
 
 export const ContactClient: React.FC = () => {
@@ -55,7 +56,7 @@ export const ContactClient: React.FC = () => {
                 Let&apos;s Talk Plants &amp; Technology.
               </h1>
               <p className="text-sm text-[#A3B18A] leading-relaxed">
-                Whether you&apos;re curious about Batch 01 reservations, an enterprise plant installation, or just want to discuss VPD science — we&apos;re happy to hear from you.
+                Whether you&apos;re curious about prototype cohort testing, research collaboration, or VPD science — we&apos;re happy to hear from you.
               </p>
             </div>
 
@@ -64,21 +65,21 @@ export const ContactClient: React.FC = () => {
                 <Mail className="w-5 h-5 text-[#8AD74C] shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm font-semibold text-[#F7F6F2]">hello@vrikshvani.com</p>
-                  <p className="text-xs text-[#A3B18A]">General enquiries</p>
+                  <p className="text-xs text-[#A3B18A]">General enquiries &amp; waitlist</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Building2 className="w-5 h-5 text-[#E8D07C] shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm font-semibold text-[#F7F6F2]">enterprise@vrikshvani.com</p>
-                  <p className="text-xs text-[#A3B18A]">B2B & fleet enquiries</p>
+                  <p className="text-sm font-semibold text-[#F7F6F2]">research@vrikshvani.com</p>
+                  <p className="text-xs text-[#A3B18A]">Academic &amp; research inquiries</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <MessageSquare className="w-5 h-5 text-[#8AD74C] shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm font-semibold text-[#F7F6F2]">press@vrikshvani.com</p>
-                  <p className="text-xs text-[#A3B18A]">Media & press kit requests</p>
+                  <p className="text-xs text-[#A3B18A]">Media &amp; press kit requests</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">

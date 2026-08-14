@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-xs font-mono text-[#8AD74C]">
                 <ShieldCheck className="w-4 h-4 shrink-0" />
-                <span>100% Volatile SRAM Frame Overwrite Privacy</span>
+                <span>Designed to minimize collection &amp; retention of visual/audio data</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-mono text-[#A3B18A]">
                 <MapPin className="w-4 h-4 shrink-0" />
