@@ -8,17 +8,17 @@ import Link from 'next/link';
 import { Search, Leaf } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Species Encyclopedia — Vriksh Vani',
-  description: 'Browse the Vriksh Vani species database: validated VPD parameters, care profiles, and biometric baselines for 847+ indoor plant species.',
+  title: 'Target Species Library Concept — Vriksh Vani',
+  description: 'Explore the Vriksh Vani species biophysics library concept: target VPD ranges, care profiles, and biometric baselines for indoor plant species.',
 };
 
 const categories = [
-  { name: 'Tropical Foliage', href: '/species/tropical', count: '312 species', emoji: '🌴', desc: 'Monsteras, Pothos, Aroids, Philodendrons, and more.' },
-  { name: 'Succulents & Cacti', href: '/species/succulents', count: '178 species', emoji: '🌵', desc: 'Low-VPD tolerant species with unique gas resistance profiles.' },
-  { name: 'Orchids', href: '/species/orchids', count: '94 species', emoji: '🌸', desc: 'Epiphytic orchids with precision humidity and temperature requirements.' },
-  { name: 'Ferns & Mosses', href: '/species/ferns', count: '67 species', emoji: '🌿', desc: 'High-humidity species requiring constant VPD monitoring.' },
-  { name: 'Mediterranean', href: '/species/mediterranean', count: '89 species', emoji: '🫒', desc: 'Drought-tolerant species including Lavender, Rosemary, and Olive.' },
-  { name: 'Edible Herbs', href: '/species/herbs', count: '107 species', emoji: '🌱', desc: 'Culinary and medicinal herbs with precise watering profiles.' },
+  { name: 'Tropical Foliage', href: '/species/tropical', count: '312 species target', emoji: '🌴', desc: 'Monsteras, Pothos, Aroids, Philodendrons, and more.' },
+  { name: 'Succulents & Cacti', href: '/species/succulents', count: '178 species target', emoji: '🌵', desc: 'Low-VPD tolerant species with unique gas resistance profiles.' },
+  { name: 'Orchids', href: '/species/orchids', count: '94 species target', emoji: '🌸', desc: 'Epiphytic orchids with precision humidity and temperature requirements.' },
+  { name: 'Ferns & Mosses', href: '/species/ferns', count: '67 species target', emoji: '🌿', desc: 'High-humidity species requiring constant VPD monitoring.' },
+  { name: 'Mediterranean', href: '/species/mediterranean', count: '89 species target', emoji: '🫒', desc: 'Drought-tolerant species including Lavender, Rosemary, and Olive.' },
+  { name: 'Edible Herbs', href: '/species/herbs', count: '107 species target', emoji: '🌱', desc: 'Culinary and medicinal herbs with precise watering profiles.' },
 ];
 
 const featuredSpecies = [
@@ -38,11 +38,11 @@ export default function SpeciesPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
           <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <Badge variant="lime">Species Encyclopedia</Badge>
+            <Badge variant="lime">Target Species Library Concept</Badge>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-[#F7F6F2]">
-              847 Species. Every Voice Mapped.
+              Targeting 800+ Species Profiles.
             </h1>
-            <p className="text-[#A3B18A]">The Vriksh Vani species database contains validated VPD target ranges, care profiles, and biometric baselines for every supported plant.</p>
+            <p className="text-[#A3B18A]">The Vriksh Vani species biophysics library concept outlines target VPD parameters, care profiles, and thermal transpiration baselines for indoor flora.</p>
           </div>
 
           {/* Search */}
