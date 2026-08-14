@@ -302,39 +302,39 @@ export const Header: React.FC = () => {
 
         </div>
 
-        {/* ── MOBILE & TABLET HEADER (< lg) — Matching Reference Image 2 ── */}
-        <div className="flex lg:hidden items-center justify-between py-1">
+        {/* ── MOBILE & TABLET HEADER (< lg) — Clean Non-Overlapping Layout ── */}
+        <div className="flex lg:hidden items-center justify-between py-1 gap-1">
           
-          {/* Far Left: Hamburger Menu Button [≡] (Clean white lines icon, no box border) */}
-          <div className="w-20 flex items-center justify-start">
+          {/* Far Left: Hamburger Menu Button [≡] */}
+          <div className="w-9 sm:w-20 flex items-center justify-start shrink-0">
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-1.5 text-white hover:text-[#8AD74C] transition-colors focus:outline-none"
+              className="p-1 text-white hover:text-[#8AD74C] transition-colors focus:outline-none"
               aria-label="Toggle navigation menu"
             >
-              {mobileOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+              {mobileOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-white" />}
             </button>
           </div>
 
-          {/* Center: Brand Logo + Subtitle (Perfectly centered in flex-1) */}
-          <div className="flex-1 flex items-center justify-center">
-            <Link href="/" className="flex items-center gap-2.5 group cursor-pointer focus:outline-none">
+          {/* Center: Brand Logo + Subtitle */}
+          <div className="flex-1 flex items-center justify-center min-w-0">
+            <Link href="/" className="flex items-center gap-1.5 sm:gap-2.5 group cursor-pointer focus:outline-none shrink-0">
               <Image
                 src="/assets/vrikshvani_logo/vrikshvani-3d-symbol-logo.png"
                 alt="Vriksh Vani Logo"
                 width={64}
                 height={64}
-                className="w-14 h-14 sm:w-[60px] sm:h-[60px] object-contain shrink-0 drop-shadow-[0_4px_14px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-300"
+                className="w-10 h-10 sm:w-[60px] sm:h-[60px] object-contain shrink-0 drop-shadow-[0_4px_14px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-300"
                 priority
                 unoptimized
               />
               {/* Parent: fit-content sized ONLY by the name (tagline is absolute) */}
               <div
                 className="flex flex-col text-left relative"
-                style={{ width: 'fit-content', paddingBottom: '12px' }}
+                style={{ width: 'fit-content', paddingBottom: '10px' }}
               >
                 {/* Name — defines the reference width */}
-                <span className="font-brand font-extrabold text-base sm:text-lg tracking-tight
+                <span className="font-brand font-extrabold text-[13px] xs:text-sm sm:text-lg tracking-tight
                                  text-white group-hover:text-[#8AD74C] transition-colors
                                  leading-tight whitespace-nowrap block">
                   Vriksh Vani
@@ -343,7 +343,7 @@ export const Header: React.FC = () => {
                 {/* Tagline — absolute, nowrap forces single line, justify spreads to fill name width */}
                 <span
                   className="absolute bottom-0 left-0 font-serif-logo
-                             text-[7.5px] sm:text-[8.5px] text-[#A3B18A] uppercase
+                             text-[6.5px] xs:text-[7px] sm:text-[8.5px] text-[#A3B18A] uppercase
                              block leading-none w-full whitespace-nowrap"
                   style={{ textAlign: 'justify', textAlignLast: 'justify' }}
                 >
@@ -354,10 +354,10 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Far Right: Compact Gradient Join Button */}
-          <div className="w-20 flex items-center justify-end">
+          <div className="w-auto sm:w-20 flex items-center justify-end shrink-0">
             <Link href="/waitlist" className="shrink-0">
-              <button className="flex items-center gap-1.5 rounded-xl px-3.5 py-1.5 text-xs font-bold text-white bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60] transition-all active:scale-95 shadow-[0_2px_12px_rgba(80,180,40,0.4)]">
-                <Leaf className="w-3.5 h-3.5 fill-white text-white shrink-0" />
+              <button className="flex items-center gap-1 sm:gap-1.5 rounded-xl px-2.5 py-1 sm:px-3.5 sm:py-1.5 text-[11px] sm:text-xs font-bold text-white bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60] transition-all active:scale-95 shadow-[0_2px_12px_rgba(80,180,40,0.4)]">
+                <Leaf className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-white text-white shrink-0" />
                 <span>Join</span>
               </button>
             </Link>
