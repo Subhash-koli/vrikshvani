@@ -87,13 +87,13 @@ export default function VpdGuidePage() {
           <Card className="p-8 space-y-4">
             <div className="flex items-center gap-3">
               <Droplets className="w-6 h-6 text-[#8AD74C]" />
-              <h2 className="font-display text-xl font-bold text-[#F7F6F2]">How NIH-01 Monitors VPD</h2>
+              <h2 className="font-display text-xl font-bold text-[#F7F6F2]">How NIH-01 Target Architecture Monitors VPD</h2>
             </div>
             <p className="text-[#A3B18A] leading-relaxed">
-              NIH-01 uses the SHT41 precision humidity sensor (±1.8% RH, ±0.2°C) and the FLIR Lepton thermal camera to compute two independent VPD values: ambient VPD (from air temperature and humidity) and leaf-surface VPD (from measured leaf temperature). The delta between these two values is a direct indicator of transpiration rate.
+              The NIH-01 target hardware design combines precision SHT41 humidity/temperature sensing (&plusmn;1.8% RH, &plusmn;0.2&deg;C) with FLIR thermal optics to evaluate two correlated values: ambient VPD and leaf-surface VPD. The thermal delta (&Delta;T) between these values serves as an empirical indicator of transpiration rate.
             </p>
             <p className="text-[#A3B18A] leading-relaxed">
-              Readings are computed at 1Hz continuously. When VPD deviates from your species&apos; validated target range, NTE™ Voice is triggered within 60 seconds.
+              In prototype benchtop validation, continuous telemetry is processed locally. When VPD deviates from target species parameters, the NTE™ neural voice model expresses physiological stress indicators.
             </p>
           </Card>
 
