@@ -141,33 +141,33 @@ const materials = [
 const assemblySteps = [
   {
     num: '01',
-    title: 'Clay Wedging & Centring',
-    desc: 'Karnataka stoneware clay is wedged by hand to remove air pockets, centred on the wheel, and opened to the target wall thickness of 6mm.',
+    title: 'Clay Wedging & Form Calibration',
+    desc: 'Stoneware clay is wedged to remove air pockets and thrown to the target body wall thickness of 6mm.',
   },
   {
     num: '02',
-    title: 'Wheel Throwing & Rim Forming',
-    desc: 'The body is thrown to form — a tapered cylinder with a wide acoustic mouth and a recessed base plate for electronics mounting. Each piece is signed wet.',
+    title: 'Wheel Forming & Port Machining',
+    desc: 'The body is shaped to form a biophilic cylinder with an acoustic cavity and recessed base plate for sensor PCB mounting.',
   },
   {
     num: '03',
-    title: 'Bisque Firing at 900°C',
-    desc: 'Dried pieces enter the kiln for bisque firing. This hardens the clay, burns off organics, and prepares the surface for the thermal window inset.',
+    title: 'Bisque Firing Target (900°C)',
+    desc: 'Dried ceramic shells undergo bisque firing to harden the clay and prepare the surface for the thermal optics inset.',
   },
   {
     num: '04',
-    title: 'LWIR Window Bonding',
-    desc: 'The FLIR borosilicate LWIR window is hand-placed into the pre-formed recess and sealed with a military-grade silicone bead. Cured 24 hours.',
+    title: 'LWIR Thermal Window Seating',
+    desc: 'The FLIR LWIR thermal window target is placed into the pre-formed recess and sealed with a high-temperature silicone bead.',
   },
   {
     num: '05',
-    title: 'High Firing at 1250°C',
-    desc: 'The assembly re-enters the kiln for 14-hour high-firing. The ceramic vitrifies around the window, forming a permanent, zero-porosity bond.',
+    title: 'High Firing Vitrification (1250°C)',
+    desc: 'The ceramic shell re-enters the kiln for high-firing to achieve stoneware vitrification and durability.',
   },
   {
     num: '06',
-    title: 'Electronics Seating & Firmware Flash',
-    desc: 'PCB, Lepton 3.5, BME688, and speaker are hand-seated and soldered in sequence. Firmware is flashed, species database loaded, and final QA signed off by the testing engineer.',
+    title: 'Prototype Assembly & Calibration',
+    desc: 'PCB, Lepton 3.5 core, BME688, and speaker driver are seated in sequence. Prototype firmware is flashed for benchtop sensor validation.',
   },
 ];
 
@@ -179,14 +179,13 @@ export default function CraftsmanshipPage() {
       {/* Hero */}
       <section className="pt-36 pb-20 px-4">
         <div className="max-w-5xl mx-auto text-center space-y-6">
-          <Badge variant="gold">Handcrafted in Bengaluru</Badge>
+          <Badge variant="gold">Handcrafted Ceramic Concept</Badge>
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-[#F7F6F2] leading-tight">
             Made Like Nothing Else
             <br className="hidden md:block" /> in Tech.
           </h1>
           <p className="text-[#A3B18A] text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Every NIH-01 begins as raw Karnataka clay and ends as a precision biometric
-            instrument, hand-signed by the ceramic artist and firmware engineer who built it.
+            Every NIH-01 shell concept explores raw stoneware clay formulation to unite precision biometric instrumentation with biophilic ceramic craftsmanship.
           </p>
         </div>
       </section>
