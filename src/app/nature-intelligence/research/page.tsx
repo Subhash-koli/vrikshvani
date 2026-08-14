@@ -5,7 +5,7 @@ import Footer from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { FlaskConical, BookOpen, Microscope } from 'lucide-react';
+import { FlaskConical, BookOpen, Microscope, Terminal, Code2, Download } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -109,6 +109,62 @@ export default function ResearchPage() {
                   className="inline-flex items-center gap-2 text-xs font-mono text-[#8AD74C] hover:underline"
                 >
                   Download Open Telemetry (JSON) &darr;
+                </a>
+              </div>
+            </Card>
+          </div>
+
+          {/* Open Python SDK */}
+          <div className="space-y-6">
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-3">
+                <Terminal className="w-6 h-6 text-[#8AD74C]" />
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-[#F7F6F2]">Open Biophysics SDK Concept</h2>
+              </div>
+              <span className="text-xs font-mono text-[#8AD74C] bg-[#8AD74C]/10 px-3 py-1 rounded-full border border-[#8AD74C]/20">
+                vrikshvani-py v0.1.0-alpha
+              </span>
+            </div>
+
+            <Card className="p-6 md:p-8 space-y-4 border-white/10 bg-[#030504]">
+              <div className="flex items-center justify-between text-xs font-mono text-[#A3B18A] border-b border-white/10 pb-3">
+                <div className="flex items-center gap-2">
+                  <Code2 className="w-4 h-4 text-[#8AD74C]" />
+                  <span>calculate_leaf_vpd.py</span>
+                </div>
+                <span>Python 3.10+</span>
+              </div>
+
+              <pre className="p-4 rounded-xl bg-[#070B08] font-mono text-xs text-[#8AD74C] overflow-x-auto leading-relaxed">
+{`import math
+
+def calculate_vpd(temp_c: float, rh_pct: float) -> float:
+    """Calculate Vapor Pressure Deficit (VPD) in kPa."""
+    vp_sat = 0.61078 * math.exp((17.27 * temp_c) / (temp_c + 237.3))
+    vp_act = vp_sat * (rh_pct / 100.0)
+    return round(vp_sat - vp_act, 2)
+
+def evaluate_transpiration_state(leaf_delta_c: float, vpd_kpa: float) -> str:
+    """Infer physiological leaf state from thermal delta and atmospheric VPD."""
+    if leaf_delta_c > 0.5 and vpd_kpa > 2.0:
+        return "PRE_WILTING_STRESS"
+    elif leaf_delta_c > 0.0:
+        return "TRANSPIRATION_RESTRICTION"
+    return "OPTIMAL_COOLING"
+
+# Test specimen telemetry
+vpd = calculate_vpd(temp_c=24.3, rh_pct=28.0)
+state = evaluate_transpiration_state(leaf_delta_c=1.2, vpd_kpa=vpd)
+print(f"Calculated VPD: {vpd} kPa | Inferred State: {state}")`}
+              </pre>
+              <div className="flex items-center justify-between text-xs text-[#A3B18A] pt-2">
+                <span>Open-source under MIT / CC-BY License</span>
+                <a
+                  href="/api/v1/telemetry/sample"
+                  target="_blank"
+                  className="text-[#8AD74C] hover:underline font-mono inline-flex items-center gap-1"
+                >
+                  <Download className="w-3.5 h-3.5" /> Sample Telemetry Payload
                 </a>
               </div>
             </Card>
