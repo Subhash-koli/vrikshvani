@@ -76,54 +76,52 @@ export const HomeHero: React.FC = () => {
                             text-center sm:text-left
                             space-y-2 sm:space-y-5">
 
-              {/* ── Category badge: tiny on mobile ── */}
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-4 sm:py-1.5
-                              rounded-full bg-[#0F2B18]/90 border border-[#8AD74C]/40
-                              text-[10px] sm:text-sm font-medium text-[#8AD74C]
-                              shadow-[0_0_16px_rgba(138,215,76,0.2)] backdrop-blur-xl">
-                <Leaf className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                <span>Nature Intelligence Category Creator</span>
-              </div>
 
               {/* ── Headline: Stacked ALL CAPS with size + color hierarchy ── */}
-              <h1 className="font-display font-black leading-none
-                             drop-shadow-[0_4px_28px_rgba(0,0,0,1)]
-                             tracking-tight">
+              <h1 className="font-display leading-none
+                             drop-shadow-[0_4px_28px_rgba(0,0,0,1)]">
 
-                {/* LET YOUR — supporting opener: white, wide tracking, smaller */}
-                <span className="block
-                                 text-[28px] sm:text-[48px] lg:text-[60px] xl:text-[72px]
+                {/* LET YOUR — normal weight, white, compact tracking
+                    Mobile: 5.5vw scales from 17.6px (320px) → 23.6px (430px)
+                    Tablet+: fixed 44px → 66px */}
+                <span className="block font-normal
+                                 text-[5.5vw] sm:text-[44px] lg:text-[54px] xl:text-[66px]
                                  text-[#F0EFEB]
-                                 tracking-[0.08em]
+                                 tracking-[0.06em]
                                  leading-none
                                  uppercase">
                   LET YOUR
                 </span>
 
-                {/* PLANTS — dominant brand word: green gradient, LARGEST */}
+                {/* PLANTS — black weight, cinematic shaded green, DOMINANT
+                    Mobile: 17vw scales from 54px (320px) → 73px (430px)
+                    Tablet+: fixed 128px → 192px */}
                 <div className="relative leading-[0.88]">
-                  <span className="block
-                                   text-[72px] sm:text-[128px] lg:text-[160px] xl:text-[192px]
-                                   font-black tracking-[-0.02em] leading-[0.88]
+                  <span className="block font-black
+                                   text-[17vw] sm:text-[128px] lg:text-[160px] xl:text-[192px]
+                                   tracking-[-0.02em] leading-[0.88]
                                    text-transparent bg-clip-text
-                                   bg-gradient-to-br from-[#3E8C20] via-[#8AD74C] to-[#C4F060]">
+                                   bg-gradient-to-b from-[#A8E055] via-[#6BBF28] to-[#2E6B12]
+                                   drop-shadow-[0_0_40px_rgba(138,215,76,0.35)]">
                     PLANTS
                   </span>
-                  {/* Leaf icon — anchored top-right of the PLANTS word */}
+                  {/* Leaf icon — top-right, glowing */}
                   <Leaf className="absolute -top-1 right-0
                                    sm:-top-2 sm:-right-2
                                    lg:-top-3 lg:-right-3
-                                   w-6 h-6 sm:w-10 sm:h-10 lg:w-14 lg:h-14
-                                   text-[#8AD74C] fill-[#8AD74C]/30
+                                   w-[4vw] h-[4vw] sm:w-9 sm:h-9 lg:w-12 lg:h-12
+                                   text-[#8AD74C] fill-[#8AD74C]/40
                                    drop-shadow-[0_0_14px_rgba(138,215,76,1)]
                                    rotate-12" />
                 </div>
 
-                {/* SPEAK — closing word: muted warm white, widest tracking, slightly smaller */}
-                <span className="block
-                                 text-[22px] sm:text-[40px] lg:text-[50px] xl:text-[60px]
-                                 text-[#B8B7B3]
-                                 tracking-[0.18em]
+                {/* SPEAK — bold weight, white, slightly larger than LET YOUR, widest tracking
+                    Mobile: 6.5vw scales from 20.8px (320px) → 27.95px (430px)
+                    Tablet+: fixed 52px → 78px */}
+                <span className="block font-bold
+                                 text-[6.5vw] sm:text-[52px] lg:text-[64px] xl:text-[78px]
+                                 text-[#F0EFEB]
+                                 tracking-[0.20em]
                                  leading-none mt-1
                                  uppercase">
                   SPEAK
@@ -131,16 +129,15 @@ export const HomeHero: React.FC = () => {
 
               </h1>
 
-              {/* ── Subtitle: super compact on mobile, full on tablet+ ── */}
-              <p className="text-[11px] sm:text-lg lg:text-xl
-                            text-[#F7F6F2]/85 sm:text-[#F7F6F2]/90
-                            max-w-[280px] sm:max-w-md
-                            leading-snug sm:leading-relaxed
+              {/* ── Subtitle: 2 lines, vw-based font scales with any device width ── */}
+              <p className="text-[2.8vw] sm:text-base lg:text-lg
+                            text-[#F7F6F2]/85
+                            max-w-[80vw] sm:max-w-sm lg:max-w-md
+                            leading-snug
                             drop-shadow-[0_2px_12px_rgba(0,0,0,1)]">
-                Your plant communicates every second through subtle thermal shifts.{' '}
+                Your plant communicates every second through subtle thermal shifts.<br />
                 <span className="text-[#8AD74C] font-semibold">Vriksh Vani</span>{' '}
-                <span className="hidden sm:inline">decodes these silent biophysical signals and translates them into plain human speech.</span>
-                <span className="sm:hidden">decodes these signals into plain speech.</span>
+                decodes these signals into plain speech.
               </p>
 
               {/* ── CTAs: compact & inline on mobile, full on tablet+ ── */}
