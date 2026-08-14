@@ -140,17 +140,15 @@ export const Header: React.FC = () => {
               className="flex items-center gap-2.5 group cursor-pointer focus:outline-none"
               aria-label="Vriksh Vani Home"
             >
-              <div className="relative w-10 h-10 rounded-xl bg-[#0F2B18] border border-[#8AD74C]/50 flex items-center justify-center p-1 group-hover:border-[#8AD74C] group-hover:shadow-[0_0_15px_rgba(138,215,76,0.4)] transition-all shadow-lime-glow shrink-0">
-                <Image
-                  src="/assets/vrikshvani_logo/vriksh vani 3d symboll logo.png"
-                  alt="Vriksh Vani Logo"
-                  width={36}
-                  height={36}
-                  className="object-contain"
-                  priority
-                  unoptimized
-                />
-              </div>
+              <Image
+                src="/assets/vrikshvani_logo/vriksh vani 3d symboll logo.png"
+                alt="Vriksh Vani Logo"
+                width={64}
+                height={64}
+                className="w-14 h-14 sm:w-[60px] sm:h-[60px] object-contain shrink-0 drop-shadow-[0_4px_14px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-300"
+                priority
+                unoptimized
+              />
               {/* Parent: fit-content sized ONLY by the name (tagline is absolute) */}
               <div
                 className="flex flex-col text-left relative"
@@ -324,9 +322,9 @@ export const Header: React.FC = () => {
               <Image
                 src="/assets/vrikshvani_logo/vriksh vani 3d symboll logo.png"
                 alt="Vriksh Vani Logo"
-                width={42}
-                height={42}
-                className="object-contain shrink-0 drop-shadow-[0_2px_8px_rgba(138,215,76,0.25)]"
+                width={64}
+                height={64}
+                className="w-14 h-14 sm:w-[60px] sm:h-[60px] object-contain shrink-0 drop-shadow-[0_4px_14px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-300"
                 priority
                 unoptimized
               />
