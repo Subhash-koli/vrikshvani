@@ -14,45 +14,45 @@ export const metadata: Metadata = {
 const commitments = [
   {
     icon: Factory,
-    title: 'Kiln-Fired Ceramic Housing',
+    title: 'Kiln-Fired Ceramic Shell Target',
     stat: '100%',
-    statLabel: 'Recyclable Stoneware',
-    body: 'The NIH-01 body is hand-thrown stoneware fired at 1,250°C — one of the most durable materials on Earth. Unlike ABS plastic, it will not degrade into microplastics. A broken housing can be returned to us for ceramic recycling. We use no virgin plastic anywhere in the product.',
+    statLabel: 'Recyclable Stoneware Target',
+    body: 'The NIH-01 shell design uses hand-thrown stoneware fired at 1,250°C — one of the most durable materials on Earth. Unlike ABS plastic, it will not degrade into microplastics. We target zero single-use plastics in our hardware casing.',
   },
   {
     icon: Zap,
     title: 'Ultra-Low Power Electronics',
     stat: '0.8W',
-    statLabel: 'Average Operational Draw',
-    body: 'The NIH-01 compute runs at ultra-low power draw — less than a LED nightlight. The ESP32-S3 dual-core microcontroller was chosen specifically for its energy-efficiency profile. Designed for continuous low-power operation.',
+    statLabel: 'Target Operational Draw',
+    body: 'The NIH-01 compute architecture runs at ultra-low power draw — less than an LED nightlight. The ESP32-S3 dual-core microcontroller was chosen specifically for its energy-efficiency profile. Designed for continuous low-power local processing.',
   },
   {
     icon: Recycle,
-    title: 'Conflict-Free & REACH-Compliant Electronics',
+    title: 'REACH-Compliant Electronics Sourcing Target',
     stat: 'REACH',
-    statLabel: 'EU Compliance Certified',
-    body: 'All PCB materials, solder, and component sourcing comply with EU REACH regulation, RoHS Directive, and the Dodd-Frank conflict minerals reporting standard. Our FLIR module and Bosch sensors are sourced through certified supply chains with documented ESG audits.',
+    statLabel: 'Target Compliance Standard',
+    body: 'All target PCB materials, solder, and component sourcing directions aim to comply with EU REACH regulation and RoHS Directive standards. Our sensor integration targets FLIR and Bosch modules with documented supply chain ESG audits.',
   },
   {
     icon: TreePine,
-    title: 'Reforestation Programme',
+    title: 'Reforestation Intent',
     stat: '10 Trees',
-    statLabel: 'Planted Per Unit Sold',
-    body: 'Every NIH-01 sold funds the planting of 10 native trees in the Western Ghats biodiversity hotspot through our partnership with the Foundation for Ecological Research, Advocacy and Learning (FERAL). Batch 01 alone will reforest over 1,000 trees by Q2 2027.',
+    statLabel: 'Target Per Unit Allocated',
+    body: 'We target funding the planting of 10 native trees in the Western Ghats biodiversity hotspot for every prototype cohort allocation in partnership with ecological research organizations.',
   },
   {
     icon: Leaf,
-    title: 'Carbon-Offset Shipping',
+    title: 'Plastic-Free Packaging Direction',
     stat: 'Net Zero',
-    statLabel: 'Shipping & Packaging',
-    body: 'All Vriksh Vani shipments are offset through verified Gold Standard carbon credits purchased via Climate Partner. Packaging is 100% recycled cardboard with soy-based ink printing. No single-use plastic void fill. Inner packaging is shredded paper from our studio offcuts.',
+    statLabel: 'Packaging Target',
+    body: 'Packaging direction targets 100% recycled cardboard with soy-based ink printing and sugarcane pulp inserts. No single-use plastic void fill.',
   },
   {
     icon: Heart,
-    title: 'Right to Repair Commitment',
-    stat: '7 Years',
-    statLabel: 'Spare Parts Guarantee',
-    body: 'We commit to providing spare parts — sensor modules, speaker, USB-C port, PCB — for a minimum of 7 years from the last date of sale for each NIH-01 generation. Repair manuals are open-sourced and published on our GitHub. We actively oppose planned obsolescence.',
+    title: 'Right to Repair Design Principle',
+    stat: 'Open SDK',
+    statLabel: 'Open Hardware Principles',
+    body: 'We are designing NIH-01 with modular sensor ports, accessible PCBs, and open-source repair guides on GitHub to actively oppose planned hardware obsolescence.',
   },
 ];
 
@@ -76,10 +76,10 @@ export default function SustainabilityPage() {
           {/* Key Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { val: '0%', label: 'Virgin Plastic', color: 'text-[#8AD74C]' },
-              { val: '10', label: 'Trees Per Unit Sold', color: 'text-[#8AD74C]' },
-              { val: '0.8W', label: 'Average Power Draw', color: 'text-[#E8D07C]' },
-              { val: '7yr', label: 'Spare Parts Guarantee', color: 'text-[#E8D07C]' },
+              { val: '0%', label: 'Virgin Plastic Target', color: 'text-[#8AD74C]' },
+              { val: '10', label: 'Trees Target / Cohort Unit', color: 'text-[#8AD74C]' },
+              { val: '0.8W', label: 'Target Compute Draw', color: 'text-[#E8D07C]' },
+              { val: 'Open', label: 'Hardware Principles', color: 'text-[#E8D07C]' },
             ].map((s, idx) => (
               <Card key={idx} className="text-center py-6 space-y-1">
                 <p className={`font-display text-3xl font-bold ${s.color}`}>{s.val}</p>
