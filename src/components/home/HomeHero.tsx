@@ -1,20 +1,111 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Play, Leaf, Sun, Activity, ChevronDown, Sparkles, ShieldCheck, ArrowRight } from 'lucide-react';
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   HERO SLIDES — same format & color hierarchy, only content differs
+   line1  : small white CAPS above  (e.g. "LET YOUR")
+   line2  : BIG bold lime-to-dark gradient — the HERO word
+   line3  : medium bold white CAPS below (e.g. "SPEAK")
+   subtitle: 2-line description, with optional highlighted span
+──────────────────────────────────────────────────────────────────────────────── */
+const SLIDES = [
+  {
+    id: 'speak',
+    line1: 'LET YOUR',
+    line2: 'PLANTS',
+    line3: 'SPEAK',
+    subtitle: (
+      <>
+        Your plant speaks through thermal shifts every second.{' '}
+        <br />
+        <span className="text-[#8AD74C] font-semibold">Vriksh Vani</span>{' '}
+        decodes these signals into plain speech.
+      </>
+    ),
+  },
+  {
+    id: 'nih',
+    line1: 'MEET THE',
+    line2: 'NATURE',
+    line3: 'INTELLIGENCE HUB',
+    subtitle: (
+      <>
+        The NIH-01 reads FLIR thermal biometrics &amp; quad-gas VOC.{' '}
+        <br />
+        Your home becomes a{' '}
+        <span className="text-[#8AD74C] font-semibold">living, breathing ecosystem.</span>
+      </>
+    ),
+  },
+  {
+    id: 'thermal',
+    line1: 'SEE WHAT',
+    line2: 'PLANTS',
+    line3: 'FEEL',
+    subtitle: (
+      <>
+        Invisible heat signatures reveal plant stress, hydration &amp; health.{' '}
+        <br />
+        <span className="text-[#8AD74C] font-semibold">No cameras. No invasive probes.</span>{' '}
+        Just biophysics.
+      </>
+    ),
+  },
+  {
+    id: 'movement',
+    line1: 'JOIN THE',
+    line2: 'GREEN',
+    line3: 'MOVEMENT',
+    subtitle: (
+      <>
+        2,900+ researchers, collectors &amp; plant lovers are already waiting.{' '}
+        <br />
+        Be part of{' '}
+        <span className="text-[#8AD74C] font-semibold">Batch 01 — NIH-01 Nature Intelligence Hub.</span>
+      </>
+    ),
+  },
+];
+
+const SLIDE_DURATION = 4500; // ms per slide
+
 export const HomeHero: React.FC = () => {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [visible, setVisible] = useState(true);
+
+  const goTo = useCallback((idx: number) => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    // Fade out
+    setVisible(false);
+    setTimeout(() => {
+      setActiveIdx(idx);
+      // Fade in
+      setVisible(true);
+      setIsAnimating(false);
+    }, 350);
+  }, [isAnimating]);
+
+  // Auto-advance
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      goTo((activeIdx + 1) % SLIDES.length);
+    }, SLIDE_DURATION);
+    return () => clearTimeout(timer);
+  }, [activeIdx, goTo]);
+
+  const slide = SLIDES[activeIdx];
+
   return (
     <section className="relative overflow-hidden bg-[#070B08] min-h-screen flex flex-col">
 
       {/* ─────────────────────────────────────────────────────────────────────────────
           BACKGROUND — Single <picture>, hydration-safe
-          object-position exposes robot per breakpoint:
-            Mobile  : center 10%  → robot in top 60% of frame
-            Tablet  : 58% 25%    → robot right-of-center
-            Desktop : 66% center → robot occupies right ~34%
          ───────────────────────────────────────────────────────────────────────────── */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <picture className="absolute inset-0 w-full h-full block">
@@ -25,32 +116,23 @@ export const HomeHero: React.FC = () => {
             alt="Vriksh Vani NHI-01 Nature Intelligence Hub in sunlit biophilic forest"
             className={[
               'w-full h-full object-cover',
-              // Mobile portrait: robot center is at ~52% from top of image
               '[object-position:center_50%]',
-              // Tablet landscape: robot right-of-center
               'sm:[object-position:60%_55%]',
-              // Desktop: robot anchored right-center
               'lg:[object-position:66%_center]',
             ].join(' ')}
           />
         </picture>
 
-        {/* ── Desktop: left column darkened only, right fully open ── */}
+        {/* Gradient overlays */}
         <div className="hidden lg:block absolute inset-0" style={{
           background: 'linear-gradient(to right, #070B08 0%, #070B08b8 18%, #070B0870 32%, #070B0830 44%, transparent 54%)',
         }} />
-
-        {/* ── Tablet: left column dark for text, RIGHT fully open — robot at 60% right ── */}
         <div className="hidden sm:block lg:hidden absolute inset-0" style={{
           background: 'linear-gradient(to right, #070B08 0%, #070B08d0 16%, #070B0890 30%, #070B0840 44%, #070B0815 58%, transparent 72%)',
         }} />
-
-        {/* ── Mobile: dark behind content (top 45%), crystal clear for robot (45%+) ── */}
         <div className="sm:hidden absolute inset-0" style={{
           background: 'linear-gradient(to bottom, #070B08d8 0%, #070B08c0 15%, #070B0895 28%, #070B0850 38%, #070B0818 45%, transparent 58%)',
         }} />
-
-        {/* Section 2 transition */}
         <div className="absolute bottom-0 left-0 right-0 h-20" style={{
           background: 'linear-gradient(to top, #070B08 0%, transparent 100%)',
         }} />
@@ -58,9 +140,6 @@ export const HomeHero: React.FC = () => {
 
       {/* ─────────────────────────────────────────────────────────────────────────────
           CONTENT LAYER
-
-          Mobile  : items-END   → compact shelf at bottom, robot visible at top (65%)
-          Tablet+ : items-CENTER → 2-col layout, robot right
          ───────────────────────────────────────────────────────────────────────────── */}
       <div className="relative z-20 flex-1 flex items-start">
         <div className="w-full max-w-[1440px] mx-auto
@@ -76,74 +155,90 @@ export const HomeHero: React.FC = () => {
                             text-center sm:text-left
                             space-y-2 sm:space-y-5">
 
+              {/* ── SLIDER: Headline + subtitle ── */}
+              <div
+                className="w-full"
+                style={{
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? 'translateY(0)' : 'translateY(12px)',
+                  transition: 'opacity 350ms ease, transform 350ms ease',
+                }}
+              >
+                {/* Headline */}
+                <h1 className="font-display leading-none drop-shadow-[0_4px_28px_rgba(0,0,0,1)]">
 
-              {/* ── Headline: Stacked ALL CAPS with size + color hierarchy ── */}
-              <h1 className="font-display leading-none
-                             drop-shadow-[0_4px_28px_rgba(0,0,0,1)]">
-
-                {/* LET YOUR — normal weight, white, compact tracking
-                    Mobile: 5.5vw scales from 17.6px (320px) → 23.6px (430px)
-                    Tablet+: fixed 44px → 66px */}
-                <span className="block font-normal
-                                 text-[5.5vw] sm:text-[34px] lg:text-[42px] xl:text-[52px]
-                                 text-[#F0EFEB]
-                                 tracking-[0.06em]
-                                 leading-none
-                                 uppercase">
-                  LET YOUR
-                </span>
-
-                {/* PLANTS — black weight, cinematic shaded green, DOMINANT
-                    Mobile: 17vw scales from 54px (320px) → 73px (430px)
-                    Tablet+: fixed 128px → 192px */}
-                <div className="relative leading-[0.88]">
-                  <span className="block font-black
-                                   text-[17vw] sm:text-[88px] lg:text-[108px] xl:text-[136px]
-                                   tracking-[-0.02em] leading-[0.88]
-                                   text-transparent bg-clip-text
-                                   bg-gradient-to-b from-[#A8E055] via-[#6BBF28] to-[#2E6B12]
-                                   drop-shadow-[0_0_40px_rgba(138,215,76,0.35)]">
-                    PLANTS
+                  {/* Line 1 — small normal white caps */}
+                  <span className="block font-normal
+                                   text-[5.5vw] sm:text-[34px] lg:text-[42px] xl:text-[52px]
+                                   text-[#F0EFEB]
+                                   tracking-[0.06em]
+                                   leading-none
+                                   uppercase">
+                    {slide.line1}
                   </span>
-                  {/* Leaf icon — top-right, glowing */}
-                  <Leaf className="absolute -top-1 right-0
-                                   sm:-top-2 sm:-right-2
-                                   lg:-top-3 lg:-right-3
-                                   w-[4vw] h-[4vw] sm:w-9 sm:h-9 lg:w-12 lg:h-12
-                                   text-[#8AD74C] fill-[#8AD74C]/40
-                                   drop-shadow-[0_0_14px_rgba(138,215,76,1)]
-                                   rotate-12" />
-                </div>
 
-                {/* SPEAK — bold weight, white, slightly larger than LET YOUR, widest tracking
-                    Mobile: 6.5vw scales from 20.8px (320px) → 27.95px (430px)
-                    Tablet+: fixed 52px → 78px */}
-                <span className="block font-bold
-                                 text-[6.5vw] sm:text-[40px] lg:text-[50px] xl:text-[62px]
-                                 text-[#F0EFEB]
-                                 tracking-[0.20em]
-                                 leading-none mt-1
-                                 uppercase">
-                  SPEAK
-                </span>
+                  {/* Line 2 — BIG bold lime gradient — DOMINANT */}
+                  <div className="relative leading-[0.88]">
+                    <span className="block font-black
+                                     text-[17vw] sm:text-[88px] lg:text-[108px] xl:text-[136px]
+                                     tracking-[-0.02em] leading-[0.88]
+                                     text-transparent bg-clip-text
+                                     bg-gradient-to-b from-[#A8E055] via-[#6BBF28] to-[#2E6B12]
+                                     drop-shadow-[0_0_40px_rgba(138,215,76,0.35)]">
+                      {slide.line2}
+                    </span>
+                    {/* Leaf icon — top-right, glowing */}
+                    <Leaf className="absolute -top-1 right-0
+                                     sm:-top-2 sm:-right-2
+                                     lg:-top-3 lg:-right-3
+                                     w-[4vw] h-[4vw] sm:w-9 sm:h-9 lg:w-12 lg:h-12
+                                     text-[#8AD74C] fill-[#8AD74C]/40
+                                     drop-shadow-[0_0_14px_rgba(138,215,76,1)]
+                                     rotate-12" />
+                  </div>
 
-              </h1>
+                  {/* Line 3 — medium bold white wide tracking */}
+                  <span className="block font-bold
+                                   text-[5.5vw] sm:text-[36px] lg:text-[46px] xl:text-[58px]
+                                   text-[#F0EFEB]
+                                   tracking-[0.18em]
+                                   leading-none mt-1
+                                   uppercase">
+                    {slide.line3}
+                  </span>
 
-              {/* ── Subtitle: 2 lines on ALL devices ── */}
-              <p className="text-[2.8vw] sm:text-sm lg:text-base
-                            text-[#F7F6F2]/85
-                            max-w-[85vw] sm:max-w-md lg:max-w-xl
-                            leading-snug
-                            drop-shadow-[0_2px_12px_rgba(0,0,0,1)]">
-                Your plant speaks through thermal shifts every second.<br />
-                <span className="text-[#8AD74C] font-semibold">Vriksh Vani</span>{' '}
-                decodes these signals into plain speech.
-              </p>
+                </h1>
 
-              {/* ── CTAs: always 1 row, responsive sizing ── */}
+                {/* Subtitle */}
+                <p className="text-[2.8vw] sm:text-sm lg:text-base
+                              text-[#F7F6F2]/85
+                              max-w-[85vw] sm:max-w-md lg:max-w-xl
+                              leading-snug mt-3 sm:mt-4
+                              drop-shadow-[0_2px_12px_rgba(0,0,0,1)]">
+                  {slide.subtitle}
+                </p>
+              </div>
+
+              {/* ── Dot indicators ── */}
+              <div className="flex items-center gap-2 pt-1">
+                {SLIDES.map((s, i) => (
+                  <button
+                    key={s.id}
+                    onClick={() => goTo(i)}
+                    aria-label={`Go to slide ${i + 1}`}
+                    className={`transition-all duration-300 rounded-full ${
+                      i === activeIdx
+                        ? 'w-6 h-2 bg-gradient-to-r from-[#2E9B12] to-[#C4F050] shadow-[0_0_8px_rgba(138,215,76,0.6)]'
+                        : 'w-2 h-2 bg-white/30 hover:bg-white/60'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {/* ── CTAs: always 1 row, static (don't slide) ── */}
               <div className="flex flex-row gap-2 sm:gap-3
                               w-full sm:w-auto
-                              pt-2 sm:pt-3">
+                              pt-1 sm:pt-2">
 
                 {/* PRIMARY: Join the Waitlist */}
                 <Link href="/waitlist" className="flex-1 min-w-0 sm:flex-none">
@@ -159,10 +254,8 @@ export const HomeHero: React.FC = () => {
                                transition-all duration-300 active:scale-[0.97]"
                   >
                     <Leaf className="w-3 h-3 sm:w-[17px] sm:h-[17px] fill-white text-white shrink-0" />
-                    {/* Shorter text on xs mobile, full text on sm+ */}
                     <span className="sm:hidden truncate">Join Waitlist</span>
                     <span className="hidden sm:inline">Join the Waitlist</span>
-                    {/* Arrow hidden on xs, shown on sm+ */}
                     <ArrowRight className="hidden sm:block w-[17px] h-[17px] text-white shrink-0" />
                   </button>
                 </Link>
@@ -192,7 +285,7 @@ export const HomeHero: React.FC = () => {
 
               </div>
 
-              {/* ── Live voice card: HIDDEN on mobile, shown on tablet+ ── */}
+              {/* ── Live voice card: HIDDEN on mobile ── */}
               <div className="hidden sm:block w-full max-w-md p-4 rounded-2xl
                               bg-[#0A1C0E]/88 border border-[#8AD74C]/30
                               backdrop-blur-xl shadow-[0_8px_28px_rgba(0,0,0,0.7)] space-y-2">
