@@ -45,9 +45,9 @@ export const HomeHero: React.FC = () => {
           background: 'linear-gradient(to right, #070B08 0%, #070B08d0 16%, #070B0890 30%, #070B0840 44%, #070B0815 58%, transparent 72%)',
         }} />
 
-        {/* ── Mobile: VERY LIGHT scrim — only header zone dark, robot zone fully clear ── */}
+        {/* ── Mobile: dark behind content (top 45%), crystal clear for robot (45%+) ── */}
         <div className="sm:hidden absolute inset-0" style={{
-          background: 'linear-gradient(to bottom, #070B0895 0%, #070B0850 10%, #070B0820 18%, transparent 28%)',
+          background: 'linear-gradient(to bottom, #070B08d8 0%, #070B08c0 15%, #070B0895 28%, #070B0850 38%, #070B0818 45%, transparent 58%)',
         }} />
 
         {/* Section 2 transition */}
