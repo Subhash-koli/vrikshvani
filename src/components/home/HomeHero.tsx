@@ -154,8 +154,8 @@ export const HomeHero: React.FC = () => {
                                px-2 py-2.5 sm:px-8 sm:py-4
                                text-[11px] sm:text-sm lg:text-base
                                font-bold tracking-wide text-white
-                               bg-gradient-to-tr from-[#0A2E04] via-[#3FAE2A] to-[#B0E840]
-                               hover:from-[#0C3506] hover:via-[#4BBF2E] hover:to-[#C0F050]
+                               bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050]
+                               hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60]
                                transition-all duration-300 active:scale-[0.97]"
                   >
                     <Leaf className="w-3 h-3 sm:w-[17px] sm:h-[17px] fill-white text-white shrink-0" />
