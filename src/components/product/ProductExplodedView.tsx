@@ -36,11 +36,11 @@ const HOTSPOTS: HardwareHotspot[] = [
   },
   {
     id: 'bme',
-    name: 'Bosch BME688 Quad-Gas Sensor',
+    name: 'Bosch BME688 Environmental Gas Sensor',
     badge: 'Planned Sensor',
     icon: Wind,
-    spec: 'VOC & Atmospheric Gas',
-    desc: 'Scans volatile organic compounds emitted during root stress, pest activity, or humidity shifts.',
+    spec: 'VOC & Environmental Gas Signals',
+    desc: 'Scans volatile organic compounds and environmental gas resistance signals to infer micro-climate shifts.',
     layerPos: 'Layer 3 · Chemical Sensing',
   },
   {

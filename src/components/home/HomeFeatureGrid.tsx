@@ -24,8 +24,8 @@ const FEATURES = [
     color: 'text-[#E8D07C]',
   },
   {
-    title: 'Bosch Quad-Gas Sensing',
-    desc: 'Designing with BME688 AI gas sensor to measure VOCs, CO2 proxies, and organic transpiration compounds.',
+    title: 'Bosch BME688 MOX Sensing',
+    desc: 'Designing with BME688 sensor to measure VOCs and environmental gas signals.',
     icon: Wind,
     tag: 'Planned Sensor',
     color: 'text-sky-400',
@@ -39,7 +39,7 @@ const FEATURES = [
   },
   {
     title: 'TinyML Edge Compute',
-    desc: 'On-device neural inference designed for low latency with zero dependence on cloud servers or constant internet.',
+    desc: 'Local-first neural inference designed for low latency with optional encrypted telemetry synchronization.',
     icon: Cpu,
     tag: 'Design Target',
     color: 'text-emerald-400',

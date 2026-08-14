@@ -39,7 +39,7 @@ export const HomeAppPreview: React.FC = () => {
                 Your garden&apos;s intelligence dashboard in your pocket.
               </h2>
               <p className="text-[#A3B18A] text-base leading-relaxed">
-                The Vriksh Vani App vision for iOS and Android is designed to pair via Bluetooth 5.2. View transpiration estimates, customize voice personalities, and receive early care insights before visible plant stress occurs.
+                The Vriksh Vani App vision for iOS and Android is designed to pair via Bluetooth 5.0 LE. View transpiration estimates, customize voice personalities, and receive early care insights before visible plant stress occurs.
               </p>
 
               {/* Voice Personality Selector */}

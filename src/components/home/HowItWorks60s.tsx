@@ -26,8 +26,8 @@ const STEPS = [
   },
   {
     step: '03',
-    title: 'NTE™ Spoken Voice',
-    subtitle: 'On-device TinyML translates biometrics into natural, calm spoken language telling you exactly what your plant needs.',
+    title: 'NTE™ Spoken Voice Concept',
+    subtitle: 'On-device TinyML translates biometrics into natural, calm spoken language helping interpret what your plant may be experiencing.',
     icon: Volume2,
     color: 'text-emerald-400',
     border: 'border-emerald-400/30',

@@ -49,6 +49,14 @@ export const CANONICAL_HARDWARE_SPECS: HardwareSpecification[] = [
     description: 'Acoustically tuned speaker driver designed for warm human speech synthesis via NTE™ Engine.',
   },
   {
+    category: 'Connectivity',
+    component: 'Wireless Connectivity Suite',
+    model: 'Wi-Fi 4 (802.11 b/g/n) + Bluetooth 5.0 LE Target',
+    parameters: '2.4GHz Wi-Fi · Bluetooth Low Energy 5.0 · Local-First Architecture',
+    status: 'TARGET HARDWARE',
+    description: 'Local-first wireless connectivity target for initial mobile app pairing and optional encrypted telemetry synchronization.',
+  },
+  {
     category: 'Enclosure & Materials',
     component: 'Stoneware Ceramic Housing',
     model: 'Handcrafted Ceramic Shell Concept',
