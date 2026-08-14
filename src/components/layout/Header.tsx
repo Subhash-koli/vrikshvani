@@ -140,12 +140,12 @@ export const Header: React.FC = () => {
               className="flex items-center gap-2.5 group cursor-pointer focus:outline-none"
               aria-label="Vriksh Vani Home"
             >
-              <div className="relative w-9 h-9 rounded-xl bg-[#0F2B18] border border-[#8AD74C]/50 flex items-center justify-center p-1 group-hover:border-[#8AD74C] group-hover:shadow-[0_0_15px_rgba(138,215,76,0.4)] transition-all shadow-lime-glow shrink-0">
+              <div className="relative w-10 h-10 rounded-xl bg-[#0F2B18] border border-[#8AD74C]/50 flex items-center justify-center p-1 group-hover:border-[#8AD74C] group-hover:shadow-[0_0_15px_rgba(138,215,76,0.4)] transition-all shadow-lime-glow shrink-0">
                 <Image
                   src="/assets/vrikshvani_logo/vriksh vani 3d symboll logo.png"
                   alt="Vriksh Vani Logo"
-                  width={32}
-                  height={32}
+                  width={36}
+                  height={36}
                   className="object-contain"
                   priority
                   unoptimized
@@ -155,8 +155,8 @@ export const Header: React.FC = () => {
                 <span className="font-display font-extrabold text-base sm:text-lg tracking-tight text-[#F7F6F2] group-hover:text-[#8AD74C] transition-colors leading-tight">
                   Vriksh Vani
                 </span>
-                <span className="text-[10px] text-[#A3B18A] tracking-normal font-sans hidden sm:inline leading-none mt-0.5">
-                  Let Your Plants Speak
+                <span className="text-[9px] text-[#A3B18A] tracking-wider font-mono uppercase hidden sm:inline leading-none mt-0.5">
+                  LET YOUR PLANTS SPEAK
                 </span>
               </div>
             </Link>
@@ -306,22 +306,22 @@ export const Header: React.FC = () => {
 
           {/* Center: Brand Logo + Subtitle (Perfectly centered in flex-1) */}
           <div className="flex-1 flex items-center justify-center">
-            <Link href="/" className="flex items-center gap-2 group cursor-pointer focus:outline-none">
+            <Link href="/" className="flex items-center gap-2.5 group cursor-pointer focus:outline-none">
               <Image
                 src="/assets/vrikshvani_logo/vriksh vani 3d symboll logo.png"
                 alt="Vriksh Vani Logo"
-                width={32}
-                height={32}
-                className="object-contain shrink-0"
+                width={42}
+                height={42}
+                className="object-contain shrink-0 drop-shadow-[0_2px_8px_rgba(138,215,76,0.25)]"
                 priority
                 unoptimized
               />
               <div className="flex flex-col text-left leading-none">
-                <span className="font-display font-extrabold text-base tracking-tight text-white group-hover:text-[#8AD74C] transition-colors">
-                  Vriksh vani
+                <span className="font-display font-extrabold text-base sm:text-lg tracking-tight text-white group-hover:text-[#8AD74C] transition-colors">
+                  Vriksh Vani
                 </span>
-                <span className="text-[9px] text-[#A3B18A] tracking-normal font-sans mt-0.5">
-                  Let Your Plants Speak
+                <span className="text-[8.5px] text-[#A3B18A] tracking-wider font-mono uppercase mt-0.5">
+                  LET YOUR PLANTS SPEAK
                 </span>
               </div>
             </Link>
