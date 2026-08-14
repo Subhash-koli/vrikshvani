@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Thermometer, Activity, ArrowLeft, Download, FileText, Share2 } from 'lucide-react';
 import Link from 'next/link';
+import TelemetryChart from '@/components/research/TelemetryChart';
 
 export const metadata: Metadata = {
   title: 'Research Note #001 — Leaf Surface Thermography | Vriksh Vani',
@@ -116,11 +117,13 @@ export default function ResearchNote001Page() {
           </div>
 
           {/* Telemetry Observation Table */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">3. Empirical Telemetry Data</h2>
             <p className="text-sm text-[#A3B18A] leading-relaxed">
               Logged time-series observations detailing atmospheric VPD, leaf surface temperature delta, and gas resistance shift:
             </p>
+
+            <TelemetryChart />
 
             <Card className="p-0 overflow-hidden border-white/10">
               <div className="overflow-x-auto">
