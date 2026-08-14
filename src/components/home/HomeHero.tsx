@@ -70,11 +70,13 @@ export const HomeHero: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-8 lg:gap-12 items-center">
 
-            {/* ── LEFT / BOTTOM COLUMN ── */}
+            {/* ── LEFT / CONTENT COLUMN ── */}
             <div className="sm:col-span-7 lg:col-span-6
                             flex flex-col items-center sm:items-start
                             text-center sm:text-left
-                            space-y-2 sm:space-y-5">
+                            space-y-2 sm:space-y-5
+                            bg-[#070B08]/25 backdrop-blur-sm rounded-2xl px-3 py-3
+                            sm:bg-transparent sm:backdrop-blur-none sm:rounded-none sm:px-0 sm:py-0">
 
               {/* ── Category badge: tiny on mobile ── */}
               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-4 sm:py-1.5
