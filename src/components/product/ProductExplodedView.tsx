@@ -49,7 +49,7 @@ const HOTSPOTS: HardwareHotspot[] = [
     badge: 'Dual-Core Microcontroller',
     icon: Cpu,
     spec: 'Target On-Device Inference',
-    desc: 'Quantized neural model classifies biophysical states directly on-device with zero cloud dependency.',
+    desc: 'Quantized neural model classifies biophysical states directly on-device with local-first intelligence.',
     layerPos: 'Layer 4 · Main Logic Board',
   },
   {

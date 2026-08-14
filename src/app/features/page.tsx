@@ -78,7 +78,7 @@ const coreFeatures = [
   {
     icon: Brain,
     title: 'On-Device TinyML Inference',
-    desc: 'Designed around low-power ESP32-S3 microcontrollers — zero cloud latency, zero external dependence. On-device signal classification for total privacy.',
+    desc: 'Designed around low-power ESP32-S3 microcontrollers — local-first inference with optional encrypted telemetry synchronization.',
     colour: 'text-[#8AD74C]',
     bg: 'bg-[#8AD74C]/10',
     border: 'border-[#8AD74C]/20',

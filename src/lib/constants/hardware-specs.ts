@@ -38,7 +38,7 @@ export const CANONICAL_HARDWARE_SPECS: HardwareSpecification[] = [
     model: 'Espressif ESP32-S3 Target',
     parameters: '240MHz dual-core Xtensa LX7 · 512KB SRAM · 8MB Flash · Vector Extensions',
     status: 'RESEARCH PROTOTYPE',
-    description: 'Low-power microcontroller executing quantized INT8 TinyML models on-device with zero cloud latency.',
+    description: 'Low-power microcontroller executing quantized INT8 TinyML models with local-first inference.',
   },
   {
     category: 'Acoustics & Interface',
