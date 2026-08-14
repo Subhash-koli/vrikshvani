@@ -68,6 +68,52 @@ export default function ResearchPage() {
             </p>
           </div>
 
+          {/* Published Research Notes */}
+          <div className="space-y-6">
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-3">
+                <FlaskConical className="w-6 h-6 text-[#8AD74C]" />
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-[#F7F6F2]">Published Research Notes</h2>
+              </div>
+              <span className="text-xs font-mono text-[#A3B18A]">Open Biophysics Datasets</span>
+            </div>
+
+            <Card className="p-8 border-[#8AD74C]/30 bg-[#0F2B18]/30 space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <Badge variant="lime">Research Note #001</Badge>
+                  <Badge variant="gold">Peer Review Draft</Badge>
+                </div>
+                <span className="text-xs font-mono text-[#A3B18A]">August 2026</span>
+              </div>
+
+              <h3 className="font-display text-xl font-bold text-[#F7F6F2]">
+                Leaf Surface Thermography Under Controlled Vapor Pressure Deficit (VPD) Shift
+              </h3>
+
+              <p className="text-sm text-[#A3B18A] leading-relaxed">
+                Empirical investigation demonstrating that fine-scale leaf surface thermal elevation (+1.4&deg;C) acts as an early indicator of stomatal closure 180 minutes prior to visible wilting in <em>Monstera deliciosa</em>.
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-center gap-4">
+                <Link
+                  href="/nature-intelligence/research/note-001"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-display font-bold text-xs text-white bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] hover:brightness-110 transition-all"
+                >
+                  Read Research Note #001 &rarr;
+                </Link>
+                <a
+                  href="/api/v1/telemetry/sample"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-xs font-mono text-[#8AD74C] hover:underline"
+                >
+                  Download Open Telemetry (JSON) &darr;
+                </a>
+              </div>
+            </Card>
+          </div>
+
           {/* Hypotheses */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">

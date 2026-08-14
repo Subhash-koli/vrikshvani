@@ -43,6 +43,30 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/order',
+        destination: '/waitlist',
+        permanent: false,
+      },
+      {
+        source: '/enterprise',
+        destination: '/waitlist',
+        permanent: false,
+      },
+      {
+        source: '/warranty',
+        destination: '/waitlist',
+        permanent: false,
+      },
+      {
+        source: '/shipping',
+        destination: '/waitlist',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
