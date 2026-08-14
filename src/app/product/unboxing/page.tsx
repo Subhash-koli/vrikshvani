@@ -9,8 +9,8 @@ import { Box, Play, Package, Star, Zap, Wifi } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'NIH-01 Unboxing Experience — Vriksh Vani',
-  description: 'The NIH-01 unboxing is designed to be a ritual. Every detail — from the seed card to the numbered Founding Member certificate — is intentional.',
+  title: 'NIH-01 Unboxing Experience — Target Packaging Concept | Vriksh Vani',
+  description: 'Target packaging concept for NIH-01. Every detail — from the seed card to recycled ceramic packaging — is designed with biophilic intent.',
 };
 
 const unboxingSteps = [
