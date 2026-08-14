@@ -59,6 +59,53 @@ export default function NteVoicePage() {
             })}
           </div>
 
+          {/* 5-Layer Scientific Confidence & Explanation Architecture */}
+          <Card className="p-8 border-[#8AD74C]/30 bg-[#0F2B18]/40 space-y-6">
+            <div className="text-center space-y-1">
+              <span className="text-xs font-mono text-[#8AD74C] font-bold uppercase tracking-widest">
+                Scientific Confidence Architecture
+              </span>
+              <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">
+                From Biophysical Observation to Explanatory Voice
+              </h2>
+              <p className="text-xs text-[#A3B18A]">
+                NTE™ never makes absolute claims &mdash; every spoken output is rooted in signal observation, inference, and explicit confidence scores.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-3 pt-2">
+              <div className="p-4 rounded-xl bg-[#070B08] border border-white/10 text-center space-y-1">
+                <span className="text-[10px] font-mono text-[#E8D07C] font-bold">01 · OBSERVED</span>
+                <p className="text-xs font-bold text-[#F7F6F2]">Sensor Signals</p>
+                <p className="text-[10px] font-mono text-[#A3B18A]">T<sub>leaf</sub> 24.2°C · VPD 0.92 kPa · RH 58%</p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-[#070B08] border border-white/10 text-center space-y-1">
+                <span className="text-[10px] font-mono text-[#8AD74C] font-bold">02 · INFERENCE</span>
+                <p className="text-xs font-bold text-[#F7F6F2]">Physiological State</p>
+                <p className="text-[10px] font-mono text-[#A3B18A]">Possible Water Stress Signature</p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-[#070B08] border border-[#8AD74C]/30 text-center space-y-1">
+                <span className="text-[10px] font-mono text-[#8AD74C] font-bold">03 · CONFIDENCE</span>
+                <p className="text-sm font-mono font-bold text-[#8AD74C]">74% Score</p>
+                <p className="text-[10px] font-mono text-[#A3B18A]">Bayesian Model Weight</p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-[#070B08] border border-white/10 text-center space-y-1">
+                <span className="text-[10px] font-mono text-[#E8D07C] font-bold">04 · EXPLANATION</span>
+                <p className="text-xs font-bold text-[#F7F6F2]">Biophysical Cause</p>
+                <p className="text-[10px] font-mono text-[#A3B18A]">Elevated leaf temp relative to room baseline</p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-[#070B08] border border-emerald-400/40 text-center space-y-1">
+                <span className="text-[10px] font-mono text-emerald-400 font-bold">05 · NTE™ VOICE</span>
+                <p className="text-xs font-bold text-[#F7F6F2]">Natural Speech</p>
+                <p className="text-[10px] italic text-[#A3B18A]">&ldquo;My leaves are warmer than usual...&rdquo;</p>
+              </div>
+            </div>
+          </Card>
+
           {/* Inference Pipeline */}
           <Card className="p-8 space-y-6">
             <div className="flex items-center gap-3">
