@@ -65,14 +65,53 @@ export const NiosFrameworkDiagram: React.FC = () => {
     <section className="py-24 bg-[#070B08] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <Badge variant="lime">Category Framework</Badge>
+          <Badge variant="lime">Operating Architecture</Badge>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-            The NIOS 6-Stage Pipeline.
+            NIOS™ — How Vriksh Vani Understands Living Systems.
           </h2>
           <p className="text-[#A3B18A] text-base md:text-lg">
-            Nature Intelligence Operating System (NIOS) transforms raw bio-physics into audible human understanding.
+            Nature Intelligence Operating System (NIOS™) bridges non-invasive biophysics, edge AI inference, and natural human communication.
           </p>
         </div>
+
+        {/* 3-Pillar Conceptual Architecture Card */}
+        <Card className="p-8 border-[#8AD74C]/30 bg-[#0F2B18]/40 space-y-6">
+          <div className="text-center space-y-1">
+            <span className="text-xs font-mono text-[#8AD74C] font-bold uppercase tracking-widest">
+              NIOS™ Conceptual Operating Model
+            </span>
+            <p className="text-xs text-[#A3B18A]">The three foundational layers connecting plants and humans</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+            {/* Pillar 1: Sensing */}
+            <div className="p-6 rounded-2xl bg-[#070B08] border border-white/10 space-y-3 text-center">
+              <span className="text-xs font-mono text-[#E8D07C] font-bold uppercase tracking-wider">01 · SENSING</span>
+              <h3 className="font-display text-lg font-bold text-[#F7F6F2]">Biophysical Capture</h3>
+              <p className="text-xs text-[#A3B18A] leading-relaxed">
+                LWIR Leaf Thermography · BME688 MOX Sensing · Ambient VPD &amp; Relative Humidity
+              </p>
+            </div>
+
+            {/* Pillar 2: Intelligence */}
+            <div className="p-6 rounded-2xl bg-[#070B08] border border-[#8AD74C]/30 space-y-3 text-center">
+              <span className="text-xs font-mono text-[#8AD74C] font-bold uppercase tracking-wider">02 · INTELLIGENCE</span>
+              <h3 className="font-display text-lg font-bold text-[#F7F6F2]">Local Edge TinyML</h3>
+              <p className="text-xs text-[#A3B18A] leading-relaxed">
+                ESP32-S3 INT8 Quantization · Stomatal Behavior Classification · Confidence Scoring
+              </p>
+            </div>
+
+            {/* Pillar 3: Human Care */}
+            <div className="p-6 rounded-2xl bg-[#070B08] border border-white/10 space-y-3 text-center">
+              <span className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">03 · HUMAN CARE</span>
+              <h3 className="font-display text-lg font-bold text-[#F7F6F2]">NTE™ Voice Guidance</h3>
+              <p className="text-xs text-[#A3B18A] leading-relaxed">
+                Natural Spoken Language · Explanatory Guidance · Empathy &amp; Intuitive Plant Care
+              </p>
+            </div>
+          </div>
+        </Card>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {STAGES.map((s, idx) => {
