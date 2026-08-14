@@ -59,7 +59,7 @@ export const HomeHero: React.FC = () => {
           Mobile  : items-END   → compact shelf at bottom, robot visible at top (65%)
           Tablet+ : items-CENTER → 2-col layout, robot right
          ───────────────────────────────────────────────────────────────────────────── */}
-      <div className="relative z-20 flex-1 flex items-end sm:items-center">
+      <div className="relative z-20 flex-1 flex items-center">
         <div className="w-full max-w-[1440px] mx-auto
                         px-4 sm:px-6 lg:px-12 xl:px-16
                         pt-20 sm:pt-36 lg:pt-36
