@@ -20,6 +20,8 @@ import HomeFinaleCta from '@/components/home/HomeFinaleCta';
 
 import JsonLd, { faqJsonLd } from '@/components/seo/JsonLd';
 
+import ChapterHeader from '@/components/home/ChapterHeader';
+
 export default function HomePage() {
   return (
     <main id="main-content" className="min-h-screen bg-[#070B08] text-[#F7F6F2] selection:bg-[#8AD74C] selection:text-[#070B08]">
@@ -35,26 +37,46 @@ export default function HomePage() {
 
       {/* CHAPTER 02 — THE IDEA & NATURE INTELLIGENCE */}
       <section id="chapter-02-idea">
+        <ChapterHeader
+          number="02"
+          title="THE IDEA — Nature Intelligence"
+          subtitle="Sense · Interpret · Understand · Care"
+        />
         <HomeSolutionDemo />
         <HowItWorks60s />
       </section>
 
-      {/* CHAPTER 03 — THE SYSTEM (SENSING -> INTERPRETATION -> CARE) */}
+      {/* CHAPTER 03 — THE SYSTEM */}
       <section id="chapter-03-system">
+        <ChapterHeader
+          number="03"
+          title="THE SYSTEM — NIH-01 Hardware & TinyML"
+          subtitle="Non-Invasive Biophysical Computing"
+        />
         <HomeProductShowcase />
         <HomeFeatureGrid />
         <HomeTechBreakdown />
         <HomeAppPreview />
       </section>
 
-      {/* CHAPTER 04 — THE RESEARCH & PHILOSOPHY */}
+      {/* CHAPTER 04 — THE RESEARCH */}
       <section id="chapter-04-research">
+        <ChapterHeader
+          number="04"
+          title="THE RESEARCH — Empirical Evidence & Truth"
+          subtitle="What We Know · What We Are Testing"
+        />
         <HomeVisionBrief />
         <HomeBlogPreview />
       </section>
 
-      {/* CHAPTER 05 — THE JOURNEY (COMMUNITY & WAITLIST) */}
+      {/* CHAPTER 05 — THE JOURNEY */}
       <section id="chapter-05-journey">
+        <ChapterHeader
+          number="05"
+          title="THE JOURNEY — Research Cohort & Community"
+          subtitle="Building Open Nature Intelligence Together"
+        />
         <HomeTestimonials />
         <HomeCommunityWall />
         <HomeFaq />
