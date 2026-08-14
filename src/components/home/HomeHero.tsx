@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
-import { Play, Leaf, Sun, Activity, ChevronDown, Sparkles, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Play, Leaf, Sun, Activity, ChevronDown, ChevronLeft, ChevronRight, Sparkles, ShieldCheck, ArrowRight } from 'lucide-react';
 
 /* ─────────────────────────────────────────────────────────────────────────────
    HERO SLIDES — same format & color hierarchy, only content differs
@@ -219,20 +219,42 @@ export const HomeHero: React.FC = () => {
                 </p>
               </div>
 
-              {/* ── Dot indicators ── */}
-              <div className="flex items-center gap-2 pt-1">
-                {SLIDES.map((s, i) => (
-                  <button
-                    key={s.id}
-                    onClick={() => goTo(i)}
-                    aria-label={`Go to slide ${i + 1}`}
-                    className={`transition-all duration-300 rounded-full ${
-                      i === activeIdx
-                        ? 'w-6 h-2 bg-gradient-to-r from-[#2E9B12] to-[#C4F050] shadow-[0_0_8px_rgba(138,215,76,0.6)]'
-                        : 'w-2 h-2 bg-white/30 hover:bg-white/60'
-                    }`}
-                  />
-                ))}
+              {/* ── Arrow indicators: < 01 / 04 > ── */}
+              <div className="flex items-center gap-3 pt-1">
+                {/* Prev */}
+                <button
+                  onClick={() => goTo((activeIdx - 1 + SLIDES.length) % SLIDES.length)}
+                  aria-label="Previous slide"
+                  className="w-8 h-8 flex items-center justify-center rounded-lg
+                             bg-white/5 border border-white/15
+                             text-white hover:bg-gradient-to-tr hover:from-[#031201] hover:via-[#2E9B12] hover:to-[#C4F050]
+                             hover:border-transparent hover:shadow-[0_0_12px_rgba(138,215,76,0.4)]
+                             transition-all duration-200 active:scale-90"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+
+                {/* Counter */}
+                <span className="font-mono text-xs text-[#A3B18A] tracking-widest tabular-nums select-none">
+                  <span className="text-[#C4F050] font-bold">
+                    {String(activeIdx + 1).padStart(2, '0')}
+                  </span>
+                  <span className="mx-1 text-white/20">/</span>
+                  {String(SLIDES.length).padStart(2, '0')}
+                </span>
+
+                {/* Next */}
+                <button
+                  onClick={() => goTo((activeIdx + 1) % SLIDES.length)}
+                  aria-label="Next slide"
+                  className="w-8 h-8 flex items-center justify-center rounded-lg
+                             bg-white/5 border border-white/15
+                             text-white hover:bg-gradient-to-tr hover:from-[#031201] hover:via-[#2E9B12] hover:to-[#C4F050]
+                             hover:border-transparent hover:shadow-[0_0_12px_rgba(138,215,76,0.4)]
+                             transition-all duration-200 active:scale-90"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
               </div>
 
               {/* ── CTAs: always 1 row, static (don't slide) ── */}
