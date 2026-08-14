@@ -21,13 +21,12 @@ export default function ThermalVisualizer() {
           </div>
         </div>
 
-        {/* View Toggle */}
         <div className="flex bg-[#070B08] p-1 rounded-xl border border-white/10">
           <button
             onClick={() => setMode('thermal')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
               mode === 'thermal'
-                ? 'bg-[#0F2B18] text-[#8AD74C] border border-[#8AD74C]/30'
+                ? 'bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] text-white'
                 : 'text-[#A3B18A] hover:text-[#F7F6F2]'
             }`}
           >
@@ -37,11 +36,11 @@ export default function ThermalVisualizer() {
             onClick={() => setMode('optical')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
               mode === 'optical'
-                ? 'bg-[#0F2B18] text-[#8AD74C] border border-[#8AD74C]/30'
+                ? 'bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] text-white'
                 : 'text-[#A3B18A] hover:text-[#F7F6F2]'
             }`}
           >
-            <Eye className="w-3.5 h-3.5 text-[#8AD74C]" /> Visible Light (RGB)
+            <Eye className="w-3.5 h-3.5 text-white" /> Visible Light (RGB)
           </button>
         </div>
       </div>

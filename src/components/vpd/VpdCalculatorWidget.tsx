@@ -109,7 +109,7 @@ export const VpdCalculatorWidget: React.FC = () => {
               onClick={() => applyPreset(p)}
               className={`px-3.5 py-2 rounded-xl text-xs font-medium transition-all flex items-center gap-2 border ${
                 selectedPreset === p.name
-                  ? 'bg-[#0F2B18] border-[#8AD74C] text-[#8AD74C] shadow-lime-glow'
+                  ? 'bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] border-transparent text-white font-bold'
                   : 'bg-white/5 border-white/10 text-[#A3B18A] hover:text-[#F7F6F2] hover:border-white/20'
               }`}
             >

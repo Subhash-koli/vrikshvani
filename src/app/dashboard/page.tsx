@@ -73,7 +73,7 @@ export default function DashboardPage() {
                 onClick={() => setActiveTab(tab)}
                 className={`px-5 py-2 rounded-lg text-sm font-medium transition-all ${
                   activeTab === tab
-                    ? 'bg-[#8AD74C] text-[#070B08]'
+                    ? 'bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] text-white font-bold'
                     : 'text-[#A3B18A] hover:text-[#F7F6F2]'
                 }`}
               >

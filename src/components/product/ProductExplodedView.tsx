@@ -103,15 +103,15 @@ export const ProductExplodedView: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => setActiveId(item.id)}
-                  className={`w-full text-left p-4 rounded-card border transition-all duration-300 flex items-center justify-between group ${
+                  className={`w-full text-left p-4 rounded-xl border transition-all duration-300 flex items-center justify-between group ${
                     isSelected
-                      ? 'bg-[#0F2B18] border-[#8AD74C] text-[#F7F6F2] shadow-lime-glow'
+                      ? 'bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] border-transparent text-white'
                       : 'bg-white/5 border-white/10 text-[#A3B18A] hover:bg-white/10 hover:border-white/20'
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div className={`w-9 h-9 rounded-xl flex items-center justify-center border ${
-                      isSelected ? 'bg-[#8AD74C]/20 border-[#8AD74C]/40 text-[#8AD74C]' : 'bg-black/30 border-white/10 text-[#A3B18A]'
+                      isSelected ? 'bg-white/20 border-white/30 text-white' : 'bg-black/30 border-white/10 text-[#A3B18A]'
                     }`}>
                       <Icon className="w-4 h-4" />
                     </div>

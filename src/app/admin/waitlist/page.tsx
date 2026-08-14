@@ -193,7 +193,7 @@ export default function AdminWaitlistPage() {
                   onClick={() => setColorwayFilter(cw)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
                     colorwayFilter === cw
-                      ? 'bg-[#8AD74C] text-[#070B08] font-bold'
+                      ? 'bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] text-white font-bold'
                       : 'bg-[#0F2B18]/40 text-[#A3B18A] hover:text-[#F7F6F2] border border-white/5'
                   }`}
                 >
