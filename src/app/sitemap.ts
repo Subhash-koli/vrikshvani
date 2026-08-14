@@ -14,10 +14,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/glossary', priority: 0.8, freq: 'monthly' },
     // Product
     { path: '/product', priority: 0.95, freq: 'weekly' },
-    // Nature Intelligence
+    { path: '/product/craftsmanship', priority: 0.85, freq: 'weekly' },
+    // Nature Intelligence & Research
     { path: '/nature-intelligence', priority: 0.9, freq: 'weekly' },
     { path: '/nature-intelligence/nte-voice', priority: 0.85, freq: 'weekly' },
-    { path: '/nature-intelligence/research', priority: 0.8, freq: 'weekly' },
+    { path: '/nature-intelligence/research', priority: 0.85, freq: 'weekly' },
+    { path: '/nature-intelligence/research/note-001', priority: 0.9, freq: 'weekly' },
+    { path: '/nature-intelligence/evidence', priority: 0.9, freq: 'weekly' },
     { path: '/vpd-guide', priority: 0.85, freq: 'weekly' },
     // App
     { path: '/app', priority: 0.85, freq: 'weekly' },
