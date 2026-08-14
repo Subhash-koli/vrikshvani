@@ -6,33 +6,33 @@ import { Box, Cable, FileText, Award, Leaf } from 'lucide-react';
 const BOX_ITEMS = [
   {
     icon: Box,
-    name: 'NIH-01 Hub Unit',
-    desc: 'Hand-poured biophilic ceramic hub with integrated thermal optics, sensors & speaker.',
-    badge: 'Ceramic Core',
+    name: 'NIH-01 Hub Unit Concept',
+    desc: 'Kiln-fired biophilic ceramic shell target with integrated thermal optics, sensors & speaker.',
+    badge: 'Design Target',
   },
   {
     icon: Cable,
     name: 'Woven USB-C Cable (2m)',
-    desc: 'Braided recycled nylon cable matching your chosen ceramic colorway.',
-    badge: '100% Recycled',
+    desc: 'Targeting braided recycled nylon cable matching your chosen ceramic colorway.',
+    badge: 'Target 100% Recycled',
   },
   {
     icon: Award,
-    name: 'Gold-Foil Certificate',
-    desc: 'Numbered Founding Member certificate printed on FSC-certified cotton paper.',
-    badge: 'Numbered Batch 01',
+    name: 'Founding Member Certificate',
+    desc: 'Numbered Founding Member certificate printed on FSC-certified paper.',
+    badge: 'Cohort Allocation',
   },
   {
     icon: FileText,
     name: 'Quickstart Care Guide',
-    desc: 'Illustrated botanical guide covering placement, VPD basics, and NTE™ voice setup.',
-    badge: 'Soy Ink Printed',
+    desc: 'Illustrated botanical guide covering sensor placement, VPD basics, and NTE™ voice setup.',
+    badge: 'Soy Ink Print Target',
   },
   {
     icon: Leaf,
-    name: 'Zero-Plastic Packaging',
-    desc: 'Custom-molded bamboo & sugarcane pulp tray. 100% home compostable within 90 days.',
-    badge: 'Biodegradable',
+    name: 'Zero-Plastic Packaging Concept',
+    desc: 'Targeting custom-molded bamboo & sugarcane pulp tray designed for home compostability.',
+    badge: 'Target Biodegradable',
   },
 ];
 
@@ -41,12 +41,12 @@ export const ProductUnboxing: React.FC = () => {
     <section className="py-24 bg-[#030504] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <Badge variant="lime">Unboxing Experience</Badge>
+          <Badge variant="lime">Proposed Product Experience</Badge>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-            What&apos;s Inside the Box.
+            Target Packaging &amp; Unboxing Concept.
           </h2>
           <p className="text-[#A3B18A] text-base md:text-lg">
-            Plastic-free, zero-waste packaging designed with the same biophilic reverence as the hardware itself.
+            Conceptual packaging and accessory direction targeted for the future NIH-01 prototype cohort.
           </p>
         </div>
 

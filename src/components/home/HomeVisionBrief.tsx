@@ -28,7 +28,7 @@ export const HomeVisionBrief: React.FC = () => {
               </div>
               <h3 className="font-display text-xl font-semibold text-[#F7F6F2]">Thermal Transpiration</h3>
               <p className="text-sm text-[#A3B18A] leading-relaxed">
-                Investigating how FLIR thermal sensors can measure micro-kelvin surface temperature fluctuations on leaf surfaces to detect stomatal stress.
+                Investigating how FLIR thermal sensors can measure sub-degree surface temperature shifts on leaf surfaces to detect stomatal stress.
               </p>
             </Card>
           </ScrollReveal>

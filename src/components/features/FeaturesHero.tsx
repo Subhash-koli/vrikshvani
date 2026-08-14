@@ -12,7 +12,7 @@ export const FeaturesHero: React.FC = () => {
           Everything your plant needs to speak.
         </h1>
         <p className="text-[#A3B18A] text-base md:text-lg">
-          From micro-kelvin stomatal transpiration monitoring to neural voice speech synthesis.
+          From leaf thermal transpiration monitoring to neural voice speech synthesis.
         </p>
       </div>
     </section>

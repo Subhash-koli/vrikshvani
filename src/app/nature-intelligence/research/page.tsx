@@ -29,7 +29,7 @@ const hypotheses: Hypothesis[] = [
     status: 'Active Hypothesis',
     tagVariant: 'lime',
     description:
-      'Investigating whether micro-kelvin fluctuations in leaf surface temperature (measured via FLIR thermal sensors) provide an earlier and more accurate signal of transpiration shutdown than conventional ambient or soil moisture sensors.',
+      'Investigating whether sub-degree thermal variations in leaf surface temperature (measured via FLIR thermal sensors) provide an earlier and more accurate signal of transpiration shutdown than conventional ambient or soil moisture sensors.',
   },
   {
     title: 'On-Device TinyML Quantization for Low-Power Biophysical Inference',

@@ -28,9 +28,9 @@ export const AboutWhyWeExist: React.FC = () => {
 
           <Card className="space-y-4">
             <Sparkles className="w-8 h-8 text-[#E8D07C]" />
-            <h3 className="font-display text-xl font-bold text-[#F7F6F2]">Sustainable Manufacturing</h3>
+            <h3 className="font-display text-xl font-bold text-[#F7F6F2]">Sustainable Manufacturing Target</h3>
             <p className="text-xs text-[#A3B18A] leading-relaxed">
-              92% recycled ceramic clay, 100% FSC cotton packaging, zero single-use plastics in our supply chain.
+              Targeting 92% recycled ceramic clay, FSC-certified packaging, and zero single-use plastics in our hardware prototyping direction.
             </p>
           </Card>
 
@@ -38,7 +38,7 @@ export const AboutWhyWeExist: React.FC = () => {
             <Compass className="w-8 h-8 text-[#8AD74C]" />
             <h3 className="font-display text-xl font-bold text-[#F7F6F2]">Open Research Standard</h3>
             <p className="text-xs text-[#A3B18A] leading-relaxed">
-              We publish our plant bio-physics findings and provide open SDKs for university research labs globally.
+              We publish open research notes on plant biophysics and plan to provide open datasets &amp; SDKs for university research labs globally.
             </p>
           </Card>
         </div>

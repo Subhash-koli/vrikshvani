@@ -9,7 +9,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 const faqs = [
   {
     q: "How does non-invasive thermal sensing work?",
-    a: "FLIR thermal arrays measure micro-kelvin surface temperature differences on leaf surfaces caused by evaporative cooling during leaf transpiration. This enables us to observe potential stress indicators without touching or harming plant tissue.",
+    a: "FLIR thermal arrays measure fine-scale surface temperature variations on leaf surfaces caused by evaporative cooling during leaf transpiration. This enables us to observe potential stress indicators without touching or harming plant tissue.",
   },
   {
     q: "Is there any camera or video recording inside my room?",

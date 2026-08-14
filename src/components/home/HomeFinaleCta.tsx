@@ -23,6 +23,7 @@ interface WaitlistResponse {
 export const HomeFinaleCta: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [role, setRole] = useState('PLANT_ENTHUSIAST');
   const [colorway, setColorway] = useState('BIOPHILIC_SAGE');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [responseData, setResponseData] = useState<WaitlistResponse['data'] | null>(null);
@@ -42,6 +43,7 @@ export const HomeFinaleCta: React.FC = () => {
         body: JSON.stringify({
           name,
           email,
+          role,
           preferredColorway: colorway,
         }),
       });
@@ -130,15 +132,31 @@ export const HomeFinaleCta: React.FC = () => {
                   />
                 </div>
 
-                <Select
-                  label="Preferred Ceramic Colorway Concept"
-                  value={colorway}
-                  onChange={(e) => setColorway(e.target.value)}
-                  options={[
-                    { label: '🌿 Biophilic Sage', value: 'BIOPHILIC_SAGE' },
-                    { label: '✨ Cream White', value: 'CREAM_WHITE' },
-                  ]}
-                />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <Select
+                    label="I am primarily a:"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                    options={[
+                      { label: '🪴 Plant Enthusiast / Collector', value: 'PLANT_ENTHUSIAST' },
+                      { label: '🔬 Student / University Researcher', value: 'RESEARCHER' },
+                      { label: '💻 Software Developer / AI Engineer', value: 'DEVELOPER' },
+                      { label: '⚡ Hardware / Electronics Engineer', value: 'HARDWARE_ENGINEER' },
+                      { label: '🌱 Botany / Horticulture Professional', value: 'HORTICULTURIST' },
+                      { label: '🧪 Prototype Tester', value: 'PROTOTYPE_TESTER' },
+                    ]}
+                  />
+
+                  <Select
+                    label="Preferred Colorway Concept"
+                    value={colorway}
+                    onChange={(e) => setColorway(e.target.value)}
+                    options={[
+                      { label: '🌿 Biophilic Sage', value: 'BIOPHILIC_SAGE' },
+                      { label: '✨ Cream White', value: 'CREAM_WHITE' },
+                    ]}
+                  />
+                </div>
 
                 {/* Error Message */}
                 {status === 'error' && errorMessage && (
