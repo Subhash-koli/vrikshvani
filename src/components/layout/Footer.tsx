@@ -64,9 +64,27 @@ export const Footer: React.FC = () => {
                   className="w-7 h-7 object-contain group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <div>
-                <span className="block font-display font-bold text-xl text-[#F7F6F2]">Vriksh Vani</span>
-                <span className="block text-[11px] font-mono tracking-wider text-[#8AD74C] uppercase mt-0.5">Let your plant speak.</span>
+              {/* Parent: fit-content sized ONLY by the name (tagline is absolute) */}
+              <div
+                className="flex flex-col text-left relative"
+                style={{ width: 'fit-content', paddingBottom: '14px' }}
+              >
+                {/* Name — defines the reference width */}
+                <span className="font-brand font-extrabold text-xl tracking-tight
+                                 text-[#F7F6F2] group-hover:text-[#8AD74C] transition-colors
+                                 leading-tight whitespace-nowrap block">
+                  Vriksh Vani
+                </span>
+
+                {/* Tagline — absolute, nowrap forces single line, justify spreads to fill name width */}
+                <span
+                  className="absolute bottom-0 left-0 font-serif-logo
+                             text-[9.5px] text-[#8AD74C] uppercase
+                             block leading-none w-full whitespace-nowrap"
+                  style={{ textAlign: 'justify', textAlignLast: 'justify' }}
+                >
+                  Let Your Plant Speak
+                </span>
               </div>
             </Link>
             <p className="text-sm text-[#A3B18A] max-w-sm leading-relaxed">

@@ -151,17 +151,23 @@ export const Header: React.FC = () => {
                   unoptimized
                 />
               </div>
-              {/* w-fit → parent hugs the name width; tagline stretches to fill it */}
-              <div className="flex flex-col text-left" style={{ width: 'fit-content' }}>
+              {/* Parent: fit-content sized ONLY by the name (tagline is absolute) */}
+              <div
+                className="flex flex-col text-left relative"
+                style={{ width: 'fit-content', paddingBottom: '12px' }}
+              >
+                {/* Name — defines the reference width */}
                 <span className="font-brand font-extrabold text-base sm:text-lg tracking-tight
                                  text-[#F7F6F2] group-hover:text-[#8AD74C] transition-colors
                                  leading-tight whitespace-nowrap block">
                   Vriksh Vani
                 </span>
+
+                {/* Tagline — absolute, nowrap forces single line, justify spreads to fill name width */}
                 <span
-                  className="font-serif-logo text-[8px] sm:text-[9px]
-                             text-[#A3B18A] uppercase hidden sm:block
-                             leading-none mt-0.5 w-full"
+                  className="absolute bottom-0 left-0 font-serif-logo
+                             text-[7.5px] sm:text-[8.5px] text-[#A3B18A] uppercase
+                             block leading-none w-full whitespace-nowrap"
                   style={{ textAlign: 'justify', textAlignLast: 'justify' }}
                 >
                   Let Your Plant Speak
@@ -324,12 +330,26 @@ export const Header: React.FC = () => {
                 priority
                 unoptimized
               />
-              <div className="flex flex-col text-left leading-none">
-                <span className="font-display font-extrabold text-base sm:text-lg tracking-tight text-white group-hover:text-[#8AD74C] transition-colors">
+              {/* Parent: fit-content sized ONLY by the name (tagline is absolute) */}
+              <div
+                className="flex flex-col text-left relative"
+                style={{ width: 'fit-content', paddingBottom: '12px' }}
+              >
+                {/* Name — defines the reference width */}
+                <span className="font-brand font-extrabold text-base sm:text-lg tracking-tight
+                                 text-white group-hover:text-[#8AD74C] transition-colors
+                                 leading-tight whitespace-nowrap block">
                   Vriksh Vani
                 </span>
-                <span className="text-[8.5px] text-[#A3B18A] tracking-wider font-mono uppercase mt-0.5">
-                  LET YOUR PLANTS SPEAK
+
+                {/* Tagline — absolute, nowrap forces single line, justify spreads to fill name width */}
+                <span
+                  className="absolute bottom-0 left-0 font-serif-logo
+                             text-[7.5px] sm:text-[8.5px] text-[#A3B18A] uppercase
+                             block leading-none w-full whitespace-nowrap"
+                  style={{ textAlign: 'justify', textAlignLast: 'justify' }}
+                >
+                  Let Your Plant Speak
                 </span>
               </div>
             </Link>
