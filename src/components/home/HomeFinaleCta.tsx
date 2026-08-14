@@ -148,12 +148,16 @@ export const HomeFinaleCta: React.FC = () => {
                   />
 
                   <Select
-                    label="Preferred Colorway Concept"
+                    label="What interests you most?"
                     value={colorway}
                     onChange={(e) => setColorway(e.target.value)}
                     options={[
-                      { label: '🌿 Biophilic Sage', value: 'BIOPHILIC_SAGE' },
-                      { label: '✨ Cream White', value: 'CREAM_WHITE' },
+                      { label: '🌿 Plant Health & Stress Insights', value: 'PLANT_HEALTH' },
+                      { label: '🔬 Plant Biophysics & Stomatal Science', value: 'PLANT_SCIENCE' },
+                      { label: '✨ AI & NTE™ Voice Output', value: 'AI_VOICE' },
+                      { label: '⚡ Biophilic Ceramic Hardware & Optics', value: 'HARDWARE' },
+                      { label: '🧪 Prototype Testbed Cohort', value: 'PROTOTYPE_TESTING' },
+                      { label: '📊 Open Biophysics Datasets', value: 'OPEN_DATA' },
                     ]}
                   />
                 </div>
