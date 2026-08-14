@@ -129,13 +129,13 @@ export const HomeHero: React.FC = () => {
 
               </h1>
 
-              {/* ── Subtitle: 2 lines, vw-based font scales with any device width ── */}
+              {/* ── Subtitle: 2 lines guaranteed — sentences short enough for 1 line each ── */}
               <p className="text-[2.8vw] sm:text-base lg:text-lg
                             text-[#F7F6F2]/85
-                            max-w-[80vw] sm:max-w-sm lg:max-w-md
+                            max-w-[85vw] sm:max-w-sm lg:max-w-md
                             leading-snug
                             drop-shadow-[0_2px_12px_rgba(0,0,0,1)]">
-                Your plant communicates every second through subtle thermal shifts.<br />
+                Your plant speaks through thermal shifts every second.<br />
                 <span className="text-[#8AD74C] font-semibold">Vriksh Vani</span>{' '}
                 decodes these signals into plain speech.
               </p>
