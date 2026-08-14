@@ -32,6 +32,11 @@ export default function HomePage() {
       <section id="chapter-01-problem">
         <HomeHero />
         <HomeTrustBar />
+        <ChapterHeader
+          number="01"
+          title="THE PROBLEM — Invisible Plant Signals"
+          subtitle="Plants Respond Continuously · Humans Observe After the Fact"
+        />
         <HomeProblemSection />
       </section>
 
