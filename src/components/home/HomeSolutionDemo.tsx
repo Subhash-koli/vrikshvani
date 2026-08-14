@@ -9,35 +9,47 @@ import { Sparkles, Volume2, Cpu, Activity, Waves, Thermometer, Wind, Info } from
 const PERSONALITIES = [
   {
     id: 'CALM_WARM',
-    label: 'Calm & Warm',
-    voice: "I'm photosynthesizing peacefully right now. The afternoon sunlight feels so soothing, but my roots could use a gentle sip of room-temperature water in about an hour.",
+    label: 'Calm & Warm Profile',
+    inference: 'Optimal Transpiration Homeostasis',
+    confidence: '94% Confidence',
+    signals: 'Leaf thermal delta -1.8°C · VPD 0.85 kPa · Humidity 58% · Baseline MOX 185 kΩ',
+    voice: '"My leaves are slightly cooler than the room air and ambient humidity is steady. Transpiration is operating peacefully, though I may enjoy a gentle sip of room-temperature water later this afternoon."',
     emotion: 'Photosynthetic Serenity 🌿',
     healthScore: 98,
     metrics: { temp: '23.4°C', vpd: '0.85 kPa', humidity: '58%', gas: '185 kΩ' },
   },
   {
-    id: 'PLAYFUL_CURIOUS',
-    label: 'Playful & Curious',
-    voice: "Hey! That breeze from the window was super refreshing! My new leaf is growing fast today. Can we get just a tiny misting later?",
-    emotion: 'Vibrant Growth Energy ✨',
-    healthScore: 95,
-    metrics: { temp: '24.1°C', vpd: '0.92 kPa', humidity: '54%', gas: '172 kΩ' },
+    id: 'WATER_STRESS',
+    label: 'Water Stress Hypothesis',
+    inference: 'Possible Water Stress Signature',
+    confidence: '74% Confidence',
+    signals: 'Leaf thermal delta +0.6°C · VPD 1.45 kPa · Relative Humidity 34% · MOX 142 kΩ',
+    voice: '"My leaves are warmer than usual and my surrounding air is relatively dry. I may be experiencing mild water stress as my stomata constrict to preserve moisture."',
+    emotion: 'Transpiration Stress Response 🌡️',
+    healthScore: 78,
+    metrics: { temp: '25.6°C', vpd: '1.45 kPa', humidity: '34%', gas: '142 kΩ' },
   },
   {
     id: 'SCIENTIFIC_PRECISION',
     label: 'Scientific Precision',
-    voice: "Stomatal conductance is operating at 94% efficiency. Transpiration rate is optimal at 0.85 kPa VPD. Soil moisture reserve is currently at 42% capacity.",
+    inference: 'Stomatal Conductance State',
+    confidence: '98% Confidence',
+    signals: 'Leaf thermal delta -1.6°C · VPD 0.82 kPa · Humidity 62% · Baseline MOX 198 kΩ',
+    voice: '"Stomatal conductance is estimated at 94% efficiency. Transpiration rate is optimal within target VPD parameters. Current soil moisture reserve is at an estimated 42% capacity."',
     emotion: 'Optimal Homeostasis 📊',
     healthScore: 99,
     metrics: { temp: '22.8°C', vpd: '0.82 kPa', humidity: '62%', gas: '198 kΩ' },
   },
   {
     id: 'MEDITATIVE_ZEN',
-    label: 'Meditative Zen',
-    voice: "Deep stillness in the leaves. The ambient humidity carries harmony. All systems rest in gentle equilibrium with the room.",
-    emotion: 'Deep Biophysical Harmony 🧘',
-    healthScore: 100,
-    metrics: { temp: '22.5°C', vpd: '0.78 kPa', humidity: '65%', gas: '210 kΩ' },
+    label: 'High Humidity Equilibrium',
+    inference: 'Low VPD Transpiration Rest',
+    confidence: '91% Confidence',
+    signals: 'Leaf thermal delta -0.4°C · VPD 0.52 kPa · Humidity 72% · Baseline MOX 210 kΩ',
+    voice: '"Ambient air humidity is high and evaporative demand is low. Stomata rest in gentle equilibrium with the room."',
+    emotion: 'Deep Biophysical Equilibrium 🧘',
+    healthScore: 96,
+    metrics: { temp: '22.1°C', vpd: '0.52 kPa', humidity: '72%', gas: '210 kΩ' },
   },
 ];
 
@@ -176,13 +188,24 @@ export const HomeSolutionDemo: React.FC = () => {
             {/* Right: Translated Voice Card */}
             <Card className="lg:col-span-7 p-8 border-[#8AD74C]/30 space-y-6 flex flex-col justify-between nidl-glass-hover bg-gradient-to-br from-[#0F2B18]/80 to-[#070B08]/90">
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <Badge variant="lime" className="text-xs">
-                    {current.emotion}
-                  </Badge>
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <div className="flex items-center gap-2">
+                    <Badge variant="lime" className="text-xs">
+                      {current.inference}
+                    </Badge>
+                    <span className="text-xs font-mono font-bold text-[#E8D07C] bg-[#E8D07C]/10 px-2 py-0.5 rounded border border-[#E8D07C]/30">
+                      {current.confidence}
+                    </span>
+                  </div>
                   <span className="text-xs font-mono text-[#A3B18A]">
-                    Voice Personality: <strong className="text-[#F7F6F2]">{current.label}</strong>
+                    Profile: <strong className="text-[#F7F6F2]">{current.label}</strong>
                   </span>
+                </div>
+
+                {/* Signals Observed Box */}
+                <div className="p-3 rounded-xl bg-[#030504] border border-white/10 text-xs font-mono text-[#A3B18A] flex flex-wrap items-center justify-between gap-2">
+                  <span>Signals Observed:</span>
+                  <span className="text-[#8AD74C] font-semibold">{current.signals}</span>
                 </div>
 
                 {/* Simulated Voice Output Box */}

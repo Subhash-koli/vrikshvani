@@ -25,22 +25,42 @@ export default function HomePage() {
     <main id="main-content" className="min-h-screen bg-[#070B08] text-[#F7F6F2] selection:bg-[#8AD74C] selection:text-[#070B08]">
       <JsonLd data={faqJsonLd} />
       <Header />
-      <HomeHero />
-      <HomeTrustBar />
-      <HomeProblemSection />
-      <HomeSolutionDemo />
-      <HowItWorks60s />
-      <HomeProductShowcase />
-      <HomeFeatureGrid />
-      <HomeTechBreakdown />
-      <HomeAppPreview />
-      <HomeTestimonials />
-      <HomeVisionBrief />
-      <HomeCommunityWall />
-      <HomePricingPreview />
-      <HomeBlogPreview />
-      <HomeFaq />
-      <HomeFinaleCta />
+
+      {/* CHAPTER 01 — THE PROBLEM */}
+      <section id="chapter-01-problem">
+        <HomeHero />
+        <HomeTrustBar />
+        <HomeProblemSection />
+      </section>
+
+      {/* CHAPTER 02 — THE IDEA & NATURE INTELLIGENCE */}
+      <section id="chapter-02-idea">
+        <HomeSolutionDemo />
+        <HowItWorks60s />
+      </section>
+
+      {/* CHAPTER 03 — THE SYSTEM (SENSING -> INTERPRETATION -> CARE) */}
+      <section id="chapter-03-system">
+        <HomeProductShowcase />
+        <HomeFeatureGrid />
+        <HomeTechBreakdown />
+        <HomeAppPreview />
+      </section>
+
+      {/* CHAPTER 04 — THE RESEARCH & PHILOSOPHY */}
+      <section id="chapter-04-research">
+        <HomeVisionBrief />
+        <HomeBlogPreview />
+      </section>
+
+      {/* CHAPTER 05 — THE JOURNEY (COMMUNITY & WAITLIST) */}
+      <section id="chapter-05-journey">
+        <HomeTestimonials />
+        <HomeCommunityWall />
+        <HomeFaq />
+        <HomeFinaleCta />
+      </section>
+
       <Footer />
     </main>
   );
