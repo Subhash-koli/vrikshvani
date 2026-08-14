@@ -16,8 +16,11 @@ export default function ThermalVisualizer() {
             <Flame className="w-5 h-5 text-[#E8D07C]" />
           </div>
           <div>
-            <h3 className="font-display text-xl font-bold text-[#F7F6F2]">FLIR Thermal Leaf vs Air Visualizer</h3>
-            <p className="text-xs text-[#A3B18A]">Illustrative LWIR Thermal Transpiration Cooling Physics Model</p>
+            <div className="flex items-center gap-2">
+              <h3 className="font-display text-xl font-bold text-[#F7F6F2]">FLIR Thermal Leaf vs Air Visualizer</h3>
+              <Badge variant="gold" className="text-[10px]">ILLUSTRATIVE THERMAL MODEL</Badge>
+            </div>
+            <p className="text-xs text-[#A3B18A]">Simulated Educational Model — Not Live Experimental Telemetry</p>
           </div>
         </div>
 
