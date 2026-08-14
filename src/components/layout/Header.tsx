@@ -129,7 +129,9 @@ export const Header: React.FC = () => {
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <div className="flex items-center justify-between">
+        
+        {/* ── DESKTOP HEADER (lg: and up) ── */}
+        <div className="hidden lg:flex items-center justify-between">
           
           {/* 1. Left: Brand Identity & Logo */}
           <div className="flex items-center gap-3">
@@ -161,7 +163,7 @@ export const Header: React.FC = () => {
           </div>
 
           {/* 2. Center: Authentic Vriksh Vani Navigation with Dropdowns */}
-          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2">
+          <nav className="flex items-center gap-1.5 xl:gap-2">
             <Link
               href="/"
               className={`relative px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all ${
@@ -262,12 +264,11 @@ export const Header: React.FC = () => {
             })}
           </nav>
 
-          {/* 3. Right: Search Trigger & Join Waitlist Glow Pill */}
+          {/* 3. Right: Search Trigger & Join Waitlist Button */}
           <div className="flex items-center gap-3">
-            {/* Search Trigger */}
             <button
               onClick={() => setSearchOpen(true)}
-              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0F2B18]/60 border border-white/10 hover:border-[#8AD74C]/40 text-xs text-[#A3B18A] hover:text-[#F7F6F2] transition-all"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0F2B18]/60 border border-white/10 hover:border-[#8AD74C]/40 text-xs text-[#A3B18A] hover:text-[#F7F6F2] transition-all"
               aria-label="Search website"
             >
               <Search className="w-3.5 h-3.5 text-[#8AD74C]" />
@@ -275,8 +276,7 @@ export const Header: React.FC = () => {
               <kbd className="px-1.5 py-0.5 text-[9px] font-mono bg-white/5 border border-white/10 rounded text-[#A3B18A]">⌘K</kbd>
             </button>
 
-            {/* Desktop Join Pill */}
-            <Link href="/waitlist" className="hidden sm:inline-flex">
+            <Link href="/waitlist">
               <Button
                 variant="primary"
                 size="sm"
@@ -286,32 +286,74 @@ export const Header: React.FC = () => {
                 <span>Join the Waitlist</span>
               </Button>
             </Link>
-
-            {/* Mobile Search Icon Button */}
-            <button
-              onClick={() => setSearchOpen(true)}
-              className="sm:hidden p-2 rounded-xl bg-[#0F2B18] text-[#8AD74C] border border-[#8AD74C]/30"
-              aria-label="Open search"
-            >
-              <Search className="w-4 h-4" />
-            </button>
-
-            {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-xl bg-[#0F2B18] text-[#F7F6F2] border border-white/10"
-              aria-label="Toggle navigation menu"
-            >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
           </div>
 
         </div>
+
+        {/* ── MOBILE & TABLET HEADER (< lg) — Matching Reference Image 2 ── */}
+        <div className="flex lg:hidden items-center justify-between py-1">
+          
+          {/* Far Left: Hamburger Menu Button [≡] (Clean white lines icon, no box border) */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="p-1.5 text-white hover:text-[#8AD74C] transition-colors focus:outline-none shrink-0"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6 text-white" />}
+          </button>
+
+          {/* Center: Brand Logo + Subtitle */}
+          <Link href="/" className="flex items-center gap-2 group cursor-pointer focus:outline-none text-center">
+            <Image
+              src="/assets/vrikshvani_logo/1000397742-removebg-preview.png"
+              alt="Vriksh Vani Logo"
+              width={34}
+              height={34}
+              className="object-contain shrink-0"
+              priority
+              unoptimized
+            />
+            <div className="flex flex-col text-left leading-none">
+              <span className="font-display font-extrabold text-base tracking-tight text-white group-hover:text-[#8AD74C] transition-colors">
+                Vriksh vani
+              </span>
+              <span className="text-[9px] text-[#A3B18A] tracking-tight font-sans mt-0.5">
+                Let Your Plants Speak
+              </span>
+            </div>
+          </Link>
+
+          {/* Far Right: Compact Gradient Join Button */}
+          <Link href="/waitlist" className="shrink-0">
+            <button className="flex items-center gap-1.5 rounded-xl px-3.5 py-1.5 text-xs font-bold text-white bg-gradient-to-tr from-[#031201] via-[#2E9B12] to-[#C4F050] hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60] transition-all active:scale-95 shadow-[0_2px_12px_rgba(80,180,40,0.4)]">
+              <Leaf className="w-3.5 h-3.5 fill-white text-white shrink-0" />
+              <span>Join</span>
+            </button>
+          </Link>
+
+        </div>
+
       </div>
 
       {/* Mobile Drawer Menu */}
       {mobileOpen && (
         <div className="lg:hidden fixed inset-x-0 top-[60px] bottom-0 z-50 bg-[#070B08]/98 backdrop-blur-3xl overflow-y-auto p-6 space-y-6 border-t border-[#8AD74C]/20 shadow-2xl">
+          
+          {/* Quick Search inside Mobile Drawer */}
+          <button
+            onClick={() => {
+              setMobileOpen(false);
+              setSearchOpen(true);
+            }}
+            className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#0F2B18]/60 border border-white/10 text-xs text-[#A3B18A] hover:text-[#F7F6F2] hover:border-[#8AD74C]/40 transition-all"
+          >
+            <div className="flex items-center gap-2">
+              <Search className="w-4 h-4 text-[#8AD74C]" />
+              <span>Search website...</span>
+            </div>
+            <kbd className="px-1.5 py-0.5 text-[9px] font-mono bg-white/5 border border-white/10 rounded text-[#A3B18A]">⌘K</kbd>
+          </button>
+
           <div className="space-y-3">
             <Link
               href="/"
