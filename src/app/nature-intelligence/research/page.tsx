@@ -66,6 +66,14 @@ export default function ResearchPage() {
             <p className="text-[#A3B18A] text-lg leading-relaxed">
               Vriksh Vani is building Nature Intelligence on a foundation of open hypotheses, empirical testing, and transparent research. We publish our research notes openly as we learn.
             </p>
+            <div className="pt-2">
+              <Link
+                href="/nature-intelligence/evidence"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-display font-bold text-xs text-[#8AD74C] bg-[#8AD74C]/10 border border-[#8AD74C]/30 hover:bg-[#8AD74C]/20 transition-all"
+              >
+                View Evidence &amp; Truth Registry &rarr;
+              </Link>
+            </div>
           </div>
 
           {/* Published Research Notes */}
