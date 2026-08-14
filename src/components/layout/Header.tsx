@@ -38,7 +38,9 @@ const navGroups: NavGroup[] = [
   {
     label: 'Research',
     children: [
-      { label: 'Open Hypotheses', href: '/nature-intelligence/research', desc: 'Biophysics study notes & transpiration models' },
+      { label: 'Research Hub & Hypotheses', href: '/nature-intelligence/research', desc: 'Biophysics study notes & transpiration models' },
+      { label: 'Research Note #001', href: '/nature-intelligence/research/note-001', desc: 'Leaf thermography under controlled VPD shift' },
+      { label: 'Evidence & Truth Registry', href: '/nature-intelligence/evidence', desc: 'Verified status of all biophysical claims & specs' },
       { label: 'Blog & Dispatches', href: '/blog', desc: 'Founder dispatches & research logs' },
       { label: 'Community Cohort', href: '/community', desc: 'Early research testers & prototype feedback' },
     ],

@@ -16,6 +16,9 @@ const INDEXED_CONTENT = [
   { id: 'sc-1', type: 'Research', title: 'Vapour Pressure Deficit Longitudinal Study', subtitle: 'Peer-reviewed research paper on leaf temperature correlation', url: '/nature-intelligence/research' },
   { id: 'sc-2', type: 'Whitepaper', title: 'Nature Intelligence Technical Whitepaper v1.2', subtitle: '42-page technical architecture of FLIR + BME688 + NTE™', url: '/nature-intelligence/whitepaper' },
   { id: 'sc-3', type: 'Open Data', title: 'Vriksh Vani Open Data Programme', subtitle: '2.1 million anonymised plant biometric readings (CC BY 4.0)', url: '/nature-intelligence/open-data' },
+  { id: 'sc-4', type: 'Research', title: 'Research Note #001 — Leaf Surface Thermography', subtitle: 'Empirical leaf surface temperature delta under controlled VPD shift', url: '/nature-intelligence/research/note-001' },
+  { id: 'sc-5', type: 'Truth Index', title: 'Evidence & Truth Registry', subtitle: 'Official verified status index of all biophysical claims & specs', url: '/nature-intelligence/evidence' },
+  { id: 'sc-6', type: 'Dataset', title: 'Open Biophysical Telemetry JSON Dataset', subtitle: 'Downloadable time-series telemetry sample (CC BY 4.0)', url: '/api/v1/telemetry/sample' },
 
   // Developer & API
   { id: 'dev-1', type: 'Developer', title: 'Vriksh Vani REST API Documentation', subtitle: 'Stream live readings, query species, and configure webhooks', url: '/developers' },
