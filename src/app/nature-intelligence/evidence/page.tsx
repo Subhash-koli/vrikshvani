@@ -23,91 +23,111 @@ interface ClaimEntry {
   claim: string;
   category: 'Scientific' | 'Hardware' | 'AI & Software' | 'Environmental' | 'Legal & Privacy';
   status: 'LIVE' | 'VERIFIED' | 'PROTOTYPE' | 'RESEARCH HYPOTHESIS' | 'TARGET CONCEPT' | 'SIMULATION';
+  confidence: 'High (Established)' | 'High (Production)' | 'Medium (Experimental)' | 'TBD (Concept)';
   tagVariant: 'lime' | 'gold' | 'glass' | 'outline';
   evidence: string;
+  lastUpdated: string;
   link: string;
 }
 
 const EVIDENCE_REGISTRY: ClaimEntry[] = [
   {
-    id: 'EVD-001',
+    id: 'BIO-001',
     claim: 'Foliar Transpiration Evaporative Cooling',
     category: 'Scientific',
     status: 'VERIFIED',
+    confidence: 'High (Established)',
     tagVariant: 'lime',
-    evidence: 'Established physical principle. Foliar water loss causes leaf temperature reduction relative to ambient air.',
+    evidence: 'Established physical energy balance law (Rn - H - λE = 0). Foliar water loss causes leaf temperature reduction relative to ambient air.',
+    lastUpdated: 'August 2026',
     link: '/nature-intelligence/research/note-001',
   },
   {
-    id: 'EVD-002',
+    id: 'EXP-001',
     claim: 'Pre-Wilting Stomatal Stress Signatures',
     category: 'Scientific',
     status: 'RESEARCH HYPOTHESIS',
+    confidence: 'Medium (Experimental)',
     tagVariant: 'gold',
     evidence: 'Research Note #001 empirical benchtop trial on Monstera deliciosa (+1.4°C thermal shift 180 min prior to wilting).',
+    lastUpdated: 'August 2026',
     link: '/nature-intelligence/research/note-001',
   },
   {
-    id: 'EVD-003',
+    id: 'HW-001',
     claim: 'FLIR Thermal Optics Integration',
     category: 'Hardware',
     status: 'TARGET CONCEPT',
+    confidence: 'TBD (Concept)',
     tagVariant: 'glass',
     evidence: 'NIH-01 target hardware specification utilizing FLIR Lepton 3.5 LWIR core (160x120 pixels).',
+    lastUpdated: 'August 2026',
     link: '/product',
   },
   {
-    id: 'EVD-004',
+    id: 'HW-002',
     claim: 'Bosch BME688 MOX Gas Resistance Sensing',
     category: 'Hardware',
     status: 'TARGET CONCEPT',
+    confidence: 'TBD (Concept)',
     tagVariant: 'glass',
     evidence: 'Target hardware specification integrating Bosch BME688 MOX sensor for total VOC resistance monitoring.',
+    lastUpdated: 'August 2026',
     link: '/product/craftsmanship',
   },
   {
-    id: 'EVD-005',
+    id: 'NTE-001',
     claim: 'NTE™ Neural Voice Output Synthesis',
     category: 'AI & Software',
     status: 'SIMULATION',
+    confidence: 'TBD (Concept)',
     tagVariant: 'outline',
     evidence: 'Interactive website speech synthesis concept mapping biophysical telemetry into spoken human text.',
+    lastUpdated: 'August 2026',
     link: '/nature-intelligence',
   },
   {
-    id: 'EVD-006',
+    id: 'AI-001',
     claim: 'Local On-Device TinyML Quantization',
     category: 'AI & Software',
     status: 'RESEARCH HYPOTHESIS',
+    confidence: 'Medium (Experimental)',
     tagVariant: 'gold',
     evidence: 'Open Python SDK reference implementation (vrikshvani-py) for local VPD and stomatal state inference.',
+    lastUpdated: 'August 2026',
     link: '/nature-intelligence/research',
   },
   {
-    id: 'EVD-007',
+    id: 'HW-003',
     claim: 'Handcrafted Kiln-Fired Ceramic Shell',
     category: 'Hardware',
     status: 'TARGET CONCEPT',
+    confidence: 'TBD (Concept)',
     tagVariant: 'glass',
     evidence: 'Biophilic ceramic shell target using stoneware clay bodies fired at 1,250°C.',
+    lastUpdated: 'August 2026',
     link: '/product/craftsmanship',
   },
   {
-    id: 'EVD-008',
+    id: 'SEC-001',
     claim: 'Volatile SRAM Frame Overwrite Privacy',
     category: 'Legal & Privacy',
     status: 'TARGET CONCEPT',
+    confidence: 'High (Established)',
     tagVariant: 'lime',
     evidence: 'Target hardware architecture executing local edge processing in volatile SRAM with zero cloud video storage.',
+    lastUpdated: 'August 2026',
     link: '/privacy',
   },
   {
-    id: 'EVD-009',
+    id: 'SYS-001',
     claim: 'Waitlist Registration Database API',
     category: 'AI & Software',
     status: 'LIVE',
+    confidence: 'High (Production)',
     tagVariant: 'lime',
     evidence: 'Live production Next.js API route backed by PostgreSQL, Prisma ORM, and Zod schema validation.',
+    lastUpdated: 'August 2026',
     link: '/waitlist',
   },
 ];
@@ -190,7 +210,9 @@ export default function EvidenceRegistryPage() {
                     <th className="p-4">Claim / Capability</th>
                     <th className="p-4">Category</th>
                     <th className="p-4">Verified Status</th>
+                    <th className="p-4">Confidence Level</th>
                     <th className="p-4">Evidence &amp; Verification Notes</th>
+                    <th className="p-4">Updated</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5">
@@ -202,6 +224,7 @@ export default function EvidenceRegistryPage() {
                       <td className="p-4">
                         <Badge variant={row.tagVariant}>{row.status}</Badge>
                       </td>
+                      <td className="p-4 font-mono text-[#E8D07C] text-[11px]">{row.confidence}</td>
                       <td className="p-4 text-[#A3B18A] leading-relaxed">
                         <div className="space-y-1">
                           <p>{row.evidence}</p>
@@ -213,6 +236,7 @@ export default function EvidenceRegistryPage() {
                           </Link>
                         </div>
                       </td>
+                      <td className="p-4 font-mono text-[11px] text-[#A3B18A]">{row.lastUpdated}</td>
                     </tr>
                   ))}
                 </tbody>
