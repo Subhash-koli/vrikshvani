@@ -24,7 +24,8 @@ export const HomeFinaleCta: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('PLANT_ENTHUSIAST');
-  const [colorway, setColorway] = useState('BIOPHILIC_SAGE');
+  const [colorway, setColorway] = useState('PLANT_HEALTH');
+  const [prototypeInterest, setPrototypeInterest] = useState('YES');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [responseData, setResponseData] = useState<WaitlistResponse['data'] | null>(null);
   const [errorMessage, setErrorMessage] = useState('');
@@ -162,6 +163,17 @@ export const HomeFinaleCta: React.FC = () => {
                   />
                 </div>
 
+                <Select
+                  label="Would you be interested in testing an early prototype?"
+                  value={prototypeInterest}
+                  onChange={(e) => setPrototypeInterest(e.target.value)}
+                  options={[
+                    { label: 'Yes — Interested in physical hardware benchtop testing', value: 'YES' },
+                    { label: 'Maybe — Depends on hardware specs and location', value: 'MAYBE' },
+                    { label: 'No — Just want research & software updates', value: 'NO' },
+                  ]}
+                />
+
                 {/* Error Message */}
                 {status === 'error' && errorMessage && (
                   <div className="flex items-start gap-2.5 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm animate-fadeIn">
@@ -179,10 +191,10 @@ export const HomeFinaleCta: React.FC = () => {
                 >
                   {status === 'loading' ? (
                     <span className="flex items-center gap-2">
-                      <Loader2 className="w-4 h-4 animate-spin" /> Joining Waitlist...
+                      <Loader2 className="w-4 h-4 animate-spin" /> Joining Research Cohort...
                     </span>
                   ) : (
-                    'Join Research Waitlist →'
+                    'Join the Research Cohort →'
                   )}
                 </Button>
 

@@ -61,7 +61,11 @@ export default function Timeline() {
             <div className="absolute left-2.5 top-1.5 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#070B08] border-2 border-[#8AD74C] group-hover:scale-125 transition-transform" />
             <div className="flex items-center justify-between flex-wrap gap-2">
               <span className="font-mono text-xs text-[#8AD74C] font-bold">{m.quarter}</span>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#A3B18A] bg-white/5 border border-white/10 px-2 py-0.5 rounded">
+              <span className={`text-[10px] font-mono uppercase tracking-widest px-2.5 py-0.5 rounded border ${
+                m.status === 'Current Phase'
+                  ? 'text-[#8AD74C] bg-[#8AD74C]/20 border-[#8AD74C] font-bold shadow-[0_0_12px_rgba(138,215,76,0.3)]'
+                  : 'text-[#A3B18A] bg-white/5 border-white/10'
+              }`}>
                 {m.status}
               </span>
             </div>

@@ -31,8 +31,8 @@ const navGroups: NavGroup[] = [
       { label: 'Nature Intelligence', href: '/nature-intelligence', desc: 'ESP32-S3 TinyML & biophysical computing' },
       { label: 'NTE™ Voice Engine', href: '/nature-intelligence/nte-voice', desc: 'Neural signal translation concept' },
       { label: 'Research Framework', href: '/nature-intelligence/research', desc: 'Working plant physiology hypotheses' },
-      { label: 'Open Data Program', href: '/nature-intelligence/open-data', desc: 'Open dataset framework for botanical AI' },
-      { label: 'Mobile App Concept', href: '/app', desc: 'iOS & Android interface vision' },
+      { label: 'Open Data Program (Pre-Release)', href: '/nature-intelligence/open-data', desc: 'Open sample telemetry dataset (CC BY 4.0)' },
+      { label: 'Mobile App Concept', href: '/app', desc: 'iOS & Android interface vision concept' },
     ],
   },
   {
