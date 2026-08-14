@@ -85,7 +85,7 @@ export const HomeHero: React.FC = () => {
                     Mobile: 5.5vw scales from 17.6px (320px) → 23.6px (430px)
                     Tablet+: fixed 44px → 66px */}
                 <span className="block font-normal
-                                 text-[5.5vw] sm:text-[44px] lg:text-[54px] xl:text-[66px]
+                                 text-[5.5vw] sm:text-[34px] lg:text-[42px] xl:text-[52px]
                                  text-[#F0EFEB]
                                  tracking-[0.06em]
                                  leading-none
@@ -98,7 +98,7 @@ export const HomeHero: React.FC = () => {
                     Tablet+: fixed 128px → 192px */}
                 <div className="relative leading-[0.88]">
                   <span className="block font-black
-                                   text-[17vw] sm:text-[128px] lg:text-[160px] xl:text-[192px]
+                                   text-[17vw] sm:text-[88px] lg:text-[108px] xl:text-[136px]
                                    tracking-[-0.02em] leading-[0.88]
                                    text-transparent bg-clip-text
                                    bg-gradient-to-b from-[#A8E055] via-[#6BBF28] to-[#2E6B12]
@@ -119,7 +119,7 @@ export const HomeHero: React.FC = () => {
                     Mobile: 6.5vw scales from 20.8px (320px) → 27.95px (430px)
                     Tablet+: fixed 52px → 78px */}
                 <span className="block font-bold
-                                 text-[6.5vw] sm:text-[52px] lg:text-[64px] xl:text-[78px]
+                                 text-[6.5vw] sm:text-[40px] lg:text-[50px] xl:text-[62px]
                                  text-[#F0EFEB]
                                  tracking-[0.20em]
                                  leading-none mt-1
@@ -129,10 +129,10 @@ export const HomeHero: React.FC = () => {
 
               </h1>
 
-              {/* ── Subtitle: 2 lines guaranteed — sentences short enough for 1 line each ── */}
-              <p className="text-[2.8vw] sm:text-base lg:text-lg
+              {/* ── Subtitle: 2 lines on ALL devices ── */}
+              <p className="text-[2.8vw] sm:text-sm lg:text-base
                             text-[#F7F6F2]/85
-                            max-w-[85vw] sm:max-w-sm lg:max-w-md
+                            max-w-[85vw] sm:max-w-md lg:max-w-xl
                             leading-snug
                             drop-shadow-[0_2px_12px_rgba(0,0,0,1)]">
                 Your plant speaks through thermal shifts every second.<br />
