@@ -11,12 +11,12 @@ import Link from 'next/link';
 type Reason = 'general' | 'research' | 'prototype' | 'press' | 'technical' | 'partnership';
 
 const reasons: { value: Reason; label: string; desc: string }[] = [
-  { value: 'general', label: 'General Inquiry', desc: 'Project questions & research waitlist' },
-  { value: 'research', label: 'Research Collaboration', desc: 'University, academic & lab research' },
-  { value: 'prototype', label: 'Prototype Testing Cohort', desc: 'Early hardware testbed cohort' },
-  { value: 'press', label: 'Press & Media', desc: 'Interviews & press kit requests' },
-  { value: 'technical', label: 'Technical / Developer', desc: 'SDK, open-data API, botanical AI' },
-  { value: 'partnership', label: 'Partnership', desc: 'Botanical garden & institutional partners' },
+  { value: 'general', label: 'General', desc: 'Questions about the project' },
+  { value: 'research', label: 'Research Collaboration', desc: 'Universities, botanists, researchers' },
+  { value: 'prototype', label: 'Prototype Testing', desc: 'Interested in joining the early cohort' },
+  { value: 'technical', label: 'Technical', desc: 'Hardware, AI, embedded systems' },
+  { value: 'partnership', label: 'Partnership', desc: 'Potential collaborators' },
+  { value: 'press', label: 'Media', desc: 'Press and creator enquiries' },
 ];
 
 export const ContactClient: React.FC = () => {
