@@ -142,10 +142,10 @@ export const Header: React.FC = () => {
             >
               <div className="relative w-9 h-9 rounded-xl bg-[#0F2B18] border border-[#8AD74C]/50 flex items-center justify-center p-1 group-hover:border-[#8AD74C] group-hover:shadow-[0_0_15px_rgba(138,215,76,0.4)] transition-all shadow-lime-glow shrink-0">
                 <Image
-                  src="/assets/vrikshvani_logo/vrikshvani-emblem-gold-ring.png"
+                  src="/assets/vrikshvani_logo/vriksh vani 3d symboll logo.png"
                   alt="Vriksh Vani Logo"
-                  width={28}
-                  height={28}
+                  width={32}
+                  height={32}
                   className="object-contain"
                   priority
                   unoptimized
@@ -308,10 +308,10 @@ export const Header: React.FC = () => {
           <div className="flex-1 flex items-center justify-center">
             <Link href="/" className="flex items-center gap-2 group cursor-pointer focus:outline-none">
               <Image
-                src="/assets/vrikshvani_logo/vrikshvani-iconmark-flat-light.png"
+                src="/assets/vrikshvani_logo/vriksh vani 3d symboll logo.png"
                 alt="Vriksh Vani Logo"
-                width={30}
-                height={30}
+                width={32}
+                height={32}
                 className="object-contain shrink-0"
                 priority
                 unoptimized
