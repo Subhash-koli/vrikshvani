@@ -17,7 +17,7 @@ export default function ThermalVisualizer() {
           </div>
           <div>
             <h3 className="font-display text-xl font-bold text-[#F7F6F2]">FLIR Thermal Leaf vs Air Visualizer</h3>
-            <p className="text-xs text-[#A3B18A]">Non-Invasive LWIR Thermal Transpiration Cooling Delta</p>
+            <p className="text-xs text-[#A3B18A]">Illustrative LWIR Thermal Transpiration Cooling Physics Model</p>
           </div>
         </div>
 
@@ -30,7 +30,7 @@ export default function ThermalVisualizer() {
                 : 'text-[#A3B18A] hover:text-[#F7F6F2]'
             }`}
           >
-            <Flame className="w-3.5 h-3.5 text-[#E8D07C]" /> FLIR Thermal LWIR
+            <Flame className="w-3.5 h-3.5 text-[#E8D07C]" /> Modeled Thermal Model
           </button>
           <button
             onClick={() => setMode('optical')}
@@ -52,13 +52,13 @@ export default function ThermalVisualizer() {
             {/* False Color Heatmap Mockup */}
             <div className="space-y-4 max-w-md">
               <div className="w-36 h-36 mx-auto rounded-full bg-gradient-to-br from-[#065f46] via-[#10b981] to-[#34d399] border-4 border-emerald-300 shadow-2xl flex flex-col items-center justify-center text-center p-2">
-                <span className="text-[10px] font-mono uppercase text-emerald-950 font-bold">Leaf Surface</span>
+                <span className="text-[10px] font-mono uppercase text-emerald-950 font-bold">Leaf Surface (Modeled)</span>
                 <span className="text-2xl font-mono font-bold text-emerald-950">22.4°C</span>
                 <span className="text-[9px] font-mono text-emerald-900">Transpiration Cooling</span>
               </div>
               <div className="bg-[#070B08]/80 p-3 rounded-xl border border-white/10 flex justify-between items-center font-mono text-xs">
                 <span className="text-[#A3B18A]">Ambient Air Temp: <strong className="text-red-400">25.8°C</strong></span>
-                <span className="text-[#8AD74C]">ΔT: <strong className="text-[#8AD74C]">-3.4°C</strong></span>
+                <span className="text-[#8AD74C]">Modeled &Delta;T: <strong className="text-[#8AD74C]">-3.4°C (Model)</strong></span>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function ThermalVisualizer() {
                 <span className="text-[10px] text-[#A3B18A]">Appears green & healthy to the human eye</span>
               </div>
               <p className="text-xs text-[#A3B18A]">
-                Human eyes cannot see transpiration stress until physical wilting occurs. FLIR thermal LWIR detects stomatal closure 48 hours earlier.
+                Human eyes cannot see transpiration stress until physical wilting occurs. Thermal optics track leaf temperature shifts earlier.
               </p>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function ThermalVisualizer() {
       <div className="p-4 rounded-xl bg-[#070B08] border border-white/5 text-xs text-[#A3B18A] flex items-start gap-2.5">
         <Info className="w-4 h-4 text-[#E8D07C] shrink-0 mt-0.5" />
         <p className="leading-relaxed">
-          <strong className="text-[#F7F6F2]">Thermal Physics Note:</strong> When stomata open, water evaporates, cooling the leaf surface by 2–4°C below room temperature (Transpiration Cooling). When VPD is out of range, stomata close, causing leaf temperature to rise above ambient. NIH-01 detects this thermal shift instantly.
+          <strong className="text-[#F7F6F2]">Illustrative Physics Model:</strong> Transpiration can produce measurable leaf-surface cooling relative to surrounding conditions. The magnitude varies with species, relative humidity, VPD, and airflow. The values above demonstrate a theoretical thermal model rather than live experimental hardware readings.
         </p>
       </div>
     </Card>

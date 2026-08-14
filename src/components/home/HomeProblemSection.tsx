@@ -10,7 +10,7 @@ const MISALIGNMENTS = [
   {
     humanSee: 'Soil feels moist to touch',
     plantFeel: 'Root Hypoxia & Anoxia',
-    detail: 'Overwatering can drown root hair stomata, reducing root respiration days before visible yellowing occurs.',
+    detail: 'Overwatering can reduce oxygen availability around roots, impairing root respiration and function days before visible yellowing occurs.',
     icon: Droplets,
     color: 'text-amber-400',
     borderColor: 'border-amber-500/20',
@@ -50,18 +50,18 @@ export const HomeProblemSection: React.FC = () => {
         <ScrollReveal>
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <Badge variant="gold" className="gap-1.5">
-              <EyeOff className="w-3.5 h-3.5" /> The Invisible Disconnect
+              <EyeOff className="w-3.5 h-3.5" /> Our Philosophy
             </Badge>
 
             <h2 className="font-display text-3xl sm:text-5xl font-bold text-[#F7F6F2] leading-tight">
-              Plants communicate every second.{' '}
+              Plants respond continuously.{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D07C] to-[#A3B18A]">
-                Humans just can&apos;t hear them.
+                Humans just need the right interface.
               </span>
             </h2>
 
-            <p className="text-[#A3B18A] text-base sm:text-lg leading-relaxed font-normal">
-              By the time leaf yellowing or drooping becomes visible to the human eye, plants have often experienced extended periods of unobserved biophysical distress.
+            <p className="text-[#A3B18A] text-base sm:text-lg leading-relaxed">
+              Plants continuously exchange signals with their environment and exhibit measurable physiological responses. Vriksh Vani is exploring whether some of those signals can be measured, interpreted, and communicated.
             </p>
           </div>
         </ScrollReveal>

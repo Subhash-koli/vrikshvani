@@ -20,9 +20,9 @@ const SLIDES = [
     line3: 'SPEAK',
     subtitle: (
       <>
-        <span className="block">Your plant speaks through thermal shifts every second.</span>
+        <span className="block">Plants continuously respond through physiological changes.</span>
         <span className="block">
-          <span className="text-[#8AD74C] font-semibold">Vriksh Vani</span> decodes these signals into plain speech.
+          <span className="text-[#8AD74C] font-semibold">Vriksh Vani</span> explores measuring &amp; interpreting these signals.
         </span>
       </>
     ),
@@ -34,7 +34,7 @@ const SLIDES = [
     line3: 'INTELLIGENCE HUB',
     subtitle: (
       <>
-        <span className="block">The NIH-01 reads FLIR thermal biometrics &amp; gas VOC.</span>
+        <span className="block">The NIH-01 target design reads thermal biometrics &amp; gas VOC.</span>
         <span className="block">
           Your home becomes a <span className="text-[#8AD74C] font-semibold">living, breathing ecosystem.</span>
         </span>
@@ -48,9 +48,9 @@ const SLIDES = [
     line3: 'FEEL',
     subtitle: (
       <>
-        <span className="block">Invisible heat signatures reveal plant stress &amp; health.</span>
+        <span className="block">Sub-degree heat signatures reveal plant transpiration states.</span>
         <span className="block">
-          <span className="text-[#8AD74C] font-semibold">No cameras. No probes.</span> Just pure biophysics.
+          <span className="text-[#8AD74C] font-semibold">No cameras. No probes.</span> Non-invasive biophysics.
         </span>
       </>
     ),
@@ -355,21 +355,21 @@ export const HomeHero: React.FC = () => {
 
               </div>
 
-              {/* ── Live voice card: HIDDEN on mobile ── */}
+              {/* ── Simulated voice card: HIDDEN on mobile ── */}
               <div className="hidden sm:block w-full max-w-md p-4 rounded-2xl
                               bg-[#0A1C0E]/88 border border-[#8AD74C]/30
                               backdrop-blur-xl shadow-[0_8px_28px_rgba(0,0,0,0.7)] space-y-2">
                 <div className="flex items-center justify-between text-xs text-[#8AD74C] font-mono flex-wrap gap-2">
                   <span className="flex items-center gap-1.5 font-bold">
                     <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-                    Live NTE™ Spoken Plant Output
+                    Simulated NTE™ Plant Interpretation
                   </span>
-                  <span className="text-[10px] text-[#A3B18A] bg-white/5 px-2.5 py-0.5 rounded-full border border-white/10">
-                    Stomata: Open · VPD: 0.92 kPa
+                  <span className="text-[10px] text-[#8AD74C] bg-white/5 px-2.5 py-0.5 rounded-full border border-[#8AD74C]/30 font-bold">
+                    SIMULATION — CONCEPT DEMO
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm italic text-[#F7F6F2]/95 leading-snug">
-                  &ldquo;My stomata are open and photosynthesizing happily! I could use a tiny sip of water around 4:00 PM.&rdquo;
+                  &ldquo;Transpiration rate is optimal and stomata are actively open. Environmental VPD is within balanced parameters.&rdquo;
                 </p>
               </div>
 
@@ -379,15 +379,15 @@ export const HomeHero: React.FC = () => {
                               gap-4 flex-wrap text-xs font-mono text-[#F7F6F2]/75
                               drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 <span className="flex items-center gap-1.5 text-[#8AD74C]">
-                  <Sun className="w-3.5 h-3.5" /> FLIR Thermal Optics
+                  <Sun className="w-3.5 h-3.5" /> FLIR Thermal Optics Target
                 </span>
                 <span className="text-white/20">•</span>
                 <span className="flex items-center gap-1.5 text-[#E8D07C]">
-                  <Activity className="w-3.5 h-3.5" /> Quad-Gas VOC
+                  <Activity className="w-3.5 h-3.5" /> BME688 MOX Sensing
                 </span>
                 <span className="text-white/20">•</span>
                 <span className="flex items-center gap-1.5 text-[#8AD74C]">
-                  <ShieldCheck className="w-3.5 h-3.5" /> Zero Camera Recording
+                  <ShieldCheck className="w-3.5 h-3.5" /> Volatile SRAM Privacy
                 </span>
               </div>
 
