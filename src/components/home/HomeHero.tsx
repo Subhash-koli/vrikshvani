@@ -85,16 +85,50 @@ export const HomeHero: React.FC = () => {
                 <span>Nature Intelligence Category Creator</span>
               </div>
 
-              {/* ── Headline: 2xl mobile → 5xl desktop ── */}
-              <h1 className="font-display
-                             text-2xl sm:text-5xl lg:text-6xl xl:text-[72px]
-                             font-extrabold tracking-tight text-[#F7F6F2]
-                             leading-[1.08] drop-shadow-[0_3px_18px_rgba(0,0,0,1)]">
-                Let Your{' '}
-                <span className="text-[#8AD74C] inline-flex items-center gap-1.5">
-                  Plants Speak
-                  <Leaf className="w-5 h-5 sm:w-9 sm:h-9 drop-shadow-[0_0_12px_rgba(138,215,76,0.6)] shrink-0 -mt-0.5" />
+              {/* ── Headline: Stacked ALL CAPS with size + color hierarchy ── */}
+              <h1 className="font-display font-black leading-none
+                             drop-shadow-[0_4px_28px_rgba(0,0,0,1)]
+                             tracking-tight">
+
+                {/* LET YOUR — supporting opener: white, wide tracking, smaller */}
+                <span className="block
+                                 text-[28px] sm:text-[48px] lg:text-[60px] xl:text-[72px]
+                                 text-[#F0EFEB]
+                                 tracking-[0.08em]
+                                 leading-none
+                                 uppercase">
+                  LET YOUR
                 </span>
+
+                {/* PLANTS — dominant brand word: green gradient, LARGEST */}
+                <div className="relative leading-[0.88]">
+                  <span className="block
+                                   text-[72px] sm:text-[128px] lg:text-[160px] xl:text-[192px]
+                                   font-black tracking-[-0.02em] leading-[0.88]
+                                   text-transparent bg-clip-text
+                                   bg-gradient-to-br from-[#3E8C20] via-[#8AD74C] to-[#C4F060]">
+                    PLANTS
+                  </span>
+                  {/* Leaf icon — anchored top-right of the PLANTS word */}
+                  <Leaf className="absolute -top-1 right-0
+                                   sm:-top-2 sm:-right-2
+                                   lg:-top-3 lg:-right-3
+                                   w-6 h-6 sm:w-10 sm:h-10 lg:w-14 lg:h-14
+                                   text-[#8AD74C] fill-[#8AD74C]/30
+                                   drop-shadow-[0_0_14px_rgba(138,215,76,1)]
+                                   rotate-12" />
+                </div>
+
+                {/* SPEAK — closing word: muted warm white, widest tracking, slightly smaller */}
+                <span className="block
+                                 text-[22px] sm:text-[40px] lg:text-[50px] xl:text-[60px]
+                                 text-[#B8B7B3]
+                                 tracking-[0.18em]
+                                 leading-none mt-1
+                                 uppercase">
+                  SPEAK
+                </span>
+
               </h1>
 
               {/* ── Subtitle: super compact on mobile, full on tablet+ ── */}
