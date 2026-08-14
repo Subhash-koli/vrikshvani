@@ -151,11 +151,19 @@ export const Header: React.FC = () => {
                   unoptimized
                 />
               </div>
-              <div className="flex flex-col text-left">
-                <span className="font-brand font-extrabold text-base sm:text-lg tracking-tight text-[#F7F6F2] group-hover:text-[#8AD74C] transition-colors leading-tight">
+              {/* w-fit → parent hugs the name width; tagline stretches to fill it */}
+              <div className="flex flex-col text-left" style={{ width: 'fit-content' }}>
+                <span className="font-brand font-extrabold text-base sm:text-lg tracking-tight
+                                 text-[#F7F6F2] group-hover:text-[#8AD74C] transition-colors
+                                 leading-tight whitespace-nowrap block">
                   Vriksh Vani
                 </span>
-                <span className="font-serif-logo text-[8px] sm:text-[9px] text-[#A3B18A] tracking-[0.22em] normal-case hidden sm:inline leading-none mt-0.5">
+                <span
+                  className="font-serif-logo text-[8px] sm:text-[9px]
+                             text-[#A3B18A] uppercase hidden sm:block
+                             leading-none mt-0.5 w-full"
+                  style={{ textAlign: 'justify', textAlignLast: 'justify' }}
+                >
                   Let Your Plant Speak
                 </span>
               </div>
