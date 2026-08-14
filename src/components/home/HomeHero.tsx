@@ -25,10 +25,10 @@ export const HomeHero: React.FC = () => {
             alt="Vriksh Vani NHI-01 Nature Intelligence Hub in sunlit biophilic forest"
             className={[
               'w-full h-full object-cover',
-              // Mobile portrait image: robot is at ~55% from top, centered horizontally
-              '[object-position:center_55%]',
-              // Tablet landscape image: robot is right-of-center, ~60% down
-              'sm:[object-position:60%_60%]',
+              // Mobile portrait: robot center is at ~52% from top of image
+              '[object-position:center_50%]',
+              // Tablet landscape: robot right-of-center
+              'sm:[object-position:60%_55%]',
               // Desktop: robot anchored right-center
               'lg:[object-position:66%_center]',
             ].join(' ')}
@@ -74,9 +74,7 @@ export const HomeHero: React.FC = () => {
             <div className="sm:col-span-7 lg:col-span-6
                             flex flex-col items-center sm:items-start
                             text-center sm:text-left
-                            space-y-2 sm:space-y-5
-                            bg-[#070B08]/25 backdrop-blur-sm rounded-2xl px-3 py-3
-                            sm:bg-transparent sm:backdrop-blur-none sm:rounded-none sm:px-0 sm:py-0">
+                            space-y-2 sm:space-y-5">
 
               {/* ── Category badge: tiny on mobile ── */}
               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-4 sm:py-1.5
