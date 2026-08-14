@@ -97,7 +97,7 @@ export const ContactClient: React.FC = () => {
                 {[
                   { label: 'Support & FAQ', href: '/support/faq' },
                   { label: 'Developer Documentation', href: '/developers' },
-                  { label: 'Enterprise Quote', href: '/enterprise/quote' },
+                  { label: 'Research Cohort', href: '/community' },
                   { label: 'System Status', href: '/support/status' },
                 ].map((l, idx) => (
                   <Link key={idx} href={l.href} className="flex items-center justify-between text-[#A3B18A] hover:text-[#8AD74C] transition-colors">
