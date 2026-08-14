@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
-import { Play, Leaf, Sun, Activity, ChevronDown, ChevronLeft, ChevronRight, Sparkles, ShieldCheck, ArrowRight } from 'lucide-react';
+
+import { Play, Sun, Activity, ChevronDown, ChevronLeft, ChevronRight, Sparkles, ShieldCheck, ArrowRight } from 'lucide-react';
 
 /* ─────────────────────────────────────────────────────────────────────────────
    HERO SLIDES — same format & color hierarchy, only content differs
@@ -20,10 +20,10 @@ const SLIDES = [
     line3: 'SPEAK',
     subtitle: (
       <>
-        Your plant speaks through thermal shifts every second.{' '}
-        <br />
-        <span className="text-[#8AD74C] font-semibold">Vriksh Vani</span>{' '}
-        decodes these signals into plain speech.
+        <span className="block">Your plant speaks through thermal shifts every second.</span>
+        <span className="block">
+          <span className="text-[#8AD74C] font-semibold">Vriksh Vani</span> decodes these signals into plain speech.
+        </span>
       </>
     ),
   },
@@ -34,10 +34,10 @@ const SLIDES = [
     line3: 'INTELLIGENCE HUB',
     subtitle: (
       <>
-        The NIH-01 reads FLIR thermal biometrics &amp; quad-gas VOC.{' '}
-        <br />
-        Your home becomes a{' '}
-        <span className="text-[#8AD74C] font-semibold">living, breathing ecosystem.</span>
+        <span className="block">The NIH-01 reads FLIR thermal biometrics &amp; gas VOC.</span>
+        <span className="block">
+          Your home becomes a <span className="text-[#8AD74C] font-semibold">living, breathing ecosystem.</span>
+        </span>
       </>
     ),
   },
@@ -48,10 +48,10 @@ const SLIDES = [
     line3: 'FEEL',
     subtitle: (
       <>
-        Invisible heat signatures reveal plant stress, hydration &amp; health.{' '}
-        <br />
-        <span className="text-[#8AD74C] font-semibold">No cameras. No invasive probes.</span>{' '}
-        Just biophysics.
+        <span className="block">Invisible heat signatures reveal plant stress &amp; health.</span>
+        <span className="block">
+          <span className="text-[#8AD74C] font-semibold">No cameras. No probes.</span> Just pure biophysics.
+        </span>
       </>
     ),
   },
@@ -62,10 +62,10 @@ const SLIDES = [
     line3: 'MOVEMENT',
     subtitle: (
       <>
-        2,900+ researchers, collectors &amp; plant lovers are already waiting.{' '}
-        <br />
-        Be part of{' '}
-        <span className="text-[#8AD74C] font-semibold">Batch 01 — NIH-01 Nature Intelligence Hub.</span>
+        <span className="block">2,900+ researchers &amp; plant lovers are waiting.</span>
+        <span className="block">
+          Join <span className="text-[#8AD74C] font-semibold">Batch 01 — NIH-01 Nature Intelligence Hub.</span>
+        </span>
       </>
     ),
   },
@@ -155,105 +155,140 @@ export const HomeHero: React.FC = () => {
                             text-center sm:text-left
                             space-y-2 sm:space-y-5">
 
-              {/* ── SLIDER: Headline + subtitle ── */}
-              <div
-                className="w-full"
-                style={{
-                  opacity: visible ? 1 : 0,
-                  transform: visible ? 'translateY(0)' : 'translateY(12px)',
-                  transition: 'opacity 350ms ease, transform 350ms ease',
-                }}
-              >
-                {/* Headline */}
-                <h1 className="font-display leading-none drop-shadow-[0_4px_28px_rgba(0,0,0,1)]">
+              {/* ── SLIDER BLOCK ──────────────────────────────────────────────────────────
+                  Mobile:  arrows are absolute (don't shift text flow), wrapper px-12 makes room
+                  Desktop: text is full-width left-aligned; arrows appear BELOW the subtitle
+                ─────────────────────────────────────────────────────────────────────────── */}
 
-                  {/* Line 1 — small normal white caps */}
-                  <span className="block font-normal
-                                   text-[5.5vw] sm:text-[34px] lg:text-[42px] xl:text-[52px]
-                                   text-[#F0EFEB]
-                                   tracking-[0.06em]
-                                   leading-none
-                                   uppercase">
-                    {slide.line1}
-                  </span>
+              {/* Relative wrapper — px-12 on mobile makes room for the absolute arrows */}
+              <div className="relative w-full px-12 sm:px-0">
 
-                  {/* Line 2 — BIG bold lime gradient — DOMINANT */}
-                  <div className="relative leading-[0.88]">
-                    <span className="block font-black
-                                     text-[17vw] sm:text-[88px] lg:text-[108px] xl:text-[136px]
-                                     tracking-[-0.02em] leading-[0.88]
-                                     text-transparent bg-clip-text
-                                     bg-gradient-to-b from-[#A8E055] via-[#6BBF28] to-[#2E6B12]
-                                     drop-shadow-[0_0_40px_rgba(138,215,76,0.35)]">
-                      {slide.line2}
-                    </span>
-                    {/* Leaf icon — top-right, glowing */}
-                    <Leaf className="absolute -top-1 right-0
-                                     sm:-top-2 sm:-right-2
-                                     lg:-top-3 lg:-right-3
-                                     w-[4vw] h-[4vw] sm:w-9 sm:h-9 lg:w-12 lg:h-12
-                                     text-[#8AD74C] fill-[#8AD74C]/40
-                                     drop-shadow-[0_0_14px_rgba(138,215,76,1)]
-                                     rotate-12" />
-                  </div>
-
-                  {/* Line 3 — medium bold white wide tracking */}
-                  <span className="block font-bold
-                                   text-[5.5vw] sm:text-[36px] lg:text-[46px] xl:text-[58px]
-                                   text-[#F0EFEB]
-                                   tracking-[0.18em]
-                                   leading-none mt-1
-                                   uppercase">
-                    {slide.line3}
-                  </span>
-
-                </h1>
-
-                {/* Subtitle */}
-                <p className="text-[2.8vw] sm:text-sm lg:text-base
-                              text-[#F7F6F2]/85
-                              max-w-[85vw] sm:max-w-md lg:max-w-xl
-                              leading-snug mt-3 sm:mt-4
-                              drop-shadow-[0_2px_12px_rgba(0,0,0,1)]">
-                  {slide.subtitle}
-                </p>
-              </div>
-
-              {/* ── Arrow indicators: < 01 / 04 > ── */}
-              <div className="flex items-center gap-3 pt-1">
-                {/* Prev */}
+                {/* ◄ MOBILE-ONLY left arrow — absolute, doesn't affect text layout */}
                 <button
                   onClick={() => goTo((activeIdx - 1 + SLIDES.length) % SLIDES.length)}
                   aria-label="Previous slide"
-                  className="w-8 h-8 flex items-center justify-center rounded-lg
-                             bg-white/5 border border-white/15
-                             text-white hover:bg-gradient-to-tr hover:from-[#031201] hover:via-[#2E9B12] hover:to-[#C4F050]
-                             hover:border-transparent hover:shadow-[0_0_12px_rgba(138,215,76,0.4)]
+                  className="sm:hidden absolute left-0 top-1/2 -translate-y-1/2 z-10
+                             flex items-center justify-center
+                             w-9 h-9 rounded-xl
+                             bg-[#040E06]/40 border border-[#7EC840]/45
+                             text-white hover:bg-[#040E06]/65 hover:border-[#C4F050]/70
+                             hover:shadow-[0_0_12px_rgba(138,215,76,0.3)]
                              transition-all duration-200 active:scale-90"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
 
-                {/* Counter */}
-                <span className="font-mono text-xs text-[#A3B18A] tracking-widest tabular-nums select-none">
-                  <span className="text-[#C4F050] font-bold">
-                    {String(activeIdx + 1).padStart(2, '0')}
-                  </span>
-                  <span className="mx-1 text-white/20">/</span>
-                  {String(SLIDES.length).padStart(2, '0')}
-                </span>
+                {/* ANIMATED TEXT — one copy, always shown */}
+                <div
+                  style={{
+                    opacity: visible ? 1 : 0,
+                    transform: visible ? 'translateY(0)' : 'translateY(10px)',
+                    transition: 'opacity 350ms ease, transform 350ms ease',
+                  }}
+                >
+                  {/* Headline */}
+                  <h1 className="font-display leading-none drop-shadow-[0_4px_28px_rgba(0,0,0,1)]">
 
-                {/* Next */}
+                    {/* Line 1 — small normal white caps */}
+                    <span className="block font-normal
+                                     text-[5.5vw] sm:text-[34px] lg:text-[42px] xl:text-[52px]
+                                     text-[#F0EFEB] tracking-[0.06em] leading-none uppercase">
+                      {slide.line1}
+                    </span>
+
+                    {/* Line 2 — BIG bold lime gradient */}
+                    <div className="relative leading-[0.88] inline-block">
+                      <span className="font-black
+                                       text-[17vw] sm:text-[88px] lg:text-[108px] xl:text-[136px]
+                                       tracking-[-0.02em] leading-[0.88]
+                                       text-transparent bg-clip-text
+                                       bg-gradient-to-b from-[#A8E055] via-[#6BBF28] to-[#2E6B12]
+                                       drop-shadow-[0_0_40px_rgba(138,215,76,0.35)]">
+                        {slide.line2}
+                      </span>
+                      {/* Gradient leaf — hugs last letter */}
+                      <div
+                        className="absolute -top-[0.5em] -right-[0.35em]
+                                   w-[0.28em] h-[0.28em] rotate-12
+                                   drop-shadow-[0_0_10px_rgba(168,224,85,0.95)]"
+                        style={{
+                          background: 'linear-gradient(to bottom, #A8E055 0%, #6BBF28 50%, #2E6B12 100%)',
+                          WebkitMaskImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12'/%3E%3C/svg%3E")`,
+                          WebkitMaskRepeat: 'no-repeat',
+                          WebkitMaskSize: 'contain',
+                          WebkitMaskPosition: 'center',
+                          maskImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12'/%3E%3C/svg%3E")`,
+                          maskRepeat: 'no-repeat',
+                          maskSize: 'contain',
+                          maskPosition: 'center',
+                        }}
+                      />
+                    </div>
+
+                    {/* Line 3 — medium bold white wide tracking */}
+                    <span className="block font-bold
+                                     text-[5.5vw] sm:text-[36px] lg:text-[46px] xl:text-[58px]
+                                     text-[#F0EFEB] tracking-[0.18em] leading-none mt-1 uppercase">
+                      {slide.line3}
+                    </span>
+
+                  </h1>
+
+                  {/* Subtitle */}
+                  <p className="text-[2.6vw] xs:text-xs sm:text-sm lg:text-base
+                                text-[#F7F6F2]/85 leading-tight sm:leading-snug mt-2.5 sm:mt-4
+                                drop-shadow-[0_2px_12px_rgba(0,0,0,1)]">
+                    {slide.subtitle}
+                  </p>
+                </div>
+
+                {/* ► MOBILE-ONLY right arrow — absolute, doesn't affect text layout */}
                 <button
                   onClick={() => goTo((activeIdx + 1) % SLIDES.length)}
                   aria-label="Next slide"
-                  className="w-8 h-8 flex items-center justify-center rounded-lg
-                             bg-white/5 border border-white/15
-                             text-white hover:bg-gradient-to-tr hover:from-[#031201] hover:via-[#2E9B12] hover:to-[#C4F050]
-                             hover:border-transparent hover:shadow-[0_0_12px_rgba(138,215,76,0.4)]
+                  className="sm:hidden absolute right-0 top-1/2 -translate-y-1/2 z-10
+                             flex items-center justify-center
+                             w-9 h-9 rounded-xl
+                             bg-[#040E06]/40 border border-[#7EC840]/45
+                             text-white hover:bg-[#040E06]/65 hover:border-[#C4F050]/70
+                             hover:shadow-[0_0_12px_rgba(138,215,76,0.3)]
                              transition-all duration-200 active:scale-90"
                 >
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+
+              </div>
+
+              {/* ── DESKTOP-ONLY arrow row — below subtitle, left-aligned ── */}
+              <div className="hidden sm:flex items-center gap-3">
+                <button
+                  onClick={() => goTo((activeIdx - 1 + SLIDES.length) % SLIDES.length)}
+                  aria-label="Previous slide"
+                  className="flex items-center justify-center
+                             w-10 h-10 rounded-xl
+                             bg-[#040E06]/30 border border-[#7EC840]/45
+                             text-white hover:bg-[#040E06]/60 hover:border-[#C4F050]/70
+                             hover:shadow-[0_0_12px_rgba(138,215,76,0.3)]
+                             transition-all duration-200 active:scale-90"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+
+                <span className="font-mono text-[11px] text-[#A3B18A]/60 tabular-nums select-none">
+                  {String(activeIdx + 1).padStart(2, '0')}&thinsp;/&thinsp;{String(SLIDES.length).padStart(2, '0')}
+                </span>
+
+                <button
+                  onClick={() => goTo((activeIdx + 1) % SLIDES.length)}
+                  aria-label="Next slide"
+                  className="flex items-center justify-center
+                             w-10 h-10 rounded-xl
+                             bg-[#040E06]/30 border border-[#7EC840]/45
+                             text-white hover:bg-[#040E06]/60 hover:border-[#C4F050]/70
+                             hover:shadow-[0_0_12px_rgba(138,215,76,0.3)]
+                             transition-all duration-200 active:scale-90"
+                >
+                  <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
 
@@ -275,7 +310,19 @@ export const HomeHero: React.FC = () => {
                                hover:from-[#051A02] hover:via-[#3FAE2A] hover:to-[#D0FF60]
                                transition-all duration-300 active:scale-[0.97]"
                   >
-                    <Leaf className="w-3 h-3 sm:w-[17px] sm:h-[17px] fill-white text-white shrink-0" />
+                    <div className="w-3 h-3 sm:w-[17px] sm:h-[17px] shrink-0"
+                         style={{
+                           background: 'linear-gradient(to bottom, #A8E055 0%, #6BBF28 50%, #2E6B12 100%)',
+                           WebkitMaskImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12'/%3E%3C/svg%3E")`,
+                           WebkitMaskRepeat: 'no-repeat',
+                           WebkitMaskSize: 'contain',
+                           WebkitMaskPosition: 'center',
+                           maskImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12'/%3E%3C/svg%3E")`,
+                           maskRepeat: 'no-repeat',
+                           maskSize: 'contain',
+                           maskPosition: 'center',
+                         }}
+                    />
                     <span className="sm:hidden truncate">Join Waitlist</span>
                     <span className="hidden sm:inline">Join the Waitlist</span>
                     <ArrowRight className="hidden sm:block w-[17px] h-[17px] text-white shrink-0" />
