@@ -18,31 +18,28 @@ const navGroups: NavGroup[] = [
   {
     label: 'Product',
     children: [
-      { label: 'NIH-01 Concept Overview', href: '/product', desc: 'The thermal biometrics ceramic hub concept' },
-      { label: 'Features & Capabilities', href: '/product/features', desc: 'Target capabilities & non-invasive sensing' },
-      { label: 'Ceramic Colorways', href: '/product/colorways', desc: 'Biophilic Sage & Cream White concepts' },
-      { label: 'Technical Specifications', href: '/product/specifications', desc: 'ESP32-S3 TinyML hardware datasheet' },
-      { label: 'Craftsmanship', href: '/product/craftsmanship', desc: 'Handcrafted mineral clay & ceramic glaze' },
+      { label: 'NIH-01 Concept Overview', href: '/product', desc: 'Handcrafted ceramic hardware concept' },
+      { label: 'Target Features', href: '/product/features', desc: 'Planned non-invasive biometrics' },
+      { label: 'Technical Specifications', href: '/product/specifications', desc: 'ESP32-S3 hardware datasheet targets' },
+      { label: 'Craftsmanship', href: '/product/craftsmanship', desc: 'Stoneware clay & natural ceramic glazes' },
     ],
   },
   {
     label: 'Technology',
     children: [
-      { label: 'Nature Intelligence', href: '/nature-intelligence', desc: 'ESP32-S3 TinyML & biophysical computing' },
-      { label: 'NTE™ Voice Engine', href: '/nature-intelligence/nte-voice', desc: 'Neural signal translation concept' },
-      { label: 'Research Framework', href: '/nature-intelligence/research', desc: 'Working plant physiology hypotheses' },
-      { label: 'Open Data Program (Pre-Release)', href: '/nature-intelligence/open-data', desc: 'Open sample telemetry dataset (CC BY 4.0)' },
-      { label: 'Mobile App Concept', href: '/app', desc: 'iOS & Android interface vision concept' },
+      { label: 'Nature Intelligence', href: '/nature-intelligence', desc: 'Biophysical edge computing concept' },
+      { label: 'NTE™ Voice Engine (Concept)', href: '/nature-intelligence/nte-voice', desc: 'Neural translation architecture' },
+      { label: 'NIOS Operating Model', href: '/nature-intelligence#nios', desc: '6-stage sense-to-care pipeline' },
+      { label: 'Mobile App Concept', href: '/app', desc: 'Local-first UI vision concept' },
     ],
   },
   {
     label: 'Research',
     children: [
-      { label: 'Research Hub & Hypotheses', href: '/nature-intelligence/research', desc: 'Biophysics study notes & transpiration models' },
-      { label: 'Research Note #001', href: '/nature-intelligence/research/note-001', desc: 'Leaf thermography under controlled VPD shift' },
-      { label: 'Evidence & Truth Registry', href: '/nature-intelligence/evidence', desc: 'Verified status of all biophysical claims & specs' },
-      { label: 'Blog & Dispatches', href: '/blog', desc: 'Founder dispatches & research logs' },
-      { label: 'Community Cohort', href: '/community', desc: 'Early research testers & prototype feedback' },
+      { label: 'Research Hub', href: '/nature-intelligence/research', desc: 'Biophysics study notes & hypotheses' },
+      { label: 'Research Notes', href: '/nature-intelligence/research/note-001', desc: 'Empirical leaf thermography notes' },
+      { label: 'Evidence Registry', href: '/nature-intelligence/evidence', desc: 'Verified status index of all claims' },
+      { label: 'Open Data — Pre-Release', href: '/nature-intelligence/open-data', desc: 'Sample biophysical telemetry datasets' },
     ],
   },
   {
