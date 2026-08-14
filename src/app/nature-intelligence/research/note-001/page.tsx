@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { Thermometer, Activity, ArrowLeft, Download, FileText, Share2 } from 'lucide-react';
 import Link from 'next/link';
 import TelemetryChart from '@/components/research/TelemetryChart';
+import JsonLd, { scholarlyArticleJsonLd, datasetJsonLd, createBreadcrumbJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Research Note #001 — Leaf Surface Thermography | Vriksh Vani',
@@ -31,6 +32,16 @@ const SAMPLE_TELEMETRY = [
 export default function ResearchNote001Page() {
   return (
     <main id="main-content" className="min-h-screen bg-[#070B08] text-[#F7F6F2]">
+      <JsonLd data={scholarlyArticleJsonLd} />
+      <JsonLd data={datasetJsonLd} />
+      <JsonLd
+        data={createBreadcrumbJsonLd([
+          { name: 'Home', url: '/' },
+          { name: 'Nature Intelligence', url: '/nature-intelligence' },
+          { name: 'Research Hub', url: '/nature-intelligence/research' },
+          { name: 'Research Note #001', url: '/nature-intelligence/research/note-001' },
+        ])}
+      />
       <Header />
 
       <article className="pt-36 pb-24">

@@ -136,3 +136,36 @@ export function createArticleJsonLd(article: {
     },
   };
 }
+
+export const scholarlyArticleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ScholarlyArticle',
+  headline: 'Leaf Surface Thermography Under Controlled Vapor Pressure Deficit (VPD) Shift',
+  name: 'Research Note #001 — Leaf Surface Thermography',
+  description: 'Empirical biophysics study investigating fine-scale leaf surface temperature variations under controlled VPD shifts as early stress indicators.',
+  datePublished: '2026-08-14',
+  author: {
+    '@type': 'Organization',
+    name: 'Vriksh Vani Biophysics Lab',
+    url: 'https://www.vrikshvani.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Vriksh Vani',
+    url: 'https://www.vrikshvani.com',
+  },
+  url: 'https://www.vrikshvani.com/nature-intelligence/research/note-001',
+};
+
+export const datasetJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  name: 'Vriksh Vani Biophysics Open Telemetry Sample #001',
+  description: 'Time-series biophysical telemetry dataset recording Monstera deliciosa leaf thermal delta, VPD, and gas resistance shift.',
+  url: 'https://www.vrikshvani.com/api/v1/telemetry/sample',
+  license: 'https://creativecommons.org/licenses/by/4.0/',
+  creator: {
+    '@type': 'Organization',
+    name: 'Vriksh Vani Biophysics Lab',
+  },
+};
