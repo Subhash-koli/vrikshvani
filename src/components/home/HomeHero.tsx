@@ -25,8 +25,11 @@ export const HomeHero: React.FC = () => {
             alt="Vriksh Vani NHI-01 Nature Intelligence Hub in sunlit biophilic forest"
             className={[
               'w-full h-full object-cover',
-              '[object-position:center_5%]',
-              'sm:[object-position:58%_25%]',
+              // Mobile portrait image: robot is at ~55% from top, centered horizontally
+              '[object-position:center_55%]',
+              // Tablet landscape image: robot is right-of-center, ~60% down
+              'sm:[object-position:60%_60%]',
+              // Desktop: robot anchored right-center
               'lg:[object-position:66%_center]',
             ].join(' ')}
           />
@@ -37,14 +40,14 @@ export const HomeHero: React.FC = () => {
           background: 'linear-gradient(to right, #070B08 0%, #070B08b8 18%, #070B0870 32%, #070B0830 44%, transparent 54%)',
         }} />
 
-        {/* ── Tablet: left text zone darkened, right robot zone open ── */}
+        {/* ── Tablet: left column dark for text, RIGHT fully open — robot at 60% right ── */}
         <div className="hidden sm:block lg:hidden absolute inset-0" style={{
-          background: 'linear-gradient(to right, #070B08 0%, #070B08c0 22%, #070B0878 40%, #070B0838 55%, transparent 68%)',
+          background: 'linear-gradient(to right, #070B08 0%, #070B08d0 16%, #070B0890 30%, #070B0840 44%, #070B0815 58%, transparent 72%)',
         }} />
 
-        {/* ── Mobile: clear at top (robot shows), dark at bottom (content readable) ── */}
+        {/* ── Mobile: VERY LIGHT scrim — only header zone dark, robot zone fully clear ── */}
         <div className="sm:hidden absolute inset-0" style={{
-          background: 'linear-gradient(to top, #070B08 0%, #070B08f8 35%, #070B08d0 55%, #070B0868 68%, transparent 82%)',
+          background: 'linear-gradient(to bottom, #070B0895 0%, #070B0850 10%, #070B0820 18%, transparent 28%)',
         }} />
 
         {/* Section 2 transition */}
@@ -59,10 +62,10 @@ export const HomeHero: React.FC = () => {
           Mobile  : items-END   → compact shelf at bottom, robot visible at top (65%)
           Tablet+ : items-CENTER → 2-col layout, robot right
          ───────────────────────────────────────────────────────────────────────────── */}
-      <div className="relative z-20 flex-1 flex items-center">
+      <div className="relative z-20 flex-1 flex items-start">
         <div className="w-full max-w-[1440px] mx-auto
                         px-4 sm:px-6 lg:px-12 xl:px-16
-                        pt-20 sm:pt-36 lg:pt-36
+                        pt-28 sm:pt-36 lg:pt-36
                         pb-16 sm:pb-20 lg:pb-20">
 
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-8 lg:gap-12 items-center">
