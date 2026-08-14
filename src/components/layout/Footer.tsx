@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-1 space-y-5">
             <Link href="/" className="flex items-center gap-2.5 group w-fit">
               <img
-                src="/assets/vrikshvani_logo/vriksh vani 3d symboll logo.png"
+                src="/assets/vrikshvani_logo/vrikshvani-3d-symbol-logo.png"
                 alt="Vriksh Vani Logo"
                 className="w-14 h-14 sm:w-[60px] sm:h-[60px] object-contain shrink-0 drop-shadow-[0_4px_14px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-300"
               />

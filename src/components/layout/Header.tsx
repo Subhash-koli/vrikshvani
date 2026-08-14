@@ -141,7 +141,7 @@ export const Header: React.FC = () => {
               aria-label="Vriksh Vani Home"
             >
               <Image
-                src="/assets/vrikshvani_logo/vriksh vani 3d symboll logo.png"
+                src="/assets/vrikshvani_logo/vrikshvani-3d-symbol-logo.png"
                 alt="Vriksh Vani Logo"
                 width={64}
                 height={64}
@@ -320,7 +320,7 @@ export const Header: React.FC = () => {
           <div className="flex-1 flex items-center justify-center">
             <Link href="/" className="flex items-center gap-2.5 group cursor-pointer focus:outline-none">
               <Image
-                src="/assets/vrikshvani_logo/vriksh vani 3d symboll logo.png"
+                src="/assets/vrikshvani_logo/vrikshvani-3d-symbol-logo.png"
                 alt="Vriksh Vani Logo"
                 width={64}
                 height={64}
