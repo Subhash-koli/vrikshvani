@@ -28,21 +28,29 @@ export default function DashboardPage() {
       <section className="pt-28 pb-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
+          {/* Concept Disclaimer Banner */}
+          <div className="p-4 rounded-xl bg-[#0F2B18]/60 border border-[#8AD74C]/30 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div className="flex items-center gap-2">
+              <Badge variant="lime">Concept Simulation</Badge>
+              <span className="text-[#F7F6F2]">
+                Simulated mobile app telemetry interface illustrating planned NIOS sensor fusion dashboard features.
+              </span>
+            </div>
+            <span className="font-mono text-[#A3B18A]">Non-Live Demonstration</span>
+          </div>
+
           {/* Dashboard Header */}
           <div className="flex items-start justify-between gap-4 flex-wrap">
             <div>
-              <p className="text-xs font-mono text-[#8AD74C] uppercase tracking-widest mb-1">Your Hub · NIH-01 #0047</p>
-              <h1 className="font-display text-3xl font-bold text-[#F7F6F2]">Plant Dashboard</h1>
+              <p className="text-xs font-mono text-[#8AD74C] uppercase tracking-widest mb-1">Simulated Hub · NIH-01 Target Concept</p>
+              <h1 className="font-display text-3xl font-bold text-[#F7F6F2]">Plant Telemetry Dashboard (Concept)</h1>
             </div>
             <div className="flex gap-3">
-              <Link href="/dashboard/settings">
-                <Button variant="outline" className="flex items-center gap-2">
-                  <Settings className="w-4 h-4" /> Settings
+              <Link href="/waitlist">
+                <Button variant="primary" className="flex items-center gap-2 text-xs">
+                  Join Prototype Waitlist &rarr;
                 </Button>
               </Link>
-              <Button variant="primary" className="flex items-center gap-2">
-                <Plus className="w-4 h-4" /> Add Plant
-              </Button>
             </div>
           </div>
 
