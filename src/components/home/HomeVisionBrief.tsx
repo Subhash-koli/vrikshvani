@@ -30,6 +30,14 @@ export const HomeVisionBrief: React.FC = () => {
               <p className="text-sm text-[#A3B18A] leading-relaxed">
                 Investigating how FLIR thermal sensors can measure sub-degree surface temperature shifts on leaf surfaces to detect stomatal stress.
               </p>
+              <div className="pt-2">
+                <a
+                  href="/nature-intelligence/research/note-001"
+                  className="text-xs font-mono text-[#8AD74C] hover:underline inline-flex items-center gap-1"
+                >
+                  Read Research Note #001 &rarr;
+                </a>
+              </div>
             </Card>
           </ScrollReveal>
 
