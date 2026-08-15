@@ -120,6 +120,53 @@ export default function ResearchPage() {
                 </a>
               </div>
             </Card>
+
+            {/* Research Note #002 */}
+            <Card className="p-8 border-[#E8D07C]/20 bg-[#0F2B18]/20 space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <Badge variant="gold">Research Note #002</Badge>
+                  <Badge variant="glass">Research Hypothesis</Badge>
+                </div>
+                <span className="text-xs font-mono text-[#A3B18A]">August 2026</span>
+              </div>
+              <h3 className="font-display text-xl font-bold text-[#F7F6F2]">
+                Boundary-Layer Micro-Airflow Dynamics and Stomatal Conductance Shifts
+              </h3>
+              <p className="text-sm text-[#A3B18A] leading-relaxed">
+                Investigating whether low-velocity boundary-layer airflow over leaf surfaces produces measurable temperature and conductance changes detectable via thermal array sensors.
+              </p>
+              <div className="pt-2">
+                <Link href="/nature-intelligence/research/note-002" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-display font-bold text-xs text-[#8AD74C] bg-[#8AD74C]/10 border border-[#8AD74C]/30 hover:bg-[#8AD74C]/20 transition-all">
+                  Read Research Note #002 &rarr;
+                </Link>
+              </div>
+            </Card>
+
+            {/* Research Note #003 */}
+            <Card className="p-8 border-white/10 space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <Badge variant="glass">Research Note #003</Badge>
+                  <Badge variant="outline">Methodology Draft</Badge>
+                </div>
+                <span className="text-xs font-mono text-[#A3B18A]">August 2026</span>
+              </div>
+              <h3 className="font-display text-xl font-bold text-[#F7F6F2]">
+                Root Zone Gas Resistance Profiling — BME688 VOC Signal Under Moisture Deficit
+              </h3>
+              <p className="text-sm text-[#A3B18A] leading-relaxed">
+                Planned experimental methodology for investigating whether BME688 MOX gas resistance signals correlate with root zone moisture deficit — accounting for temperature-driven baseline drift.
+              </p>
+              <div className="pt-2 flex flex-wrap gap-3">
+                <Link href="/nature-intelligence/research/note-003" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-display font-bold text-xs text-[#A3B18A] bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+                  Read Research Note #003 &rarr;
+                </Link>
+                <Link href="/nature-intelligence/experiment-log" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-display font-bold text-xs text-[#8AD74C] bg-[#8AD74C]/10 border border-[#8AD74C]/30 hover:bg-[#8AD74C]/20 transition-all">
+                  View Experiment Log &rarr;
+                </Link>
+              </div>
+            </Card>
           </div>
 
           {/* Open Python SDK */}

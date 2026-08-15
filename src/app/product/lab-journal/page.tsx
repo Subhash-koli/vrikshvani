@@ -4,7 +4,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Cpu, Flame, Camera, Wind, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Cpu, Flame, Camera, Wind, CheckCircle2, ArrowRight, ImageIcon, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -141,6 +141,49 @@ export default function LabJournalPage() {
                 </Card>
               );
             })}
+          </div>
+
+          {/* Photo Journal Section */}
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <div className="flex items-center gap-3">
+                <Camera className="w-5 h-5 text-[#8AD74C]" />
+                <h2 className="font-display text-2xl font-bold text-[#F7F6F2]">Benchtop Photo Journal</h2>
+              </div>
+              <p className="text-sm text-[#A3B18A]">Photographic documentation of physical hardware tests, ceramic kiln events, and sensor array setups. Photos are published as physical evidence becomes available.</p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { label: 'BME688 Breakout Wiring', date: '12 Aug 2026', status: 'PHOTO PENDING', note: 'Benchtop breadboard wiring of BME688 + SHT41 to ESP32-S3 DevKit. Photo to be uploaded.' },
+                { label: 'Ceramic Glaze Firing — Kiln Exit', date: '28 Jul 2026', status: 'PHOTO PENDING', note: 'Post-firing stoneware ceramic body at 1,250°C vitrification. Photographic documentation planned.' },
+                { label: 'FLIR Isolation Chamber', date: '05 Aug 2026', status: 'PHOTO PENDING', note: 'Ceramic fiber thermal barrier around compute PCB. Physical photograph to follow hardware assembly.' },
+                { label: 'ESP32-S3 UART Serial Output', date: '18 Jul 2026', status: 'PHOTO PENDING', note: 'Terminal output showing INT8 inference logs at 38ms latency. Screenshot to be published.' },
+                { label: 'Monstera deliciosa Test Subject', date: 'Aug 2026', status: 'PHOTO PENDING', note: 'Specimen used in Research Note #001 thermal transpiration trial. Photo documentation forthcoming.' },
+                { label: 'Next Physical Prototype Assembly', date: 'Phase 05 (Planned)', status: 'AWAITING HARDWARE', note: 'NIH-01 ceramic prototype photographic documentation. Awaiting PCB fabrication and enclosure assembly.' },
+              ].map((slot, i) => (
+                <Card key={i} className="p-5 border-white/10 space-y-3">
+                  <div className="w-full h-32 rounded-xl bg-[#030504] border border-white/5 flex flex-col items-center justify-center gap-2">
+                    <ImageIcon className="w-8 h-8 text-white/10" />
+                    <span className="text-xs font-mono text-white/20 uppercase tracking-wider">{slot.status}</span>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="font-display text-sm font-bold text-[#F7F6F2]">{slot.label}</p>
+                    <p className="text-xs font-mono text-[#A3B18A]">{slot.date}</p>
+                    <p className="text-xs text-[#A3B18A] leading-relaxed">{slot.note}</p>
+                  </div>
+                </Card>
+              ))}
+            </div>
+
+            <Card className="p-4 border-amber-500/20 bg-amber-950/10">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <p className="text-xs text-amber-200 leading-relaxed">
+                  Physical photographs will replace placeholder slots as hardware development progresses in Phase 05. Photographic evidence is a core part of our Truth Before Growth research transparency commitment.
+                </p>
+              </div>
+            </Card>
           </div>
 
           {/* CTA Box */}
