@@ -5,7 +5,7 @@ import Footer from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { FlaskConical, BookOpen, Microscope, Terminal, Code2, Download } from 'lucide-react';
+import { FlaskConical, BookOpen, Microscope, Terminal, Code2, Download, ShieldCheck, Database, Leaf, Brain, ArrowRight, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -74,6 +74,35 @@ export default function ResearchPage() {
                 View Evidence &amp; Truth Registry &rarr;
               </Link>
             </div>
+          </div>
+
+          {/* Research Architecture Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            {[
+              { title: 'Research Notes', desc: 'Published methodology & findings', icon: FlaskConical, href: '#published-notes', status: '3 NOTES', color: 'text-[#8AD74C]', border: 'border-[#8AD74C]/20' },
+              { title: 'Evidence Registry', desc: 'Verified status of all claims', icon: ShieldCheck, href: '/nature-intelligence/evidence', status: 'LIVE', color: 'text-[#8AD74C]', border: 'border-[#8AD74C]/20' },
+              { title: 'Experiment Log', desc: 'Dated chronological timeline', icon: BookOpen, href: '/nature-intelligence/experiment-log', status: 'LOG', color: 'text-[#8AD74C]', border: 'border-[#8AD74C]/20' },
+              { title: 'Open Data', desc: 'Sample biophysical telemetry', icon: Database, href: '/nature-intelligence/open-data', status: 'LIVE', color: 'text-sky-400', border: 'border-sky-400/20' },
+              { title: 'Active Hypotheses', desc: '3 working research hypotheses', icon: Brain, href: '#hypotheses', status: 'ACTIVE', color: 'text-purple-400', border: 'border-purple-400/20' },
+              { title: 'Species Library', desc: 'Plant profiles & VPD targets', icon: Leaf, href: '/species', status: 'LIVE', color: 'text-[#E8D07C]', border: 'border-[#E8D07C]/20' },
+              { title: 'Source of Truth', desc: 'Canonical claims registry', icon: ShieldCheck, href: '/source-of-truth', status: 'LIVE', color: 'text-[#8AD74C]', border: 'border-[#8AD74C]/20' },
+              { title: 'Model Performance', desc: 'TinyML evaluation metrics', icon: BarChart3, href: '#', status: 'COMING SOON', color: 'text-[#A3B18A]', border: 'border-white/10' },
+            ].map((card) => {
+              const Icon = card.icon;
+              const isComingSoon = card.status === 'COMING SOON';
+              return (
+                <Link href={card.href} key={card.title} className={isComingSoon ? 'pointer-events-none opacity-50' : ''}>
+                  <Card className={`p-4 h-full space-y-2 hover:border-[#8AD74C]/30 transition-all group cursor-pointer ${card.border}`}>
+                    <div className="flex items-center justify-between">
+                      <Icon className={`w-4 h-4 ${card.color}`} />
+                      <span className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded border ${isComingSoon ? 'text-[#A3B18A] bg-white/5 border-white/10' : `${card.color} bg-white/5 ${card.border}`}`}>{card.status}</span>
+                    </div>
+                    <p className="font-display text-sm font-bold text-[#F7F6F2] group-hover:text-[#8AD74C] transition-colors">{card.title}</p>
+                    <p className="text-[10px] text-[#A3B18A] leading-tight">{card.desc}</p>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
 
           {/* Published Research Notes */}
