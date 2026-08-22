@@ -44,8 +44,8 @@ export default function HomePage() {
       <section id="chapter-02-idea">
         <ChapterHeader
           number="02"
-          title="THE IDEA — Nature Intelligence"
-          subtitle="Sense · Interpret · Understand · Care"
+          title="THE IDEA — What Is Nature Intelligence?"
+          subtitle="Signals · Interpretation · Understanding · Connection · Care"
         />
         <HomeSolutionDemo />
         <HowItWorks60s />
@@ -55,8 +55,8 @@ export default function HomePage() {
       <section id="chapter-03-system">
         <ChapterHeader
           number="03"
-          title="THE SYSTEM — NIH-01 Hardware & TinyML"
-          subtitle="Non-Invasive Biophysical Computing"
+          title="THE SYSTEM — How Vriksh Vani Works"
+          subtitle="Thermal Sensing · Environmental Intelligence · Edge AI"
         />
         <HomeProductShowcase />
         <HomeFeatureGrid />

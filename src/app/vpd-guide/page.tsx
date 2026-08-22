@@ -39,7 +39,7 @@ export default function VpdGuidePage() {
             <h1 className="font-display text-4xl md:text-5xl font-bold text-[#F7F6F2]">
               The Complete VPD Guide for Plant Care
             </h1>
-            <p className="text-[#A3B18A]">Everything you need to understand Vapour Pressure Deficit — and why it is the single most important metric for indoor plant health.</p>
+            <p className="text-[#A3B18A]">Everything you need to understand Vapour Pressure Deficit — and why it is one of the most significant environmental metrics for understanding indoor plant transpiration.</p>
           </div>
 
           <Card className="p-8 space-y-4">
@@ -81,6 +81,9 @@ export default function VpdGuidePage() {
                   <p className="text-sm text-[#A3B18A] leading-relaxed">{r.desc}</p>
                 </Card>
               ))}
+            </div>
+            <div className="p-3 rounded-xl bg-[#070B08]/80 border border-[#E8D07C]/20 text-xs text-[#A3B18A] leading-relaxed">
+              <strong className="text-[#E8D07C]">Scientific note:</strong> VPD ranges above are general guidelines derived from published horticultural literature and plant physiology research. Optimal ranges vary significantly by species, acclimatisation history, growth stage, substrate, and environmental context. Always cross-reference with species-specific data when available.
             </div>
           </div>
 

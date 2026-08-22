@@ -20,23 +20,23 @@ const SLIDES = [
     line3: 'SPEAK',
     subtitle: (
       <>
-        <span className="block">Plants continuously respond through physiological changes.</span>
+        <span className="block">Nature has always been communicating.</span>
         <span className="block">
-          <span className="text-[#8AD74C] font-semibold">Vriksh Vani</span> explores measuring &amp; interpreting these signals.
+          <span className="text-[#8AD74C] font-semibold">Vriksh Vani</span> is building the interface to listen.
         </span>
       </>
     ),
   },
   {
     id: 'nih',
-    line1: 'MEET THE',
+    line1: 'BUILDING',
     line2: 'NATURE',
-    line3: 'INTELLIGENCE HUB',
+    line3: 'INTELLIGENCE',
     subtitle: (
       <>
-        <span className="block">The NIH-01 target design reads thermal biometrics &amp; gas VOC.</span>
+        <span className="block">Technology that helps humans observe, interpret</span>
         <span className="block">
-          Your home becomes a <span className="text-[#8AD74C] font-semibold">living, breathing ecosystem.</span>
+          and understand <span className="text-[#8AD74C] font-semibold">living systems.</span>
         </span>
       </>
     ),
@@ -48,7 +48,7 @@ const SLIDES = [
     line3: 'FEEL',
     subtitle: (
       <>
-        <span className="block">Sub-degree heat signatures reveal plant transpiration states.</span>
+        <span className="block">Sub-degree thermal signatures reveal plant transpiration states.</span>
         <span className="block">
           <span className="text-[#8AD74C] font-semibold">No cameras. No probes.</span> Non-invasive biophysics.
         </span>
@@ -64,7 +64,7 @@ const SLIDES = [
       <>
         <span className="block">2,900+ researchers &amp; plant lovers are waiting.</span>
         <span className="block">
-          Join <span className="text-[#8AD74C] font-semibold">Batch 01 — NIH-01 Nature Intelligence Hub.</span>
+          Join <span className="text-[#8AD74C] font-semibold">the Nature Intelligence research journey.</span>
         </span>
       </>
     ),

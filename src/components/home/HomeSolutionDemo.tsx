@@ -69,6 +69,30 @@ export const HomeSolutionDemo: React.FC = () => {
       <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-[#8AD74C]/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 relative z-10 space-y-16">
+
+        {/* Nature Intelligence Journey Strip */}
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col sm:flex-row items-stretch justify-center gap-0 text-center">
+              {[
+                { label: 'Signals', question: 'What is happening?', color: 'text-[#E8D07C]', bg: 'bg-[#E8D07C]/10', border: 'border-[#E8D07C]/20' },
+                { label: 'Interpretation', question: 'What could it mean?', color: 'text-[#8AD74C]', bg: 'bg-[#8AD74C]/10', border: 'border-[#8AD74C]/20' },
+                { label: 'Understanding', question: 'Why is it happening?', color: 'text-sky-400', bg: 'bg-sky-400/10', border: 'border-sky-400/20' },
+                { label: 'Connection', question: 'What does this tell us?', color: 'text-purple-400', bg: 'bg-purple-400/10', border: 'border-purple-400/20' },
+                { label: 'Care', question: 'What should we do?', color: 'text-[#8AD74C]', bg: 'bg-[#8AD74C]/10', border: 'border-[#8AD74C]/20' },
+              ].map((stage, i) => (
+                <div key={stage.label} className="flex items-center flex-1 min-w-0">
+                  <div className={`flex-1 p-3 ${stage.bg} border ${stage.border} ${i === 0 ? 'rounded-t-xl sm:rounded-l-xl sm:rounded-tr-none' : ''} ${i === 4 ? 'rounded-b-xl sm:rounded-r-xl sm:rounded-bl-none' : ''}`}>
+                    <p className={`font-mono text-[10px] font-bold uppercase tracking-wider ${stage.color}`}>{stage.label}</p>
+                    <p className="text-[10px] text-[#A3B18A] mt-0.5 leading-tight">{stage.question}</p>
+                  </div>
+                  {i < 4 && <span className="text-white/20 text-xs px-0.5 hidden sm:block">→</span>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center space-y-4 max-w-3xl mx-auto">

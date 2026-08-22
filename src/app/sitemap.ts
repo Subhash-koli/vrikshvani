@@ -18,12 +18,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/product/lab-journal', priority: 0.85, freq: 'weekly' },
     // Nature Intelligence & Research
     { path: '/nature-intelligence', priority: 0.9, freq: 'weekly' },
+    { path: '/nature-intelligence/what-is-ni', priority: 0.95, freq: 'weekly' },
     { path: '/nature-intelligence/nte-voice', priority: 0.85, freq: 'weekly' },
     { path: '/nature-intelligence/research', priority: 0.85, freq: 'weekly' },
     { path: '/nature-intelligence/research/note-001', priority: 0.9, freq: 'weekly' },
     { path: '/nature-intelligence/research/note-002', priority: 0.9, freq: 'weekly' },
+    { path: '/nature-intelligence/research/note-003', priority: 0.9, freq: 'weekly' },
     { path: '/nature-intelligence/evidence', priority: 0.9, freq: 'weekly' },
+    { path: '/nature-intelligence/experiment-log', priority: 0.85, freq: 'weekly' },
     { path: '/vpd-guide', priority: 0.85, freq: 'weekly' },
+    { path: '/source-of-truth', priority: 0.9, freq: 'weekly' },
+    // Learn
+    { path: '/learn', priority: 0.9, freq: 'weekly' },
     // App
     { path: '/app', priority: 0.85, freq: 'weekly' },
     // Blog

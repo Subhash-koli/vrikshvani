@@ -31,7 +31,7 @@ export const AboutFounder: React.FC = () => {
               <Sparkles className="w-3.5 h-3.5" /> Founder &amp; Vision
             </Badge>
             <h2 className="font-display text-3xl md:text-5xl font-bold text-[#F7F6F2]">
-              Subhash Koli
+              The Question That Started Vriksh Vani
             </h2>
             <div className="space-y-4 text-sm sm:text-base text-[#A3B18A] leading-relaxed">
               <p>
@@ -41,7 +41,10 @@ export const AboutFounder: React.FC = () => {
                 Plants are constantly responding to light, water, temperature, and atmospheric conditions through subtle physical and chemical signals. In nature, nothing is truly silent &mdash; we just lack the tools to interpret the language of living systems.
               </p>
               <p>
-                Rather than building another generic moisture meter or disposable plastic gadget, Subhash started Vriksh Vani as an open exploration of <strong className="text-[#8AD74C]">Nature Intelligence</strong> &mdash; exploring how thermal biometrics, environmental sensing, and on-device AI can help humans build genuine empathy for living flora.
+                Rather than building another generic moisture meter or disposable plastic gadget, Subhash started Vriksh Vani as an open exploration of <strong className="text-[#8AD74C]">Nature Intelligence</strong> &mdash; exploring how thermal biometrics, environmental sensing, and on-device AI can help humans build genuine understanding of living systems.
+              </p>
+              <p>
+                The technology is the bridge. <strong className="text-[#F7F6F2]">Understanding is the destination.</strong>
               </p>
             </div>
           </div>

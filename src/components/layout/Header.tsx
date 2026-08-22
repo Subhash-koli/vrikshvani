@@ -16,30 +16,40 @@ type NavGroup = {
 
 const navGroups: NavGroup[] = [
   {
-    label: 'Product',
+    label: 'Nature Intelligence',
     children: [
-      { label: 'NIH-01 Concept Overview', href: '/product', desc: 'Handcrafted ceramic hardware concept' },
-      { label: 'Target Features', href: '/product/features', desc: 'Planned non-invasive biometrics' },
-      { label: 'Technical Specifications', href: '/product/specifications', desc: 'ESP32-S3 hardware datasheet targets' },
-      { label: 'Craftsmanship', href: '/product/craftsmanship', desc: 'Stoneware clay & natural ceramic glazes' },
-    ],
-  },
-  {
-    label: 'Technology',
-    children: [
-      { label: 'Nature Intelligence', href: '/nature-intelligence', desc: 'Biophysical edge computing concept' },
+      { label: 'What Is Nature Intelligence?', href: '/nature-intelligence/what-is-ni', desc: 'The category Vriksh Vani is pioneering' },
+      { label: 'NI Technology Overview', href: '/nature-intelligence', desc: 'Sensing, interpretation & edge AI' },
       { label: 'NTE™ Voice Engine (Concept)', href: '/nature-intelligence/nte-voice', desc: 'Neural translation architecture' },
       { label: 'NIOS Operating Model', href: '/nature-intelligence#nios', desc: '6-stage sense-to-care pipeline' },
-      { label: 'Mobile App Concept', href: '/app', desc: 'Local-first UI vision concept' },
     ],
   },
   {
-    label: 'Research',
+    label: 'Science',
     children: [
       { label: 'Research Hub', href: '/nature-intelligence/research', desc: 'Biophysics study notes & hypotheses' },
-      { label: 'Research Notes', href: '/nature-intelligence/research/note-001', desc: 'Empirical leaf thermography notes' },
       { label: 'Evidence Registry', href: '/nature-intelligence/evidence', desc: 'Verified status index of all claims' },
+      { label: 'Experiment Log', href: '/nature-intelligence/experiment-log', desc: 'Dated chronological research timeline' },
+      { label: 'VPD Guide', href: '/vpd-guide', desc: 'Understanding Vapour Pressure Deficit' },
       { label: 'Open Data — Pre-Release', href: '/nature-intelligence/open-data', desc: 'Sample biophysical telemetry datasets' },
+    ],
+  },
+  {
+    label: 'Products',
+    children: [
+      { label: 'NIH-01 Concept Overview', href: '/product', desc: 'First Nature Intelligence hardware' },
+      { label: 'Craftsmanship', href: '/product/craftsmanship', desc: 'Stoneware clay & natural ceramic glazes' },
+      { label: 'Lab Journal', href: '/product/lab-journal', desc: 'Hardware R&D development log' },
+      { label: 'Technical Specifications', href: '/product/specifications', desc: 'ESP32-S3 hardware datasheet targets' },
+    ],
+  },
+  {
+    label: 'Learn',
+    children: [
+      { label: 'Explore Nature Intelligence', href: '/learn', desc: 'Knowledge hub & educational resources' },
+      { label: 'Species Library', href: '/species', desc: 'Plant profiles & care intelligence' },
+      { label: 'Glossary', href: '/glossary', desc: 'Nature Intelligence terminology' },
+      { label: 'Research Notes', href: '/nature-intelligence/research/note-001', desc: 'Published research methodology' },
     ],
   },
   {
