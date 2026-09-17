@@ -9,9 +9,22 @@ import { FlaskConical, BookOpen, Microscope, Terminal, Code2, Download, ShieldCh
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Research & Hypotheses — Vriksh Vani Nature Intelligence',
-  description:
-    'Vriksh Vani research framework, working hypotheses, and open invitation for academic collaboration on plant biophysics and edge AI.',
+  title: 'Research & Hypotheses — Vriksh Vani (vrikshvani) Nature Intelligence',
+  description: 'Vriksh Vani (vrikshvani / VrikshVani) research framework, working hypotheses, and open invitation for academic collaboration on plant biophysics and edge AI at vrikshvani.com.',
+  keywords: [
+    'vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com',
+    'vrikshvani research', 'vriksh vani research', 'Nature Intelligence research',
+    'plant biophysics hypotheses', 'vrikshvani biophysics', 'plant thermal research'
+  ],
+  alternates: {
+    canonical: 'https://www.vrikshvani.com/nature-intelligence/research',
+  },
+  openGraph: {
+    title: 'Research & Hypotheses — Vriksh Vani (vrikshvani) Nature Intelligence',
+    description: 'Open research framework from Vriksh Vani (vrikshvani) on plant biophysics, thermal transpiration sensing, and edge AI voice synthesis.',
+    url: 'https://www.vrikshvani.com/nature-intelligence/research',
+    siteName: 'Vriksh Vani (vrikshvani)',
+  },
 };
 
 interface Hypothesis {

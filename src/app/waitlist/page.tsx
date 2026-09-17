@@ -12,12 +12,14 @@ import { Sparkles, ShieldCheck, Truck, Lock, Gift, Users, ArrowRight, CheckCircl
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Join Batch 01 Waitlist — Vriksh Vani NIH-01 Pre-Order',
-  description: 'Reserve your Batch 01 NIH-01 Nature Intelligence Hub. FLIR thermal biometrics, quad-gas analysis, and neural plant voice. Limited founding allocation.',
+  title: 'Join Batch 01 Waitlist — Vriksh Vani (vrikshvani) NIH-01',
+  description: 'Reserve your Batch 01 NIH-01 Nature Intelligence Hub by Vriksh Vani (vrikshvani / VrikshVani). FLIR thermal biometrics and plant voice AI at vrikshvani.com.',
+  keywords: ['vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com', 'vrikshvani waitlist', 'Vriksh Vani waitlist', 'NIH-01 pre-order', 'vrikshvani batch 01'],
   openGraph: {
-    title: 'Join Batch 01 Waitlist — Vriksh Vani NIH-01',
-    description: 'Reserve your founding unit of the NIH-01 Nature Intelligence Hub. Limited Batch 01 allocation.',
-    url: 'https://vrikshvani.com/waitlist',
+    title: 'Join Batch 01 Waitlist — Vriksh Vani (vrikshvani) NIH-01',
+    description: 'Reserve your founding unit of the NIH-01 Nature Intelligence Hub by Vriksh Vani (vrikshvani). Limited Batch 01 allocation.',
+    url: 'https://www.vrikshvani.com/waitlist',
+    siteName: 'Vriksh Vani (vrikshvani)',
   },
 };
 

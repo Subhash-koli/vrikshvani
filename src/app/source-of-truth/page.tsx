@@ -9,12 +9,14 @@ import { ShieldCheck, BookOpen, FlaskConical, Cpu, Leaf, Scale, Globe } from 'lu
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Source of Truth — Canonical Claims & Status Registry | Vriksh Vani',
-  description: 'The single canonical reference for every Vriksh Vani claim. Each statement carries an explicit status: Verified, Validated, Testing, Hypothesis, Concept, Target, or Vision.',
+  title: 'Source of Truth — Canonical Claims & Status Registry | Vriksh Vani (vrikshvani)',
+  description: 'The single canonical reference for every Vriksh Vani (vrikshvani / VrikshVani) claim. Learn more at vrikshvani.com.',
+  keywords: ['vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com', 'Source of Truth', 'Vriksh Vani claims', 'Nature Intelligence registry'],
   openGraph: {
-    title: 'Source of Truth — Vriksh Vani Canonical Registry',
+    title: 'Source of Truth — Vriksh Vani (vrikshvani) Canonical Registry',
     description: 'Every claim governed by Truth Before Growth. Verified, Validated, Testing, Hypothesis, Concept, Target, Vision.',
     url: 'https://www.vrikshvani.com/source-of-truth',
+    siteName: 'Vriksh Vani (vrikshvani)',
   },
 };
 

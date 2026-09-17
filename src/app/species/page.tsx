@@ -8,8 +8,20 @@ import Link from 'next/link';
 import { Search, Leaf } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Target Species Library Concept — Vriksh Vani',
-  description: 'Explore the Vriksh Vani species biophysics library concept: target VPD ranges, care profiles, and biometric baselines for indoor plant species.',
+  title: 'Target Species Library — Vriksh Vani (vrikshvani) Plant Intelligence',
+  description: 'Explore the Vriksh Vani (vrikshvani / VrikshVani) species biophysics library: target VPD ranges, care profiles, and biometric baselines for indoor plant species at vrikshvani.com.',
+  keywords: [
+    'vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com',
+    'vrikshvani species', 'vriksh vani plant species', 'Nature Intelligence species library',
+    'plant VPD profiles', 'indoor plant biometrics', 'plant care intelligence'
+  ],
+  alternates: { canonical: 'https://www.vrikshvani.com/species' },
+  openGraph: {
+    title: 'Target Species Library — Vriksh Vani (vrikshvani)',
+    description: 'Plant biophysics profiles and care intelligence for 800+ indoor plant species by Vriksh Vani (vrikshvani).',
+    url: 'https://www.vrikshvani.com/species',
+    siteName: 'Vriksh Vani (vrikshvani)',
+  },
 };
 
 const categories = [

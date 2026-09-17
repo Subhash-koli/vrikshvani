@@ -5,12 +5,14 @@ import Footer from '@/components/layout/Footer';
 import ContactClient from '@/components/sections/ContactClient';
 
 export const metadata: Metadata = {
-  title: 'Contact Vriksh Vani — General, Press & Enterprise Enquiries',
-  description: 'Reach out to the Vriksh Vani team for product questions, enterprise fleet solutions, media kit requests, or botanical science discussions.',
+  title: 'Contact Vriksh Vani (vrikshvani) — General & Press Enquiries',
+  description: 'Reach out to Vriksh Vani (vrikshvani / VrikshVani) for product questions, enterprise solutions, or botanical science discussions at vrikshvani.com.',
+  keywords: ['vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com', 'contact vrikshvani', 'Vriksh Vani contact', 'vrikshvani email', 'subhash koli contact'],
   openGraph: {
-    title: 'Contact Vriksh Vani — Support, Press & Enterprise',
-    description: 'Connect with our team in Bengaluru, London, and San Francisco. Average response time: 1-2 business days.',
-    url: 'https://vrikshvani.com/contact',
+    title: 'Contact Vriksh Vani (vrikshvani) — Support & Press',
+    description: 'Connect with the Vriksh Vani (vrikshvani) team. Average response time: 1-2 business days.',
+    url: 'https://www.vrikshvani.com/contact',
+    siteName: 'Vriksh Vani (vrikshvani)',
   },
 };
 

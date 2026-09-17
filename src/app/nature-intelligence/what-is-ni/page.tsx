@@ -9,17 +9,17 @@ import { Leaf, Eye, Brain, Heart, ShieldCheck, Sparkles, ArrowRight, FlaskConica
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'What Is Nature Intelligence? — The Category Vriksh Vani Is Pioneering',
-  description: 'Nature Intelligence is a new discipline combining plant biophysics, environmental sensing, edge AI, and human translation to help humanity understand living systems. Learn the 5-stage NI journey.',
-  keywords: ['Nature Intelligence', 'plant intelligence', 'plant signals', 'biophysics', 'living systems', 'plant communication', 'NI category'],
+  title: 'What Is Nature Intelligence? — Pioneered by Vriksh Vani (vrikshvani)',
+  description: 'Nature Intelligence is a new discipline pioneered by Vriksh Vani (vrikshvani / VrikshVani) combining plant biophysics, thermal sensing, edge AI, and voice translation at vrikshvani.com.',
+  keywords: ['vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com', 'Nature Intelligence', 'vrikshvani plant intelligence', 'plant signals', 'biophysics', 'living systems', 'plant communication', 'NI category'],
   alternates: {
     canonical: 'https://www.vrikshvani.com/nature-intelligence/what-is-ni',
   },
   openGraph: {
-    title: 'What Is Nature Intelligence? | Vriksh Vani',
-    description: 'A new discipline for understanding living systems. Signals, Interpretation, Understanding, Connection, Care.',
+    title: 'What Is Nature Intelligence? | Vriksh Vani (vrikshvani)',
+    description: 'A new discipline for understanding living systems by Vriksh Vani (vrikshvani). Signals, Interpretation, Understanding, Connection, Care.',
     url: 'https://www.vrikshvani.com/nature-intelligence/what-is-ni',
-    siteName: 'Vriksh Vani',
+    siteName: 'Vriksh Vani (vrikshvani)',
   },
 };
 

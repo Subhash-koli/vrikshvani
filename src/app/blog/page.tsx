@@ -8,8 +8,20 @@ import { CalendarDays, Clock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Vriksh Vani Research Notes — Plant Science & Biophysics Explanations',
-  description: 'Read research notes, hardware design logs, VPD science explainers, and plant care insights from the Vriksh Vani project.',
+  title: 'Vriksh Vani (vrikshvani) Research Notes — Plant Science & Biophysics',
+  description: 'Read research notes, hardware design logs, VPD science explainers, and plant care insights from the Vriksh Vani (vrikshvani / VrikshVani) project at vrikshvani.com.',
+  keywords: [
+    'vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com',
+    'vrikshvani blog', 'vriksh vani blog', 'vrikshvani research notes',
+    'plant biophysics blog', 'plant science explained', 'vrikshvani science'
+  ],
+  alternates: { canonical: 'https://www.vrikshvani.com/blog' },
+  openGraph: {
+    title: 'Vriksh Vani (vrikshvani) Research Notes — Plant Science & Biophysics',
+    description: 'Science notes, hardware design logs, and plant care insights from the vrikshvani project.',
+    url: 'https://www.vrikshvani.com/blog',
+    siteName: 'Vriksh Vani (vrikshvani)',
+  },
 };
 
 const articles = [

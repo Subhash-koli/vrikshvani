@@ -11,17 +11,22 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'NIH-01 Concept & Targeted Features | Vriksh Vani',
-  description: 'Target features of NIH-01: FLIR thermal optics vision, BME688 gas sensing, ESP32-S3 TinyML compute, real-time VPD, and privacy-first NTE™ voice output.',
-  keywords: ['NIH-01 features', 'FLIR thermal plant sensor concept', 'Bosch BME688', 'on-device voice AI', 'VPD computation concept'],
+  title: 'NIH-01 Concept & Targeted Features | Vriksh Vani (vrikshvani)',
+  description: 'Target features of NIH-01 by Vriksh Vani (vrikshvani / VrikshVani): FLIR thermal optics, BME688 gas sensing, ESP32-S3 TinyML compute, real-time VPD, and plant voice AI at vrikshvani.com.',
+  keywords: [
+    'vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com',
+    'vrikshvani NIH-01 features', 'vrikshvani FLIR thermal sensor',
+    'NIH-01 features', 'FLIR thermal plant sensor concept', 'Bosch BME688',
+    'on-device voice AI', 'VPD computation concept'
+  ],
   alternates: {
     canonical: 'https://www.vrikshvani.com/features',
   },
   openGraph: {
-    title: 'NIH-01 Concept & Targeted Features | Vriksh Vani',
-    description: 'FLIR thermal optics vision, quad-gas analysis, ESP32-S3 TinyML compute, and real-time VPD computation concept in ceramic casing.',
+    title: 'NIH-01 Concept & Targeted Features | Vriksh Vani (vrikshvani)',
+    description: 'FLIR thermal optics, quad-gas analysis, ESP32-S3 TinyML compute, and plant voice AI by Vriksh Vani (vrikshvani) in ceramic casing.',
     url: 'https://www.vrikshvani.com/features',
-    siteName: 'Vriksh Vani',
+    siteName: 'Vriksh Vani (vrikshvani)',
     images: [
       {
         url: 'https://www.vrikshvani.com/og?title=NIH-01%20Hardware%20%26%20AI%20Features&subtitle=Thermal%2C%20Quad-Gas%20%26%20NTE%E2%84%A2%20Voice',

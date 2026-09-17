@@ -12,17 +12,17 @@ import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 
 export const metadata: Metadata = {
-  title: 'Our Story & Vision | About Vriksh Vani',
-  description: 'Vriksh Vani is an independent Nature Intelligence project exploring how non-invasive sensing and edge AI can help humans understand plant signals.',
-  keywords: ['About Vriksh Vani', 'Nature Intelligence founder', 'Subhash Koli', 'Vriksh Vani story', 'plant technology project', 'Bengaluru hardware project'],
+  title: 'Our Story & Vision | About Vriksh Vani (vrikshvani)',
+  description: 'Discover the story, mission, and founder Subhash Koli behind Vriksh Vani (vrikshvani / VrikshVani) — pioneering Nature Intelligence plant biophysics and voice AI at vrikshvani.com.',
+  keywords: ['vrikshvani', 'vriksh vani', 'VrikshVani', 'About Vriksh Vani', 'vrikshvani about', 'vrikshvani.com', 'Nature Intelligence founder', 'Subhash Koli', 'Vriksh Vani story', 'vrikshvani subhash koli', 'plant technology project', 'Bengaluru hardware project'],
   alternates: {
     canonical: 'https://www.vrikshvani.com/about',
   },
   openGraph: {
-    title: 'Our Story & Vision | About Vriksh Vani',
-    description: 'Technology should disappear. Nature should become understandable. Discover the mission and founder behind Vriksh Vani.',
+    title: 'Our Story & Vision | About Vriksh Vani (vrikshvani)',
+    description: 'Technology should disappear. Nature should become understandable. Discover the mission and founder behind Vriksh Vani (vrikshvani).',
     url: 'https://www.vrikshvani.com/about',
-    siteName: 'Vriksh Vani',
+    siteName: 'Vriksh Vani (vrikshvani)',
     images: [
       {
         url: 'https://www.vrikshvani.com/og?title=Our%20Story%20%26%20Vision&subtitle=Building%20Nature%20Intelligence',

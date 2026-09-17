@@ -17,7 +17,19 @@ export const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Vriksh Vani',
-  alternateName: ['Vriksh Vani Nature Intelligence', 'Nature Intelligence'],
+  alternateName: [
+    'vrikshvani',
+    'VrikshVani',
+    'vrikshvani.com',
+    'vriksh vani',
+    'vrikshvani website',
+    'Vriksh Vani Website',
+    'Vriksh Vani AI',
+    'vrikshvani ai',
+    'vrikshvani plant',
+    'Vriksh Vani Nature Intelligence',
+    'Nature Intelligence'
+  ],
   url: 'https://www.vrikshvani.com',
   slogan: 'Let your plant speak.',
   potentialAction: {
@@ -30,12 +42,14 @@ export const websiteJsonLd = {
 export const productJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Product',
-  name: 'Vriksh Vani NIH-01 Nature Intelligence Hub',
+  name: 'Vriksh Vani NIH-01 Nature Intelligence Hub (vrikshvani)',
+  alternateName: ['vrikshvani NIH-01', 'VrikshVani NIH-01', 'Vriksh Vani Plant Speaker', 'vrikshvani plant care'],
   image: 'https://www.vrikshvani.com/og',
-  description: 'An early plant intelligence prototype exploring leaf surface thermal sensing, quad-gas analysis, and NTE™ voice output. Let your plant speak.',
+  description: 'An early plant intelligence prototype exploring leaf surface thermal sensing, quad-gas analysis, and NTE™ voice output. Let your plant speak with Vriksh Vani (vrikshvani).',
   brand: {
     '@type': 'Brand',
     name: 'Vriksh Vani',
+    alternateName: ['vrikshvani', 'VrikshVani'],
     slogan: 'Let your plant speak.',
   },
   category: 'Nature Intelligence',
@@ -45,13 +59,31 @@ export const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Vriksh Vani Technologies',
-  alternateName: 'Vriksh Vani',
+  alternateName: [
+    'vrikshvani',
+    'VrikshVani',
+    'Vriksh Vani',
+    'vrikshvani.com',
+    'vrikshvani website',
+    'vriksh vani website',
+    'Vriksh Vani AI',
+    'vrikshvani ai',
+    'vrikshvani plant care'
+  ],
   url: 'https://www.vrikshvani.com',
-  logo: 'https://www.vrikshvani.com/icon-512.png',
+  logo: 'https://www.vrikshvani.com/assets/vrikshvani_logo/Vriksh%20vani%20logo%20favicon.png',
   slogan: 'Let your plant speak.',
+  founder: {
+    '@type': 'Person',
+    name: 'Subhash Koli',
+    url: 'https://github.com/Subhash-koli'
+  },
   sameAs: [
     'https://twitter.com/vrikshvani',
     'https://github.com/Subhash-koli/vrikshvani',
+    'https://instagram.com/vrikshvani',
+    'https://youtube.com/@vrikshvani',
+    'https://www.vrikshvani.com'
   ],
   contactPoint: {
     '@type': 'ContactPoint',

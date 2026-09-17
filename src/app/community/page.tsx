@@ -10,12 +10,19 @@ import { Users, FlaskConical, Leaf, Code2, GraduationCap, Building, Camera, Tren
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Nature Intelligence Explorers — Community | Vriksh Vani',
-  description: 'Join 2,900+ researchers, plant enthusiasts, students, and developers exploring Nature Intelligence. Help us validate the science, test prototypes, and build the future of plant understanding.',
+  title: 'Nature Intelligence Explorers — Vriksh Vani (vrikshvani) Community',
+  description: 'Join 2,900+ researchers and plant enthusiasts exploring Nature Intelligence with Vriksh Vani (vrikshvani / VrikshVani). Help validate the science and test prototypes at vrikshvani.com.',
+  keywords: [
+    'vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com',
+    'vrikshvani community', 'vriksh vani community', 'Nature Intelligence community',
+    'vrikshvani researchers', 'vrikshvani explorers', 'plant intelligence community'
+  ],
+  alternates: { canonical: 'https://www.vrikshvani.com/community' },
   openGraph: {
-    title: 'Nature Intelligence Explorers — Vriksh Vani Community',
-    description: 'A growing community of people who believe understanding living systems matters. Join the research journey.',
+    title: 'Nature Intelligence Explorers — Vriksh Vani (vrikshvani) Community',
+    description: 'A growing community of plant lovers and researchers exploring Nature Intelligence with Vriksh Vani (vrikshvani). Join the research journey.',
     url: 'https://www.vrikshvani.com/community',
+    siteName: 'Vriksh Vani (vrikshvani)',
   },
 };
 

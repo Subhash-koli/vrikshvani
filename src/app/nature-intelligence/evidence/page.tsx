@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -7,12 +7,19 @@ import { ShieldCheck } from 'lucide-react';
 import EvidenceDashboardClient from '@/components/research/EvidenceDashboardClient';
 
 export const metadata: Metadata = {
-  title: 'Evidence & Truth Registry — Vriksh Vani Nature Intelligence',
-  description: 'Interactive status index of Vriksh Vani biophysical claims, hardware specifications, research hypotheses, and prototype verification metrics — filterable by category, status, and confidence level.',
+  title: 'Evidence & Truth Registry — Vriksh Vani (vrikshvani) Nature Intelligence',
+  description: 'Interactive status index of Vriksh Vani (vrikshvani / VrikshVani) biophysical claims, hardware specifications, research hypotheses, and prototype verification metrics at vrikshvani.com.',
+  keywords: [
+    'vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com',
+    'vrikshvani evidence', 'vrikshvani truth registry', 'Nature Intelligence evidence',
+    'plant biophysics claims', 'vrikshvani research verification'
+  ],
+  alternates: { canonical: 'https://www.vrikshvani.com/nature-intelligence/evidence' },
   openGraph: {
-    title: 'Evidence & Truth Registry — Vriksh Vani Nature Intelligence',
-    description: 'Transparent classification of Vriksh Vani claims across live research, prototype hardware, and active research hypotheses.',
+    title: 'Evidence & Truth Registry — Vriksh Vani (vrikshvani)',
+    description: 'Transparent classification of Vriksh Vani (vrikshvani) claims across live research, prototype hardware, and active research hypotheses.',
     url: 'https://www.vrikshvani.com/nature-intelligence/evidence',
+    siteName: 'Vriksh Vani (vrikshvani)',
   },
 };
 

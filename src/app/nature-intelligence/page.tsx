@@ -10,17 +10,22 @@ import HomeFinaleCta from '@/components/home/HomeFinaleCta';
 import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
-  title: 'Nature Intelligence Category & NIOS Architecture | Vriksh Vani',
-  description: 'Explore the 6-stage Nature Intelligence OS (NIOS) framework. Combines thermal transpiration sensing, quad-gas analysis, and local TinyML neural voice synthesis.',
-  keywords: ['Nature Intelligence', 'NIOS architecture', 'plant biophysics AI', 'NTE voice engine', 'plant transpiration thermal sensing'],
+  title: 'Nature Intelligence Category & NIOS Architecture | Vriksh Vani (vrikshvani)',
+  description: 'Explore the 6-stage Nature Intelligence OS (NIOS) framework by Vriksh Vani (vrikshvani / VrikshVani). Combines thermal transpiration sensing, quad-gas analysis, and TinyML plant voice AI at vrikshvani.com.',
+  keywords: [
+    'vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com',
+    'Nature Intelligence', 'NIOS architecture', 'vrikshvani nature intelligence',
+    'plant biophysics AI', 'NTE voice engine', 'plant transpiration thermal sensing',
+    'vrikshvani NIOS', 'vrikshvani plant sensor'
+  ],
   alternates: {
     canonical: 'https://www.vrikshvani.com/nature-intelligence',
   },
   openGraph: {
-    title: 'Nature Intelligence Category & NIOS Architecture | Vriksh Vani',
-    description: 'Learn how tiny ML and FLIR thermal optics decode invisible plant stress into natural human speech.',
+    title: 'Nature Intelligence Category & NIOS Architecture | Vriksh Vani (vrikshvani)',
+    description: 'How vrikshvani uses TinyML and FLIR thermal optics to decode invisible plant stress into natural human speech.',
     url: 'https://www.vrikshvani.com/nature-intelligence',
-    siteName: 'Vriksh Vani',
+    siteName: 'Vriksh Vani (vrikshvani)',
     images: [
       {
         url: 'https://www.vrikshvani.com/og?title=Nature%20Intelligence%20Category&subtitle=Bridging%20Plant%20Biophysics%20%26%20Human%20Speech',

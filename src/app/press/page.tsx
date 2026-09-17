@@ -9,8 +9,20 @@ import { Download, Mail, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Press & Media — Vriksh Vani',
-  description: 'Download the Vriksh Vani brand kit, access high-resolution product concept photography, and request interviews with the founder.',
+  title: 'Press & Media — Vriksh Vani (vrikshvani)',
+  description: 'Download the Vriksh Vani (vrikshvani / VrikshVani) brand kit, access high-resolution product concept photography, and request interviews with founder Subhash Koli at vrikshvani.com.',
+  keywords: [
+    'vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com',
+    'vrikshvani press', 'vriksh vani media kit', 'vrikshvani brand kit',
+    'vrikshvani subhash koli interview', 'Nature Intelligence press'
+  ],
+  alternates: { canonical: 'https://www.vrikshvani.com/press' },
+  openGraph: {
+    title: 'Press & Media — Vriksh Vani (vrikshvani)',
+    description: 'Brand assets, logos, and founder background for Vriksh Vani (vrikshvani). Download the press kit at vrikshvani.com/press.',
+    url: 'https://www.vrikshvani.com/press',
+    siteName: 'Vriksh Vani (vrikshvani)',
+  },
 };
 
 export default function PressPage() {

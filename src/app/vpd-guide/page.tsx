@@ -9,8 +9,9 @@ import { Wind, Thermometer, Droplets } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'VPD Guide — Understanding Vapour Pressure Deficit | Vriksh Vani',
-  description: 'The definitive beginner-to-expert guide to Vapour Pressure Deficit (VPD): what it is, how to calculate it, why it matters for plant care, and how NIH-01 monitors it in real time.',
+  title: 'VPD Guide — Understanding Vapour Pressure Deficit | Vriksh Vani (vrikshvani)',
+  description: 'The definitive guide to Vapour Pressure Deficit (VPD) by Vriksh Vani (vrikshvani / VrikshVani): calculate VPD, understand plant transpiration, and monitor leaf health at vrikshvani.com.',
+  keywords: ['vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com', 'VPD guide', 'vapour pressure deficit', 'plant transpiration', 'vrikshvani VPD calculator', 'plant health monitor'],
 };
 
 const vpdRanges = [

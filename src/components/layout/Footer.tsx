@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
             <Link href="/" className="flex items-center gap-2.5 group w-fit">
               <img
                 src="/assets/vrikshvani_logo/vrikshvani-3d-symbol-logo.png"
-                alt="Vriksh Vani Logo"
+                alt="Vriksh Vani (vrikshvani) Logo"
                 className="w-14 h-14 sm:w-[60px] sm:h-[60px] object-contain shrink-0 drop-shadow-[0_4px_14px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-300"
               />
               {/* Parent: fit-content sized ONLY by the name (tagline is absolute) */}
@@ -90,7 +90,7 @@ export const Footer: React.FC = () => {
               </div>
             </Link>
             <p className="text-sm text-[#A3B18A] max-w-sm leading-relaxed">
-              Decoding the silent biophysical language of plants through thermal biometrics, atmospheric gas analysis, and on-device neural voice synthesis.
+              Decoding the silent biophysical language of plants with Vriksh Vani (vrikshvani / VrikshVani) through thermal biometrics, atmospheric gas analysis, and plant voice AI at vrikshvani.com.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-xs font-mono text-[#8AD74C]">

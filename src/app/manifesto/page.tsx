@@ -8,8 +8,20 @@ import { BookOpen, Heart } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Brand Manifesto — Vriksh Vani',
-  description: 'The Vriksh Vani manifesto: why we believe plants speak, why the world has not been listening, and why that ends with NIH-01.',
+  title: 'Brand Manifesto — Vriksh Vani (vrikshvani) — Plants Have Always Been Speaking',
+  description: 'The Vriksh Vani (vrikshvani / VrikshVani) manifesto: why plants speak, why the world has not been listening, and why that changes with NIH-01. Read at vrikshvani.com.',
+  keywords: [
+    'vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com',
+    'vrikshvani manifesto', 'vriksh vani brand story',
+    'Nature Intelligence manifesto', 'plant voice brand'
+  ],
+  alternates: { canonical: 'https://www.vrikshvani.com/manifesto' },
+  openGraph: {
+    title: 'Brand Manifesto — Vriksh Vani (vrikshvani)',
+    description: 'Why plants speak, why the world has not been listening, and why that changes with Vriksh Vani (vrikshvani).',
+    url: 'https://www.vrikshvani.com/manifesto',
+    siteName: 'Vriksh Vani (vrikshvani)',
+  },
 };
 
 export default function ManifestoPage() {

@@ -8,15 +8,21 @@ import { BookOpen, Wind, Leaf, Brain, FlaskConical, BookMarked, ArrowRight } fro
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Learn — Explore Nature Intelligence | Vriksh Vani',
-  description: 'Your knowledge hub for Nature Intelligence. Explore VPD science, species profiles, research notes, plant signals, and the glossary of Nature Intelligence terminology.',
+  title: 'Learn — Explore Nature Intelligence | Vriksh Vani (vrikshvani)',
+  description: 'Your knowledge hub for Nature Intelligence by Vriksh Vani (vrikshvani / VrikshVani). Explore VPD science, species profiles, research notes, plant signals, and the glossary at vrikshvani.com.',
+  keywords: [
+    'vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com',
+    'vrikshvani learn', 'vrikshvani knowledge', 'Nature Intelligence education',
+    'plant VPD science', 'vrikshvani species', 'vrikshvani glossary'
+  ],
   alternates: {
     canonical: 'https://www.vrikshvani.com/learn',
   },
   openGraph: {
-    title: 'Learn — Explore Nature Intelligence | Vriksh Vani',
-    description: 'Educational resources for understanding plant biophysics, Nature Intelligence, and living systems.',
+    title: 'Learn — Explore Nature Intelligence | Vriksh Vani (vrikshvani)',
+    description: 'Educational resources for understanding plant biophysics, Nature Intelligence, and living systems from Vriksh Vani (vrikshvani).',
     url: 'https://www.vrikshvani.com/learn',
+    siteName: 'Vriksh Vani (vrikshvani)',
   },
 };
 

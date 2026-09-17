@@ -147,11 +147,11 @@ export const Header: React.FC = () => {
             <Link
               href="/"
               className="flex items-center gap-2.5 group cursor-pointer focus:outline-none"
-              aria-label="Vriksh Vani Home"
+              aria-label="Vriksh Vani (vrikshvani) Home"
             >
               <Image
                 src="/assets/vrikshvani_logo/vrikshvani-3d-symbol-logo.png"
-                alt="Vriksh Vani Logo"
+                alt="Vriksh Vani (vrikshvani) Logo"
                 width={64}
                 height={64}
                 className="w-14 h-14 sm:w-[60px] sm:h-[60px] object-contain shrink-0 drop-shadow-[0_4px_14px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-300"

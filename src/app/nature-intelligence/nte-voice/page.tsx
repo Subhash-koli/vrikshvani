@@ -9,8 +9,22 @@ import { Mic, Brain, Cpu, Waves, Globe, Volume2 } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'NTE™ Neural Translation Engine Concept — Vriksh Vani Voice System',
-  description: 'Deep-dive into the Neural Translation Engine concept: exploring INT8 quantized TinyML models on ESP32-S3 to convert plant biometrics into conversational speech.',
+  title: 'NTE™ Neural Translation Engine — Vriksh Vani (vrikshvani) Voice System',
+  description: 'Deep-dive into the Neural Translation Engine by Vriksh Vani (vrikshvani / VrikshVani): INT8 TinyML on ESP32-S3 converting plant biometrics into natural speech. Explore plant voice AI at vrikshvani.com.',
+  keywords: [
+    'vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com',
+    'NTE plant voice', 'vrikshvani voice AI', 'plant voice synthesis', 'plant NTE engine',
+    'vrikshvani plant voice', 'Nature Translation Engine'
+  ],
+  alternates: {
+    canonical: 'https://www.vrikshvani.com/nature-intelligence/nte-voice',
+  },
+  openGraph: {
+    title: 'NTE™ Neural Translation Engine — Vriksh Vani (vrikshvani)',
+    description: 'Vriksh Vani (vrikshvani) plant voice AI: INT8 TinyML models converting thermal and gas biometrics to natural conversational speech.',
+    url: 'https://www.vrikshvani.com/nature-intelligence/nte-voice',
+    siteName: 'Vriksh Vani (vrikshvani)',
+  },
 };
 
 const languages = ['English', 'Hindi', 'Tamil', 'Kannada', 'Telugu', 'Spanish', 'French', 'German'];

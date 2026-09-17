@@ -9,11 +9,17 @@ import Link from 'next/link';
 import { BookOpen, Search, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Nature Intelligence Glossary & Technical Lexicon | Vriksh Vani',
-  description: 'Standardized definitions and scientific terminology for Vriksh Vani technology: NIH-01, NTE™ voice engine, Vapour Pressure Deficit (VPD), FLIR thermal sensing, and TinyML AI.',
+  title: 'Nature Intelligence Glossary & Technical Lexicon | Vriksh Vani (vrikshvani)',
+  description: 'Standardized definitions and scientific terminology for Vriksh Vani (vrikshvani / VrikshVani): NIH-01, NTE™ voice engine, Vapour Pressure Deficit (VPD), FLIR thermal sensing, and plant voice AI at vrikshvani.com.',
+  keywords: ['vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com', 'Nature Intelligence glossary', 'plant biophysics terms', 'vrikshvani terms', 'vrikshvani lexicon'],
 };
 
 const glossaryTerms = [
+  {
+    term: 'Vriksh Vani (vrikshvani / VrikshVani)',
+    category: 'Brand & Organization',
+    definition: 'The pioneer of the Nature Intelligence category. Vriksh Vani (also searched as vrikshvani, VrikshVani, or vrikshvani.com) develops non-invasive plant biometrics, leaf thermal sensing, quad-gas telemetry, and plant voice AI.',
+  },
   {
     term: 'NIH-01 (Nature Intelligence Hub 01)',
     category: 'Hardware',

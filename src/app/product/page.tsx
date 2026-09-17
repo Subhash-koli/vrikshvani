@@ -13,17 +13,17 @@ import JsonLd, { productJsonLd, createBreadcrumbJsonLd } from '@/components/seo/
 import HomeFinaleCta from '@/components/home/HomeFinaleCta';
 
 export const metadata: Metadata = {
-  title: 'NIH-01 Nature Intelligence Hub | Vriksh Vani',
-  description: 'Discover the NIH-01 kiln-fired ceramic plant intelligence hub. Features FLIR thermal leaf biometrics, Bosch quad-gas sensing, on-device neural voice, and zero monthly fees.',
-  keywords: ['NIH-01', 'Vriksh Vani product', 'ceramic plant sensor', 'plant voice AI', 'FLIR thermal plant sensor', 'VPD monitor', 'plant biometrics'],
+  title: 'NIH-01 Nature Intelligence Hub | Vriksh Vani (vrikshvani)',
+  description: 'Discover the NIH-01 kiln-fired ceramic plant intelligence hub by Vriksh Vani (vrikshvani / VrikshVani). Features FLIR thermal biometrics and plant voice AI at vrikshvani.com.',
+  keywords: ['NIH-01', 'vrikshvani', 'vriksh vani', 'VrikshVani', 'vrikshvani.com', 'Vriksh Vani product', 'vrikshvani product', 'vrikshvani plant sensor', 'ceramic plant sensor', 'plant voice AI', 'FLIR thermal plant sensor', 'VPD monitor', 'plant biometrics'],
   alternates: {
     canonical: 'https://www.vrikshvani.com/product',
   },
   openGraph: {
-    title: 'NIH-01 Nature Intelligence Hub | Vriksh Vani',
-    description: 'FLIR thermal leaf biometrics, quad-gas analysis, and neural plant voice synthesis in a hand-crafted ceramic casing. Reserve Batch 01 today.',
+    title: 'NIH-01 Nature Intelligence Hub | Vriksh Vani (vrikshvani)',
+    description: 'FLIR thermal leaf biometrics, quad-gas analysis, and neural plant voice synthesis in a hand-crafted ceramic casing by Vriksh Vani (vrikshvani).',
     url: 'https://www.vrikshvani.com/product',
-    siteName: 'Vriksh Vani',
+    siteName: 'Vriksh Vani (vrikshvani)',
     images: [
       {
         url: 'https://www.vrikshvani.com/og?title=NIH-01%20Nature%20Intelligence%20Hub&subtitle=Kiln-Fired%20Ceramic%20Plant%20Voice%20Hub',
