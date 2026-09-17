@@ -24,7 +24,7 @@ export const HomeFinaleCta: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('PLANT_ENTHUSIAST');
-  const [colorway, setColorway] = useState('PLANT_HEALTH');
+  const [colorway, setColorway] = useState('BIOPHILIC_SAGE');
   const [prototypeInterest, setPrototypeInterest] = useState('YES');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [responseData, setResponseData] = useState<WaitlistResponse['data'] | null>(null);
@@ -149,16 +149,12 @@ export const HomeFinaleCta: React.FC = () => {
                   />
 
                   <Select
-                    label="What interests you most?"
+                    label="Preferred ceramic colorway:"
                     value={colorway}
                     onChange={(e) => setColorway(e.target.value)}
                     options={[
-                      { label: '🌿 Plant Health & Stress Insights', value: 'PLANT_HEALTH' },
-                      { label: '🔬 Plant Biophysics & Stomatal Science', value: 'PLANT_SCIENCE' },
-                      { label: '✨ AI & NTE™ Voice Output', value: 'AI_VOICE' },
-                      { label: '⚡ Biophilic Ceramic Hardware & Optics', value: 'HARDWARE' },
-                      { label: '🧪 Prototype Testbed Cohort', value: 'PROTOTYPE_TESTING' },
-                      { label: '📊 Open Biophysics Datasets', value: 'OPEN_DATA' },
+                      { label: '🌿 Biophilic Sage — Forest green ceramic', value: 'BIOPHILIC_SAGE' },
+                      { label: '🤍 Cream White — Natural clay ceramic', value: 'CREAM_WHITE' },
                     ]}
                   />
                 </div>
